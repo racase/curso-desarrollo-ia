@@ -20,34 +20,47 @@ Contexto de los datos, que ya está en el README:
   2026, en UTC.
 - Los datos contienen a propósito periodos sin lecturas y valores anómalos.
 
-Crea la carpeta docs/issues/ y dentro estos cinco ficheros:
+Crea la carpeta docs/issues/ y dentro estos seis ficheros:
 
 1. 01-resumen-diario-por-sensor.md
-   Por cada sensor y día: valor mínimo, máximo, medio y número de lecturas.
-   Filtros por sede, por sensor y por rango de fechas. Los días se cuentan en
-   UTC. Se consulta desde la línea de comandos del proyecto, igual que check.
+   Por cada sensor y día: valor mínimo, máximo, medio y número de lecturas, con
+   la unidad del sensor. Filtros por sede, por sensor y por rango de fechas. Los
+   días se cuentan en UTC. Se consulta desde la línea de comandos del proyecto,
+   igual que check.
 
 2. 02-deteccion-de-huecos.md
    Listar los periodos en que un sensor estuvo más de N minutos sin enviar
    lecturas, con su inicio, su fin y su duración. Umbral configurable y filtros
    por sede y por sensor. Debe encontrar todos los periodos sin lecturas que hay
-   en el conjunto de datos. Depende del issue 1.
+   en el conjunto de datos. No depende de otros issues.
 
 3. 03-deteccion-de-valores-anomalos.md
-   Señalar las lecturas anómalas de cada sensor: valores imposibles para su
-   tipo y valores que se quedan fijos durante demasiado tiempo. Qué cuenta como
-   «anómalo» se tiene que definir en la especificación antes de programar.
-   Depende del issue 1.
+   Señalar las lecturas anómalas de cada sensor, cubriendo tres tipos: valores
+   fuera del rango posible para su tipo de sensor, valores que se quedan fijos
+   durante demasiado tiempo y saltos bruscos respecto a las lecturas vecinas.
+   Los límites y umbrales de cada tipo se tienen que definir en la especificación
+   antes de programar. No depende de otros issues.
 
 4. 04-informe-semanal-csv-por-sede.md
    Exportar a CSV, para una sede y una semana, el resumen de cada uno de sus
-   sensores. El formato del fichero (columnas, separador, decimales) tiene que
-   quedar fijado y ser verificable. Depende del issue 1.
+   sensores. El formato del fichero (columnas, separador, decimales, codificación)
+   tiene que quedar fijado y ser verificable, y el fichero debe abrirse bien en
+   Excel en español. Depende del issue 1.
 
 5. 05-resumen-diario-precalculado.md
    Que el resumen del issue 1 no se recalcule sobre todas las lecturas en cada
    consulta, sino que esté precalculado y se mantenga al día cuando lleguen
-   lecturas nuevas. Implica un cambio en la base de datos. Depende del issue 1.
+   lecturas nuevas, devolviendo exactamente los mismos resultados. Implica un
+   cambio en la base de datos. Depende del issue 1.
+
+6. 06-del-notebook-al-paquete.md
+   El equipo de datos tiene un notebook de exploración, notebooks/exploracion.ipynb,
+   que calcula la media móvil y la tendencia semanal de la temperatura por sede
+   cargando todas las lecturas en memoria. Hay que llevar ese cálculo al paquete
+   como funcionalidad reutilizable y con tests, haciendo la agregación en la base
+   de datos, y dejar el notebook usando esa funcionalidad en lugar de su propio
+   código. El resultado debe coincidir con el del notebook original. No depende
+   de otros issues.
 
 Cada fichero sigue exactamente esta estructura:
 
@@ -95,10 +108,23 @@ Reglas:
 - En el issue 2, recoge en «Notas» cómo se mide la duración de un hueco (por
   ejemplo, desde la última lectura recibida hasta la siguiente) y qué pasa con
   los huecos al principio o al final del rango consultado.
+- En el issue 1, recoge en «Notas» que cada sensor debería tener 288 lecturas al
+  día y que los días incompletos afectan a la media.
+- En el issue 3, recoge en «Notas» que un mismo valor puede ser normal en un
+  sensor y anómalo en otro (por ejemplo, una presión de 0 bar con la instalación
+  parada), y que la especificación debe decidir cómo se distinguen.
+- En el issue 4, recoge en «Notas» que Excel en español espera punto y coma como
+  separador y coma decimal.
 - En el issue 5, indica en «Notas» que el AGENTS.md pide preguntar antes de
-  cambiar el esquema de la base de datos.
+  cambiar el esquema de la base de datos, y que hay que decidir con qué retraso
+  se admite que el resumen refleje las lecturas nuevas.
+- En el issue 6, indica en «Notas» que el notebook lo aporta el formador, que el
+  AGENTS.md pide justificar cualquier dependencia nueva (Jupyter, pandas) y que
+  conviene decidir si esas dependencias van en un grupo aparte.
 - No inventes funcionalidad que no esté en la lista anterior.
 
 Al terminar, crea docs/issues/README.md con una tabla (número, título,
-dependencias) y el orden recomendado, y enséñame un resumen de lo creado.
+dependencias) y el orden recomendado. Indica que los issues 1 y 2 son los de la
+sesión de datos y que del 3 al 6 son de reserva. Después enséñame un resumen de
+lo creado.
 ```
