@@ -46,10 +46,23 @@ python -m infradata check
 | Tests | `uv run pytest` |
 | Lint | `uv run ruff check .` |
 | Formato | `uv run ruff format .` |
+| Resumen diario | `uv run python -m infradata summary --site "Planta Valencia" --from-date 2026-08-01 --to-date 2026-08-07` |
+| Huecos de lecturas | `uv run python -m infradata gaps --minutes 5 --site "Planta Sagunto"` |
+| Valores anómalos | `uv run python -m infradata anomalies --sensor VAL-T01` |
+| CSV semanal | `uv run python -m infradata weekly-csv --site "Planta Valencia" --week 2026-08-03 --output valencia.csv` |
 | Consola SQL | `docker compose exec db psql -U infradata` |
 | Recrear la base de datos desde cero | `docker compose down -v` y `docker compose up -d` |
 
 Los tests marcados como `integration` necesitan el contenedor levantado; si no lo está, se omiten.
+
+## Analítica
+
+- `summary` muestra mínimo, máximo, media, número de lecturas y unidad por sensor y día UTC. Los filtros `--site`, `--sensor`, `--from-date` y `--to-date` se pueden combinar; las fechas límite se incluyen. Los días sin lecturas no aparecen y los incompletos muestran el recuento real.
+- `gaps` muestra los intervalos entre lecturas consecutivas que superan `--minutes` (5 por defecto), con inicio y fin UTC. Acepta `--site` y `--sensor`. No infiere huecos anteriores a la primera lectura ni posteriores a la última.
+- `anomalies` muestra lecturas sospechosas y sus motivos, con filtros `--site` y `--sensor`. Los rangos y umbrales están fijados en [la especificación](openspec/specs/anomalous-readings/spec.md); una lectura puede tener varios motivos.
+- `weekly-csv` exporta los resúmenes diarios de una sede para una semana de lunes a domingo UTC. `--week` debe ser la fecha del lunes. El CSV usa UTF-8 con BOM, punto y coma, coma decimal, dos decimales y saltos de línea CRLF; no sobrescribe ficheros existentes.
+
+Los issues 1 a 4 del [backlog](docs/issues/README.md) están implementados. El resumen precalculado (issue 5) queda pendiente porque requiere cambiar el esquema, para lo que `AGENTS.md` exige consulta previa. La migración del notebook (issue 6) queda pendiente hasta que el formador aporte `notebooks/exploracion.ipynb`; sin él no es posible verificar la equivalencia de resultados.
 
 ## Conexión
 
