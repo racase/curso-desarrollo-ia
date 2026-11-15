@@ -1,5 +1,4 @@
-# Curso de desarrollo con IA — CHM
-
+# Curso de desarrollo con IA 
 Repositorio de trabajo del curso «Desarrollo con IA: de escribir prompts al desarrollo con agentes».
 Contiene los dos proyectos de demostración sobre los que practicaremos el ciclo de
 Spec-Driven Development con OpenSpec y Codex.
