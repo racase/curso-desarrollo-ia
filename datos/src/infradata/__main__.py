@@ -11,6 +11,7 @@ from infradata.anomalies import anomalous_readings
 from infradata.db import connect
 from infradata.export import export_weekly_csv
 from infradata.gaps import reading_gaps
+from infradata.precompute import migrate_daily_summary
 from infradata.summary import daily_summaries
 
 
@@ -44,10 +45,11 @@ def _date(value: str) -> date:
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="python -m infradata",
-        usage="Uso: python -m infradata {check,summary,gaps,anomalies,weekly-csv} ...",
+        usage="Uso: python -m infradata {check,migrate,summary,gaps,anomalies,weekly-csv} ...",
     )
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("check", help="Comprobar los datos cargados")
+    commands.add_parser("migrate", help="Instalar y actualizar el resumen diario precalculado")
     summary = commands.add_parser("summary", help="Consultar resúmenes diarios")
     summary.add_argument("--site", help="Sede")
     summary.add_argument("--sensor", help="Código del sensor")
@@ -79,7 +81,10 @@ def main(argv: list[str] | None = None) -> int:
         return check()
     try:
         with connect() as conn:
-            if args.command == "weekly-csv":
+            if args.command == "migrate":
+                conn.autocommit = True
+                migrate_daily_summary(conn)
+            elif args.command == "weekly-csv":
                 count = export_weekly_csv(conn, site=args.site, week=args.week, output=args.output)
             elif args.command == "summary":
                 rows = daily_summaries(
@@ -103,6 +108,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"No se pudo crear el CSV: {exc}", file=sys.stderr)
         return 1
 
+    if args.command == "migrate":
+        print("Resumen diario precalculado preparado.")
+        return 0
     if args.command == "weekly-csv":
         print(f"CSV creado: {args.output} ({count} filas)")
         return 0

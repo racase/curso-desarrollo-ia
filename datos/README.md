@@ -1,7 +1,7 @@
 # InfraData — demo de datos
 
-Proyecto Python mínimo sobre PostgreSQL + TimescaleDB con lecturas de sensores ya cargadas.
-No incluye ninguna analítica: la construiremos en clase con OpenSpec y Codex.
+Proyecto Python de analítica sobre PostgreSQL + TimescaleDB con lecturas de sensores ya cargadas.
+Incluye resúmenes diarios, detección de huecos y anomalías, y exportación semanal.
 
 ## Requisitos
 
@@ -19,6 +19,7 @@ cd datos
 docker compose up -d          # la primera vez carga los datos: espera unos segundos
 uv sync                       # crea .venv e instala dependencias
 uv run python -m infradata check
+uv run python -m infradata migrate  # instala el resumen diario precalculado
 ```
 
 Salida esperada:
@@ -37,6 +38,7 @@ python -m venv .venv
 .venv\Scripts\activate        # Windows; en Linux/WSL: source .venv/bin/activate
 pip install -e . pytest ruff
 python -m infradata check
+python -m infradata migrate
 ```
 
 ## Comandos habituales
@@ -46,6 +48,7 @@ python -m infradata check
 | Tests | `uv run pytest` |
 | Lint | `uv run ruff check .` |
 | Formato | `uv run ruff format .` |
+| Instalar o refrescar resumen | `uv run python -m infradata migrate` |
 | Resumen diario | `uv run python -m infradata summary --site "Planta Valencia" --from-date 2026-08-01 --to-date 2026-08-07` |
 | Huecos de lecturas | `uv run python -m infradata gaps --minutes 5 --site "Planta Sagunto"` |
 | Valores anómalos | `uv run python -m infradata anomalies --sensor VAL-T01` |
@@ -58,11 +61,12 @@ Los tests marcados como `integration` necesitan el contenedor levantado; si no l
 ## Analítica
 
 - `summary` muestra mínimo, máximo, media, número de lecturas y unidad por sensor y día UTC. Los filtros `--site`, `--sensor`, `--from-date` y `--to-date` se pueden combinar; las fechas límite se incluyen. Los días sin lecturas no aparecen y los incompletos muestran el recuento real.
+- `migrate` crea el agregado continuo que usa `summary` y `weekly-csv` sin recrear el volumen ni tocar `db/init/`. Puede ejecutarse de nuevo. Los días cerrados se refrescan automáticamente cada minuto y pueden tardar hasta dos minutos en reflejar lecturas históricas en condiciones normales; el día UTC abierto incorpora lecturas recientes inmediatamente.
 - `gaps` muestra los intervalos entre lecturas consecutivas que superan `--minutes` (5 por defecto), con inicio y fin UTC. Acepta `--site` y `--sensor`. No infiere huecos anteriores a la primera lectura ni posteriores a la última.
 - `anomalies` muestra lecturas sospechosas y sus motivos, con filtros `--site` y `--sensor`. Los rangos y umbrales están fijados en [la especificación](openspec/specs/anomalous-readings/spec.md); una lectura puede tener varios motivos.
 - `weekly-csv` exporta los resúmenes diarios de una sede para una semana de lunes a domingo UTC. `--week` debe ser la fecha del lunes. El CSV usa UTF-8 con BOM, punto y coma, coma decimal, dos decimales y saltos de línea CRLF; no sobrescribe ficheros existentes.
 
-Los issues 1 a 4 del [backlog](docs/issues/README.md) están implementados. El resumen precalculado (issue 5) queda pendiente porque requiere cambiar el esquema, para lo que `AGENTS.md` exige consulta previa. La migración del notebook (issue 6) queda pendiente hasta que el formador aporte `notebooks/exploracion.ipynb`; sin él no es posible verificar la equivalencia de resultados.
+Los issues 1 a 5 del [backlog](docs/issues/README.md) están implementados. La migración del notebook (issue 6) queda pendiente hasta que el formador aporte `notebooks/exploracion.ipynb`; sin él no es posible verificar la equivalencia de resultados.
 
 ## Conexión
 

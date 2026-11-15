@@ -1,5 +1,6 @@
 from contextlib import nullcontext
 from datetime import UTC, date, datetime
+from types import SimpleNamespace
 
 import infradata.__main__ as cli
 from infradata.anomalies import AnomalousReading
@@ -97,3 +98,14 @@ def test_weekly_command_reports_count(monkeypatch, capsys, tmp_path):
         == 0
     )
     assert "28 filas" in capsys.readouterr().out
+
+
+def test_migrate_command_prepares_summary(monkeypatch, capsys):
+    conn = SimpleNamespace(autocommit=False)
+    calls = []
+    monkeypatch.setattr(cli, "connect", lambda: nullcontext(conn))
+    monkeypatch.setattr(cli, "migrate_daily_summary", lambda connection: calls.append(connection))
+    assert main(["migrate"]) == 0
+    assert conn.autocommit is True
+    assert calls == [conn]
+    assert "precalculado preparado" in capsys.readouterr().out

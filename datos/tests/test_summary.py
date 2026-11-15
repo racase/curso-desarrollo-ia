@@ -2,11 +2,9 @@
 
 from datetime import UTC, date, datetime
 
-import psycopg
 import pytest
 
-from infradata.db import connect
-from infradata.summary import daily_summaries
+from infradata.summary import daily_summaries, direct_daily_summaries
 
 
 class _Connection:
@@ -56,7 +54,7 @@ def test_daily_summary_filters_and_utc_day():
         datetime(2026, 8, 1, tzinfo=UTC),
         datetime(2026, 8, 2, tzinfo=UTC),
     ]
-    assert "time_bucket('1 day', r.time)" in conn.query
+    assert "FROM daily_reading_summary AS d" in conn.query
 
 
 def test_daily_summary_rejects_reversed_dates():
@@ -65,18 +63,32 @@ def test_daily_summary_rejects_reversed_dates():
 
 
 @pytest.mark.integration
-def test_seed_daily_summary_counts_missing_readings():
-    try:
-        connection = connect(connect_timeout=2)
-    except psycopg.OperationalError:
-        pytest.skip("database not reachable")
-    with connection:
-        rows = daily_summaries(
-            connection,
-            sensor="SAG-P02",
-            from_date=date(2026, 9, 3),
-            to_date=date(2026, 9, 3),
-        )
+def test_seed_daily_summary_counts_missing_readings(migrated_conn):
+    rows = daily_summaries(
+        migrated_conn,
+        sensor="SAG-P02",
+        from_date=date(2026, 9, 3),
+        to_date=date(2026, 9, 3),
+    )
     assert len(rows) == 1
     assert rows[0].count == 210
     assert rows[0].minimum <= rows[0].average <= rows[0].maximum
+
+
+@pytest.mark.integration
+def test_precomputed_summary_matches_all_direct_rows(migrated_conn):
+    assert daily_summaries(migrated_conn) == direct_daily_summaries(migrated_conn)
+    assert len(daily_summaries(migrated_conn)) == 1090
+
+
+@pytest.mark.integration
+def test_precomputed_filters_match_direct_rows(migrated_conn):
+    filters = {
+        "site": "Planta Sagunto",
+        "sensor": "SAG-P02",
+        "from_date": date(2026, 9, 1),
+        "to_date": date(2026, 9, 5),
+    }
+    assert daily_summaries(migrated_conn, **filters) == direct_daily_summaries(
+        migrated_conn, **filters
+    )

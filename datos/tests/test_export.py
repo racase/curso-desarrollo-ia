@@ -3,10 +3,8 @@
 import csv
 from datetime import UTC, date, datetime
 
-import psycopg
 import pytest
 
-from infradata.db import connect
 from infradata.export import HEADERS, export_weekly_csv
 
 
@@ -71,16 +69,11 @@ def test_weekly_csv_requires_monday(tmp_path):
 
 
 @pytest.mark.integration
-def test_seed_weekly_csv_matches_daily_summaries(tmp_path):
-    try:
-        connection = connect(connect_timeout=2)
-    except psycopg.OperationalError:
-        pytest.skip("database not reachable")
+def test_seed_weekly_csv_matches_daily_summaries(tmp_path, migrated_conn):
     output = tmp_path / "weekly.csv"
-    with connection:
-        count = export_weekly_csv(
-            connection, site="Planta Valencia", week=date(2026, 8, 3), output=output
-        )
+    count = export_weekly_csv(
+        migrated_conn, site="Planta Valencia", week=date(2026, 8, 3), output=output
+    )
     with output.open(encoding="utf-8-sig", newline="") as stream:
         rows = list(csv.DictReader(stream, delimiter=";"))
     assert count == len(rows) == 28
