@@ -81,6 +81,9 @@ class PostgresTicketTest extends TestCase
         $process->setTimeout(12);
         DB::beginTransaction();
         try {
+            if ($arguments[0] === 'assign') {
+                DB::table('administration_locks')->where('name', 'users')->lockForUpdate()->sole();
+            }
             Ticket::whereKey($ticket->id)->lockForUpdate()->firstOrFail();
             $process->start();
             $deadline = microtime(true) + 6;

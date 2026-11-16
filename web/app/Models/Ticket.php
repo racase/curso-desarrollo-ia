@@ -15,7 +15,7 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'priority'];
+    protected $fillable = ['title', 'description', 'priority', 'asset_id'];
 
     protected function casts(): array
     {
@@ -29,6 +29,11 @@ class Ticket extends Model
     public function scopeVisibleTo(Builder $query, User $user): Builder
     {
         return $query->when($user->hasRole(UserRole::Requester), fn (Builder $query) => $query->where('requester_id', $user->id));
+    }
+
+    public function asset(): BelongsTo
+    {
+        return $this->belongsTo(Asset::class);
     }
 
     public function requester(): BelongsTo

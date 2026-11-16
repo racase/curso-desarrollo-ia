@@ -18,6 +18,9 @@ class TicketInfolist
                 TextEntry::make('priority')->label('Prioridad')->badge(),
                 TextEntry::make('requester.name')->label('Solicitante'),
                 TextEntry::make('technician.name')->label('Técnico asignado')->placeholder('Sin asignar'),
+                TextEntry::make('asset.code')->label('Código del activo')->placeholder('Sin activo asociado'),
+                TextEntry::make('asset.name')->label('Activo')->placeholder('Sin activo asociado'),
+                TextEntry::make('asset.site.name')->label('Sede')->placeholder('Sin activo asociado'),
                 TextEntry::make('created_at')->label('Alta en propuesta')->dateTime('d/m/Y H:i'),
             ]);
     }

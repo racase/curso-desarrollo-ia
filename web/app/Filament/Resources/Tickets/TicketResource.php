@@ -31,7 +31,7 @@ class TicketResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->visibleTo(auth()->user())->with(['requester', 'technician']);
+        return parent::getEloquentQuery()->visibleTo(auth()->user())->with(['requester', 'technician', 'asset.site']);
     }
 
     public static function form(Schema $schema): Schema

@@ -2,6 +2,7 @@
 
 namespace App\Actions\Tickets;
 
+use App\Actions\Users\UserAdministration;
 use App\Enums\TicketStatus;
 use App\Enums\UserRole;
 use App\Models\Ticket;
@@ -16,6 +17,7 @@ class AssignTicket
     public function handle(User $actor, Ticket $ticket, ?int $technicianId, int $expectedVersion): Ticket
     {
         return DB::transaction(function () use ($actor, $ticket, $technicianId, $expectedVersion): Ticket {
+            $actor = UserAdministration::lock($actor);
             $current = Ticket::query()->lockForUpdate()->findOrFail($ticket->id);
             Gate::forUser($actor)->authorize('assign', $current);
             TrackingVersion::check($current, $expectedVersion);
