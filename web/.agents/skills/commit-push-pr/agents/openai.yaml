@@ -1,0 +1,3 @@
+interface:
+  display_name: "Commit, push y PR"
+  short_description: "Conventional Commit, push y propuesta de PR"
