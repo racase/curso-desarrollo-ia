@@ -58,7 +58,7 @@ python -m infradata migrate
 
 Los tests marcados como `integration` necesitan el contenedor levantado; si no lo está, se omiten.
 
-## Cuaderno de exploración visual
+## Cuaderno de exploración visual (opcional)
 
 Instala las dependencias del cuaderno con `uv sync --group notebook` y ejecuta
 `uv run python -m infradata migrate` con la base de datos levantada. En VS Code,
@@ -85,7 +85,7 @@ paquete principal no necesita estas dependencias para la CLI.
 - `anomalies` muestra lecturas sospechosas y sus motivos, con filtros `--site` y `--sensor`. Los rangos y umbrales están fijados en [la especificación](openspec/specs/anomalous-readings/spec.md); una lectura puede tener varios motivos.
 - `weekly-csv` exporta los resúmenes diarios de una sede para una semana de lunes a domingo UTC. `--week` debe ser la fecha del lunes. El CSV usa UTF-8 con BOM, punto y coma, coma decimal, dos decimales y saltos de línea CRLF; no sobrescribe ficheros existentes.
 
-Los issues 1 a 5 del [backlog](docs/issues/README.md) están implementados. La migración del notebook (issue 6) queda pendiente hasta que el formador aporte `notebooks/exploracion.ipynb`; sin él no es posible verificar la equivalencia de resultados.
+Los issues 1 a 5 del [backlog](docs/issues/README.md) están implementados. El [parte de incidencias](docs/issues/07-parte-de-incidencias.md) es el ejercicio principal pendiente para integrar esas funciones; el cuaderno visual (issue 8) es una ampliación opcional ya implementada. La migración del notebook (issue 6) queda pendiente hasta que el formador aporte `notebooks/exploracion.ipynb`; sin él no es posible verificar la equivalencia de resultados.
 
 ## Conexión
 
