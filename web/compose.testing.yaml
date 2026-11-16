@@ -1,0 +1,39 @@
+services:
+    app:
+        build: .
+        working_dir: /app
+        entrypoint: []
+        command: ["sleep", "infinity"]
+        ports:
+            - "127.0.0.1:18000:8000"
+        volumes:
+            - .:/app
+            - test-vendor:/app/vendor
+        environment:
+            APP_ENV: testing
+            APP_LOCALE: es
+            APP_KEY: base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+            DB_CONNECTION: sqlite
+            DB_DATABASE: ":memory:"
+            PG_TEST_HOST: postgres
+            PG_TEST_DATABASE: infraticket_test
+            PG_TEST_USERNAME: infraticket_test
+            PG_TEST_PASSWORD: test-only
+        depends_on:
+            postgres:
+                condition: service_healthy
+    postgres:
+        image: docker.io/library/postgres:16
+        environment:
+            POSTGRES_USER: infraticket_test
+            POSTGRES_PASSWORD: test-only
+            POSTGRES_DB: infraticket_test
+        tmpfs:
+            - /var/lib/postgresql/data
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U infraticket_test -d infraticket_test"]
+            interval: 2s
+            timeout: 3s
+            retries: 30
+volumes:
+    test-vendor:
