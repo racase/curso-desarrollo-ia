@@ -128,6 +128,15 @@ In both branches, never create the root as a side effect: do not run `openspec i
    - If all done: report that tracked tasks are complete and suggest review or verification as appropriate before archiving
    - If paused: explain why and wait for guidance
 
+8. **Ofrecer una revisión opcional de duplicados**
+
+   Después de implementar todas las tareas, pregunta una sola vez: «¿Quieres usar el subagente `duplicate-finder` para buscar duplicados en el nuevo código? Si aceptas, guardaré el informe de revisión en la raíz del proyecto».
+
+   - Ejecuta la revisión únicamente si el usuario responde afirmativamente de forma explícita. Si responde que no o no responde, termina sin invocar el subagente, crear un informe ni volver a preguntar. El silencio nunca autoriza la revisión y no impide dar por completada la implementación.
+   - Si acepta, invoca el subagente de tipo `duplicate-finder` con el cambio implementado y los archivos o diff correspondientes. Pídele revisar el código añadido o modificado, comparándolo con el código existente del proyecto para detectar duplicados, sin modificar archivos.
+   - Con su resultado, guarda un informe en español como `duplicate-review-<change-name>.md` en la raíz del proyecto donde se implementó el código, aunque los artefactos OpenSpec estén en un store externo. Si el nombre ya existe, usa un sufijo para conservar el informe anterior.
+   - Incluye el alcance revisado, los hallazgos con rutas y líneas como evidencia, las propuestas de refactorización y las limitaciones de la revisión. Si no se detectan duplicados, indícalo expresamente. Comunica la ruta del informe al usuario; no apliques refactorizaciones como parte de esta revisión.
+
 **Output During Implementation**
 
 ```
@@ -158,6 +167,9 @@ Working on task 4/7: <task description>
 
 All tracked tasks are complete. Review or verify the change as appropriate
 before archiving. You can archive this change with `openspec-archive-change`.
+
+¿Quieres usar el subagente `duplicate-finder` para buscar duplicados en el nuevo
+código? Si aceptas, guardaré el informe de revisión en la raíz del proyecto.
 ```
 
 **Output On Pause (Issue Encountered)**
