@@ -151,6 +151,8 @@ La propuesta y tareas del cambio se encuentran en `openspec/changes/add-ticket-m
 
 ## Configuración de agentes
 
+El bloqueo de archivos de entorno de Codex se describe en [esta guía](docs/codex-env-hook.md).
+
 | Ruta | Lo usa | Contenido |
 |---|---|---|
 | `AGENTS.md` | Codex y OpenCode | Instrucciones del proyecto: mapa, comandos, convenciones |
