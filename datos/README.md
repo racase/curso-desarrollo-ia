@@ -58,6 +58,25 @@ python -m infradata migrate
 
 Los tests marcados como `integration` necesitan el contenedor levantado; si no lo está, se omiten.
 
+## Cuaderno de exploración visual
+
+Instala las dependencias del cuaderno con `uv sync --group notebook` y ejecuta
+`uv run python -m infradata migrate` con la base de datos levantada. En VS Code,
+instala las extensiones **Python** y **Jupyter**, abre
+`notebooks/visual_exploration.py`, selecciona el intérprete `datos/.venv` y pulsa
+**Run Below** en la primera celda `# %%` (o ejecuta las celdas en orden).
+Los gráficos aparecen en la ventana interactiva de VS Code. El selector permite
+ver cualquiera de los 12 sensores; arrastra sobre su serie para aplicar zoom.
+
+El mapa muestra del 1 de agosto al 30 de octubre de 2026 en UTC. Cada celda
+contiene `lecturas recibidas / 288 × 100`; los días sin lecturas aparecen como
+0 %. El porcentaje exacto se ve al pasar el cursor por la celda. Usa el resumen
+diario precalculado. La serie lee las lecturas originales solo del sensor elegido.
+
+El grupo opcional `notebook` añade `ipykernel` para ejecutar celdas en VS Code,
+`ipywidgets` para seleccionar el sensor y `plotly` para el mapa y el zoom. El
+paquete principal no necesita estas dependencias para la CLI.
+
 ## Analítica
 
 - `summary` muestra mínimo, máximo, media, número de lecturas y unidad por sensor y día UTC. Los filtros `--site`, `--sensor`, `--from-date` y `--to-date` se pueden combinar; las fechas límite se incluyen. Los días sin lecturas no aparecen y los incompletos muestran el recuento real.
