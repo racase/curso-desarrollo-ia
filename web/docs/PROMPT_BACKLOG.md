@@ -38,9 +38,8 @@ Crea la carpeta docs/issues/ y dentro estos seis ficheros:
    administrador, técnico o solicitante. No tiene dependencias.
 
 5. 05-sedes-y-activos.md
-   Sedes y activos, y vincular cada incidencia a un activo. Debe contemplar
-   exactamente 6 sedes y 5 activos por sede (30 activos en total). Depende del
-   issue 1 y modifica su comportamiento.
+   Sedes y activos, y vincular cada incidencia a un activo. Depende del issue 1
+   y modifica su comportamiento.
 
 6. 06-widget-incidencias-por-estado.md
    Widget en el panel con el número de incidencias abiertas por estado.
