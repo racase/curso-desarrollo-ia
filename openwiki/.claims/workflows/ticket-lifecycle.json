@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c15094b7e210b0152a001e4f5f0a0ac942b561348ee9dc74913f91f3ffc20669",
+  "claims": [
+    {
+      "id": "claim_6d0dee3db6e94d97bd548bccb4eb9ed0",
+      "statement": "Ticket creation authorizes the actor, validates ticket data, associates the actor as requester, initializes status to Proposed, persists inside a transaction, and returns a refreshed ticket.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Tickets/CreateTicket.php#L11-L23",
+          "version": "repo-lines-v1:sha256:3929810e8e224f231fbd774bac3e9bb2254f03fc79fcb46872da38430a1fb34a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2Y2IyMzUwYjU2Yzc4YmQ4ZjA3NTcxZjVjYmFiMjk2Yzc3OTk3MTc4MmEyNWY2NzNiZGEwN2U1ZmVlZjY1YWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3N2JmNTgzZmE2ZjFjMWZiYzlkMDY3NGU2NTFmYjk3MzAyMTkwOTQzYWFlMjA4MDZhNzE5ZWRkYWZiMDY2NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_07773ae740204f8a8f5cf258ea3e1e82",
+      "statement": "The ticket lifecycle is a strictly linear Proposed → Open → InProgress → Resolved → Closed sequence; TransitionTicket rejects non-successor targets, requires a technician for InProgress, and the Closed state has no successor, so tickets cannot be reopened.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Tickets/TransitionTicket.php#L13-L31",
+          "version": "repo-lines-v1:sha256:8d2a4b74bc8663b78ac5996c4f9357e7fae344c4cbc35e736cd8f4ef1466b16d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiNzQyYzRlOTRjMDYwZjNhNzgzYzIzZjM3YTQyMWQ5MDYzZDVkMDVhYmRmM2RhYmZkOTU1MmI3OTVjYjFkZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyN2FiNGM1ZmEyYWQ2YTJkZjViNjhkYTBhYzg0YzRjZmJmMTMwNTFhOTE3NzE4ZjBiNDQ5NTA2NjQ1YTdhNDYifQ"
+        },
+        {
+          "resource": "repo://web/app/Enums/TicketStatus.php#L8-L34",
+          "version": "repo-lines-v1:sha256:8a4b690949c45592ee127f7172cbd91859a2ca60fb6d5ae1c86fcffe4d723a19:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NDQ1OTM3ZjYxOTViNjJhOWJkMWViYzI2OGU4YTEyNmNjMmJlOGQ5NzdhZGY1ZTEzYWZkYzg5YjE2YTNlMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketTrackingTest.php#L67-L93",
+          "version": "repo-lines-v1:sha256:2a4a8db8d548ed39b490c21134e742e2ae88b547e606e659cf068e613ee80d9c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NDVjZWEwNzJiYjk5MmQyODJjZmIwZWY2MGUyNjc2N2RjY2U4NzhkMzkzNTFlN2E1ZmYzMzFkZDRmMjg2NjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmM2UzN2Y2NzljZDY2NzAyYjcxZjNmOThkN2IyYjYyZTAwMGEzM2FkYjQ4OTE1NDdjNjZhOTJkNDEyNGIxNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhY2I5NWI1MjRmY2RjZjlmNzhkNDg0NWExMWY1YTM5NWRlYTAzZWE0MzgyOGFkOGNiODBmNGM3MjZmZDA0OGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa0787477c0f475e8fa90758b9b4faad",
+      "statement": "Ticket visibility is requester-scoped for users with the requester role and unrestricted by requester_id for non-requesters; the policy and Ticket::visibleTo scope enforce the same boundary for both individual viewing and resource listing.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Ticket.php#L28-L31",
+          "version": "repo-lines-v1:sha256:8920c237307c2003fd690d13931ff91422e057537ffd1b6dfa60f19d3bc28766:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY2MDdjY2E4OWJkOTNmNzAzZWM5ZjZjMmMxNDVkZGY2MGIxZjQ3MzYwNWE4NzMzZmM2Y2E5YzhjY2MzY2U1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTZlY2JlMWFlMTY0YTA0MjUwMTE0MzczNzA0ODc1NjkzMGRmZWRmZGNjYjU4MjhmZDAxYTZkYTI4MjBjMzJmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmVlNDgwNzM4ZGU5NDA0ZWY3NzA1OTcxMzczNjNmOTg4YTM3ZjJkNmM1NGFhYzQ1MjcxMmEwMmMxYjVjOTMzMCJ9"
+        },
+        {
+          "resource": "repo://web/app/Policies/TicketPolicy.php#L18-L21",
+          "version": "repo-lines-v1:sha256:0a4eec729b01c7251321c8aa8a215e1bafe62bf83bc9b483f9c1aa14049d8b20:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTg5MWJmZjdhYzFmN2NlYWFlNDBlZjA1MTA2NmJlOWVmZTQ3YjRlNDI4MWU4NmMzMTliZTJjNTVlYmNlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTcyMzIwM2RhYWEyZWU5NDZlMTU2ZTUzM2Q3MzM5YWEzMzQyODMxMmFmYThhMTQwNjU0ZDJjNWI5MjMwNzFiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQyODhhNDQwYmY1MTAyYmMxOWQyNGIxN2UzN2Q0NDg5ZTM5Njg5OGY3YWFlNWIwNGM3Zjk3ZGFiZTVhNDk5NiJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/PostgresTicketTest.php#L117-L137",
+          "version": "repo-lines-v1:sha256:7df9992cd14cc76af325fa0f965e7e614ca0ebff7851fed0bcfe031adf687ed6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NDVjZWEwNzJiYjk5MmQyODJjZmIwZWY2MGUyNjc2N2RjY2U4NzhkMzkzNTFlN2E1ZmYzMzFkZDRmMjg2NjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0ODM5ODhmNjgxNWVkMzcxMTc5M2I0YzUwZGYyZGY5YTIzZjI1YjA2YzBhM2VlZmEyMjBhY2E5YWViNGRiNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_540a6ff196d44b37a4d7ade6389d8e75",
+      "statement": "Update is denied on closed tickets and requester updates are limited to Proposed or Open; assignment is staff-only and unavailable after closure; transitions are limited to admins or the currently assigned technician; commenting requires visibility and is unavailable after closure; deletion is always denied.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Policies/TicketPolicy.php#L23-L58",
+          "version": "repo-lines-v1:sha256:ec1c7b8d57b95b5b30198231b29a95ad2f510a9e07cf7cb6c477ab7fc7851315:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2ODliMWFkMjExMzU3MzRjNzIwNGFiYTUwYWRhMTg4ZmZmMWExZWRlOGMwNDk5MmY0Y2NkNWVjOTc5YmI1MzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzY2IwYmYzNDVkNzY3M2U5OGJmOTUwZGRiYzQzYjYwYzc5ZTQyNzdiYjkzMDg1MzZjYjNjNjcxNDZiZjAxZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/PostgresTicketTest.php#L117-L137",
+          "version": "repo-lines-v1:sha256:7df9992cd14cc76af325fa0f965e7e614ca0ebff7851fed0bcfe031adf687ed6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NDVjZWEwNzJiYjk5MmQyODJjZmIwZWY2MGUyNjc2N2RjY2U4NzhkMzkzNTFlN2E1ZmYzMzFkZDRmMjg2NjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0ODM5ODhmNjgxNWVkMzcxMTc5M2I0YzUwZGYyZGY5YTIzZjI1YjA2YzBhM2VlZmEyMjBhY2E5YWViNGRiNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9008a490fa164b3296d8290db7674117",
+      "statement": "Assignment accepts only technician-role users, permits removing a technician only in Proposed or Open, requires a technician in later states, increments tracking_version, and does not create status history.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Tickets/AssignTicket.php#L13-L32",
+          "version": "repo-lines-v1:sha256:6e83f1dd2b087959000d2868622f27f51cdbe2b8b4462a2889988628710e3c89:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzYTJkZjA1YWFmZTAzYjkxMDg0YmQ3YTFjNmNhZjgzMGQ0MzQ0ZWM5ZWFlMTNjOWYzOTZhYzA4YmFmNTQyOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OTY1ODYzYzJiNjgyNGY1ZTgyZDMwNWY5ZjMzMmE0ZTUyOGNiOGZjZDNhY2YzMzgyZjc4ZWVhNjdiNGNjMGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxOGY5YmEwOWU5Y2UwNDUxODhlNWY4ZjExNjg3ZTA5ZDlkNjI1ZjNkZmExNTEyYjE2MDkwMTIwMzNhYjI3NGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhMjg2MzQ3ZmNlNmM1MTM4YTA0Y2FjNTMzOGU4MTFkOGJlNjY3ZTZhMzhjOTc5MDk0NzM2ZDg1YmQ1OGU2NzIifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketTrackingTest.php#L18-L61",
+          "version": "repo-lines-v1:sha256:ba3ca8f78255fbdb355fa93b1e2ad96d07a7a52d37f4cc714b4096aa6ec1e348:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxZjk5NDdjZTFhMzgwOWU1NmYyNzA5NjgyMWVhMmMyYmFiNzZjM2VhZTdkY2Q4OTExYjQ2NTEwMTgwNjkyY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiM2VmNzE1NzFiMTU1OTBiMzRhYjVjNzE4NTI2YjQ4YjBmYmY3YTBkYWI5NzVlZjEyMjgzMGZmY2QxMjRlOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5YjJiOWQzMTVhMDQwZjhmZjU4YTFiOTExNTczYzQ2NmQ2MDM3YzU3MDU2ZDAwZmE1OWFhOWNmOWEzYWZlZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczNjAxY2Q5YjNhMjRkMzljYTY1Yzg5ZmJiOWZiMWM2NTIwN2NkOTY1MDJiNGE3NDU2NDJkOGU2YjhkMmIxMzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f34354b77ab45bcae10a23809c60c48",
+      "statement": "Tracking actions reload and lock the current ticket row inside a transaction, authorize against that current row, compare the supplied expected version, and reject stale versions with a validation error; successful assignment and transitions increment the version, preventing concurrent lost updates.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Tickets/AssignTicket.php#L15-L31",
+          "version": "repo-lines-v1:sha256:6efb08542b023c9f4b40adc7785399e09d2e920aa086bb1b6d035158d157e996:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NDhlYWFlMDMzMWQzNTE5ZjQ4Y2JhZGU2NjBhMzdiNDI2MmFhZjcyZWUzNWYzNzQ0YWQwOTBjZDRiZTE1MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2NDZiYTU0NTZlMTlkODY3NDdmNDJjMjJmZjk4OTYyYWI3NWU2NjhkMGIyYjQ5N2U3OTFlNDM5ZTI3MDViZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyN2FiNGM1ZmEyYWQ2YTJkZjViNjhkYTBhYzg0YzRjZmJmMTMwNTFhOTE3NzE4ZjBiNDQ5NTA2NjQ1YTdhNDYifQ"
+        },
+        {
+          "resource": "repo://web/app/Actions/Tickets/TrackingVersion.php#L9-L14",
+          "version": "repo-lines-v1:sha256:7e11d5d0fe9b45c305a0cc225b57b30d1cb215ca87498e510f9e2c0db5729059:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzMyOGI5MDgyOGU2MzE5ZDY1ZDQ5M2UxZDEwN2ViNDhjNDY2ZmFhOWE0NjlmOTVkNmE5ZWY3NDNiZWMyM2ZiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5NGQwMmE4MTIxOTQ0ZDE3NmQyNjVlOWJiOWNjNTlmNmFiODkwYmNhZGY4YWVmZGViZGJiYjRmMmVhODQ0NCJ9"
+        },
+        {
+          "resource": "repo://web/app/Actions/Tickets/TransitionTicket.php#L15-L32",
+          "version": "repo-lines-v1:sha256:af65933145697bae497aa061c7b22270d2fa679a75ffedbd07dfc5053d0c5025:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OTY1ODYzYzJiNjgyNGY1ZTgyZDMwNWY5ZjMzMmE0ZTUyOGNiOGZjZDNhY2YzMzgyZjc4ZWVhNjdiNGNjMGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1ZGY1MDFkMGY0NzZkZGJjNzJjYzRmNTA2MmUwYmVlNTU1OGU3NzIzOTdjZmI3Y2Q0N2RjN2FiZjMzOGYxYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhMjg2MzQ3ZmNlNmM1MTM4YTA0Y2FjNTMzOGU4MTFkOGJlNjY3ZTZhMzhjOTc5MDk0NzM2ZDg1YmQ1OGU2NzIifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/PostgresTicketTest.php#L36-L66",
+          "version": "repo-lines-v1:sha256:5a87db429963f80f2c2bccc7c59b913a94364893f3e484f7cfd7ef16ac5a8133:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjM2FhMjk5NjBhMjA3MGI2MWZiZTcxZjVjMDk5ZGNkMzY1YWUyNGQ5NjY4MDRiOTc0NTM2MTk4MWUwYWQ0MjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MTRkMTAzY2Y1NzM3MWQ2Y2Y3MWZlZjIyNjI3YzQxMTQ5NmQyMjM2MGE1NjliNzM0Y2RmODFiYTJiOTUyMjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4NDk1ZGUwZjhlYzRmNDUxZjNjODBiZGY5ZWVlOGVjZDRhM2FjOWY5Yzk1MWQ2MzA3NjFiNTdhMTQxODhlYTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkYTY3ZWZjNGZjNWI5YzhkMTI0YWEwYzkyODRlZDY2NzNjZGQyMWJmZDYxNDg5NDg3YWJmODM5Y2ZjODlhYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a401dd149414e54bab6bf04217a7b33",
+      "statement": "A successful transition increments tracking_version and atomically creates a status-change record containing from_status, to_status, and author_id; if history creation fails, the transaction rolls back both the status and version.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Tickets/TransitionTicket.php#L24-L31",
+          "version": "repo-lines-v1:sha256:a5ed37a065844a7e2f9da240baa262c64007ca05b79b42088eb109b8cdd53e85:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRjOTE3OGJiZGJhMTA0NDAwNmY1YzMwOWY1ODBhNGEwODVkNDVjZWNiODExNGM1M2VlZGRjM2M2MDY0ZjM4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRjYzc4Y2MxMWZmZTZhNDA0NTYzMDMzOGM2MDg3ZDEyMjhlNTlkYTdkOGY2MGVmOGQ3OWVhZmI0N2IyNWYyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODI3YWI0YzVmYTJhZDZhMmRmNWI2OGRhMGFjODRjNGNmYmYxMzA1MWE5MTc3MThmMGI0NDk1MDY2NDVhN2E0NiJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketTrackingTest.php#L104-L123",
+          "version": "repo-lines-v1:sha256:63e9d6eba46ff4d54a666d6b20a53b59c90718f5fd178c8099caac019082bda0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMjUzN2JkMzkyZDAxNzkzMWRlOWQ1MjRhYjRkMWQ1Yjc4YTc1YWU2OGMwZDllOTRkNTg2NDA2ZjhjNTg2MDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmZmQ5N2EzNGVlMzU2Nzc0ZTQ1Y2MzNTJhYzQ3ODU1ZDc0NDA2YmQwYjlmMDNkMDZiZDQxZjljZDM2OTUzYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3NGY2MTFmOWJlMTJhMTRjYzU2NDI0NWRjYTdlYTllNDY3ZmE2NGJhNTRmNzE0ODE2YjdlNjQzNTBiOWZhMjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_337eeb284da74f189b43477f176fd274",
+      "statement": "Comments are created under a locked, freshly loaded ticket after comment authorization; bodies are trimmed and validated to 1–5,000 characters, and the authenticated actor supplies author_id rather than caller-provided identity or timestamp fields.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Tickets/AddTicketComment.php#L13-L26",
+          "version": "repo-lines-v1:sha256:30bafb6c8e86d5186ed695d3d11ef4d4d7419cf41c58702f23c2ab5fc1dbafa0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNDE4YjA1MGQ0ZDc0MmI1MjZhY2VmZDNhODU3Y2QyYTQxZTMxZDZiZjMxOTAwMDQ2MDdlNGFjOTBjNDM3MjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketCommentsTest.php#L27-L50",
+          "version": "repo-lines-v1:sha256:793ccf28098be68bb4b29aa1544cec590015d280d016b2c0f80293e72cb58514:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5YzBjY2E4MjFiNzc5NTE0NDBmNjY4OTMxZGEzNDJkYzA1MTI5ZTRkZjRlYmI0ZWI3ODQzOTQxOTVmNjUxNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjOTIwNDIxMjVjNmM2ZGMyM2NjMjUxMDdjMzIzMTA5MzA0Y2E2ODA5MmJmNzgwM2Y0ODU3MDMwYjhkNjM3Y2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlNjU3OTFiNzViMDE3YzczMWRhMTFmYTEzNTJkYmVhNDMyYjJiMWY2MDA1MTc1NmJkZDk0MWFmMzEwYTJjMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZDk4MmUzMTI4YjMwZjhjZThhNGVmOTYxOGYyODIyNjIxN2I3Zjc0YTBlYzRlMzJiZDk4MzJjNzJlYzVlYzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2107c2e094784ff79a8afc27993c53cf",
+      "statement": "Comments and status history re-authorize the parent ticket before querying, so direct relation access cannot bypass visibility; closed tickets retain readable comments and history while comment publication and relation-manager mutation actions are unavailable.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Filament/Resources/Tickets/RelationManagers/CommentsRelationManager.php#L22-L53",
+          "version": "repo-lines-v1:sha256:1706d5a8711d4bfcbdc778d81f74af2babe6c9e94eca884af0dbf3b83410c967:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzODgyYzA4MGZhYTk1NDhkMjU3Yzc1YzFkN2Q4M2IxYTY5MjYzYjM3NmNmMmEwNzk0NWQxYWNjYTY5OWRmZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyYzU2YTY4NDVkYTg4ZjAzZTBmY2IzN2Y2NjhmNGE5OGY5NjMyZGYwNjcwNDI5MmMxZWViNjAxNjcwZTM2NmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Tickets/RelationManagers/StatusChangesRelationManager.php#L20-L37",
+          "version": "repo-lines-v1:sha256:f68d1a3acf50d1a1fe1fa37782941911d31adfed0d046f0126edfcb1e868fbfb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MDQyNjkyYzg4ZThhNzEyMDM5NzNjOGFhZDgzYjdhYmNlNGMxMWMxZmM3NzM1MTZlYjZmYjY0NzQzNGNmODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNzdjNTQ2NmE4MzI4MjMxOTE2Y2Y2YWEzOThlM2M3OGI2OTYwNWY5YTVkYTAzYjIzMTdlNjNmZTA0YjhhZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketCommentsTest.php#L73-L119",
+          "version": "repo-lines-v1:sha256:3798ea0446746552bd81632da5f252c271898107568a749b996a13f536521636:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxYmMzZGRiMWFhYTJjODdkNGYzZDYyOTQ4NTRkNWFiYjI5ZmNhODkzMmU4MTI4MTAzMDA4NmZiNGY5Mzk3NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYjRiNWM5OTYwODQ3MTc2MjhkYWZiYjU5N2NkYmNjMjIxNmM3ZDhkZjAyMjM5MDM4ZDNlNWIxMDZhYzU1MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3MDk5MTU4MDZlM2RhZTE4NDVmYWI2NTczMTY0NWZlMDA4YWEzMTgzYjQ1NTYxNWZjNThiODkzOThlYzBiNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxNzlhNGZjNDc3NzVmNTFlOGYwNmRlNjYxODMzYTM0NWE2Y2M4ZjE4YzcyNTQzYjc3YTFhNzgxMThlMjA1NWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_769d971858ba4a0eb3c636636ba1d98a",
+      "statement": "Ticket status history is ordered stably by created_at and id, and the Filament view captures tracking_version for assignment and transition actions, maps validation errors back to the mounted action, and refreshes and broadcasts the record after success.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Filament/Resources/Tickets/Pages/ViewTicket.php#L24-L62",
+          "version": "repo-lines-v1:sha256:1a58f3a80cfac270c089243b7b1697a33c0e28a10a46ddb28e86f5b6f41a5eda:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZmExYTMzNGQwYjZjMjE3NTIyZmU1YTJlZWNkNDIzYzI1NTBlNGFhYjFkMGNiNjhkYzEzOGM1NmZhMmMyZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2NDY4Nzc4ZTk3NTIxNjI4OTdkOWZjZWVkYTFjNjE3OTg4Yzk0NDNjNGM3NWY1NjAyYjEwMTM2ZWEyZWQwZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/Ticket.php#L47-L55",
+          "version": "repo-lines-v1:sha256:168dca4c837654347f6fa9c375f496bdd05b3bfdeee5af002b272fc54f99de88:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTg5MWJmZjdhYzFmN2NlYWFlNDBlZjA1MTA2NmJlOWVmZTQ3YjRlNDI4MWU4NmMzMTliZTJjNTVlYmNlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODUxMDU4MzBlNTdkMWMxODU2ZGNmZWYzMGEyZDMyMWM1MGFkNWNmMGQ3NTc0YWQ5ZGQ4ZmNlYzhiYzI2ODFiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDU0MTk2ODQyOWJhNDljYzZhMmViNGE3NGVhMmVjOGVjN2ZlMjYxODQwZmI4ZjY5ZDNhNTdjMzgwN2ViMWEzNCJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketTrackingTest.php#L125-L138",
+          "version": "repo-lines-v1:sha256:5b352a2246308041992b168fb463d2d9fd6085827a40b8d97877f321bbc2d2a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExZmNiYmRlNTQ5MjNkOWUxZjk1OTZmZGNiNTkxZjg5MWU0ZjczODhjNmU4NDNmMjFmMTdjZTFiMTBhMDUwMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0YzE5ZWI4ZWNiMzJiNDQwNWRjNWZlZDY2ZTRkZjQxNzI2ZjlhMDUwNWEyNWU5OTMxMjQ2YTgxYjI1MjViMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0NjlhN2IzMDBlYzNkOGVjNDMyYmMxZDAwNzI0M2I0OWY1ZTE2ZDYyMGJjNWZjMWYyNWFhNTRiYWE1ZGJkNDAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-18T11:00:29.223Z"
+  }
+}

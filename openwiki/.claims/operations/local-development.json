@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:45279b4d42805d263399ceab89e90206dee89cb1909eee72e8b68e7ba95e5124",
+  "claims": [
+    {
+      "id": "claim_83b16bbacc1b43de81a853a077667293",
+      "statement": "The development Docker stack builds a PHP 8.3 CLI application image with PostgreSQL, Intl, Zip, and PCNTL support, bind-mounts the source into /app, and stores Composer dependencies in the named infraticket-vendor volume rather than the host vendor directory.",
+      "evidence": [
+        {
+          "resource": "repo://web/Dockerfile#L1-L17",
+          "version": "repo-lines-v1:sha256:9ca845b224901ca9292eed3d8de89a2f83f4532f0f7ae2ca263191b17cb259e0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkY2NiM2NmMTkzN2EzM2U2ZDA2YWNkZTc1MTVlZjdlZGMzMzcyNjAyNGYzZWY4YmZjMDllZTE3NzM4ODYyYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiYjNjMWU3ZTZlMWU1ODc4MDFhOWMxMGIzYTZkZGFjMDc0NjM3M2Q1NjhlMTQ3NGNiZGM2YjFhNmYxNmUxNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/docker-compose.yml#L1-L39",
+          "version": "repo-lines-v1:sha256:37b839fed5ec8d28e676e51f23c1ba34395343a46568a2052324ca721e478619:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5MzQxMjgzOTc0MTcyY2QyZDgxNGExOGY4YjhlMWJhMGVhMWUxNDI5ZGY5OWQ5Y2ZlM2Y0ODAyY2RiZWVhZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_01111d3fcb4d402fbc38f70eb3d1d742",
+      "statement": "Container startup waits for the PostgreSQL service health check, installs missing Composer dependencies, creates .env from .env.example when absent, generates a missing application key, runs migrations and seeders, logs the readiness message, and serves on 0.0.0.0:8000.",
+      "evidence": [
+        {
+          "resource": "repo://web/docker-compose.yml#L1-L35",
+          "version": "repo-lines-v1:sha256:e16fbefdbdceb1c06b08ed74dcbf59a345d852feff6cf9b1e0aa95e4778c6f1a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZTNmYTE2Nzg4Zjg2ZWQ0Nzk3MWEwMGUxNDExMGQyZjcyZmI3ZWUxM2Y3M2Q4NDI4YjdkZTc5OTBkMjRiOWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhM2Q1NzI1YjhmM2U1ZGJmN2JlNzg0OTQwNzM2YWE1MjA2OWI5M2IxZjFhMDM3YjljMzBmZTFhZjRjZjkyNjYifQ"
+        },
+        {
+          "resource": "repo://web/docker/start.sh#L1-L25",
+          "version": "repo-lines-v1:sha256:e50f5faa708d7a9695f3528be0ea1be9662c4a9333f02419d64678c4c04feb97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MDc2ZDNkMjhkMjFlMDIwMTJiMjBlYWY3ZGJmNzU0MDlhNjI3NzEzNDQzOTAyNWYyODJlMzY4ZTMzMDVhYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4OGMzYjYyZDI3ODIyZGU0YjNlMTQzODRkNDhmMGExOTc3MTk1NjllYzBiMTk3ZjU3Nzg0NmQ0MzY5ZTI0ZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97651b2ef3bc472e8430c62a09555b89",
+      "statement": "The application container must use DB_HOST=db and retain artisan serve --no-reload because Docker service-name networking differs from the .env.example host default of 127.0.0.1 and a reload can discard the container environment.",
+      "evidence": [
+        {
+          "resource": "repo://web/.env.example#L21-L28",
+          "version": "repo-lines-v1:sha256:42fc4faece4829155eb818ff7ed5d53724c4aeef0386cdb813611711446a803a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGJmNWViNzcxMDVkNzZhMDJjMWE3Nzk5NDkyOGM5YzhmZjAyOTQwZTA5OGJhZTNhNWZjMDM3YTQ1NzcwZDViOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzI2NDdhZGJlZTM3NDBmYjdhNzM3ZmRhYmNkYTZlMmMwYWYwZjhkNjlhOTBjMDAyNWY2NTg5ZDQ2ODE2ZTEyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTI2MTAzYWMwOGJiZWY4MjU3NTk3Yjk3MDJlNWUwODUxMzUwNDFjMDQ1OTQ5NWI4NjgyY2QyMmVhYmVhZmJmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGEyMjM2MDUxYWIyODY5MzU1NjQ5N2ZjZjFjMDAzOWNiOTNjZTFkMjdhMzY1NTg4ZjE5ZjdhNGQ1NDIwNGMyOSJ9"
+        },
+        {
+          "resource": "repo://web/docker-compose.yml#L7-L17",
+          "version": "repo-lines-v1:sha256:773fee89f19d2be75251bc41c73279fa8a3cce1ef49bd1b5e24bb6b8b36d9dd6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YWI4N2UxNGZkODBkMTY3ZDVmNGUxNjE2YjgyY2YxZWFmNDI0MzFmOTliNGRiMjg2MDY4NGY0YThlZjUzMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NDhiY2ViMDVkMjJhZjJjMzkyYTkwMmM1OWUxOGMxMDIyNzYyMWQwZDI2OTcyMjA4OTNlYjE4MWU5N2IwYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ODBhYTQxYTc4MGY0ZTVmZTNmZjlkMDg2MjY1YWIwYTgwMTExMWMyMDYyOGM4Mzg5Y2JhZmU3NTk5OGQzOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlMjIwMTQ3ZTg0NWQ4MzA2ZTdkODI4NmRjZjU1MTNhMDk3YTNmODhkMWYxZjlkZGFkYjQ2N2U0NmM1ZDcwYWQifQ"
+        },
+        {
+          "resource": "repo://web/docker/start.sh#L20-L25",
+          "version": "repo-lines-v1:sha256:f92a2ef827519e3a755bdc84704350fd67913226d6141caf6d1bb181dcf3191f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFmMDBiZWMwYmE4ZjA1YzY1NzBiMTY5NjdiOTdjYzY3MzQ5NjYwN2Q3MTc3ZWUwN2Y0YzFmZGRkNjQ3MmM4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDg4YzNiNjJkMjc4MjJkZTRiM2UxNDM4NGQ0OGYwYTE5NzcxOTU2OWVjMGIxOTdmNTc3ODQ2ZDQzNjllMjRlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWIyM2JkNGIxZmQ5YzRlOWI3YTUxODliZDE1MDc5Y2NiMGY0ZTgxNGUyZmFjNzI0MDJmOThjMTc3ZjY2ZTU5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee4f525e34164ccbabaac94e9fb579af",
+      "statement": "The development PostgreSQL service persists data in the infraticket-pgdata named volume, publishes port 5432, and uses the infraticket database with the compose-defined local credentials; removing that volume is therefore destructive to development data.",
+      "evidence": [
+        {
+          "resource": "repo://web/docker-compose.yml#L19-L39",
+          "version": "repo-lines-v1:sha256:e1138e8018f4d022eecdf19f0c0fea2a2b440d3d24c8ff6f0a7b16ff72b80bfa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5MzQxMjgzOTc0MTcyY2QyZDgxNGExOGY4YjhlMWJhMGVhMWUxNDI5ZGY5OWQ5Y2ZlM2Y0ODAyY2RiZWVhZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmMmRiYjRjOTg4MDVjZmJhNjc2ZTJlZWE1NmJiOTgwOTc4NGQ1Y2RkYmE0YTdhNjRhMGQ5ZWJlOTkyNGEzMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e4086ab76eb4064bcdf2148adca831d",
+      "statement": "The Vite asset setup builds Laravel CSS and JavaScript plus the Filament admin theme, supports npm run dev and npm run build, and ignores storage/framework/views while watching for changes.",
+      "evidence": [
+        {
+          "resource": "repo://web/AGENTS.md#L23-L25",
+          "version": "repo-lines-v1:sha256:b47080f84fbd637a9a0853e048e7294c855411f84de253dc4a99504b72a6ae23:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODg4NTc5NTdmNzBkNDA0NTdiN2MzYWEzOGE1NjFhNTM2Yzk5NDYyYjMxMzAwODM2ZjFmZThhODM4NDQxYzI1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTE5OGU0ZDgzOTQzNzQzZTk2YWJmOTI0YmJmMjJlNmJiNTI1ZWYyZDMzMGUxNGJiYmRiOWNlM2UwNDAwMjNjZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWJjNDA2MjM1MDExMTE5YzQzYjE0ZGIxM2M4ZjlmNzA3ZTNjZWQxOGI0YmMyZmEyZmVmZGNiZTZlOTE4YmU0YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTdiMmM0N2ZhZTNhOWE2Y2QxNjc1ZDg5ZTA4ZDFkZTNiYjQ1Mjk4MTZmMTZkMWQwMjM4YmUzY2U5MGNhMmM4NiJ9"
+        },
+        {
+          "resource": "repo://web/package.json#L1-L20",
+          "version": "repo-lines-v1:sha256:dc18afcbedf9004865e3741fae32851a51a6dd14652d435a6ba0c1aad946e6a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/vite.config.js#L1-L24",
+          "version": "repo-lines-v1:sha256:ad73416b0289e92af39255df1009d5a18f4b15750c2dc3454dcde0c70ecb4c21:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxZDAyMTI3OTkzMzU4NzY1OTg0Mjk3ZGQzMzgzNWUwMGYyMjc0MjRjYmQ2NGMyY2JmMDJjYjcxMTQ1Y2ZmMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4707f967a9d649dd92ba3f6b1e9483c3",
+      "statement": "The isolated PostgreSQL test compose project uses a separate postgres service and test-vendor volume, requires the database name infraticket_test with test-only credentials, uses a temporary PostgreSQL data filesystem, and does not start the web server automatically.",
+      "evidence": [
+        {
+          "resource": "repo://web/README.md#L75-L91",
+          "version": "repo-lines-v1:sha256:0a3bcabc8abcac9619d804c9a16211c493778a3fb20e37f8e340135d1bd00a37:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMGFmMWM1MThlMzEzNzk2YzExZmEwZGEzN2MxOWJmMWFjMWQ2YzI5NGM0ZDlmODBjY2NiZjIxYWQ4NWZkM2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3ZTk0ODk1NTQ0YTkyY2JmN2JlNjY3NGVkYzJhYWQxODJiYzI5YzEwZmZhM2Y2NjJhYTYwZjFhZDgwOWY0MDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwZmRjMDM4MDMyMzlmMTNlZDJmYjQ4MDlhOTg2NmM1YzFmOTY5M2IzYWIxYjE1YTQ3NDQwZjM4YjUwYjY2MzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2MWUzMDllMDY0MjE0YWY1NjA5ZjRjOWY4ODkzZjNiZWMzMmI4YmFlY2ZiMzA5ZjQzYjhiMzYzZmExMjI3ZTIifQ"
+        },
+        {
+          "resource": "repo://web/compose.testing.yaml#L1-L39",
+          "version": "repo-lines-v1:sha256:4b0889004d61c56ca3da24a2dce5ba8bc0a435b616e6fa895163aa9989b7b6d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNGU4MzdjZjQ2MzAwYzI4Y2JmOTI4YjFhYjhkMTAwMTMzNTVjZGFjM2NhODY3OTIzYzU5MTI0MWEwNWUxOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb0c32fa28584112bbd579a07b72d6d2",
+      "statement": "PostgreSQL tests are enabled only when PG_TEST_HOST is present and PG_TEST_DATABASE is exactly infraticket_test; the support configuration explicitly switches to that PostgreSQL connection and rejects unsafe database settings.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/PostgresTicketTest.php#L19-L31",
+          "version": "repo-lines-v1:sha256:6249128ad196376d1580f2f13fafbbceb4c968bd2e5c953c0716c80bafca617b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyYjYyN2YwODUyZmNlZWVhNTUwMjIyZmM1Zjc5MzA2ZTkxZmVlMDlmYzYzN2ZiYjkwMmJkYTI0MTUyOTBjODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwNjFiMWMxNTE2YmRmOGZlYTIxNTZhZGQ3YTkxOTg1Nzk5YmIxYWE0MTYzM2MxYTI2MmIzZjg5ZTllMGM1NmQifQ"
+        },
+        {
+          "resource": "repo://web/tests/Support/PostgresTestDatabase.php#L1-L23",
+          "version": "repo-lines-v1:sha256:9308409a9ae6b68db9557b14fd98ea0cf1ca2a030313f34d8c2c719ef089cf95:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYWJhMzkyOGNkNjIyYWQ2N2MwZjgxZWNkNWFhODY5OWUwN2Y4ZjQ5MDhjMDQ1ZmUzNGY2YTJkYzAwNjdiMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7194c7f4b9824e1b8d1fb50ab04efd1e",
+      "statement": "The isolated PostgreSQL tests recreate only the test database and exercise migration reversal and reapplication, stale-version concurrency protection for transitions and assignments, close-versus-comment behavior, and the complete ticket workflow.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/PostgresTicketTest.php#L31-L138",
+          "version": "repo-lines-v1:sha256:9e4f9bfae5ebc4c5ab5d792d6b1013303cafce9261ffd5afbf938457a8451907:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1OTk0ZWE5NTJhYzk0YzcyMjU0Mjk1NzY2ZDk2OWU1NzViYjQ1MjdhNTA0MWY1OTM0NmNmMzFlMjk3OTNiZDFmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a46abe718584d94b6f0c0f989924c29",
+      "statement": "The normal test suite uses SQLite in memory, while the testing compose workflow prepares the app explicitly with Composer and package discovery before running PHPUnit and Pint.",
+      "evidence": [
+        {
+          "resource": "repo://web/AGENTS.md#L29-L31",
+          "version": "repo-lines-v1:sha256:a82071d51dd72fc249934c264cba960d847dd93e0014d57f4866152a35c4995a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTU4NzlhMGMxNTU1MDUzOTNhMTc4Nzc2NTk5MzJjMDdhYjk4YmEzZmE1N2Y1Yjk4MmIxMWNiZDE2NWRjNDQzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzZmODk0ZGQ2YzdlMzVlMDEyNzBhMjc0MzYzNWI4ZjRmMDJmZmM1MjU1NjAyZTkzYTU5ZDFhYmY2ZDlhYTE4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTdiMmM0N2ZhZTNhOWE2Y2QxNjc1ZDg5ZTA4ZDFkZTNiYjQ1Mjk4MTZmMTZkMWQwMjM4YmUzY2U5MGNhMmM4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzM3MmNjYzlmZGIzMTNkZjRkMjNkNTc2Y2E0NzUyMTkwZTU0ZGNkYmYxOWRhNDc1ZGUxMDIxN2ZmMmVmZWE5NCJ9"
+        },
+        {
+          "resource": "repo://web/README.md#L70-L91",
+          "version": "repo-lines-v1:sha256:7f43d623c2ccbcba22cdcfd0bc81eed348af94a048a38e7fbbcd946cfd2bcd4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlOWQ2ZjQyZWRjZGFiZjQ4ODhjNDc3OTdkOThiZDIxNmQwNzYxMDVlM2E1NjViMTJkOGFlNzM2MzM0OTAwOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3ZTk0ODk1NTQ0YTkyY2JmN2JlNjY3NGVkYzJhYWQxODJiYzI5YzEwZmZhM2Y2NjJhYTYwZjFhZDgwOWY0MDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5Zjc3ZDhlMmEyOGM0NTUzOWI5OGIyNmZjMjBlZDY3NDliNDU3YTUwYjM5ZjU2OWViZjczYjhlMmMyNWZjZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2MWUzMDllMDY0MjE0YWY1NjA5ZjRjOWY4ODkzZjNiZWMzMmI4YmFlY2ZiMzA5ZjQzYjhiMzYzZmExMjI3ZTIifQ"
+        },
+        {
+          "resource": "repo://web/compose.testing.yaml#L1-L22",
+          "version": "repo-lines-v1:sha256:c99b775041b2b9eef6c8ed2663381f087d094fc1807def5436b1e1101fc5422e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwYmVjNDZiODc3MTQ3ZmE5ZDU5OGIyYTIwNjkwNjFkN2MwMDNmY2IwNjQ0NmI4MTViZDFkYjkxNWMxNzhlZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllZjRmZTVhMjdjNmNkYjAyYWU0MTRhYWQ2ODI1YTNhZWUzNjY2ZTlkYTA4MTBmODFkNWFlZjZiNDE0NzI2NDAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-18T11:00:29.223Z"
+  }
+}

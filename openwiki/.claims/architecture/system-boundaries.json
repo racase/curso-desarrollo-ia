@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3c1ae816e0dcc652023a2e1baa58a3e08e9fd97ed933a098d026fe27faace307",
+  "claims": [
+    {
+      "id": "claim_895ac6ca54674fc6ad4008147db9aa13",
+      "statement": "InfraTicket exposes its browser-facing experience through a Filament admin panel at /admin; the root web route redirects to /admin, and Laravel bootstraps the web routes and health route in bootstrap/app.php.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Providers/Filament/AdminPanelProvider.php#L25-L35",
+          "version": "repo-lines-v1:sha256:caa38027bfbdd7ea1b564b23af76c46b8c09c2ce3dcf948b92edb743c443e916:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZjdkOWFlYThmZDA4YTk2NDgxNGU1Mjc0Nzk3OWJjOGQyY2M2MWU5MjMzOGFkZjY1NTE1MmYxOTk2OTAyMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MWUzMTZiNmZlNDhlOGJmZTI5ZmM2YWM0ZDJiODFiYWY4ODZkZmUzMDQ2YTFhZWU2OWViMDA2ODZkYWE4MWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiMmM0YTk3MGFkMWY3MjlkMmZmNjZhMWQ3YzgyNTM5YjcxMDJkYjJiNjFlMDQ3NzY0OGRkNDk2YmU2ZGVjNGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlNjRiZmJhOWFjMjRhMTZlMDIzZjg2MjUyM2NlMjhkMzEzNmYyN2E3NmZkZjM1MDAzZmI3YTI4NDcyMzRiOTEifQ"
+        },
+        {
+          "resource": "repo://web/bootstrap/app.php#L8-L20",
+          "version": "repo-lines-v1:sha256:d51737453bfaa8f29452222b89ad8f75db65bb3089535e717fa62aaec424e1be:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjZjFhYTNiZDVmOGEwOTMzYWFmOGUzODE2MTc2NzY2OTcwZjRkOWM2YTk2YmMzMGJiZTc3NmVmOTY0ZTA5MzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNzVjNzBkOTQ2MzYyNWUxMDc5ZmQ4ZmM4ZWU2MmFkMmU5MmM0MmJlYWFiZmQ4NWI3OGQ4ZTBhNDk3OWI5NGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0MWU5YzI3ODYyY2VhOWM2NjM2ZjYxNmZkY2NlYzk1Y2NhZWRkYTU0YjU2MGU0ZDY1ZjE4YjQ1NWMyMDA4ZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhYWJmOTJkOTk0ODdhYTc5ZWFhOGYyY2FmMTUzMWFkMzNmMjA4MzExMmVkOTg2MTY3YmIxZTM2MGFjZTBhYjkifQ"
+        },
+        {
+          "resource": "repo://web/routes/web.php#L1-L5",
+          "version": "repo-lines-v1:sha256:fa65a0aae7d7d17f543d952cebde7d9ecfb90e96094e7af40a961ed349151bb1:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBhYmEzOTI4Y2Q2MjJhZDY3YzBmODFlY2Q1YWE4Njk5ZTA3ZjhmNDkwOGMwNDVmZTM0ZjZhMmRjMDA2N2IzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDBhNTMzNDViMTM5Y2M3MTgzMzMyZmFjM2FjNjNhMGIyYWYxYWRiNmNlNmQwYThhMzZlYmUwNjNiMmI1OWM0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9bbd1a7f80c84517b2c2d38698cb38f7",
+      "statement": "The Filament admin panel is stateful and authenticated: AdminPanelProvider configures login, session, CSRF, binding, and Filament-serving middleware, with Authenticate as panel authentication middleware.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Providers/Filament/AdminPanelProvider.php#L25-L35",
+          "version": "repo-lines-v1:sha256:caa38027bfbdd7ea1b564b23af76c46b8c09c2ce3dcf948b92edb743c443e916:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZjdkOWFlYThmZDA4YTk2NDgxNGU1Mjc0Nzk3OWJjOGQyY2M2MWU5MjMzOGFkZjY1NTE1MmYxOTk2OTAyMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MWUzMTZiNmZlNDhlOGJmZTI5ZmM2YWM0ZDJiODFiYWY4ODZkZmUzMDQ2YTFhZWU2OWViMDA2ODZkYWE4MWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiMmM0YTk3MGFkMWY3MjlkMmZmNjZhMWQ3YzgyNTM5YjcxMDJkYjJiNjFlMDQ3NzY0OGRkNDk2YmU2ZGVjNGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlNjRiZmJhOWFjMjRhMTZlMDIzZjg2MjUyM2NlMjhkMzEzNmYyN2E3NmZkZjM1MDAzZmI3YTI4NDcyMzRiOTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Providers/Filament/AdminPanelProvider.php#L57-L78",
+          "version": "repo-lines-v1:sha256:57916eeb71b88460519b2052f9a63ee1be1c7cf4edfacd3f380b5effb9197763:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmOTljMDUyN2E0YjczNWUwYjM5MzYyMjFjNjQyNTIzZGFiZDIxMDlmMDdjYTY3OTk3NTRhMjBjMGUyYTUyNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhOWVlNWM5MGI3YmZmYTIyMzYzMjQ4YjM0NzgyMjEwY2UxYzFmZGQ1NzFiM2UyNjEyZjM5OTQ5N2MwNTNhYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fbb76115cb7243e6bb6a4e99cfca073f",
+      "statement": "The local container runtime consists of an app service and PostgreSQL 16 db service; app receives DB_HOST=db, depends on database health, and PostgreSQL data and Composer dependencies persist in named volumes.",
+      "evidence": [
+        {
+          "resource": "repo://web/docker-compose.yml#L1-L39",
+          "version": "repo-lines-v1:sha256:37b839fed5ec8d28e676e51f23c1ba34395343a46568a2052324ca721e478619:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5MzQxMjgzOTc0MTcyY2QyZDgxNGExOGY4YjhlMWJhMGVhMWUxNDI5ZGY5OWQ5Y2ZlM2Y0ODAyY2RiZWVhZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4429c898de194dc4abf552b0d99ece36",
+      "statement": "The container entrypoint installs missing Composer dependencies, creates and keys .env, runs migrations and seeders, then starts Laravel on 0.0.0.0:8000; --no-reload preserves the container DB_HOST=db environment.",
+      "evidence": [
+        {
+          "resource": "repo://web/docker/start.sh#L1-L25",
+          "version": "repo-lines-v1:sha256:e50f5faa708d7a9695f3528be0ea1be9662c4a9333f02419d64678c4c04feb97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MDc2ZDNkMjhkMjFlMDIwMTJiMjBlYWY3ZGJmNzU0MDlhNjI3NzEzNDQzOTAyNWYyODJlMzY4ZTMzMDVhYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4OGMzYjYyZDI3ODIyZGU0YjNlMTQzODRkNDhmMGExOTc3MTk1NjllYzBiMTk3ZjU3Nzg0NmQ0MzY5ZTI0ZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_66b78c4388ca450da93ed7e9ff23927e",
+      "statement": "TicketResource is the Filament adapter for Ticket: it supplies the model, forms, infolist, table, relations, CRUD pages, and a getEloquentQuery implementation that applies Ticket::visibleTo(auth()->user()) and eager-loads ticket relations.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Filament/Resources/Tickets/TicketResource.php#L19-L67",
+          "version": "repo-lines-v1:sha256:ce2d37de6d4845ea069d8909a8bdb36fde7ba6a49a3cd1fccbf6097d353c6f5f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMGVjYzE1M2JmMTdjYmMzM2YxNzJjMWNiNjg1NDUzZmIzZjIzZTNkMjkxNWQ4OTM3M2RhNDgzYzdkMjgyYzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5N2UxMTg3MjVmM2MxMjk5ODg1MjBiZWYxZmZiMmQ0YTE5Y2U4YzIwZWYxMTk4M2U1YTRhNzkwNTllYjViMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e53d9269ae07407d8cc5e5cd71668cf5",
+      "statement": "Ticket visibility is enforced at query and record-authorization boundaries: Ticket::visibleTo restricts Requester users to requester_id, while TicketPolicy checks record view and update access and separately governs assignment, transitions, comments, and deletion.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Ticket.php#L29-L32",
+          "version": "repo-lines-v1:sha256:f289e7249dbae66f8dc002982e1adfb1b4e35243bbd92003acc7a8f264a82a1c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYyNmVkNTQ5ZTI3MjEzM2MyYTExY2RkMTgzZGYyNmIyNjkwMTI4NDU1ZGYwMWFjNTg3YWE4MWY2ZWZmZDM2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGYxYWFjMGY2NTNmMjljM2EyOTk1ZDU5MTdlNWNlNjIxMTE1YjQxMGJlM2Y5NGVhMjdmMTFlYzgwYWI2NzE2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2I3ZmMzOWJjZGI2ZWRkZjFjNmE3NTExYzQ4NzhmYjk5OTljYzljMTg0ZWJkOGYxMjY5OGI0OTFiYmQ5M2EzNiJ9"
+        },
+        {
+          "resource": "repo://web/app/Policies/TicketPolicy.php#L12-L59",
+          "version": "repo-lines-v1:sha256:082c737bb797df122bf5ff538a5e2d66e529b8e32612430eecbc2275c3ba31d3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyNzFjMjVkODE1MjcxNzVlYTIyYWNlMDdmNWMyMjc1MDZiMzc0MTE4YzQxOWIzMzkwYzVkMGY1OTk0ODYzMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmZmM0YzdjYjczNjNhOGVlNDFlOTRkNjQ0NzQyMjY5M2E0MjYxMmY3MjNkM2MwOWRjNTg4NjFkZGNlOTI3ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketManagementTest.php#L48-L71",
+          "version": "repo-lines-v1:sha256:71fbfb9b8e3fd4fbddaf183cbcd843d4060e370ac01bb1e3a5a20d540b8e7960:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhYzAzZjE1YWMzZmVjYjVkZTFkMmE2MDU3OTM2ZDAwYzg3Zjg2YjllY2MzNDc4Yjk0NTNkNzQ1OTE0ZjFjMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzMWJjYzJiM2EyYWVkZmQ5NzhkNWRmMjhlNmYyNmUwYjJmMmJlYWNlY2ExMjJmMjA2YmI1MjU5ZjVjMmFkY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzODU3OWIwYjQyNTgzZjcwMWVkNzIyZjZlODhjY2ExMTYzYjQzZDQxNDgzOGQ2NThkMTljNjIwZGFlMDY4NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkMTc4NzkwYmI3MmU5OWZmNDI5OTUxYjY5Njk3YzU3M2I0ZmUxY2UxMTBjZjE5Mjk5NDgxZDJjN2NkZWIzOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_90abf94f773b4db588b931bb7260372f",
+      "statement": "Filament ticket creation delegates from the CreateTicket page to the CreateTicket action, which runs authorization, validation, requester association, initial Proposed status assignment, save, and refresh inside a database transaction.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Tickets/CreateTicket.php#L11-L24",
+          "version": "repo-lines-v1:sha256:27a82c2f69ce9d0177c0791626c3f69e2d3a084cb73e28cea89335537ee83b77:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2Y2IyMzUwYjU2Yzc4YmQ4ZjA3NTcxZjVjYmFiMjk2Yzc3OTk3MTc4MmEyNWY2NzNiZGEwN2U1ZmVlZjY1YWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3N2JmNTgzZmE2ZjFjMWZiYzlkMDY3NGU2NTFmYjk3MzAyMTkwOTQzYWFlMjA4MDZhNzE5ZWRkYWZiMDY2NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Tickets/Pages/CreateTicket.php#L11-L25",
+          "version": "repo-lines-v1:sha256:19b98748f7366c6e1a9e6461642388f7beff856e0cfad692c80c3dc6288ae09e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkNzk4ODAzOTAzMGRhNmY1MjI5ODU5NzM5ZmRlMmVhNmRiYWZkOTE5ZmUzNTc1MDg0NGJkYTE4NjljNGJjMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxNmM1MmQ3MzgzY2UxN2JkMmIwZGFhZWEzNGU1OTU4ZGZiNzAxYjBmNzM4MmI3OTcxMDc2N2ZhOTA5MmI4MTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ef06aea91764a3294fdbc19f116882d",
+      "statement": "The Ticket Eloquent model owns fillable fields, enum and integer casts, visibility scope, and ticket relationships, while migrations own the tickets table schema, foreign keys, indexes, defaults, and later asset_id addition.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Ticket.php#L11-L58",
+          "version": "repo-lines-v1:sha256:8ad09295cefd97d4f729939bcd29fbdcea6e71da4c497fe4cec6b8ce0f1f3ac2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMjQ5MzE4ZWQ5ZjAyMzBiYWMwMGIwMGY1MmNmYWYxNjQwN2Y3NjBjMDJjNzQ4MjEwYTIwZmRmNjUxMTljMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4OTM5YWE0ZjU4N2FjZDUxZmVjM2JkMGNjMjVjM2UyYTFjYmU4OTIyZjNhZGU3YjQ2MmE3ODA2NGRlNDk5ODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000001_create_tickets_table.php#L8-L29",
+          "version": "repo-lines-v1:sha256:65e35681c65d29b31ed16697dd79e853daeec1c23a099e19f5e7225a93d246f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4M2ViOWE5NDNiZjM5NDk5OWQ2MjkzMTYwZGZlYmEyZjBiYTA4MDcxOTk4OTZkMWUzZGQwNTVlMTcwMDBkOWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyMmZmMTcwYmZkZWMxOGQxMjQyOWI3YTFlNDkzZjM4YTUzMTFhYmQzNDYzZjdlMTM0NTBiYmNiMzJhMTNlMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNTBjMGIzNTc3Njk5NjBhMjFlODUxY2JlYzdkYzcwMmE1NWM3OGVjZDJiNzJjNGM2YmI3MjFkNmEzMmE5NGYifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000006_add_asset_to_tickets.php#L8-L21",
+          "version": "repo-lines-v1:sha256:4d05e69559211e25e1268a6cbccb49b932799a272a943b892e6011adc65945d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyMmZmMTcwYmZkZWMxOGQxMjQyOWI3YTFlNDkzZjM4YTUzMTFhYmQzNDYzZjdlMTM0NTBiYmNiMzJhMTNlMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNTBjMGIzNTc3Njk5NjBhMjFlODUxY2JlYzdkYzcwMmE1NWM3OGVjZDJiNzJjNGM2YmI3MjFkNmEzMmE5NGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_21bfd26929284ec486947dacaf2861f9",
+      "statement": "The repository's focused ticket management feature tests verify creation identity and initial values, validation boundaries, requester isolation, role/state policy decisions, protected attributes, reload-before-authorization behavior, and migration reversal/reapplication.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/TicketManagementTest.php#L18-L113",
+          "version": "repo-lines-v1:sha256:4aa9cc540407d167bcd4f7535c947651c09289af9c3119bba1324b3b67087674:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MmE2MTIwYTlkOTc4ZjRkNjAwODVjY2NiYzg4MDlhZmFjYTRkOWNjZWY3MTBiZjI3NzEzNWNlYmNmYjNiODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa5807987a5b40ce89cedefcdfd3f8d8",
+      "statement": "Laravel's database connection is environment-selected with SQLite as the default and a PostgreSQL connection configured from DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, and DB_PASSWORD; Docker supplies the PostgreSQL host and service credentials.",
+      "evidence": [
+        {
+          "resource": "repo://web/config/database.php#L20-L31",
+          "version": "repo-lines-v1:sha256:550d97667546f6ebbb8c96ea825387f6ac584c8d4d1a239e3b6df2e9361e625e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3YjYxZGFjYjQ4NGEwZjUyNDU3YzBlZjY1ZWFhMDhkMGZlMmVlYzdiMjRjZjU5ZDg5Y2QzNjA5YmMxNDkyZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkZDY4ZDA2MjhjYjYxNmU0YmZiZjE2MmU3MmNmNDM1Y2E4OGNiOTJmOWQ3MWQ5MTA3NmQ1NGU1OTZlYmIzNTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1NzI1Y2E4OGI3MTRiODUzYjFmNTNkNzc1NTg3MjdhMDk2NDkzOTAwNDRhMDRkOWRmZGU1Mjk0MmI5NmUwMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkMTkwN2U3NjUzMmI2ODc3MWQ4YTE1MGM5ZjQ2YTVlZDVhMDk2ZjNjMTI0YTQ3NTFmNDU4YTJkNjU0N2NiMGEifQ"
+        },
+        {
+          "resource": "repo://web/config/database.php#L81-L99",
+          "version": "repo-lines-v1:sha256:b84c45b2cd6114c8f621f8979fb5f61a9853bac0c9b0b9f1d7a4f4a259965c8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkZDM4NzA4YWFjZDMzM2M3MmVmNzcyNWJjNGQwNTNlMjU1NTU0OTBiNGI2YjA0ZDYwN2VkNTlmZDE0YzNkMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NGU2ZGFhYTRjOGI4MzVkNWI2Yzc3ZTBiZGQ4NmM3ZjRjODE0OWM4MThjZjFmY2M3OGJhODZkM2U4Y2MwODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiZDFlMzFiMTFiMDdkZTU0ZjdmNTBiYWEwMzQ3OTBiZGQ2MDYxZTdiOTdlZjA5ZTNlYjdhZTRlZjI4YmU5NTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1MTVmZGFkZTVhZjU3NmUyMGE3YTY3MThmN2Q5YWUwMjQ0MzBiMDA1NDcyYWViZmUzMDRiMzIyNzBkZDkwODEifQ"
+        },
+        {
+          "resource": "repo://web/docker-compose.yml#L17-L29",
+          "version": "repo-lines-v1:sha256:58429152e80f09945524c84622b341b5eb8da9952a26c466467136a5855b3da7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NDhiY2ViMDVkMjJhZjJjMzkyYTkwMmM1OWUxOGMxMDIyNzYyMWQwZDI2OTcyMjA4OTNlYjE4MWU5N2IwYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxM2Y0ZDk2NjFlOWQyYzNlMWEyODllNTgzMjI5OWJlYTE0Y2RiNjRiZjg4NjYxZGY3MTdiMTJmYTAyZDAxMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyNTEwMDIxNDVhNDQ2NzBlYzMxYjIwYmNlNzk0YmQ3ZTBmNDUzYzVhNGZhODQxMjk0MWYxMTU5MzRiNjVkNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjZTJhYmNkNDhkYThjMDhiMTBhOGFlZjg2ODdiMmZiZTgwZTcwNDA5NjJhMGUxN2VlZTVmNjE5ZWJjOTBiNmMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-18T11:00:29.223Z"
+  }
+}

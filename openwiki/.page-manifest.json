@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/data-model.md": {
+      "pageVersion": "sha256:1c938b84facbd757a7d8646dbaaadc3d6e5c1bac9a9c100a7a02f64cf0251233",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "d725ee92-9522-47a2-a05b-45a9979a31b7",
+      "gitHead": "3a997e095232eaacadc4aa1feb7e272f8b80f01e",
+      "sourceFingerprint": "sha256:b63bb6a484e7637e1b6573266e83323dd1520feda0ebc34d1e1ad673c097d680"
+    },
+    "/openwiki/architecture/system-boundaries.md": {
+      "pageVersion": "sha256:3c1ae816e0dcc652023a2e1baa58a3e08e9fd97ed933a098d026fe27faace307",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "d725ee92-9522-47a2-a05b-45a9979a31b7",
+      "gitHead": "3a997e095232eaacadc4aa1feb7e272f8b80f01e",
+      "sourceFingerprint": "sha256:b63bb6a484e7637e1b6573266e83323dd1520feda0ebc34d1e1ad673c097d680"
+    },
+    "/openwiki/concepts/authorization-and-visibility.md": {
+      "pageVersion": "sha256:0233db95426eae46ce81eba15975d9b252790cac99ffc60c10a831e0f564f101",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "d725ee92-9522-47a2-a05b-45a9979a31b7",
+      "gitHead": "3a997e095232eaacadc4aa1feb7e272f8b80f01e",
+      "sourceFingerprint": "sha256:b63bb6a484e7637e1b6573266e83323dd1520feda0ebc34d1e1ad673c097d680"
+    },
+    "/openwiki/concepts/catalog-and-user-administration.md": {
+      "pageVersion": "sha256:ba03ba5ff84664bfb92e9e1c26ed7b3c0171658afd7f754543bb0e1fa4f33d28",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "d725ee92-9522-47a2-a05b-45a9979a31b7",
+      "gitHead": "3a997e095232eaacadc4aa1feb7e272f8b80f01e",
+      "sourceFingerprint": "sha256:b63bb6a484e7637e1b6573266e83323dd1520feda0ebc34d1e1ad673c097d680"
+    },
+    "/openwiki/operations/local-development.md": {
+      "pageVersion": "sha256:45279b4d42805d263399ceab89e90206dee89cb1909eee72e8b68e7ba95e5124",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "d725ee92-9522-47a2-a05b-45a9979a31b7",
+      "gitHead": "3a997e095232eaacadc4aa1feb7e272f8b80f01e",
+      "sourceFingerprint": "sha256:b63bb6a484e7637e1b6573266e83323dd1520feda0ebc34d1e1ad673c097d680"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:db13205eef3a4dedf426cb9d9c0318d141735984c92dbdf51774c578f57f625c",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "d725ee92-9522-47a2-a05b-45a9979a31b7",
+      "gitHead": "3a997e095232eaacadc4aa1feb7e272f8b80f01e",
+      "sourceFingerprint": "sha256:b63bb6a484e7637e1b6573266e83323dd1520feda0ebc34d1e1ad673c097d680"
+    },
+    "/openwiki/testing/test-strategy.md": {
+      "pageVersion": "sha256:b2fb2e1ab488aefe732abfa0c5adaf849267fef4e131b5425a628d3993b65c5c",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "d725ee92-9522-47a2-a05b-45a9979a31b7",
+      "gitHead": "3a997e095232eaacadc4aa1feb7e272f8b80f01e",
+      "sourceFingerprint": "sha256:b63bb6a484e7637e1b6573266e83323dd1520feda0ebc34d1e1ad673c097d680"
+    },
+    "/openwiki/workflows/ticket-lifecycle.md": {
+      "pageVersion": "sha256:c15094b7e210b0152a001e4f5f0a0ac942b561348ee9dc74913f91f3ffc20669",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "d725ee92-9522-47a2-a05b-45a9979a31b7",
+      "gitHead": "3a997e095232eaacadc4aa1feb7e272f8b80f01e",
+      "sourceFingerprint": "sha256:b63bb6a484e7637e1b6573266e83323dd1520feda0ebc34d1e1ad673c097d680"
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1c938b84facbd757a7d8646dbaaadc3d6e5c1bac9a9c100a7a02f64cf0251233",
+  "claims": [
+    {
+      "id": "claim_d3ed19bc23a34179b5bcfad46810324c",
+      "statement": "The current persistence model contains users, tickets, ticket status changes, ticket comments, sites, and assets; tickets reference a mandatory requester, optional technician, and optional asset, while assets belong to sites.",
+      "evidence": [
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000001_create_tickets_table.php#L11-L25",
+          "version": "repo-lines-v1:sha256:b847ef878db3fb3e40a181b8559e8fd299413bc9000a17a791a78e22307a5b5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiYTFkNmI1NDlmYmIzOGYyYzY1OTdmNmZhMDRmNDI2ZmUzNmQzNDViY2YxZDA2ZmIxZmY2MGQ1Yzk2ZTNkNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmZWVhMGQxNWJlN2IzNDhhYjkxNWMxODc1NmQ4M2FjN2JjNTc3YzAyMTY1ZjI3OGZlMmMyODE2ZGNhMmJiNjEifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000002_create_ticket_status_changes_table.php#L11-L22",
+          "version": "repo-lines-v1:sha256:48504268d387655c49074ca5d5f68db5f7839867d171e8cbe70c578778ec4c8a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiYWNkMjljNjE5NGM4ZjRhNzgwMzlmMDliYTg4MTIxOTg1MjVkYjFjM2M4MzQxYzRhY2FiNzMxYzdlMDkxMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5Njc4Zjc5NzBjNDQwZjJhN2QzOWM1YTc5ZTJhYTUxZmRjMzZhODA1ODI3MjU0YjIxNzMxMzI1Y2Q5ODFhZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViMTMwMTc1ZmU4NjMwOWEyN2MyZGRmYzU3NTBiODA1YTdlMjQ0ZjAwY2NlZThlYTliNjk0YTVhYzg2MjJhNDcifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000003_create_ticket_comments_table.php#L11-L21",
+          "version": "repo-lines-v1:sha256:da8714e2e409eb3c79822fa876951dabbc899ec76f92070d8bc55bcefe5209ed:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNzVlNDcyZjZkMzVmYzJkOTRlZWRkOGY0ZGIyMjkzY2EwMzUyYTE3NDdiM2YyZDI4MTc0YTU1Nzg2NDY4ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5Njc4Zjc5NzBjNDQwZjJhN2QzOWM1YTc5ZTJhYTUxZmRjMzZhODA1ODI3MjU0YjIxNzMxMzI1Y2Q5ODFhZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzNjI1MjAzZGQwNTJmZGFlNjY4ZmU5ZTFmZDM4NWQ3ZjEyODZkYmFhOWEyZGExOTliMDlmZThmNTdjNDM0YjYifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000005_create_sites_and_assets.php#L11-L25",
+          "version": "repo-lines-v1:sha256:c38725fd1ade6657886be24352d5c3dda71167bbfd1b2b267b1d6b425df82133:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOWUxMzg5MGNjMWE5OTVkYzUwYjlkYzIwMzBkODkyMGI4YjkxMDhlMmVjOTAxZGNjYTViMTVlNTVmMWExMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMjU5NTNmNTRmNzBhY2RhMjJiNjU0NjFjOTk0Yjk2ZDk3YTM5YjNkN2ZhY2YzN2JkY2ExMWRmMGY2MWQwNWQifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000006_add_asset_to_tickets.php#L11-L20",
+          "version": "repo-lines-v1:sha256:9317be244019016fbe83b240627af06b404c9954c25c198afb9396ec7f676714:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxM2IwZTIzM2RhODNmMmZmMjExNDVhNjI5ZjM2MmJjY2FmYmM4ODc2OWE0MjBiMjI3YWI1OGE3M2ZjZmQ3ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljNDgwYjViMGVjMzBmMjRmZjEyOTAyYWFkMjcxNTRkYzBiY2M3Yzk0MmI1MjM3ZDE1NDcwNjlkMzIzZGYzMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllNjYyZjU5NTgyMjM4N2FkYjYxNGJhYWNlMDliNjU4M2Q4ZjU0YmY5ZWQwMGYzNzNmMjU3ZTJmZWJhMmU0OTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_345e90c53f3f482dae2766a813a9ffeb",
+      "statement": "User roles, ticket statuses, and ticket priorities are persisted as strings with application-level enum casts; the defaults are requester, proposed, and medium respectively, and the enum sets are admin/technician/requester, proposed/open/in_progress/resolved/closed, and low/medium/high/critical.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Enums/TicketPriority.php#L7-L21",
+          "version": "repo-lines-v1:sha256:1f9c9fecb6cf4f20a4dac256bcb0309da85f460971174fa5eea06c218ab7ae42:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNjIxZmQxYjRkYWE1YzE2NTc3MzVhZjVkMmE0NjkzOTdiMTIzYjY0ODZlNmZkY2NhOGFkZThjNWFiNmFiNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MjA3ZTc5MzI4ODQ2MmUwNGRjZjk3YmU3NzFiYTU3NjJlZDBkMmUyMGE4OTk0Nzk4MDVhZmI5MmY0NWY1MTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Enums/TicketStatus.php#L7-L34",
+          "version": "repo-lines-v1:sha256:a429c7f7ea44a011e2d9e8423b56fc2ecef7775a40d340be8734bc592448b1fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2NGEwMTYzZGUxMmYxYzhmYjgyNTcxOTU1OWZmYTU2NjkyMWFmMjU0Y2E5NzczMGQ5NjM3NDU4YzFhZTlhNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MjA3ZTc5MzI4ODQ2MmUwNGRjZjk3YmU3NzFiYTU3NjJlZDBkMmUyMGE4OTk0Nzk4MDVhZmI5MmY0NWY1MTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Enums/UserRole.php#L7-L20",
+          "version": "repo-lines-v1:sha256:123fb02695d066c2a7725467b09b6ab30cdba596512811cd7d8164033212eb6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ZDYwMTBmMzQ1MjdjMDhmNGJlMzJmZDAxMTk4NGUyNmNiNDZjMWM1MGI0MmFjMTk0NzE3YmRlNDFiZGQzNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MjA3ZTc5MzI4ODQ2MmUwNGRjZjk3YmU3NzFiYTU3NjJlZDBkMmUyMGE4OTk0Nzk4MDVhZmI5MmY0NWY1MTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/Ticket.php#L20-L27",
+          "version": "repo-lines-v1:sha256:d7fbcedc327462fa824526cdaacad5060056309da892e998c0bdf12584973c2b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI0NDg1NzYxZmI3NGE1ZDUxZmI4MTRiODJiOTY3OTE3MmQwYzllZTU4YWI4YTI3MDllMWI0MDQ2OTkwOWQ2NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRjMmM3YmFmMTMyMjU4YjJkOTE2YWJkZTkyMGU1ZjMzZWRjZDg1NzJiMThkM2IyYjYxNWUzMGJkZGNmYTM3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmNiZGZkZGY5YjdjNTI3NDRlNWRkMTkzZDM0NjJjOGJmNjcxZGM5ZjJiOWU1M2U4ZmU4ZDVlMTc3NjIwYzBlOCJ9"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_13_000000_add_role_to_users_table.php#L14-L24",
+          "version": "repo-lines-v1:sha256:2ddbcd4db1254e5df379d9e38de8e3e0dec56764ff5e03a86193b3445b6d8365:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNDk3NmU2YjM3MDIwYTAwYjlkM2RiZDdlY2E0MGUwMGJhNWYyMTBmYjllODVhOTgwYWE1MzVjNWU2ZWM4N2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNDk3NmU2YjM3MDIwYTAwYjlkM2RiZDdlY2E0MGUwMGJhNWYyMTBmYjllODVhOTgwYWE1MzVjNWU2ZWM4N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzODA3NTgzNjA0YzZiYjBkYjU2YzliZTUxMzJhOWVlMjMxOTU1MmM3ZGQ1NDU2ODExZGRlNjI1Y2RmY2IxYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxNjQ0YmFiNzExYjI2MjI4YzA5OThhMzMwZDhkZTIxZDQ4NWFmOGU1ZDZmY2QzNGZlYzM3YWM3MmNiYmE4MzQifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000001_create_tickets_table.php#L14-L19",
+          "version": "repo-lines-v1:sha256:2be9738a46021b08925b0113d0869e99bd57f395e4e6880825abe5901a338895:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU0NmNkZGRmZTJlZjk3YTJiYjIyZjU3YjRiY2M5MGFmM2ZiYThhMzVkNTM1Njc5MGYwZWU1YWVlOGE2YTBiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2U2NWEyMDUyODc1NGQwYmM1ZjFmYjQ3MGE0MTdiN2FmNGQ1ZDY1YzE2ZGNkNjNhZDA5MDAxNTI4Nzc0YzkyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWY4MTI2ZjA4Mzg3ZTFkOGJhOGE0MDc3OTUxZmQ4MGZjYTgzODc4YjcxMGU4NzVlMGZjZjAxY2U1OTA4OTI4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWJlOTJiMDY4OWUxODE3YzdhYWFlZmYyZmRmMjAwMzgzNTkzMjRkYWFiOGZhNWJiNzcyODc5NTViZjY5ZDUzMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_059192427d6147829dc9a7b9598eaa72",
+      "statement": "Ticket status progression is one-way from proposed to open to in_progress to resolved to closed; transition handling requires the exact next status, requires a technician before in_progress, increments tracking_version, and writes a status-change record transactionally.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Tickets/TransitionTicket.php#L15-L33",
+          "version": "repo-lines-v1:sha256:da86bd787683d6c8d7d72faa93545215368bae6243ae9ec7c2facb39ace0f889:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1ZGY1MDFkMGY0NzZkZGJjNzJjYzRmNTA2MmUwYmVlNTU1OGU3NzIzOTdjZmI3Y2Q0N2RjN2FiZjMzOGYxYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Enums/TicketStatus.php#L20-L34",
+          "version": "repo-lines-v1:sha256:33d5b9b16f0d6168c166272e16c9fada0c4955058b049d122bdb632af3534197:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMjI2NGIzMTI1MDI5NTgzMjc5Y2E2ZjdkMWVmMmZmMWUzOWUzYzNlZThlYzAxNDI5MDQ2NDQyNWQxMTgzNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzYmNlMzRkMTJkNDBmZTUwMmJiMDI3ZGU0MjRhYzRlNzYxM2Q4ZGYxOTE3ZTUxMzhhMTEyODNmOTEwYTdhMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5cf16188a6742c697566ce920492535",
+      "statement": "Ticket status histories and comments are deterministically ordered by created_at and then id, and both tables have matching per-ticket composite indexes.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Ticket.php#L45-L56",
+          "version": "repo-lines-v1:sha256:35c2019a50eedb55c145c5dad51b947d66c3998df0155111c186d031b0e22179:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljOTEzZDg2NWNhZjU5ODQ0MWNmMjE0ZmZkYWE4MWU3MTk2YzEzM2VjMjZjZGQ5YzdhZTU2MTM1MzE4MDQ3NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmNmRkN2VhZTllMzNiNjQ1MjQyYzllNmFlN2U2MWRkMzI2ZjI4NTU4OGYwMDU2NTRjODlkNzFmMmU1NmNkOGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000002_create_ticket_status_changes_table.php#L17-L21",
+          "version": "repo-lines-v1:sha256:0c203a7a350aead144d3545805b4874af349a80c2dcbeb7ffc11df8969b2848d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzExOGRiNzhiZDVmNmIyMTdhMzU2NDMxMWYwNzZkNjFmOGQ0NGUyOWY5YjYwMGRiMmNjZGVlMGQ0MTI3OGNlZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTliNDk3NTgwY2ZjODZlMDBmZDk5YmZjM2YzNzg2YjUxNzgxNGE2MDM0MmJjODMxMzE0MmMwNjJjYzBjYmU1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjRiZWIxYzcwNjIxNzQ4OGMxNDI0MjdmNjQwMTMxMjdjNTcwMjVkMmY1YmI2YWY5Y2UyODg2NmEyMmEyYTBjZSJ9"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000003_create_ticket_comments_table.php#L17-L21",
+          "version": "repo-lines-v1:sha256:f1c869e578842734e2a526dd42a2201df779c7e0fbcd5c1053693d4555ebf04d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQxMGRiMDAyMjQ4MmM0NDY2ZDQ3NmI5ZDc2ZmVlM2Q4MDc5YTI0NjgzYTEzY2RkNzRmMTI0MWMwNmRhZDYxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjk2NzhmNzk3MGM0NDBmMmE3ZDM5YzVhNzllMmFhNTFmZGMzNmE4MDU4MjcyNTRiMjE3MzEzMjVjZDk4MWFlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2VmZTA1MWRjMjNmOWMwNmZlYWQ4YjhiZDcyYWUxMGZkMjRjNTI3YTRjNGJmOGNiYWQ3N2NlNjg0ODFmMDY1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjM2MjUyMDNkZDA1MmZkYWU2NjhmZTllMWZkMzg1ZDdmMTI4NmRiYWE5YTJkYTE5OWIwOWZlOGY1N2M0MzRiNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d7b3e36f846425187bcff11f835e62e",
+      "statement": "Domain foreign keys protect historical references with restrict-on-delete behavior: referenced users, tickets, assets, and sites cannot be deleted while dependent tickets, histories, comments, asset links, or site assets exist; these migrations define no cascade deletes.",
+      "evidence": [
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000001_create_tickets_table.php#L16-L18",
+          "version": "repo-lines-v1:sha256:994a673b3a0f45bf3a29ded025a292924292880e0ed95570b2f1596e7ca5f1d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzViMGYyOTNiYWJhYWQ3MGJiNzRiMjdjNDg2N2MyNTU1ZDUzMjkyNDQzYTFjNWVhMGRjYTVhNTUyMjNkN2QwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdjYjAxM2E2ZmVkMTY3Y2NmMTViZmZkZTNkY2M4NDNkMWMyYjgwZWZhOGRmNzk5ODYxNjY0Mjk3YTcxMjViYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTM5YjYwZDBhZjU3YzNjZjcxMTk5NWI5NDRjZGVlNzEyYmRlYmNmOGU3ZDVhZTQ2ODY0MjRjZmRmNDU4NWYxNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWVhNTc3MzQzOWEzNTg4N2YxNmFjYjFlODhkMDY0NjNjM2NmMDM0MTM5NmNjOTM1Yzk5NjYwNzBlZTM2NGYzNSJ9"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000002_create_ticket_status_changes_table.php#L12-L15",
+          "version": "repo-lines-v1:sha256:50e3d2b3a2e02acca60ae0fe81faa82a2ee5a4a6f5429251fc8cd58072978322:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGM0YTA1N2ZkN2FkMjFkY2Y2Yjk4NDc4ZTJlYzIzOGE2NGMyZGVmMjQ5MmQ5YjU5NGIxNDY1YjA0ODUyNTJlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYyNGY1ODIzMzc3OGNmMDQxOTUwZGIwMGI3YzlmYmJkNjY3MWU1ZDQwNDBhMWY1Mjk2NDM4Y2ZiZjQ5MmU3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjY1NDMwYTc0Yzg4NjhjNmNiNWE2ZTQ4YTFiZDJlNDYyYjMxNzFhZmUyZGJkMjY5NTYwNWQyMmVjZWVjZGE2YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTc4NmVjNGMxOThhZTYyYzAwNjkwN2E0YTA5NDQ1MzQwNjEzY2Q0YzhkMjNkOWY1ZDJiMWQ1NTQ5NWUyMDY3NSJ9"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000003_create_ticket_comments_table.php#L12-L14",
+          "version": "repo-lines-v1:sha256:e058fafe32cc343f2e49f1dcb88dc43fe4ffd0222033ff5487f4c6e5564e2ddd:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGM0YTA1N2ZkN2FkMjFkY2Y2Yjk4NDc4ZTJlYzIzOGE2NGMyZGVmMjQ5MmQ5YjU5NGIxNDY1YjA0ODUyNTJlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY4MGYzYTEwZDk4YWY0ODgwNzhkYmE2NDRkMzI0N2E1MWRkNWY4ZTQ5YzI3YWE0ZWIyOWI3Yjc4MTI0MTVjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDg1Yzk2MTE3NjgyZjcxNDk1YTVjM2RkNjhlODQ1ZmZlZTI0MDA1ZmYyNWE2YzJlNTc0MDQ1N2FiNWMzMDBjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDE0Nzg0ZTZiMDNhNWM5OTc3MDgwNzBjODljNzYwMDIyYzlkODI0YzJiM2VkYzU4NTdjNzdlN2E1ZTc4YzVlZCJ9"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000005_create_sites_and_assets.php#L21-L24",
+          "version": "repo-lines-v1:sha256:a511fe857d7136b12bcec01d9e46d73a2efc68ef92c96f5145255dfef4b8e88e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjcyZDBmMDI1YTYxODY4NDM3NjIwNTY2MDg5Y2ZlZTdlNjZmZjliNjg0MTBmMDM0OWJhMjE5NzZkNDcwNmM5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWUxYTc3N2VhNWI1YzIyOGViM2EwMmFkNzg4ODAxZmI2ZTdmMTM0NzVlYTEyNGJiZDAwZmIyNmEwNTU0YTlmNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmZlZWEwZDE1YmU3YjM0OGFiOTE1YzE4NzU2ZDgzYWM3YmM1NzdjMDIxNjVmMjc4ZmUyYzI4MTZkY2EyYmI2MSJ9"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000006_add_asset_to_tickets.php#L12-L13",
+          "version": "repo-lines-v1:sha256:c09cfae5cdc8f10b672c69036ef18e6c85198a35047eb370c55c9f0a6ec86985:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY2ZTA1MWQ5MzY2ZDIyNTIxNmIzM2IyNDU4Yjk3YTM0NzIyMGJmM2EwY2VkOTUwYjNhZjcwYjFiNGYyYjY1NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTljMTM1OTA2NjU2MzIzZDFjNWVhNDE2NTRlZTY2YWZiNTg1YWNkY2ZhZWFjYTEyMWQ1ZTMwYmYxOTNlZWRkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTFkMWRjODBhMzY1MDhhZDA0NzU1YWFjNWFmZTkxZTRkMWNkYTE2YzY4Y2Q1NGNhMzRjYmE4YWJiNGI4OTdmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzE5NTNkZWE3MTBkMGNhZTMxZmZiZDRkZTc3NzczODc2YzNlOGJhMWExOGMwM2JjZjgzYjllMGQwMDEwOGZlMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9eb13dcc1a9048099eec6a3f3404bdb4",
+      "statement": "Assignment and status actions use a ticket row lock and expected tracking_version check; successful assignment increments the version without status history, while successful status transition increments it and creates history.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Tickets/AssignTicket.php#L15-L32",
+          "version": "repo-lines-v1:sha256:0151125d110a403c0d8808247b3829f381cc34eb2d279568eccb9a76a2efd0cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NDhlYWFlMDMzMWQzNTE5ZjQ4Y2JhZGU2NjBhMzdiNDI2MmFhZjcyZWUzNWYzNzQ0YWQwOTBjZDRiZTE1MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OTY1ODYzYzJiNjgyNGY1ZTgyZDMwNWY5ZjMzMmE0ZTUyOGNiOGZjZDNhY2YzMzgyZjc4ZWVhNjdiNGNjMGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2NDZiYTU0NTZlMTlkODY3NDdmNDJjMjJmZjk4OTYyYWI3NWU2NjhkMGIyYjQ5N2U3OTFlNDM5ZTI3MDViZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhMjg2MzQ3ZmNlNmM1MTM4YTA0Y2FjNTMzOGU4MTFkOGJlNjY3ZTZhMzhjOTc5MDk0NzM2ZDg1YmQ1OGU2NzIifQ"
+        },
+        {
+          "resource": "repo://web/app/Actions/Tickets/TrackingVersion.php#L7-L15",
+          "version": "repo-lines-v1:sha256:601cde73656772a23f47466107cbad41f168c13d82187af6dda13976ee59a036:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNThkOGYwNjIwZDYyNDljNmEyOWQ0M2VhZmI4ZTJkMWRmM2NkODk0ZGYyZTI4MTYwYzlmOTUwYjU5MzBlMmJkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://web/app/Actions/Tickets/TransitionTicket.php#L15-L33",
+          "version": "repo-lines-v1:sha256:da86bd787683d6c8d7d72faa93545215368bae6243ae9ec7c2facb39ace0f889:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1ZGY1MDFkMGY0NzZkZGJjNzJjYzRmNTA2MmUwYmVlNTU1OGU3NzIzOTdjZmI3Y2Q0N2RjN2FiZjMzOGYxYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f28f0eed913842228948a17e80655df5",
+      "statement": "Ticket visibility for requesters is scoped to tickets whose requester_id is the current user's id, while the User model casts role to UserRole and hides credential fields.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Ticket.php#L29-L34",
+          "version": "repo-lines-v1:sha256:614105d82680b215dfa9d30d3fe971dea51cf0794ea5b6cc2b38d8378cc1d977:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYyNmVkNTQ5ZTI3MjEzM2MyYTExY2RkMTgzZGYyNmIyNjkwMTI4NDU1ZGYwMWFjNTg3YWE4MWY2ZWZmZDM2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2IzYTA1MWY0NjM1ZjIxM2ZhNjZlZTY2OTUwMDFiN2U3ODU0MDExOWRlNWY5OWI2ZjE2MjI5MjRhY2VkNGQwMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGYxYWFjMGY2NTNmMjljM2EyOTk1ZDU5MTdlNWNlNjIxMTE1YjQxMGJlM2Y5NGVhMjdmMTFlYzgwYWI2NzE2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2YyYmM1MTkzYzM0NGQwOTZiYTM4NTE5Y2RjZjNlZmNjMWRiN2FkZGVhYjYyNDFkOTMwMTg3OTZkNjM1MjA0OSJ9"
+        },
+        {
+          "resource": "repo://web/app/Models/User.php#L17-L20",
+          "version": "repo-lines-v1:sha256:831c361933044895660fca3744c061839f65b2fbcd15f2c88d083aef61ee736b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdiMjA3MzQ5ZGQ0ZmMxM2Q1MjhiNGZiMDBlMjBhYzQyNDE3ZDI2Mzg1YjI1MzgxNjQzZmI1MzRhYWFjMTBhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZhNmUzNzgwYTg3NDc1YTdiMmU2Njk4ZGUyZTc1ZWRiODUwNGMwNGE1OTQ4ZWQ0ZjM1NjFkMjFjMTJlOTRlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmU3YmU5Y2IzN2Y0ZDk0MTk1MWU4Mzc5ZjMwZDcyODQyNjRiNTZlZDYwMGRhMTZjZDQ1MDhhNWU4ZjQ1MjZkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzViN2ZlNjYwZGM1YjQ2NWYwMTcxMjJhZGQyYzk0MzczZGVhYjAwOWVlN2I2MWY1MTI4ZDdlMGE3NGZlMDkwYyJ9"
+        },
+        {
+          "resource": "repo://web/app/Models/User.php#L38-L48",
+          "version": "repo-lines-v1:sha256:ba68c510da299f14a4672d144f89e546b02c44a7a8b4151255607cf7295cf0df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNTA2NzJkNzI3MmUwNzA0OWFkN2JhNmY2YzQ0NGVkY2U1NDQzOTg0MzAzNzQ2NWE1NmY4Y2I3OWY3ODc3NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMGVjYzE1M2JmMTdjYmMzM2YxNzJjMWNiNjg1NDUzZmIzZjIzZTNkMjkxNWQ4OTM3M2RhNDgzYzdkMjgyYzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlMmI5ZTIxZmRjODZmYzJjMmVlNDQ3MjE4NWQ2NzY0NjdiZGQxY2JmMmUyNGI0ZGM2NDRhYjFhYmIzMzI1NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_533520e0dc774dd1b142d13d6495acac",
+      "statement": "Schema evolution adds sites and assets and then a nullable indexed asset_id to tickets, so asset linkage is optional for tickets created before that feature; this current schema supersedes the older README statement that sites and assets are intentionally absent.",
+      "evidence": [
+        {
+          "resource": "repo://web/README.md#L148-L160",
+          "version": "repo-lines-v1:sha256:d772150b8fb4a9e9e72013850a03944ca16725a8c6de2b228900742f5a6ac636:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NGY5OTBlNGQ5NzYzMDhmMDI0NGUzY2Q4MWZjMGNhN2IyM2I3OTZlZWNhMzQ3N2M4YjJlZGY5YzNjZGE4N2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmYTM1ZDFjYmQzMGVjNDQzOTUwNjFmOGIyYmFiMTdlMWUwYzc5YWM1MmRkYzViODFkZjkyOTkzOGNlNWI0NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzY2E0Nzg5YThhMDQyNjY0ZDFmOTVjOTc3OWQxNGM0OGMxMmY0MGRkMGRkMWNjZjgxODk1MTVhNzVmNWQ3NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkZjA0YmY5MDZmZTA5ZTAyNWRkOGViMGE0YWUyMmQ1YjkwM2I1NTY2Mzc3N2Q3MmE2NjFlODlhMzI0YjUyYjkifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000005_create_sites_and_assets.php#L11-L25",
+          "version": "repo-lines-v1:sha256:c38725fd1ade6657886be24352d5c3dda71167bbfd1b2b267b1d6b425df82133:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOWUxMzg5MGNjMWE5OTVkYzUwYjlkYzIwMzBkODkyMGI4YjkxMDhlMmVjOTAxZGNjYTViMTVlNTVmMWExMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMjU5NTNmNTRmNzBhY2RhMjJiNjU0NjFjOTk0Yjk2ZDk3YTM5YjNkN2ZhY2YzN2JkY2ExMWRmMGY2MWQwNWQifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000006_add_asset_to_tickets.php#L11-L20",
+          "version": "repo-lines-v1:sha256:9317be244019016fbe83b240627af06b404c9954c25c198afb9396ec7f676714:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxM2IwZTIzM2RhODNmMmZmMjExNDVhNjI5ZjM2MmJjY2FmYmM4ODc2OWE0MjBiMjI3YWI1OGE3M2ZjZmQ3ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljNDgwYjViMGVjMzBmMjRmZjEyOTAyYWFkMjcxNTRkYzBiY2M3Yzk0MmI1MjM3ZDE1NDcwNjlkMzIzZGYzMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllNjYyZjU5NTgyMjM4N2FkYjYxNGJhYWNlMDliNjU4M2Q4ZjU0YmY5ZWQwMGYzNzNmMjU3ZTJmZWJhMmU0OTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_555c6e5cdcb44c9c8655cf74dc0d9c85",
+      "statement": "The user-administration preparation migration normalizes existing emails inside a transaction, aborts when normalized duplicates exist, and only then creates and seeds the administration lock.",
+      "evidence": [
+        {
+          "resource": "repo://web/database/migrations/2026_11_16_000004_prepare_user_administration.php#L11-L29",
+          "version": "repo-lines-v1:sha256:874cddde8f33edfa29f5d61bea8fffd6166823257edf10698d06476bd03c8e25:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkM2FhMzFhMjQzMTc4NGFiNjYzZmQ0YWNhMGY2MTJmY2NiYTlkM2JmMWYzMGFlMmNmNmJkMzRjZWViYmZkM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1ZjRlMWQ2MGRjMDkyYTk2NGY2NjFhNmIzOWJlYjIxNGJiNGI5MmI0MDNhMzM2Y2NlYjIzMmYwYTliYjA5MjEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-18T11:00:29.223Z"
+  }
+}

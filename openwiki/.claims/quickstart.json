@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:db13205eef3a4dedf426cb9d9c0318d141735984c92dbdf51774c578f57f625c",
+  "claims": [
+    {
+      "id": "claim_92fe691200904e9ab327d2e6f1547be2",
+      "statement": "InfraTicket is a Laravel 13, Filament 5 application using PostgreSQL in its development Compose stack, with the Filament admin panel served at `/admin`.",
+      "evidence": [
+        {
+          "resource": "repo://web/AGENTS.md#L5-L8",
+          "version": "repo-lines-v1:sha256:d31da0256903740974f2466f89454f3448dbbab11372c56c5e2f51cfcf6ad589:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE0ZTM0ZWE3NWE4ZTY0YzBhYjFlOTAwYTZlMWYyZmFiNjZkOWRkOTMxYzMwNTQwNTg4NTBlMmJlNDU3NzFjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDkxNDE5YTNkN2M4N2ZjYjNlM2RlZDM1ZjI2MmQ1NjBmMmM2ZmM5ODE0YjkyMjM2NzQ3ZTQzY2YxMjk5MmUyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTk2ZDZhZjFmMTAyMTI0YjAyYjEwZDM4MTBlN2RhZjNlYzdiMTAyZGI3MzYzNjVkMjg4NjdhY2FhN2JhNTFmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODZhNjU2MzdhYzlkNTg2NDNiM2IxNmNmNjViN2VlMTRmM2UwNzZjYmMwNmVmYzJiYzlkZTk0Y2YyOTA5NzdkOCJ9"
+        },
+        {
+          "resource": "repo://web/composer.json#L8-L22",
+          "version": "repo-lines-v1:sha256:dd7cbd92d5014c1a5efccfd7f2d0315ce0893ec30e7de721f00f1b49bd72a755:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhNDU0YmRkNmUzYWVkOThiMjNlM2U4OTRmOGU5MzRjNmRmNGQ5NTAwMmEwYjk2ZjRmZjY4ZDQzYzViODYxZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhYzUzMWQ2MjRmNmEzMDY2OWU2YjRkNTAwNGUxMGJhMTliZDdjOGM4MjBmYTZlNDJkYmI5YTU5ODE3ZTkxMWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwZTJlY2YwMGMyM2VmYzgyNmUwODE0NTM2MDE4MTAyYWEwMjRmMWE0YzIwMzBiZDhmOTcyNDcxNWM4MGI1MWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhMzYzZjYzNjJmODQ5MTZkNjE1ZTBhNWE3NjgxM2Y2ZmI0ZmM0NDk1YTY0MWJlM2Y4ZTNkOGY5NDMwMjdhMDAifQ"
+        },
+        {
+          "resource": "repo://web/docker-compose.yml#L1-L36",
+          "version": "repo-lines-v1:sha256:51bed6209e971f296a3d1fe44450e8497f53b8ea99d875fa38ca73e90e454323:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkNThjYTEwMDczNTE4MDQ0NzE2YjA3NzdiMjhiYWNiY2I4MzU2NjM0M2NmNGRkOGE0ZTg0ZmI5NmI1YTY2MTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_92a74b13a07140a6903ce72aaa7e58de",
+      "statement": "The development Compose stack starts the app only after PostgreSQL passes its health check, exposes the app at port 8000, and persists PostgreSQL data and Composer dependencies in separate named volumes.",
+      "evidence": [
+        {
+          "resource": "repo://web/docker-compose.yml#L1-L39",
+          "version": "repo-lines-v1:sha256:37b839fed5ec8d28e676e51f23c1ba34395343a46568a2052324ca721e478619:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5MzQxMjgzOTc0MTcyY2QyZDgxNGExOGY4YjhlMWJhMGVhMWUxNDI5ZGY5OWQ5Y2ZlM2Y0ODAyY2RiZWVhZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_08ad391be44642b38324e14756be00b3",
+      "statement": "The app container's entrypoint installs Composer dependencies when the vendor autoloader is absent, creates `.env` from `.env.example` when needed, generates an application key, runs migrations and seeders, and starts Laravel on `0.0.0.0:8000` with `--no-reload` so the container database host is preserved.",
+      "evidence": [
+        {
+          "resource": "repo://web/docker/start.sh#L1-L25",
+          "version": "repo-lines-v1:sha256:e50f5faa708d7a9695f3528be0ea1be9662c4a9333f02419d64678c4c04feb97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MDc2ZDNkMjhkMjFlMDIwMTJiMjBlYWY3ZGJmNzU0MDlhNjI3NzEzNDQzOTAyNWYyODJlMzY4ZTMzMDVhYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4OGMzYjYyZDI3ODIyZGU0YjNlMTQzODRkNDhmMGExOTc3MTk1NjllYzBiMTk3ZjU3Nzg0NmQ0MzY5ZTI0ZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_33b5e7d89fb1473e97b702392f96b7fa",
+      "statement": "The repository directs agents to work from `web/`, use Docker or Podman Compose commands, avoid reading or modifying `.env`, and treat seeded demo credentials as development-only.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L50-L57",
+          "version": "repo-lines-v1:sha256:a174e082691e7d5af337517d20566ab2fcef837618484e59c0e0d24efcbf1144:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAwNmQwZjI5ZDlmOGEzOWYwMThiNTk2YmY1YjQyODJiNDc5NWVmMjExZmRmNThhZGIzNDg4ZTk2MTc3Y2E3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjhlYjgyZTI1ZWE2YThiOGRiYzk1OWQyODg0ZTEyNWU3NWU4MmE2ODY5MmMwYzg4ZmNjZjY4NThjZDQ1ZGMyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://web/AGENTS.md#L1-L8",
+          "version": "repo-lines-v1:sha256:f5e297646262574d311a0463b874290488e6509b87f47acc8db92bb9c7e4142d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQzZGJiOWE0NWRkNjQ1ODgwMjdjMTZmNDdhZjE4NTZmZjNlYmQwOGI4MjI2YTViMGViNDBhMzFlMjc4YmMwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDkxNDE5YTNkN2M4N2ZjYjNlM2RlZDM1ZjI2MmQ1NjBmMmM2ZmM5ODE0YjkyMjM2NzQ3ZTQzY2YxMjk5MmUyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODZhNjU2MzdhYzlkNTg2NDNiM2IxNmNmNjViN2VlMTRmM2UwNzZjYmMwNmVmYzJiYzlkZTk0Y2YyOTA5NzdkOCJ9"
+        },
+        {
+          "resource": "repo://web/AGENTS.md#L33-L41",
+          "version": "repo-lines-v1:sha256:9b1e3e1b87651d560c8469916819b433751d40ed0010a7bcda0ce13e610b00f0:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQ1MGFlZTllZGIzNzY5NWE2ZWVkZjgzZDBjMTliYTYyNjJlN2JkZGY2ZjYxNDk5ZmRkZjY2YjM5NmRlMTViMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmMzhiNTI2NTYyNDFlMmM2ODYxMDdkMzEyMTUyYjBiYzI2NTZmNTAzNjA0ODc2YWZiYzJjOTFlNWUyMDJmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDUzNzBlNjk2MTJjMDMyNTBhZGI4ZTBiNmUwOTdmMTA1YmY5YzFjMTEzMTBmZjVkNjYzMmYzMTE2MjUyYjdlNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e6b86b8450a4482e815f515d86be53de",
+      "statement": "The default PHPUnit configuration runs Unit and Feature suites against an in-memory SQLite database with a test-only application key and environment settings, so the ordinary test suite is isolated from development PostgreSQL data.",
+      "evidence": [
+        {
+          "resource": "repo://web/AGENTS.md#L24-L25",
+          "version": "repo-lines-v1:sha256:a1ffbe050f9d571061502a586011dc81e8d71a1e9647f7b99dea6a480e3867e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTE5OGU0ZDgzOTQzNzQzZTk2YWJmOTI0YmJmMjJlNmJiNTI1ZWYyZDMzMGUxNGJiYmRiOWNlM2UwNDAwMjNjZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2M2MTM0ZjNkZmI0MjliNTZiMDZjNDdiZTI2MzhhOWMwNDEwMzlkZWU3NDBjODg1OWM4Y2I0YjJiMTI4NTg3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTdiMmM0N2ZhZTNhOWE2Y2QxNjc1ZDg5ZTA4ZDFkZTNiYjQ1Mjk4MTZmMTZkMWQwMjM4YmUzY2U5MGNhMmM4NiJ9"
+        },
+        {
+          "resource": "repo://web/phpunit.xml#L5-L36",
+          "version": "repo-lines-v1:sha256:1e230c13ef474111f2bd55129255e91566b64543ee53a726c0f440fdb25af3c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5ZmZhZWM5MmVhNDJkYzVmMTZkNGY1YmY0OWYwMTgzZTU2OWQ0Yjg1NTFkOTkwYWQ1MWVmMTU1NmU4YjBmNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0MGE2N2QyMjI0OGY4ZTIxNzQ2NGE5M2Q2MGJjZmQ5YjBlMWY4YjlmMTEwYzI2ZTUzYWIyMjhhNzJmZjk3OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjYmYwY2I1M2JhOGZlY2M5NjZmZjRjM2Y3YmRiYjIzYTIzZDgwMDg3M2I4YTE5OTUwZGNjMDA3ZDBiMzU3ZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3NDVkODBmMjE5NDlmMTcwN2I4NWIzMDFhYWYwMDNmNmVjNDU0OWM1M2UxZjBiOTU1NTUyNDJmOTBjZTMwZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a5e0b9916c5400280546122c52a69c7",
+      "statement": "The optional PostgreSQL test environment is isolated by `compose.testing.yaml`, which uses a separate project composition, a disposable PostgreSQL data directory, and the explicitly named `infraticket_test` database.",
+      "evidence": [
+        {
+          "resource": "repo://web/README.md#L115-L133",
+          "version": "repo-lines-v1:sha256:c047d52a447c31637b96847429e04008e26349f383ddb16a4f18d0184c8c327b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5MzQ5NTRlZmQ3ZTliMWFkZTdhZDJhYWQwZTU3YTIzMTJlNjU2ZTIzMzI1YzE1OGQyNmYxM2YwZTY5ZDcxNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjY2Q2Yjc5NGJmZjI4NGFjYjRlZjJhNWE2MDQzMzY2Y2E3NzU5YjBiN2RlNWFkNGNhNzAzMTgxMWIyMTFmMzYifQ"
+        },
+        {
+          "resource": "repo://web/compose.testing.yaml#L1-L39",
+          "version": "repo-lines-v1:sha256:4b0889004d61c56ca3da24a2dce5ba8bc0a435b616e6fa895163aa9989b7b6d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNGU4MzdjZjQ2MzAwYzI4Y2JmOTI4YjFhYjhkMTAwMTMzNTVjZGFjM2NhODY3OTIzYzU5MTI0MWEwNWUxOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68e9bd27c09f4d44849043c375fde751",
+      "statement": "The repository provides focused feature-test coverage for login, ticket management and tracking, comments, user administration, sites and assets, migrations, and PostgreSQL behavior, and uses PHPUnit's `--filter` option for targeted execution.",
+      "evidence": [
+        {
+          "resource": "repo://web/AGENTS.md#L20-L25",
+          "version": "repo-lines-v1:sha256:4a6f142985f1f3e0ba341e8cc22283cb3f7a8f0ed2ff26f2dd6e2693cd23f790:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBiZjI1N2QzYmU2NzY1M2FmNmE1NjkxYzM2OTJiMDFhYjA2YmJjMzkwOGVmNWQ2MTc5ZmU4NDViOWUzOTFmNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTE5OGU0ZDgzOTQzNzQzZTk2YWJmOTI0YmJmMjJlNmJiNTI1ZWYyZDMzMGUxNGJiYmRiOWNlM2UwNDAwMjNjZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTRiNDUwYjA5NDhhZjJkOTkwNDJmMWM1YmFkNzk1NmY3MWJkNWYyNTk3M2IxNDQwZjY3MjI3MDExODQ4MjhhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTdiMmM0N2ZhZTNhOWE2Y2QxNjc1ZDg5ZTA4ZDFkZTNiYjQ1Mjk4MTZmMTZkMWQwMjM4YmUzY2U5MGNhMmM4NiJ9"
+        },
+        {
+          "resource": "repo://web/README.md#L91-L113",
+          "version": "repo-lines-v1:sha256:964a3c2dcec163d14bc5523120911e441f66202992d2fc170f642931c7033742:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3ZTk0ODk1NTQ0YTkyY2JmN2JlNjY3NGVkYzJhYWQxODJiYzI5YzEwZmZhM2Y2NjJhYTYwZjFhZDgwOWY0MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzYjYxMzIxMmI3MmE3ZGY2MTM2YzM1NDQ2NzlhMDQ3MWY1NDkyZGE0MTQyNmU4ZGI2ZDU0NjYxNmUzMTk2YmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlNGU2YmJlMjlhODgyN2M2NDkzMWQ0YjY3MTNkMzdkNDg3NTE1N2JjZDVlMjlhMDZjYzk3YWQ5ZWNmNWQ2Y2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0YTBkOGYxMmYzOGMyNThhMDI0MjU4M2U1YzBjOTg3MjBmN2Q5OGM3YjE4NjMzNzczYmQ5MDA0ZTFlNzRlZTUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/AdminLoginTest.php#L1-L20",
+          "version": "repo-lines-v1:sha256:69190418ba56b917b2fa4e03cf7b28fdb865ac4da9eb100919b0d41d36918d68:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYWJhMzkyOGNkNjIyYWQ2N2MwZjgxZWNkNWFhODY5OWUwN2Y4ZjQ5MDhjMDQ1ZmUzNGY2YTJkYzAwNjdiMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViMzAyMDc1Y2UwMTI0YmY5MTBlOWZjZDIzZGVkNGVhNzVjOWE5ZmE4YjY4NDIyNmYxMzkyYjBiNzA1ZmVjYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyMjVkZmU3YmUwNzBlMTg2NDUzZWYwMzRmOGVlMjVmYThhNDE5NWQ1MmExMWUxZTgxYjZiMzMxMTk4OTdkMTAifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketTrackingTest.php#L1-L20",
+          "version": "repo-lines-v1:sha256:7fbc6c7a41bdfbe0d45fe9f08619f81274f3027c2e1bc609a40d6b3ba8965442:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYWJhMzkyOGNkNjIyYWQ2N2MwZjgxZWNkNWFhODY5OWUwN2Y4ZjQ5MDhjMDQ1ZmUzNGY2YTJkYzAwNjdiMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOGM0MTQwYzc5NzkxYWNjZjE2OWMwMTAxZTJmNmNmMDVlY2FhMWRjZjk0NTJmNGViNTFjOGVlMjNjZDAxZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlMGZhNWFjMGIwYWU1NDkzNWI5OWQ0OTgxZDhjMDhkZTg1OGNkNDY5MmE3ZDI3MTMzYmJlNjU2YTk3ODIzZGQifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/UserManagementTest.php#L1-L20",
+          "version": "repo-lines-v1:sha256:0041d4040abb1a98ae5a1441e48561b4095235b6dfc97c2e6793d27d9601c1fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYWJhMzkyOGNkNjIyYWQ2N2MwZjgxZWNkNWFhODY5OWUwN2Y4ZjQ5MDhjMDQ1ZmUzNGY2YTJkYzAwNjdiMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjMDljMmMzODhkOWJhYmYxNzNiYjhiNDQ5ODg0NjA2OWMwZWRkMjUzOGU5YjQyNzU4NWMzM2E3NDE3NmY5MTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_258298f74beb403f821d999e1eead3b0",
+      "statement": "The currently documented application includes the admin panel, role-based users, ticket creation and visibility, assignment, status history, and comments, while panel user management, sites, assets, and a count widget are identified as not yet present in the baseline feature set.",
+      "evidence": [
+        {
+          "resource": "repo://web/README.md#L145-L164",
+          "version": "repo-lines-v1:sha256:b2b3fd63757a957cc727be4ebdd29bcad89588fcb58b029052cd60527f253c6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYmIwZWE4MDM0Zjc1ODJjZjlmZDEzNGUyZTRjOTZjMzk1MmVjODRiZjU2MWVjMTRmNmZkMmU0MTE0OGQzYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2Y2Y0ZjkzZDQ1NzE3ZTZkN2M3YmJlNjQ4NzllZjA1MDg2MDdkN2NkMDE2OTAyYzAwMmUwMmJmMjIxNjc1MGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhNTE1MjNhZjkwMTEzNzAxM2FlMzQ1YTFiMmRjMDMyMWZmY2Y2OGExYmE2NzU3N2ZjYjU4MThjNjliNzlkOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2MGM2MmM3YmM1NDMyMjBjOWEyMjBlOTc3ZDE3ZmI1MDg1MmZlMWRkMTQyMjY3YjJiZWM4OTAwOTJmZjIzZjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1cbdb620bf54296b252f64fa6f8bb5e",
+      "statement": "Composer's project scripts provide container-compatible setup, testing, and development workflows: setup installs dependencies, creates the environment from `.env.example`, generates a key, and migrates with seed data; test clears configuration and runs the test suite.",
+      "evidence": [
+        {
+          "resource": "repo://web/composer.json#L36-L58",
+          "version": "repo-lines-v1:sha256:90505c8b0b2db856544536dc793ed3175df20f7d61272eea59391c709238ee45:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiZTk2ZWJhM2JjNGZhODcxNGM3NDlmNzBkOGM0ODI2ODRiNGQzMzM3ODNkMGI0YWU2NzViYzhjYTY5MzNhY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiMzllMTZkY2I1YTAyODlmMTQ0MGJiMGNmOGQ1MmRiZTU4MWQyYWI2N2IzNmIzNDQwZWRmZjRmMWRmOGFlNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NjE4YmJiZGQ3ZTlkZWZkMjRmZDVjNjYxNzQ1MjVkNTJlYzU0OGMwMGMyZDg1Mzk1YWIxYzY4ZjcyZjFlYTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0ZTgwNmM4YzA5MjAxZTdmNDBkYzM4NzRhNjhlODZhMDRjZDEzNjg5ZGQyZTExNzA4YWY5YjdmMWNiYjZmY2YifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-18T11:00:29.223Z"
+  }
+}

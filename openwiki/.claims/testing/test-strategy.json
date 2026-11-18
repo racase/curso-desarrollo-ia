@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b2fb2e1ab488aefe732abfa0c5adaf849267fef4e131b5425a628d3993b65c5c",
+  "claims": [
+    {
+      "id": "claim_e5e54d3993aa4ad18a909d1e9ac1efd9",
+      "statement": "The PHPUnit configuration defines Unit and Feature suites, uses an in-memory SQLite database by default, and sets testing-safe array cache and synchronous queue settings.",
+      "evidence": [
+        {
+          "resource": "repo://web/phpunit.xml#L7-L37",
+          "version": "repo-lines-v1:sha256:d15017fd57622ccd0807bbe437f916f6941fda8f2c52fa00c7634728c381fc58:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiNDVhMDU1ZmU3N2FiNjIwNzNkNmE2ZGI4Y2FiYWRjN2U2MjI1YmZkNDIyYmM0YjFkMmJlOTllYzVmZDdjOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NDVkODBmMjE5NDlmMTcwN2I4NWIzMDFhYWYwMDNmNmVjNDU0OWM1M2UxZjBiOTU1NTUyNDJmOTBjZTMwZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlYWVhMWI4OGI4ZDQzYzAyYzk4OTU2N2ExNzcxMTI3OTBjZDkzMDhkNmJkY2JkMGI0YzgyM2NkNmFmZGE0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_031f94b0b7974c99aa990921d298242e",
+      "statement": "The base test case loads a deliberately nonexistent testing environment file, so tests use explicit PHPUnit/container settings rather than local environment files.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/TestCase.php#L9-L19",
+          "version": "repo-lines-v1:sha256:0f2a96e3b24c4b2c859e0837a1795e7451cf94b36f920c87a24a8ac7841fd3b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllNzhmMzI4NGMzZGU4MWJlN2MwZWRmZTBmYTQxYTQ0ODA3NTIxZDc5ZjlhNjkwYTRjNjJkZGM2ODZlYmM5NWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwZjJhNGVjZmI3MDA3NjFmNjg1YzI2MzU0MzViNGE0YmM0MDg0OGJkNTU0ZWEyZmJkYWZhMDhkZjBjNTM3NWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3MjBlM2YwNTdmYTM0MDRlZWNhNTRlM2Y4NTdhZDVjOTE1NTI3NGU5OWEwNDQ2NTMzZTUxMTAxNGVmM2E4YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a69a835ee1684a74bbfa21d873ea645d",
+      "statement": "The default feature suite uses RefreshDatabase and behavior-focused tests to verify admin authentication, ticket authorization and visibility, lifecycle transitions, Livewire/Filament actions, and history behavior.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/AdminLoginTest.php#L15-L74",
+          "version": "repo-lines-v1:sha256:9434cfc008781a0211d07bdd6f00bf067a0aa84b9bfd772e7d74ddfd2ee70e4d:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0ZTg4N2M0NDViYjZhM2MwZDE3YjM2ODljOGUyYjU1MWM1NjM1MTE1YjhhMjE4YmE4MTM5MDEwM2JmMTQyMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketManagementTest.php#L18-L111",
+          "version": "repo-lines-v1:sha256:0446aa0eca04189544380f0af1b95f956db014a6fd220b19daf4aa8fc4e871d1:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMmU5OWQ1YTEzNzE0ZTViNmNmYTFjZWEzNjk3NjU2MTAwNDVlYWIxNWQ2ZGFjOTAwMTY0OGQ2NjAxYTA3MGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MmE2MTIwYTlkOTc4ZjRkNjAwODVjY2NiYzg4MDlhZmFjYTRkOWNjZWY3MTBiZjI3NzEzNWNlYmNmYjNiODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketResourceTest.php#L29-L143",
+          "version": "repo-lines-v1:sha256:f1abe95c2af52ad78cf0546ddb646bdb4b739ca8ea41d0a444f2ba385887ee51:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1MGZlMTE3YWIwZmQ2YjIwYWY1ZjE5ZGIwMWFhZGEzNzdkMTA3NDk3NzE0ZmU1Y2UxN2IzYzg4YjU1ZWRhOWIxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkMGY1MzY0NzNiYjYxZWRkY2M1MTExNzU2OGRiMzk3ZDIwYWJhYTA3NDgxNzQ3YzMyZmE3NjVhMGU4NzZlNWJjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIn0"
+        },
+        {
+          "resource": "repo://web/tests/Feature/TicketTrackingTest.php#L19-L151",
+          "version": "repo-lines-v1:sha256:21fc4664618695efaeb8a301c84335648bbfe7257c3adf5ad2b95716ba8edad8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNmZiMDhmZGExYWNiOTU3YjYxMTZiZDM3ODExYTFmZTQxYTAxNjExYzA2MzFlZGJmNzg2ZDY4ODlhMjdhNTVjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyYmU0NTRlNmViMmUzOTU3YTIyOTk2NTU5MzFjZGQxYzA2MWFlZmE2Y2FiNDFjMDg0NGJiNTc4ZmRkNDliYjYxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3OTcyODQyMzc2MDZlODFiMzFlNzY1OTZjMTZjMWZhMWJmNWQ3NWJjNjc4MjAxODdiOWY3ZWU3MzI4M2NhYTExIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MiwiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzNzk0ZDAyYTgxMjE5NDRkMTc2ZDI2NWU5YmI5Y2M1OWY2YWI4OTBiY2FkZjhhZWZkZWJkYmJiNGYyZWE4NDQ0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_23cd55f52b1c491091ebbdd5323b5839",
+      "statement": "SQLite migration tests verify reset and reapply behavior, safe rejection of case-insensitive email collisions without changing accounts, and preservation and reversibility of legacy tickets when asset_id is added.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/AdministrationMigrationsTest.php#L15-L57",
+          "version": "repo-lines-v1:sha256:35cddfb09a60ea372067882e6f8559d0c6508ca0722b6035a5b2c4ef8dea7cc9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOGM0MTQwYzc5NzkxYWNjZjE2OWMwMTAxZTJmNmNmMDVlY2FhMWRjZjk0NTJmNGViNTFjOGVlMjNjZDAxZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxZTc5NDNkMDZlZTQ1NzU1NTRjMWNiMjQ4MTk4NjExODNkOGUxZTYyN2QwMTc1MjBmMzU5MmYzZmQxOWQ1ZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyMzNhNGI1NzgwNTg3OTk4ZmZmN2U1Y2E4NTc4OGFmZDU0NDQ2OGFmMjVlMGJlMjE2MzVlM2ZhMWMwZDNjYjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68881b817c354e2699745d4c35009d30",
+      "statement": "PostgreSQL tests are skipped when PG_TEST_HOST is absent, configure an isolated pgsql connection, and reset that database with migrate:fresh before each test.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/PostgresAdministrationTest.php#L19-L27",
+          "version": "repo-lines-v1:sha256:843828313b517c368e0d1a5269397e5e563577fdd6afa10f0798ce19034bac7a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjYwMDA3YTdlOTI2MGIzN2EwMjA2NjRjYTlhODcxYmMwY2Q4MDlmZjBhMWVmZWFjNTg2MmY0OThkN2RlMjM5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWEwM2JjYWExMTMwOGRhYmY5ZGI1MWViNzQ0YWRkNzkwN2RkNGQ1ZGVhMTBiOGE3MjhkYjEwNTcwMzAwZmY2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5MjExZGZkZjYxNjU3YzU1NWRlODViNmZjYzA3MGMzMGU0ZjljNDdmOTQwNDM1MTZhNGNkMzkzZGUxMzU0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTUyMDBlZDkyNWNkNTA5YzE1ZTk2ZTBlYzRkMWQxMDliYWYwZjc2ZDkxOThmMTA0MzJiNTRmYmJkMTAzYzJlYyJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/PostgresTicketTest.php#L19-L27",
+          "version": "repo-lines-v1:sha256:b377438b102b099927df8322e5b1fc02187cf196fc9fd3b7a7333d0dbb5e85e6:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJiNjI3ZjA4NTJmY2VlZWE1NTAyMjJmYzVmNzkzMDZlOTFmZWUwOWZjNjM3ZmJiOTAyYmRhMjQxNTI5MGM4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTk5NGVhOTUyYWM5NGM3MjI1NDI5NTc2NmQ5NjllNTc1YmI0NTI3YTUwNDFmNTkzNDZjZjMxZTI5NzkzYmQxZiJ9"
+        },
+        {
+          "resource": "repo://web/tests/Support/PostgresTestDatabase.php#L7-L22",
+          "version": "repo-lines-v1:sha256:7f48c82bad5fc1828475cc389ba394356fc6a8351effa96a67356f4791bcae10:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwMzc3OGMwODNmZmVkNTQwYmI1MTEwYWJlMDNjNWIyODg4ZTcyYzg5ZDNjZjQxZDE4MTkxOGNkNDI4NjAzMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3MGFiYmM3ZTJkOGMyOWUxZjJkZmYxZTM3MGNmNmEyMGQ1ZWUzZmVlN2FmYWU0Y2NiYmFhMDA1MWQ4NzVkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d824c2f69591466a87bad3842003529a",
+      "statement": "The PostgreSQL test database contract requires PG_TEST_HOST and the exact database name infraticket_test; the Compose test environment supplies that database, credentials, and a disposable PostgreSQL 16 service.",
+      "evidence": [
+        {
+          "resource": "repo://web/compose.testing.yaml#L13-L38",
+          "version": "repo-lines-v1:sha256:00f74ce431a5219b6791c624ecf5a8dadcc078136b1f5306db3659dca41cccbb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkOTJlZmNjNDA3MWM4Y2ZjNjk5YjRmMGJjMDI3ZTFiYzg5NmJmZTljMmEwMDExYzFmMWNhNmE4YTYyYWQ0NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1ZTUxMDAzMWIzZDVjZmY4NjhiOTlhMjc1ZGQyNGQ3MmU0NWNiNTA2YjNjNGY1ODljZDA4ZGQ4MGU5ZmIyZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjODE0MmQ5MDBhM2ZjYTQzMGU2ZjYwYjVlMDdiYjliZjk1NWUzNTQ3ODAwMGZmNDgyNTE2NzZhMjU3Y2JlYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyNGU4MzdjZjQ2MzAwYzI4Y2JmOTI4YjFhYjhkMTAwMTMzNTVjZGFjM2NhODY3OTIzYzU5MTI0MWEwNWUxOGYifQ"
+        },
+        {
+          "resource": "repo://web/tests/Support/PostgresTestDatabase.php#L7-L16",
+          "version": "repo-lines-v1:sha256:de96b6f528b04b2678f9a227bf16f7cfbe09134f5ab06a946530e6e9736b8f02:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwMzc3OGMwODNmZmVkNTQwYmI1MTEwYWJlMDNjNWIyODg4ZTcyYzg5ZDNjZjQxZDE4MTkxOGNkNDI4NjAzMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5OTI4Y2YxYmNiMmQ2YmM1NzQwMTgwMDJmZTIzNGU1NzhkYmViZWJmYWUwNWMyM2EzNjFhNDRhNTVhZjQyMDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3MGFiYmM3ZTJkOGMyOWUxZjJkZmYxZTM3MGNmNmEyMGQ1ZWUzZmVlN2FmYWU0Y2NiYmFhMDA1MWQ4NzVkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzMmUwNzBlMGIyYWFjNjg4ODBhMDQwOWJhMWU3YWUxYTA2MTNmNGQwYzEwMjdhMDY4ZjBiMGExYThlMmMwMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f642085387d24b2483f8e33b54276164",
+      "statement": "The PostgreSQL ticket race tests use separate worker processes and lock observation to verify stale tracking versions cannot overwrite transitions or assignments, closing prevents concurrent comment publication, and the complete role workflow preserves expected history, comments, visibility, and denied abilities.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/PostgresTicketTest.php#L38-L83",
+          "version": "repo-lines-v1:sha256:53d39ec52d04f1dfb0f115da8d9eb3571d780193b1996c04bb249bdf8aaaae27:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4NzhhMDdmNWU3MGFhMjU1NTZlYTAwYWVkZmVhNGRmOWVmOTllZTg2ZDI3NDI3NWUwM2I3ZTk3YjRmY2FkNDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyMTI1ODBlNjUzN2VmNDRhZjBmN2VjOWI2ZDA5YmMxOGY5YWYwNDA2MDk1NzM2YWFiMWY2MDM2YjA0MjRkYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1NTFkNzE3Y2Q0NDJmMGNhYTlhMmM3MTk0OGI2ZjYxZDdkYjQyMmY0NDZhNWYzODBjYjlhNDFhYTgwODkyOWQifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/PostgresTicketTest.php#L85-L137",
+          "version": "repo-lines-v1:sha256:5ad2eac17b8a471acdb3ec9f7227568b5f6fcb5d2fd1aa5c5e635cf20a933233:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmZDEyZTQ5MzU5NTU1NDdkZWUzMTVhYWE3YWY1N2Q1NThjNmVlNmUwZjg1M2JjYzFiYWU4MDNiZTZjZjdhYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4Y2Y4ZjBmMmUxMDBiYjQ3ZGNlZGNjMGQ3YmZlYmI5OThlMTliZjc0YWUyNjMxYTQyNTEwMmFiNjM0ZDcyMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Support/ticket-worker.php#L14-L32",
+          "version": "repo-lines-v1:sha256:e63727691d4eb1a016a1287c8b2aaaa7be137fed12256fc8b9a48d81cbc1f430:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyMTFlZWFjY2UwOGM0NDdlMjRiOGI5YWU0YjkxNTIwYTMwODcxZmMyYzBiMDFkMmZkNjM5ZWQxNWE5NDQ1YTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3NTdiMTE5ODhhYzBmNTAzZDc2NWIzMDI5M2UwY2M5ZjE0YWJiYTBmNTIxZDQ5MTk1M2QwNjEwYzE1NzNiNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c90cd637c2ad4104a1c71d979a812179",
+      "statement": "The PostgreSQL administration race tests protect the last administrator, reject assignments invalidated by role changes, and prevent asset deletion races from producing partial tickets or losing existing references.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/PostgresAdministrationTest.php#L78-L153",
+          "version": "repo-lines-v1:sha256:15b4b15742f01fdf0fc30bd50f90ec7e1697c02d3f069b4d5e9f17a48521d57b:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlNjAxZDk5OTFiYmQ2OGU3YzM2NDM1ZTNkODA2YjViYjE4NWE4OTA5Zjc2YTgxY2NkYTAwYjg2MDk5MWMxOTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2MTEzNjBmZjkzYTU1NDQwOGU1OWI1MDYzMjRlNzJlNzJjOTJhOTdjOGJhMGI4OTk2NjZhOTQ3MzViNzlkYTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3MjVjMmQ1ZDZhMzQyNjZjNjQyZmQxZTZlODhlMDYwNjFlYWEzNzUxMWJkNzJjMzc2Yjk1YTQ0MDA0MGMzN2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7d55fa2209c42fca73f57ef14a870ff",
+      "statement": "The repository requires running Laravel Pint after modifying PHP, and its documented test commands run from the web directory.",
+      "evidence": [
+        {
+          "resource": "repo://web/AGENTS.md#L12-L25",
+          "version": "repo-lines-v1:sha256:12fe7760181d3c69f4c9f2452a61b531e9db7d0a713a2bd1ba1bc3f18bceb612:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkNWNmZWMwOTYyMjIwM2YzNTdkOGI1OGU5NDhmY2FlYzRhZmQxNDBmZTQ0ZDg2MWNhNjcyZjc2Zjk2OTQ3MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxOThlNGQ4Mzk0Mzc0M2U5NmFiZjkyNGJiZjIyZTZiYjUyNWVmMmQzMzBlMTRiYmJkYjljZTNlMDQwMDIzY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2YTY1NjM3YWM5ZDU4NjQzYjNiMTZjZjY1YjdlZTE0ZjNlMDc2Y2JjMDZlZmMyYmM5ZGU5NGNmMjkwOTc3ZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3YjJjNDdmYWUzYTlhNmNkMTY3NWQ4OWUwOGQxZGUzYmI0NTI5ODE2ZjE2ZDFkMDIzOGJlM2NlOTBjYTJjODYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-18T11:00:29.223Z"
+  }
+}

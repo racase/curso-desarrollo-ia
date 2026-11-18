@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ba03ba5ff84664bfb92e9e1c26ed7b3c0171658afd7f754543bb0e1fa4f33d28",
+  "claims": [
+    {
+      "id": "claim_0818151978174d41b9cd3542ae3b6c0c",
+      "statement": "The Filament administration exposes user, site, and asset resources with list, create, view, and edit pages; users are navigation-visible only when their policy permits viewing users, while site and asset policies allow authenticated users to view records and restrict create, update, and delete operations to administrators, with bulk deletion disabled.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Filament/Resources/Assets/AssetResource.php#L13-L55",
+          "version": "repo-lines-v1:sha256:9e8ea5c358a64da0115ad5f37efd6af9077d18cd70ded26c64c021ea63cd1b48:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzZjE4YzllNDk4NmVmZjNiODliM2I0MTczZmM0ZDU1MmQ5YmJiMTk2M2U3MGRmYWFiNzQ4MTFiY2FjNDg4ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3MmVlMDhiYzkzMGVkMzJjMDlhOWRlMmFjY2FhMzg3MGYyMzE1YTE0YzYxOGZkZmM2N2I1YjI3ZTEyOGViODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Sites/SiteResource.php#L13-L54",
+          "version": "repo-lines-v1:sha256:3a541184d6ec7cff09b71ac56435a940cbe26e6126b5ce7b2b39275e582032b7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzZjE4YzllNDk4NmVmZjNiODliM2I0MTczZmM0ZDU1MmQ5YmJiMTk2M2U3MGRmYWFiNzQ4MTFiY2FjNDg4ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3MmVlMDhiYzkzMGVkMzJjMDlhOWRlMmFjY2FhMzg3MGYyMzE1YTE0YzYxOGZkZmM2N2I1YjI3ZTEyOGViODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Users/UserResource.php#L13-L60",
+          "version": "repo-lines-v1:sha256:6724d0512d384bf4c7a37e96328d14a6f1dcd8244a268cce52be297da33a76e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzZjE4YzllNDk4NmVmZjNiODliM2I0MTczZmM0ZDU1MmQ5YmJiMTk2M2U3MGRmYWFiNzQ4MTFiY2FjNDg4ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3MmVlMDhiYzkzMGVkMzJjMDlhOWRlMmFjY2FhMzg3MGYyMzE1YTE0YzYxOGZkZmM2N2I1YjI3ZTEyOGViODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/AssetPolicy.php#L8-L40",
+          "version": "repo-lines-v1:sha256:c669119fa4f266eef1f76b0605efdec2e5b3f744e04be77848c272f7509a1f0f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxYWY2YTEyZjhmOGVmM2E2Y2Q3ODI0Y2FlYWUzOTdjN2ZlMWYxNThkYzU5ZWIwNjRjYWRhMmMyNTQxZmU0NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/SitePolicy.php#L8-L40",
+          "version": "repo-lines-v1:sha256:dc857a5ff29c2985c275db1a806b58347c94932e4099e17948a6ff8222a8588a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1OTFkNjY1NmI3MDZjMGIzZGQ5ZDg0YTEzM2NkNDE2ZGQ3NjE5NmY4YzYyYmQxZDQ5ODRiMjI1ZjcyNzY4NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/UserPolicy.php#L8-L39",
+          "version": "repo-lines-v1:sha256:dabdd004a9739074fb1e9869a18071db1ad93a4d57dd53ed171cf0ed14cb226b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTM5ZDY4Y2UxNDU0M2QwNjc0OWFlZjI3NjIxOTc2MGMxN2JlNWViNmRmNTY3ZmYxMGJmZDdlNTg3NDdiMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhYTU3ZDhiNzY0NjQ0MTlmYzA1NDgzNzE4OWVmN2M4OTc3ODg5N2I4YWFjYTg1ZTM4ODcyZDUyZmYyZTBiNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4f45f457d68490aa374d9d5f72aa614",
+      "statement": "Sites have many assets; assets belong to a site and have many tickets, and an asset label includes its site's name.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Asset.php#L8-L30",
+          "version": "repo-lines-v1:sha256:d8a43035a5dc9aa56dc56cf5e30a5234766af4106a7eea1ab633c63bf4ddafb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1MGFiZmJlZmZhZWJhN2MyNGYxM2EyMWYwZGFjNmViYjEzZmY5MjI0NDlhYWNhYTkwNTQ5NTk2MmViZjZkYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4ZDgxZTc5MGY5MmRhZGY4Nzc3OTU3MTE2Y2VjMzY2ZjgzYzQ0NzE4MzJlNzlkMWM1OWU0YTA1MmYzMGM2YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/Site.php#L8-L18",
+          "version": "repo-lines-v1:sha256:f475c80b827f5dfc3b5f477898fa180550f678629529a9cbf114aa694917d1ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyMDE2M2MxZDc3NjVlOWMwZTg5ZTc3YWJmOTgwZmMwMGViYTQwY2FkZTM5MjhmNjU0MDNiNDNhNzU1ZWRhYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fef15dc199c490189d907d7ada03b2c",
+      "statement": "Catalog saves run in transactions, reload existing records with row locks, authorize create or update through the actor's Gate, normalize codes and names, enforce unique code and required fields, require assets to reference an existing site, and recheck the selected site before saving.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Catalog/SaveCatalogRecord.php#L12-L58",
+          "version": "repo-lines-v1:sha256:f1d8d3590de63a092ac9a0c27becf704afc58d737f3c8b73d154788d193e3c39:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzYTJkZjA1YWFmZTAzYjkxMDg0YmQ3YTFjNmNhZjgzMGQ0MzQ0ZWM5ZWFlMTNjOWYzOTZhYzA4YmFmNTQyOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxOGY5YmEwOWU5Y2UwNDUxODhlNWY4ZjExNjg3ZTA5ZDlkNjI1ZjNkZmExNTEyYjE2MDkwMTIwMzNhYjI3NGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/SitesAndAssetsTest.php#L17-L38",
+          "version": "repo-lines-v1:sha256:a4a0cd2529a945e8a7171978b0ab464b60a188ec2cb750e70597cc91ecbace10:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMjUzN2JkMzkyZDAxNzkzMWRlOWQ1MjRhYjRkMWQ1Yjc4YTc1YWU2OGMwZDllOTRkNTg2NDA2ZjhjNTg2MDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczODllNDA1NTk1MmZhNjI5OTk3MmJlZjIyOWVmOGJiMjY3ZDU3N2Y4MGVlNDFhOGE5YTJjYzJlN2I2YjJlMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwNDdlZWE2ZTI3N2YzODExOTlmMjNkODdmYWJiYjY2MGQ5Mzg0OWI4M2EwZjIwMjMwM2I5YThjZTIxMTkxOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_16bd134fb2214ac3b908f21d636f3e8c",
+      "statement": "Catalog deletion runs transactionally, locks and reloads the record, authorizes deletion, refuses sites with assets and assets with tickets, and converts relevant foreign-key or integrity failures into validation errors rather than cascading deletion.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Catalog/DeleteCatalogRecord.php#L12-L34",
+          "version": "repo-lines-v1:sha256:ceada9422dbbcd3f1f0a580aa649caa4f1251716d65c5c773f8e88b8fd9e3a66:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4ZDllMzZjZWU2OTdmZmYxZTBhMWY5NDVkMjkwN2Y4YjRjYTJlZjM5MWQ1YTU4NzEzYWI2YWQzOTc4MjhiYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/Asset.php#L18-L23",
+          "version": "repo-lines-v1:sha256:0165070b2cdf96ad5a23c0a0c973cb8314d523098581ee8413656e2d89edd332:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBjZjg5ZTBiZTk0MWNkYjlmNWY5YThmNDBjNDZlNTRhM2I2MDQ5M2IzYmQ3MmRlODhkM2UyMGI3YTM0Y2Q0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDRiMGM0YmNjNWUzYjg3M2RiNjA3Y2VjOWRlMTczNzRlZGZhNDFmMDUwOTM4ZjA1N2I3NDA4YzYwNTQxZWFkYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRjMjE4ZDI3MDhkZmY0MjcyYmYxZWM2MjQ5ZjE4OTJiODQ3MzMzZjlmZjNmZGJlNzFiZDRiZmQyNGRhMWRiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA1MDY3OTIyNzFhMzQ3OWQ0OGEzYWU4NjI2NTMyNjEzOWE2OTgyZjY0ZTg1YTYwZGY2Y2FjZGUwZTI0NjZmNCJ9"
+        },
+        {
+          "resource": "repo://web/app/Models/Site.php#L12-L16",
+          "version": "repo-lines-v1:sha256:910ac9990ae640e2540fc03a8b78438f05a43862d67cff583c3a893078ff6072:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTg5MWJmZjdhYzFmN2NlYWFlNDBlZjA1MTA2NmJlOWVmZTQ3YjRlNDI4MWU4NmMzMTliZTJjNTVlYmNlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmZmZGIxMGQ5OWVmMzYxNGZhZjdlYzljN2RkNDg1YjI3NzhkMTkzNDkwYjU4YzZiZTdjZGMxYzY0NzM3MWZlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGU0MDY5ZWIyMTM0NzBjOWFmMzA5YjVkNmFiYWNiODYwYjkxNWMzYWZjMGE5ODVhYWIwOTVkNDA0ZmYxZThjOCJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/SitesAndAssetsTest.php#L40-L59",
+          "version": "repo-lines-v1:sha256:6477ff033fd966a94d95f11fbd6d041cd8dfc73ed6615f1d71cccbfa0999411b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMWNhYzNjZGQzZTgyZmE1ODcxMmI0OGE3MjZhZGFlYjZkYWQzMTUzY2I2MmEwMmJiZmRkZmY2MDhkN2UwNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNWE5ZDcyM2I2ODA2NDFkZjAyZTRjOWVlMjIxMTBhMGQzZTUxZjZlMmUwYTVjNDBiMzYyY2EzZDIxOWJmN2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3ZTRhMmFkMzIxYjlkNWIzNTE3ODhhNGU1MDQxMmY2OTlkY2JjNzI3OTY5NDI3NDllZTgyMGE5M2YyMmE5ZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhYjVjZDNmOGRjOGMzNTRjZjQ2NDRhN2NlNzNhMTYzYTM4MmQ5M2E4NzE2OTdmZTI4NjA1Y2IzZWY2ZjQzZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_13259b30a74245e8925d6c001db393d2",
+      "statement": "User mutations execute in transactions under the named users administration row lock, reload the actor and target users, and authorize through UserPolicy; this prevents a stale actor snapshot from authorizing an operation after the actor's role changes.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Users/CreateUser.php#L10-L18",
+          "version": "repo-lines-v1:sha256:966cb0e2090451f6e6b519c1bc407539500ae769a239271c1137879c3a0b9ab9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTljMTM1OTA2NjU2MzIzZDFjNWVhNDE2NTRlZTY2YWZiNTg1YWNkY2ZhZWFjYTEyMWQ1ZTMwYmYxOTNlZWRkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTlmODQ1NmU3NTk0YmZkOTE0NTg0MTE2ZDI1MTNlZjU1MDRkNzJiODJkMzJjYWYxYmFkYTU3NDY1MDY0YjNlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5NGQwMmE4MTIxOTQ0ZDE3NmQyNjVlOWJiOWNjNTlmNmFiODkwYmNhZGY4YWVmZGViZGJiYjRmMmVhODQ0NCJ9"
+        },
+        {
+          "resource": "repo://web/app/Actions/Users/DeleteUser.php#L16-L29",
+          "version": "repo-lines-v1:sha256:ee87efb4149e7e1cdde1864dc0292e8bc92863a24cbd506824b6473e31fbe510:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5N2QyMzk4MDNkNmVlYTA3YzBlOGMzOGYyZmU2MjkxNjY4M2IwM2Q3MDAyZmVhYjViODEwZjIxYTgzYmMyM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwOWIzYmUyMzRmNDM0YWQ4OTg5NGQ4MGYxNmU2OTkwNmQyMDA4OGFjYWYyNWU4ZGExZGU1ZmFmYmFjZjE1OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlM2Y1ZWI0Yzc4OTU3OTA1OTg1NDJkMGE0MzZmMmMzOGY5MDA1NjRhODJmNzRmMzVhNjVlZDg1NjEwNWI0YjMifQ"
+        },
+        {
+          "resource": "repo://web/app/Actions/Users/UpdateUser.php#L13-L24",
+          "version": "repo-lines-v1:sha256:05a68ae4148c81f054748a3d8796ed358f0c5e5858e13bb64f0ff39c6dd22d2b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkODQwNGVkMjNlN2FhNTkzNDgzNTVjNmNlMmJkY2VlY2NiYjdlODIxZWUyNjVmMDcyOTUzMzZhNzU4NjFlYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhODdlZmY2ZDBhZTJhODBhMzlhZDQxNDFkYmFmNmU4NjU0NGE4OGNlZDcwZTZjNWI1OTBhNTU1NzIwOGFlN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmNGJlYWNhYjM1NmM0Nzk5NGY0OGU4YTkyN2Y1YWFhZmQ5YTc3YjRiOGUxNTUwNTMxM2Q5ZTU1OGE1OTRiNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4YmNhYWZmOGJjMTVkZGRiNzIxNGVlZjVhMTJlNTc5ZmZiM2MzZGYwOGI1OTIyOTc1MDA5MTIyOGUxMTg2NjUifQ"
+        },
+        {
+          "resource": "repo://web/app/Actions/Users/UserAdministration.php#L8-L14",
+          "version": "repo-lines-v1:sha256:96325206883cf5f161ac514ca79845111a2b5f50a19ea0128b0bc60d61b257b8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWI2ODM3ZDhiMDMxZmI4NTU1ZDZjNTkzZTg3NTc0ZmU0ZjNjYmNhZTAwNDQ2MjFkMTUxM2NlZmY2MmExMGQ3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQ3ZjdiYjgyYzNhYjZmM2IzMGFlYTA3OGM0ZGEzM2YxNTZjYzYzYmQzZWY1ZGM5NDU2ZWVmODljNThhNjA4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2E4MGI3MDQ5NWJiYzg2ZTU5NWEzMGYwN2I3NGVkNjE1NzFkOGFmZjJhNjlhMDhmMjgxZWUzZGM2NmE4NzVjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5NGQwMmE4MTIxOTQ0ZDE3NmQyNjVlOWJiOWNjNTlmNmFiODkwYmNhZGY4YWVmZGViZGJiYjRmMmVhODQ0NCJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/UserManagementTest.php#L137-L143",
+          "version": "repo-lines-v1:sha256:abefb0d7d8dbdd8f51b880698e5bd487814508bbe838b961e45c3519e6680875:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjk0NWNlYTA3MmJiOTkyZDI4MmNmYjBlZjYwZTI2NzY3ZGNjZTg3OGQzOTM1MWU3YTVmZjMzMWRkNGYyODY2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGJiMTRjZWZkYTVkODU5YWI0NzcyZDdkNmE3NmRjYWViYTI1MDdlMTEzYjBiMzc0NzY1ZWVmMWYyODZlYjNmNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2edcda171c9e47d696a6b2dc9f0a0819",
+      "statement": "User input validation trims names and email, lowercases email, validates the UserRole enum, requires a 12-character password when creating a user, and preserves the existing password when an update supplies an empty password; the User model hashes passwords through its cast.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Users/UserData.php#L10-L33",
+          "version": "repo-lines-v1:sha256:db2058a6d96e593faa2378886a62b6c24021b93f9218fbcad136f0e08c4cac98:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwY2QxZTQ0ZTRkNzBmNzRlZTdjN2MyNGI1MjM4NTJkZjY1MjY3Y2YzNGVmNjcwYWM0YjA2OTNhMGQ5NTAxZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2NDZiYTU0NTZlMTlkODY3NDdmNDJjMjJmZjk4OTYyYWI3NWU2NjhkMGIyYjQ5N2U3OTFlNDM5ZTI3MDViZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/User.php#L37-L48",
+          "version": "repo-lines-v1:sha256:f381560640c4ef5478a54c529f49e5372eb9e1e4217f732e3ab1737295c62518:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMGVjYzE1M2JmMTdjYmMzM2YxNzJjMWNiNjg1NDUzZmIzZjIzZTNkMjkxNWQ4OTM3M2RhNDgzYzdkMjgyYzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkM2ViOWQ0MDhiZDA1NjMyMDEzMTBiOTdhYmZmZTA3NTVjNGJlZDYyMTczNjg2ZTI2ZGMyYjI5MDhiYjI2MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/UserManagementTest.php#L26-L67",
+          "version": "repo-lines-v1:sha256:d63a2cf279bec339f7dcb0331eb2c9eb9d34189c97639abc6d0cc0b844376993:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwOTY3NWYzMmJhNTVhMjE5ODJlMzliNTk2OWJlYmM1YTQ2OTE3NDMxY2E1ZmMwOTVkNjMyMjVkNDM1MDBmMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4NGVhYzI2YjcyODA5NTlmY2FjOTVjODU0OGE1YmM0NjMyMzM4MzNhZTFmZjk3ZmQzM2M5YWYzYzU2ZjM4MDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1MTQ1YmEwMWVjMjdhY2NiNTdiOTIxM2E2NzQ3ZTZiN2VjZTgwMzI1MzU1YmU4NjFlYjg3OTBkYWU1N2MyYzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ba8a7cd848a4599a7805290699e7eba",
+      "statement": "User administration prevents removal or demotion of the last administrator and prevents demoting a technician who has any non-closed ticket until those tickets are reassigned or closed.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Users/UpdateUser.php#L20-L41",
+          "version": "repo-lines-v1:sha256:fdb8ef89c41ba0e3f8e32c0515e52f7632ad2e4453a0d01f805665b2043e98a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhYmEyNzQwMTczNDZjYzQ1NmEzM2MzMDNmN2FmZTgwOGQ5NzQ5OTdlYmU0YjM1NWI1MzgwNDBhZjhjYjNiYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjZDc1YjYwZGE4MTgxNmYyZDdmMjk3ZmY5ODc5ZjU2ZGZjODZiMGI5YzY4MGY3OWVjOWNlZDgwNzg1ZmMyOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/UserManagementTest.php#L85-L116",
+          "version": "repo-lines-v1:sha256:d93c0b933467577df4b19aa293f979304ec684a70535da92e833a7eef8dc86bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhOWU2ZjZjM2U5OWNhY2JhY2M4ODMyOWEwN2IyZmU3NGI5ODhiMjFhZDYyOGQ4MzFjZGY3YjlmNzNkMjhhMTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNThlZTllOTg1NzlhNTA3MTdhZDJiODg0OTI3ZGVlMjg3YjY1ODllMjljMjgzN2MwNTY0YTlkOTM4ZjJiZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MzBiOTZlZDM3ODdhZjA1YTc0OWJlMDU5MmI5NDgzYjU3NDhhZmJkYWE4MjUzNDBhNThkYTNkZjFiODg5OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzNzg4YmNmY2M0ZDRiNzBhMzc4ODVkNTM5ZGExZjc1NzhjZjA3YWFkZDM4MGE5ZjExNDJlYjI5ZGJkMzMyYzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3688cf2e3bc242f4a51795ab81dc3e77",
+      "statement": "User-reference deletion is constrained by database relationships and explicit checks: users referenced by ticket requester or technician fields, ticket comments, or ticket status changes cannot be deleted, while an unreferenced user can be deleted; SQL integrity failures are surfaced as validation errors.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Users/DeleteUser.php#L16-L39",
+          "version": "repo-lines-v1:sha256:73235b1a09a9b008c570caa22a6cdb3c7556d460ec52691219ede2a09ca1ed35:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5N2QyMzk4MDNkNmVlYTA3YzBlOGMzOGYyZmU2MjkxNjY4M2IwM2Q3MDAyZmVhYjViODEwZjIxYTgzYmMyM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwOWIzYmUyMzRmNDM0YWQ4OTg5NGQ4MGYxNmU2OTkwNmQyMDA4OGFjYWYyNWU4ZGExZGU1ZmFmYmFjZjE1OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/UserManagementTest.php#L118-L135",
+          "version": "repo-lines-v1:sha256:e2e816fd4ecce8b494567e8bc82e04546d27be30c7011b0bec681e5f3ffe271b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNDM3ZTM1ZGM2ZDFjMGQ3YzBmN2U0ZGU5NzA2YzU4YjIzNGQ1Y2UzZWNiZmExOGM4OGZiMTNlOTA5MzE1ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ0MzMxMTA3Y2NlNjZjZWE1OWFiYWRlZjIxOWIzZTcwMWRjNmJjODdmNDE2NmRkZWZiNTg0MDE3MjVhMGMyYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwMDVmZGEzMDc4MDhlYmU5NjAxMmEzZjY4NzMwZTBmY2M3Y2Q4YzJlYWQyYzYwYjQ3ZjdlZjJiNTNhNzJkM2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_88870d76dca147f4a33b7a12a542828e",
+      "statement": "The implementation and focused tests cover user, site, and asset creation, editing, deletion, normalization, authorization, role safeguards, asset movement, and relationship protection, but do not establish management screens for tickets, comments, or status history; those objects participate in referential safeguards only.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Filament/Resources/Assets/AssetResource.php#L40-L55",
+          "version": "repo-lines-v1:sha256:39be41ce421c2698f235d7d6db132cef7e3c40cdad958f1e83d6d8f61f99042a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NjJmZTkzZGZlNTg5NWRhZWYxMTllMmE0ZDY1MGJlNWQ0NGVjMTM0ODRmODBiMGQ4MTdmYzliZjBlNzA2MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NzU1ZTI3NDczY2I4MmE4ZjEzOWEwN2UyMzliODFmYTMxYzJlYzRhOWMyZDRmMWMxOTcwZDIyYmQzNmFiNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Sites/SiteResource.php#L39-L54",
+          "version": "repo-lines-v1:sha256:00c94a97a225202ef0f03bc5d62931e43ea726c95a4f7bf7b876dde1a4d02c9e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZmYxZTQ1ZjRjN2Q3MDYyNmZkMmJiMDMzOWUxNjE1OGRkZjc3MWEyY2EwYTJkNDJlNTUxOWQ3MmJhYzZhYzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmZjYxMDk1MzUxNjlmOTc3Yjk3MjM0YmI3OWRlNGEzN2RjYzAxNmE1ZjIzOTdkMDYyOTY1NTA2ODgwODAxOGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Users/UserResource.php#L45-L60",
+          "version": "repo-lines-v1:sha256:fc7a0f7947c0e0bc2b186de8145e9ee9d1294ad6caade55f021af14ff95438ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhNDhhYmRhZDQ4MDBjODViYzYxM2NiOWZkMjI1MmU1NjRjNzExZjBhNjcxZGM2NzQ4ZjcyMjZmZWFjNzc0OWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NzU1ZTI3NDczY2I4MmE4ZjEzOWEwN2UyMzliODFmYTMxYzJlYzRhOWMyZDRmMWMxOTcwZDIyYmQzNmFiNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/SitesAndAssetsTest.php#L17-L87",
+          "version": "repo-lines-v1:sha256:ebcd341223736280e7a70b6220d4a0db971e7c3e58577f9dda4b516484c33b52:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczODllNDA1NTk1MmZhNjI5OTk3MmJlZjIyOWVmOGJiMjY3ZDU3N2Y4MGVlNDFhOGE5YTJjYzJlN2I2YjJlMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/UserManagementTest.php#L20-L143",
+          "version": "repo-lines-v1:sha256:3e6577aab04cdf78b3df34ea07ef0a4d00bcd68f2ebd320d8cb34225fa5537de:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNmZiMDhmZGExYWNiOTU3YjYxMTZiZDM3ODExYTFmZTQxYTAxNjExYzA2MzFlZGJmNzg2ZDY4ODlhMjdhNTVjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkZjdkZmU5M2RmMmQ2OWRjNjQ1ZjAxZDhkZjk4NTMwOTIxYTYxZWVjZGYxZGQ3MDhkZjQ4NzJmYjIxOGNlMzI4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7d914f1214f4bc284a98858248ae666",
+      "statement": "Administration migrations establish the users administration lock and preserve/revalidate user email normalization and asset-ticket relationships across migration reversal and reapplication.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/AdministrationMigrationsTest.php#L14-L59",
+          "version": "repo-lines-v1:sha256:7c1cdc4b8e19223448f948a179453f30cf039953b57ea992792c7d126380c8a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkM2RhZDRiYmQ3NjAyYzFlYmIzNmQzNDdlMWRlYzEyNjZlOWFmNTM0M2Y5Nzk5MmI5MjI4MTgxOWE5MTU2ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-18T11:00:29.223Z"
+  }
+}
