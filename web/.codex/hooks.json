@@ -12,6 +12,15 @@
             "command": "node -e \"const fs=require('node:fs'),path=require('node:path');let p=process.cwd();for(;;){const f=path.join(p,'.codex','hooks','block-env-read.cjs');if(fs.existsSync(f)){require(f);break;}const parent=path.dirname(p);if(parent===p){console.error('No se encuentra el hook de proteccion de archivos de entorno.');process.exit(2);}p=parent;}\""
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook codex"
+          }
+        ]
       }
     ]
   }

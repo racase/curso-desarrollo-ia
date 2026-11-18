@@ -39,3 +39,5 @@ El historial emplea Conventional Commits, como `docs: update course title in REA
 ## Configuración y seguridad
 
 No leas ni modifiques archivos `.env`; consulta `.env.example` como referencia. No incluyas secretos en commits. Los usuarios de demostración son solo para desarrollo. Evita comandos como `migrate:fresh` salvo que la tarea autorice eliminar los datos locales.
+
+@RTK.md
