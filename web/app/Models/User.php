@@ -10,6 +10,7 @@ use Filament\Panel;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -32,6 +33,26 @@ class User extends Authenticatable implements FilamentUser
     public function hasRole(UserRole $role): bool
     {
         return $this->role === $role;
+    }
+
+    public function requestedIncidents(): HasMany
+    {
+        return $this->hasMany(Incident::class, 'requester_id');
+    }
+
+    public function assignedIncidents(): HasMany
+    {
+        return $this->hasMany(Incident::class, 'technician_id');
+    }
+
+    public function incidentComments(): HasMany
+    {
+        return $this->hasMany(IncidentComment::class, 'author_id');
+    }
+
+    public function incidentStatusHistory(): HasMany
+    {
+        return $this->hasMany(IncidentStatusHistory::class, 'actor_id');
     }
 
     /**
