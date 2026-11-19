@@ -11,6 +11,8 @@ class CreateTicket extends CreateRecord
 {
     protected static string $resource = TicketResource::class;
 
+    protected ?bool $hasDatabaseTransactions = false;
+
     protected function handleRecordCreation(array $data): Model
     {
         try {

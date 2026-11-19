@@ -31,7 +31,7 @@ class TicketManagementTest extends TestCase
         $this->assertSame('No imprime ningún documento.', $ticket->description);
         $this->assertSame($actor->id, $ticket->requester->id);
         $this->assertSame(TicketStatus::Proposed, $ticket->status);
-        $this->assertSame(TicketPriority::Medium, $ticket->priority);
+        $this->assertNull($ticket->priority);
         $this->assertNull($ticket->technician);
         $this->assertSame(0, $ticket->tracking_version);
         $this->assertTrue($ticket->created_at->isToday());
@@ -40,7 +40,7 @@ class TicketManagementTest extends TestCase
     public function test_creation_rejects_invalid_fields_and_boundaries(): void
     {
         $actor = User::factory()->create();
-        foreach ([['title' => '  '], ['title' => 'ab'], ['title' => str_repeat('a', 201)], ['description' => 'short'], ['description' => str_repeat('x', 10001)], ['priority' => 'urgent'], ['priority' => null]] as $invalid) {
+        foreach ([['title' => '  '], ['title' => 'ab'], ['title' => str_repeat('a', 201)], ['description' => 'short'], ['description' => str_repeat('x', 10001)]] as $invalid) {
             try {
                 app(CreateTicket::class)->handle($actor, array_replace(['title' => 'Valid title', 'description' => 'Valid description.', 'priority' => 'low'], $invalid));
                 $this->fail('Invalid ticket was accepted');
@@ -85,14 +85,14 @@ class TicketManagementTest extends TestCase
     {
         $ticket = Ticket::factory()->create();
         $updated = app(UpdateTicket::class)->handle($ticket->requester, $ticket, [
-            'title' => 'Corrección de título', 'description' => 'Descripción corregida.', 'priority' => 'critical',
+            'title' => 'Corrección de título', 'description' => 'Descripción corregida.',
             'status' => 'closed', 'requester_id' => 999, 'technician_id' => 999, 'created_at' => '2000-01-01',
         ]);
         $this->assertSame(TicketStatus::Proposed, $updated->status);
         $this->assertSame($ticket->requester_id, $updated->requester_id);
         $this->assertTrue($ticket->created_at->equalTo($updated->created_at));
         $this->assertNull($updated->technician_id);
-        $this->assertSame(TicketPriority::Critical, $updated->priority);
+        $this->assertSame(TicketPriority::Medium, $updated->priority);
     }
 
     public function test_update_reloads_the_current_state_before_authorizing(): void

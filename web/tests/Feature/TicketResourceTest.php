@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Actions\Tickets\AssignTicket;
 use App\Actions\Tickets\TransitionTicket;
-use App\Enums\TicketPriority;
 use App\Enums\TicketStatus;
 use App\Filament\Resources\Tickets\Pages\CreateTicket;
 use App\Filament\Resources\Tickets\Pages\EditTicket;
@@ -38,7 +37,7 @@ class TicketResourceTest extends TestCase
     {
         $this->actingAs(User::factory()->create());
         Livewire::test(CreateTicket::class)
-            ->assertFormSet(['priority' => TicketPriority::Medium])
+            ->assertFormFieldIsHidden('priority')->assertFormFieldIsHidden('category')
             ->fillForm(['title' => 'Impresora averiada', 'description' => 'No imprime desde esta mañana.'])
             ->call('create')->assertHasNoFormErrors();
         $ticket = Ticket::sole();

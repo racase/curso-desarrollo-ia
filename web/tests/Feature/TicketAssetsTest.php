@@ -25,7 +25,7 @@ class TicketAssetsTest extends TestCase
 
     private function data(array $overrides = []): array
     {
-        return array_replace(['title' => 'Fallo de equipo', 'description' => 'El equipo no arranca.', 'priority' => 'medium'], $overrides);
+        return array_replace(['title' => 'Fallo de equipo', 'description' => 'El equipo no arranca.'], $overrides);
     }
 
     public function test_optional_asset_and_edit_preserve_replace_or_remove_reference(): void

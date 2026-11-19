@@ -1,6 +1,13 @@
 <?php
 
 return [
+    'openrouter' => [
+        'api_key' => env('OPENROUTER_API_KEY', ''),
+        'model' => env('OPENROUTER_MODEL', 'gpt-oss-120b'),
+        'timeout' => env('OPENROUTER_TIMEOUT_SECONDS', 10),
+        'connect_timeout' => env('OPENROUTER_CONNECT_TIMEOUT_SECONDS', 3),
+        'retry_delay_ms' => env('OPENROUTER_RETRY_DELAY_MS', 250),
+    ],
 
     /*
     |--------------------------------------------------------------------------

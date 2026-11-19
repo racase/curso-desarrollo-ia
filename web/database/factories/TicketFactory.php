@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\TicketCategory;
 use App\Enums\TicketPriority;
 use App\Enums\TicketStatus;
 use App\Models\User;
@@ -9,6 +10,16 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TicketFactory extends Factory
 {
+    public function classified(): static
+    {
+        return $this->state(['category' => TicketCategory::Hardware]);
+    }
+
+    public function unclassified(): static
+    {
+        return $this->state(['category' => null, 'priority' => null]);
+    }
+
     public function definition(): array
     {
         return [

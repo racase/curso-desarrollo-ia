@@ -14,7 +14,13 @@ class UpdateTicket
         return DB::transaction(function () use ($actor, $ticket, $data): Ticket {
             $current = Ticket::query()->lockForUpdate()->findOrFail($ticket->id);
             Gate::forUser($actor)->authorize('update', $current);
-            $current->update(TicketData::validate($data));
+            $validated = TicketData::validate($data);
+            if (TicketData::classificationChanges($current, $data)) {
+                Gate::forUser($actor)->authorize('classify', $current);
+                $validated += TicketData::classification($data);
+            }
+            TicketData::lockAsset($validated);
+            $current->update($validated);
 
             return $current;
         });

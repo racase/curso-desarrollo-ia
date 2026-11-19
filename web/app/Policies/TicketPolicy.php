@@ -36,6 +36,12 @@ class TicketPolicy
         return ! $user->hasRole(UserRole::Requester) && $ticket->status !== TicketStatus::Closed;
     }
 
+    public function classify(User $user, Ticket $ticket): bool
+    {
+        return $ticket->status !== TicketStatus::Closed
+            && ($user->hasRole(UserRole::Technician) || $user->hasRole(UserRole::Admin));
+    }
+
     public function transition(User $user, Ticket $ticket): bool
     {
         return $ticket->status !== TicketStatus::Closed

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\TicketCategory;
 use App\Enums\TicketPriority;
 use App\Enums\TicketStatus;
 use App\Enums\UserRole;
@@ -15,15 +16,21 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'priority', 'asset_id'];
+    protected $fillable = ['title', 'description', 'category', 'priority', 'asset_id'];
 
     protected function casts(): array
     {
         return [
             'status' => TicketStatus::class,
             'priority' => TicketPriority::class,
+            'category' => TicketCategory::class,
             'tracking_version' => 'integer',
         ];
+    }
+
+    public function isClassified(): bool
+    {
+        return $this->category !== null && $this->priority !== null;
     }
 
     public function scopeVisibleTo(Builder $query, User $user): Builder

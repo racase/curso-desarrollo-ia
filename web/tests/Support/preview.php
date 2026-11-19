@@ -4,6 +4,7 @@
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Http;
 
 require __DIR__.'/../../vendor/autoload.php';
 $_ENV['APP_ENV'] = $_SERVER['APP_ENV'] = 'testing';
@@ -28,6 +29,24 @@ $_ENV['BCRYPT_ROUNDS'] = $_SERVER['BCRYPT_ROUNDS'] = '4';
 putenv('BCRYPT_ROUNDS=4');
 $app = require __DIR__.'/../../bootstrap/app.php';
 $app->useEnvironmentPath(__DIR__)->loadEnvironmentFrom('testing-no-environment');
+$app->booted(function () {
+    if (getenv('REVIEW_CLASSIFICATION') !== '1') {
+        return;
+    }
+    config(['services.openrouter.api_key' => 'review-only-fake-key', 'services.openrouter.retry_delay_ms' => 0]);
+    Http::preventStrayRequests();
+    Http::fake(function ($request) {
+        $description = $request['messages'][1]['content'] ?? '';
+        if (str_contains($description, 'conectividad')) {
+            return Http::response(['error' => 'simulated_unavailable'], 503);
+        }
+
+        return Http::response(['choices' => [[
+            'finish_reason' => 'stop',
+            'message' => ['content' => '{"category":"hardware","urgency":"high"}'],
+        ]]]);
+    });
+});
 if (PHP_SAPI === 'cli' && ($argv[1] ?? '') === 'setup') {
     if (! file_exists('/tmp/infraticket-review.sqlite')) {
         touch('/tmp/infraticket-review.sqlite');
