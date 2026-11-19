@@ -1,6 +1,6 @@
 # Validación de incidencias
 
-Cambio: [gestionar-incidencias](../openspec/changes/gestionar-incidencias/proposal.md).
+Cambio: [gestionar-incidencias](../openspec/changes/archive/2026-11-19-gestionar-incidencias/proposal.md).
 
 ## Comprobaciones realizadas
 

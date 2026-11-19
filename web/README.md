@@ -134,7 +134,7 @@ Hay:
 - Usuarios de prueba (`database/seeders/DatabaseSeeder.php`).
 - Alta, consulta, asignación, seguimiento y comentarios de incidencias con permisos por rol.
 - Tests de autenticación, modelos, acciones y páginas Livewire en `tests/Feature/`.
-- Planificación en `openspec/changes/gestionar-incidencias/`.
+- Planificación en `openspec/changes/archive/2026-11-19-gestionar-incidencias/`.
 
 No hay, a propósito:
 
