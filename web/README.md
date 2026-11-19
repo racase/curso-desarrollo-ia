@@ -6,10 +6,10 @@ Permite registrar incidencias, asignarlas a técnicos, seguir sus estados y comp
 ## Requisitos
 
 - Docker Desktop (o Docker dentro de WSL2) o Podman
+- Node.js 22.12+ y npm solo si prefieres compilar los assets desde el host
 
-Para la aplicación, nada más: PHP y Composer van dentro del contenedor y no hace falta
-instalarlos en tu equipo. Node tampoco lo necesita la aplicación, pero sí Codex y OpenSpec
-(ver el `README.md` de la raíz).
+PHP y Composer se ejecutan dentro del contenedor. El tema puede compilarse con
+Podman sin instalar Node en tu equipo, o usando Node y npm en el host.
 
 Con Podman, sustituye `docker` por `podman` en todos los comandos de este documento.
 
@@ -29,6 +29,48 @@ Abre <http://localhost:8000/admin> e inicia sesión con uno de los usuarios de p
 Las dependencias de Composer se guardan en un volumen de Docker, no en la carpeta `vendor/` de tu
 equipo, que quedará vacía. Para consultar el código de una librería:
 `docker compose exec app cat vendor/<paquete>/<fichero>`.
+
+## Tema del panel
+
+El login y el panel adaptan `DESIGN.md` con identidad InfraTicket, Rubik local,
+login violeta y superficies operativas claras. El panel usa modo claro también
+si el navegador tiene guardada una preferencia oscura. La fuente se distribuye
+en `public/fonts/rubik/` con su licencia OFL, sin depender de un CDN al navegar.
+
+Con `infraticket-app` arrancado en Podman, compila con Node en un contenedor:
+
+```powershell
+podman run --rm --volumes-from infraticket-app -w /app -v infraticket-node-modules:/app/node_modules docker.io/library/node:22-bookworm-slim sh -c "npm ci && npm run build"
+```
+
+El contenedor comparte el proyecto y el volumen de Composer de la aplicación;
+las dependencias npm quedan en un volumen separado. Los assets generados en
+`public/build` se sirven desde la aplicación. No necesitas copiar `vendor/` ni
+instalar Node en Windows. Con Docker puedes usar el mismo comando sustituyendo
+`podman` por `docker`.
+
+Si prefieres compilar en el host, después de arrancar Docker prepara los fuentes
+de Filament para Vite. Composer
+los instala en un volumen: copia ese directorio a `vendor/` en el host (ignorando
+Git) y compila. La carpeta `vendor/` local la crea el montaje del contenedor.
+
+```bash
+docker compose cp app:/app/vendor/filament/. ./vendor/filament
+npm ci
+npm run build
+```
+
+Ahora abre <http://localhost:8000/admin>. `public/build` se genera localmente y
+PHP lo sirve a través del montaje del proyecto; no se versiona. Repite la copia
+si actualizas Filament y el build si cambias el tema. No es necesario copiar todo
+Composer al host ni instalar PHP localmente. Si la copia ya existe, conserva
+`vendor/filament/filament/resources/css/theme.css` como ruta, sin anidar otro
+directorio `filament` dentro del destino.
+
+Los estilos están en `resources/css/filament/admin/theme.css` y se registran en
+`AdminPanelProvider` y Vite. Para usar HMR ejecuta `npm run dev` mientras trabajas;
+al terminar detén Vite y vuelve a ejecutar `npm run build`. Si quedó un
+`public/hot` de un proceso interrumpido, retíralo antes de usar el build estático.
 
 ## Usuarios de prueba
 

@@ -32,3 +32,7 @@ History mixes plain imperative subjects with prefixes such as `docs:` and `chore
 ## Security & Configuration
 
 Keep secrets out of commits; document configuration through `.env.example`. Seeded accounts and Docker credentials are for local demos. `php artisan migrate:fresh --seed` deletes existing database data; use it only for intentional local resets.
+
+## UX/UI
+
+Para cualquier cambior de UI/UX ten en cuenta el fichero @DESIGN.md
