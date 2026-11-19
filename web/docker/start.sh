@@ -2,9 +2,10 @@
 # Prepares the application on first run and starts the development server.
 set -e
 
-if [ ! -f vendor/autoload.php ]; then
-    echo "==> Installing Composer dependencies (first run, takes a few minutes)"
+if [ ! -f vendor/autoload.php ] || ! cmp -s composer.lock vendor/.composer-installed.lock; then
+    echo "==> Synchronizing Composer dependencies with composer.lock"
     composer install --no-interaction
+    cp composer.lock vendor/.composer-installed.lock
 fi
 
 if [ ! -f .env ]; then
