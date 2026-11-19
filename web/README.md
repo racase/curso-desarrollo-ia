@@ -1,8 +1,7 @@
 # InfraTicket — demo web
 
 Aplicación Laravel + Filament + PostgreSQL que usaremos como base de la demo web.
-Ahora mismo solo tiene el acceso al panel y unos usuarios de prueba: las incidencias y el
-resto de funcionalidad las construiremos en clase con OpenSpec y Codex.
+Permite registrar incidencias, asignarlas a técnicos, seguir sus estados y compartir comentarios desde el panel.
 
 ## Requisitos
 
@@ -43,7 +42,41 @@ Todos con la contraseña `password`.
 | Solicitante | Sara Solicitante | `solicitante1@infraticket.test` |
 | Solicitante | Sergio Solicitante | `solicitante2@infraticket.test` |
 
-De momento los tres roles ven lo mismo: un panel vacío.
+## Incidencias
+
+Entra en **Incidencias** (`/admin/incidents`) para crear una solicitud con título,
+descripción y prioridad. Toda alta se hace en nombre propio, comienza en **propuesta**,
+sin técnico y con prioridad **media** por defecto. Puedes elegir baja, media, alta o crítica.
+El título admite 1–255 caracteres y la descripción 1–10000, sin contar espacios exteriores.
+
+El listado muestra título, estado, prioridad y solicitante. Los filtros de estado y prioridad
+se pueden combinar; la ficha muestra también descripción, técnico, historial y comentarios.
+Los solicitantes solo acceden a sus incidencias, incluso mediante URL directa. Técnicos y
+administradores pueden consultar todas.
+
+| Operación | Quién puede realizarla |
+|---|---|
+| Crear una incidencia | Cualquier usuario, para sí mismo |
+| Asignar o cambiar de técnico | Administrador, eligiendo un usuario con rol técnico |
+| Autoasignarse una incidencia libre | Técnico |
+| Avanzar de estado | Administrador o técnico asignado |
+| Publicar comentarios | Cualquier usuario con acceso a la incidencia, en los cinco estados |
+
+El ciclo es **propuesta → abierta → en curso → resuelta → cerrada**. Para pasar a en curso
+es obligatorio tener técnico. Un administrador puede pasar de propuesta a abierta sin
+asignación. No se permiten saltos, retrocesos ni reapertura. Asignar no cambia el estado;
+cada avance guarda estado anterior, nuevo, usuario y fecha en el historial de la ficha.
+Las confirmaciones obsoletas se rechazan con un aviso para actualizar la ficha.
+
+Los comentarios son texto plano de 1–5000 caracteres, muestran autor y fecha y se leen en
+orden cronológico, con paginación. No se pueden editar ni eliminar, tampoco por un
+administrador. No hay adjuntos, notificaciones ni comentarios privados. Las incidencias
+tampoco tienen edición o borrado general; el seguimiento usa las acciones de la ficha.
+
+Las migraciones son aditivas: para actualizar una instalación existente ejecuta
+`docker compose exec app php artisan migrate`. No hace falta recrear la base de datos.
+Los usuarios referenciados como solicitante, técnico, actor o autor no pueden borrarse;
+la futura gestión de usuarios (issue 04) deberá conservar esta atribución.
 
 ## Comandos habituales
 
@@ -61,7 +94,23 @@ Los comandos de PHP se ejecutan dentro del contenedor `app`:
 | Parar todo | `docker compose down` |
 | Reinstalar dependencias desde cero | `docker compose down`, `docker volume rm web_infraticket-vendor` y volver a arrancar |
 
-Los tests usan SQLite en memoria, así que no tocan los datos de PostgreSQL.
+Los tests habituales usan SQLite en memoria, así que no tocan los datos de PostgreSQL.
+
+Para comprobar los bloqueos y las carreras con dos conexiones reales de PostgreSQL:
+
+```bash
+docker compose exec app php tests/Support/check-postgres-concurrency.php
+```
+
+Esta comprobación crea una base temporal aleatoria `infraticket_concurrency_*`, aplica las
+migraciones, verifica una sola autoasignación y una sola transición ganadoras y elimina
+exclusivamente esa base al terminar. Usa la configuración PostgreSQL del contenedor y
+requiere permiso de creación de bases (incluido en el usuario de la demo). No migra ni
+reinicia la base de demo. Las credenciales se leen del entorno, sin imprimirse.
+
+Si tienes el contenedor ya arrancado pero no el subcomando Compose, puedes usar
+`docker exec infraticket-app php artisan test`, `docker exec infraticket-app vendor/bin/pint`
+y `docker exec infraticket-app php tests/Support/check-postgres-concurrency.php`.
 
 ### Alternativa: PHP instalado en tu equipo
 
@@ -83,14 +132,14 @@ Hay:
 - Panel de Filament en `/admin` con inicio de sesión.
 - Modelo `User` con un rol (`App\Enums\UserRole`): administrador, técnico o solicitante.
 - Usuarios de prueba (`database/seeders/DatabaseSeeder.php`).
-- Tests del inicio de sesión (`tests/Feature/AdminLoginTest.php`).
+- Alta, consulta, asignación, seguimiento y comentarios de incidencias con permisos por rol.
+- Tests de autenticación, modelos, acciones y páginas Livewire en `tests/Feature/`.
+- Planificación en `openspec/changes/gestionar-incidencias/`.
 
 No hay, a propósito:
 
-- Incidencias ni ningún otro modelo de negocio.
 - Gestión de usuarios desde el panel.
-- Permisos por rol.
-- OpenSpec: lo inicializaremos en clase con `openspec init`.
+- Sedes y activos, ni widget de resumen por estado.
 
 ## Configuración de agentes
 
