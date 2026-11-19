@@ -28,6 +28,7 @@ class ViewIncident extends ViewRecord
     {
         return [
             Action::make('assign')->label('Asignar técnico')
+                ->outlined(fn (): bool => $this->getRecord()->status->next() !== null && Gate::allows('transition', $this->getRecord()))
                 ->visible(fn (): bool => auth()->user()->hasRole(UserRole::Admin))
                 ->authorize('assign', $this->getRecord())
                 ->schema([
