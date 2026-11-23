@@ -1,0 +1,23 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["CONSTRUCTORA DEMO$Job"]
+
+annotation PBI_ProTooling = ["DevMode","MCP-PBIModeling"]
+
+ref table 'CONSTRUCTORA DEMO$Job'
+ref table DateTableTemplate_5d24edad-df89-4a57-9c33-f24c78108b08
+ref table LocalDateTable_e56a0709-06df-4408-8919-ffe23f7e41a1
+ref table LocalDateTable_f4909b8f-4551-4344-b0e7-8a844a57b147
+ref table LocalDateTable_7a0bf077-2031-4442-ab59-2b34a04c14ae
+
+ref cultureInfo es-ES
+
