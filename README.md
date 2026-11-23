@@ -1,14 +1,15 @@
 # Curso de desarrollo con IA 
 Repositorio de trabajo del curso «Desarrollo con IA: de escribir prompts al desarrollo con agentes».
-Contiene los dos proyectos de demostración sobre los que practicaremos el ciclo de
-Spec-Driven Development con OpenSpec y Codex.
+Contiene los proyectos de demostración sobre los que practicaremos el ciclo de
+Spec-Driven Development con OpenSpec y Codex. La parte de datos tiene dos proyectos.
 
 | Carpeta | Proyecto | Stack | Estado inicial |
 |---|---|---|---|
 | `web/` | InfraTicket, gestor de incidencias | Laravel, Filament, PostgreSQL | Login y usuarios de prueba |
-| `datos/` | InfraData, analítica de sensores | Python, PostgreSQL + TimescaleDB | Lecturas de sensores cargadas, sin analítica |
+| `datos/InfraData/` | InfraData, analítica de sensores | Python, PostgreSQL + TimescaleDB | Lecturas de sensores cargadas, sin analítica |
+| `datos/ReportingBI/` | ReportingBI, informes de Power BI sobre un ERP | SQL Server (esquema tipo Navision), Power BI | Datos del ERP cargados, sin informes |
 
-Los dos proyectos llegan casi vacíos a propósito: la funcionalidad la construiremos en clase,
+Los proyectos llegan casi vacíos a propósito: la funcionalidad la construiremos en clase,
 una feature cada vez.
 
 ## Antes de empezar
@@ -27,7 +28,8 @@ Cada proyecto añade sus propios requisitos en su `README.md`.
 
 1. Crea tu copia del repositorio como te indiquemos en clase y clónala.
 2. Sigue el `README.md` de la carpeta con la que vayas a trabajar.
-3. Abre el agente **dentro de esa carpeta** (`cd web` o `cd datos`), no en la raíz:
+3. Abre el agente **dentro de esa carpeta** (`cd web`, `cd datos/InfraData` o
+   `cd datos/ReportingBI`), no en la raíz ni en `datos/`:
    cada proyecto tiene su propio `AGENTS.md` y su propia configuración de agentes.
 4. La primera vez, Codex pregunta si confías en la carpeta. Acepta: si no, ignora la
    configuración del proyecto que hay en `.codex/`.
@@ -40,7 +42,7 @@ juntos en clase con `openspec init`, una vez dentro de cada carpeta.
 El curso se hace con **Codex**. Cada proyecto incluye además la configuración base para
 Claude Code y OpenCode, por si quieres repetir el ejercicio con otro agente.
 
-| Dentro de `web/` y de `datos/` | Lo usa | Para qué |
+| Dentro de cada proyecto | Lo usa | Para qué |
 |---|---|---|
 | `AGENTS.md` | Codex y OpenCode | Instrucciones del proyecto. Es la fuente común |
 | `.agents/skills/` | Codex y OpenCode | Skills del proyecto |
