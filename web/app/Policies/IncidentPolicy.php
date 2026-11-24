@@ -40,6 +40,11 @@ class IncidentPolicy
         return false;
     }
 
+    public function linkAsset(User $user, Incident $incident): bool
+    {
+        return $user->hasRole(UserRole::Admin);
+    }
+
     public function delete(User $user, Incident $incident): bool
     {
         return false;

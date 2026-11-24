@@ -6,6 +6,7 @@ use App\Actions\Incidents\CreateIncident;
 use App\Enums\IncidentPriority;
 use App\Enums\IncidentStatus;
 use App\Enums\UserRole;
+use App\Models\Asset;
 use App\Models\Incident;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -22,6 +23,7 @@ class IncidentAccessTest extends TestCase
         foreach (UserRole::cases() as $role) {
             $actor = User::factory()->create(['role' => $role]);
             $incident = app(CreateIncident::class)->handle($actor, [
+                'asset_id' => Asset::factory()->create()->id,
                 'title' => '  Sin conexión  ', 'description' => '  Revisar el equipo  ',
                 'requester_id' => 9999, 'technician_id' => 9999, 'status' => 'closed',
             ])->fresh();
@@ -37,6 +39,7 @@ class IncidentAccessTest extends TestCase
     public function test_explicit_priority_and_maximum_lengths_are_accepted(): void
     {
         $incident = app(CreateIncident::class)->handle(User::factory()->create(), [
+            'asset_id' => Asset::factory()->create()->id,
             'title' => str_repeat('á', 255), 'description' => str_repeat('ñ', 10000), 'priority' => 'critical',
         ]);
         $this->assertSame(IncidentPriority::Critical, $incident->priority);
@@ -46,7 +49,7 @@ class IncidentAccessTest extends TestCase
     {
         foreach ([['title' => ' '], ['title' => str_repeat('a', 256)], ['description' => ' '], ['description' => str_repeat('a', 10001)], ['priority' => 'invalid']] as $invalid) {
             try {
-                app(CreateIncident::class)->handle(User::factory()->create(), [...['title' => 'Equipo', 'description' => 'No arranca'], ...$invalid]);
+                app(CreateIncident::class)->handle(User::factory()->create(), [...['title' => 'Equipo', 'description' => 'No arranca', 'asset_id' => Asset::factory()->create()->id], ...$invalid]);
                 $this->fail('Invalid incident accepted');
             } catch (ValidationException $exception) {
                 $this->assertArrayHasKey(array_key_first($invalid), $exception->errors());

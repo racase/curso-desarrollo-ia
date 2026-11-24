@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Policies;
+
+use App\Enums\UserRole;
+use App\Models\User;
+
+class UserPolicy
+{
+    public function viewAny(User $actor): bool
+    {
+        return $actor->hasRole(UserRole::Admin);
+    }
+
+    public function view(User $actor, User $user): bool
+    {
+        return $this->viewAny($actor);
+    }
+
+    public function create(User $actor): bool
+    {
+        return $this->viewAny($actor);
+    }
+
+    public function update(User $actor, User $user): bool
+    {
+        return $this->viewAny($actor);
+    }
+
+    public function delete(User $actor, User $user): bool
+    {
+        return $this->viewAny($actor);
+    }
+
+    public function deleteAny(User $actor): bool
+    {
+        return false;
+    }
+}

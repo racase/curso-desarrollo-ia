@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/infradata-runtime.md": {
+      "pageVersion": "sha256:b21c8fbe363029e6f776b4079348341eae10a87c5a22bf9bf127daeb897f407f",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "9d5da0d5-cd52-4849-a1ec-4af5b41a6064",
+      "gitHead": "e55b75e266c2f09a97231720475d03e97b39fd68",
+      "sourceFingerprint": "sha256:23dacc24edba61ef542a1f74d2144fdf77ec72bdb670d7fcfa9d26e2de5943b2"
+    },
+    "/openwiki/architecture/infraticket-panel.md": {
+      "pageVersion": "sha256:40784a1e2418de13012c6e9a45de76b06e1ea04aa0399b3ecba032220dc4868a",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "9d5da0d5-cd52-4849-a1ec-4af5b41a6064",
+      "gitHead": "e55b75e266c2f09a97231720475d03e97b39fd68",
+      "sourceFingerprint": "sha256:23dacc24edba61ef542a1f74d2144fdf77ec72bdb670d7fcfa9d26e2de5943b2"
+    },
+    "/openwiki/architecture/repository-landscape.md": {
+      "pageVersion": "sha256:525160356aeec88922e47a004c4e183b0b356f4ec6a287ebce6edf611c0fd110",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "9d5da0d5-cd52-4849-a1ec-4af5b41a6064",
+      "gitHead": "e55b75e266c2f09a97231720475d03e97b39fd68",
+      "sourceFingerprint": "sha256:23dacc24edba61ef542a1f74d2144fdf77ec72bdb670d7fcfa9d26e2de5943b2"
+    },
+    "/openwiki/concepts/incident-domain.md": {
+      "pageVersion": "sha256:63b82e2eab8710899cc1ae192bcafc2f135b8cfb1b7299f6fcad782f83ff50b6",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "9d5da0d5-cd52-4849-a1ec-4af5b41a6064",
+      "gitHead": "e55b75e266c2f09a97231720475d03e97b39fd68",
+      "sourceFingerprint": "sha256:23dacc24edba61ef542a1f74d2144fdf77ec72bdb670d7fcfa9d26e2de5943b2"
+    },
+    "/openwiki/operations/local-development.md": {
+      "pageVersion": "sha256:4f153f13fc798993e7bf9331d16cda39475ba7c1b4d9c5dfd800e9c413e70eac",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "9d5da0d5-cd52-4849-a1ec-4af5b41a6064",
+      "gitHead": "e55b75e266c2f09a97231720475d03e97b39fd68",
+      "sourceFingerprint": "sha256:23dacc24edba61ef542a1f74d2144fdf77ec72bdb670d7fcfa9d26e2de5943b2"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:16f2b10bdebd2224b8afd8593c807a744b3a7a0f7ee7bf0193031be2a6a1d96f",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "9d5da0d5-cd52-4849-a1ec-4af5b41a6064",
+      "gitHead": "e55b75e266c2f09a97231720475d03e97b39fd68",
+      "sourceFingerprint": "sha256:23dacc24edba61ef542a1f74d2144fdf77ec72bdb670d7fcfa9d26e2de5943b2"
+    },
+    "/openwiki/testing/validation-strategy.md": {
+      "pageVersion": "sha256:e3270963f7b0bd09655144a32fbacf2ea8ef83870759dad6fa51cf2161293c0a",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "9d5da0d5-cd52-4849-a1ec-4af5b41a6064",
+      "gitHead": "e55b75e266c2f09a97231720475d03e97b39fd68",
+      "sourceFingerprint": "sha256:23dacc24edba61ef542a1f74d2144fdf77ec72bdb670d7fcfa9d26e2de5943b2"
+    },
+    "/openwiki/workflows/incident-management.md": {
+      "pageVersion": "sha256:77c2bc0a94b8048663e6f47c305f2fa59389584146aad6097fa33af3e2acec35",
+      "completedBy": "openwiki/0.9.0",
+      "completedRunId": "9d5da0d5-cd52-4849-a1ec-4af5b41a6064",
+      "gitHead": "e55b75e266c2f09a97231720475d03e97b39fd68",
+      "sourceFingerprint": "sha256:23dacc24edba61ef542a1f74d2144fdf77ec72bdb670d7fcfa9d26e2de5943b2"
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:77c2bc0a94b8048663e6f47c305f2fa59389584146aad6097fa33af3e2acec35",
+  "claims": [
+    {
+      "id": "claim_2ef79075fd1b41cd9030d20b881e9eff",
+      "statement": "Incident creation is available to every authenticated role, trims and validates title, description, and priority, and server-assigns the actor as requester while forcing proposed status, no technician, and medium priority by default; caller-supplied lifecycle and ownership fields are ignored.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/CreateIncident.php#L15-L34",
+          "version": "repo-lines-v1:sha256:4f0869b95d6e7ec3a9da684ab7964d01d0a705e758df7fed80d7f33bdef16614:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4M2U1NDliNzhkYjM4N2UyZjAxNWVkNjM2NzBlZDc4MGIyNWJjODgyZTNmMTYxMTAzMmZkZDE3MmE2ZWJhOGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiNGJjODUzNDc5MjU0ZTE1OWI0MjRiZTM1ZjljNjlhOGM4NzdhZTdhNzIyOTAzZjAzZWJhNTFhODQ5M2MyOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentPolicy.php#L18-L21",
+          "version": "repo-lines-v1:sha256:1a20b03ce5a417505ba0b330e93efd826d57cf2e18e4543d0a172358a534f75a:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRiZjVjMmZlMzBjNGMyNDE0MTNmMTg1YjBjZDZlZmY3NGMzZjE5ODgyZmNlMzZhMmYzYzAxNTNmOTFiYTM3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTA2Y2QyNjUxMjgzNjkwMTk0MmVlOTcyZGEyOWI5NzFkMDE1NDhmNGEyZDk4NDNhMTliNzBmZGMwZmM4ZDhmZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWQwMTgyZGY1YzY2ZThkMjQ0Y2UyZmY0MjI4ODVkZGIxYThkODdiODlmYTNmZDYxMjdiMTRmYmQ1MjA1ZDg0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjFmZGQzZTVlZDYwZDc3NWE4MzI2NjY4OTczYzlhZGFlMTZiYWFiY2FhMmIwMWMzNDA5NzI2ODgyZGJlYzZhNCJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentAccessTest.php#L20-L35",
+          "version": "repo-lines-v1:sha256:4180ea54e256298884bbd1152a6629a0ef5e9e37c677d074ce8f692853623b4f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmODI4OWMwNjliZThmM2ZhMmE3NmFkZjE4NGYwYzdhMjEyNGRmMmM3ZTA5ZWQxZTY1OWJjYjE4MmUyNjliNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhYmQyMGVmNGJjYjFiMmIzYzg0NzBmMjVhZTJjNjM3MWEyZjUyNDVmNDY0YWE3YWZlYjc2Y2RlY2JhZjM2NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4NDUxOGZkZWJiYzE5ZDY0NDAxZjMxZjU3OGM5Y2NmNzU0ZWZiZDc1ZDg1MDM0M2QwNmFhYzZhN2JmNDc0NDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d90d2e9b6784ac2a405555e5dac65ea",
+      "statement": "The incident lifecycle is exactly proposed to open to in_progress to resolved to closed; transitions may neither skip nor move backward, closed has no successor, and entering in_progress requires an assigned technician while opening does not.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L22-L28",
+          "version": "repo-lines-v1:sha256:9dac1eaf14bc7fd2185ebbd3917c98e1b9ba1fdb902dd5b8773c23c2851078ca:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIzZWYxNTM4MjA1YjAwNDU2NjdjZDAwMGRjOTA1NWY3ZDBhNmJkMDgzNzAwODczNDFkNWUxODA2NDQ0MTUyMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzRkNjA0YjQ3Y2U5YTYyNTY0YzhhN2I1Y2Q5ODI0YjVjMmVkZDdmN2RjZTdhMzkxYmE3Y2M4ZGIzZmUxYmI2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzNhOWNiMTc5ZDg4OTM3Y2U3YzIyMGVmN2IzMDIyYTI4MDcxYTQ4YmY4MTg4YjdhZjA2YjZmODQ5NmE1Yjg2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWJlNjg0ZDdmZDU4MmRiYzE3OTYxMGQ5OWZkZjk5YzIyZmMxMWU5Y2NlOGExZTg1NDk5YjU3NmFkYWY0NDA3YyJ9"
+        },
+        {
+          "resource": "repo://web/app/Enums/IncidentStatus.php#L26-L35",
+          "version": "repo-lines-v1:sha256:8f70d1c86c7e401c18abe21a1f5471720eb02f689ed3563d477eccedea09b582:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhNDUzN2ZlZjFkYzIyMjk3ZGIzM2IwMmIzNWQ4NWQyYjFhMWZjMDAzOGFlODBhODNiMTQxZDM1MmFiMDkwODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4MDg4M2RjYzQ1NWNiNGUwODk3NDkxNzMwZmVhYmQzOWM3MTRhYTRmYTUzZTc4MzA1YThkN2ViMWQyZjYxZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L133-L148",
+          "version": "repo-lines-v1:sha256:406099b7d1e72da160a19a5fbca7739ce588a866d9cac36b89465ee897227ae1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5YTJhMDA5YmRhY2I5NGJjODBkMGQ0ZWQ3Mjk2YzkzOTEyNmFjMDRhYTZhYTg5MzBiMDQ5NzAyNGI4MzNhNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1YzBmMjA3NTYzMDVmZDhkM2I2MDYxNjg0MjIxNTlmYzcxNmVhYzM5NmJiYjg4NmM3NDBjMzYyOGRjZDkwOGUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L72-L101",
+          "version": "repo-lines-v1:sha256:43daaa8fe16ebd05f71ef6d323eae182ef01471f1a8df95824c3e182fe557c2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTc0ZjBlNDUwZjVkY2ZmOTExOTJjYjZmNDQ0YWJhOTMxNzI5ZGU3Mjg0ZWVlZGM3NmMzYWFmYjZlMThlMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxZGI3ZTQ0NTMyNGNiMzVmOTBiOWQ2MDg5NWM0NjI5ZTdkNjU4NDg0YzI5MDQ0NTk3YTUyYjE5NTg4MjhkOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_149d736d77814ec2bc672d7ea549f5dc",
+      "statement": "Only administrators and the incident's assigned technician may transition it; TransitionIncident reauthorizes against the row-locked current incident before enforcing the expected status and sequential target.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L15-L25",
+          "version": "repo-lines-v1:sha256:7e1be1f7aa88a8650dc0ca599bf8285f41fe1451d02ec9cc3a0951cc607ddcaf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmYTQ1MTRiNzY3MGUzZTk1YzRkNjEwMjBmYWZjYmVkMzJhNzUyMzk5MDIxMTExMGVlNDQ5Y2E2MjA2YjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NzAyNTIxOTE5NjkzZDZlYjVhMzljNTZhZDk3YTc2NDkyODAzY2U0Yzg2NjVmNzZmYmVkNmJhZjJmM2E0NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4YjA2OWQ1M2Q0Y2M0MWQyMDgzYWExZGYwNjFhNTk4YTQwMjYwYmI5Njg5YzkyNDlmMTU4ZTc5NzYwZmUwMGUifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentPolicy.php#L30-L34",
+          "version": "repo-lines-v1:sha256:32a358530cfd3e714bf23443c1bfaa3a794d1dde9fa6539c960e030a7152340d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFiYjQ5MTJjMThlYzBlMjNkMDM4ZDkyMjAzYTdlZmMwZTA2ZmY0Zjc0MDJjZjAxZGY2MWI2MmViZTdiNGE3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIzYWVmZTdmZWRkYTdjNWUzYWRjMDYwM2JhNTQ2OTY4NDI0MWU3OTZiNjQ2YzA5OWU5NGVmZWQ3ZTEzNmUwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDAyYmY1MzYzNmIxMTRiYWU5NWFjODg3NGZiYjc2ZDU3MDZlM2Y0ZDhkNjdmNGNhZTM3MzIwOGQ2OGE5MTIwNCJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L103-L131",
+          "version": "repo-lines-v1:sha256:094c4e999158286cba6febdfb3b168401d967306a06767d95a77a0cb2b4c4fc1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmM2UzN2Y2NzljZDY2NzAyYjcxZjNmOThkN2IyYjYyZTAwMGEzM2FkYjQ4OTE1NDdjNjZhOTJkNDEyNGIxNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlYjI1OTQyNTU1MGU2N2FhYjk4OWFkZWNhMjFjYThhMTE0OTY5NDYzOGJkNGYyZGY4NzIxODg3NTI5YjE0ZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7e64a41066f4dfe90adee97649bcf16",
+      "statement": "A successful transition updates incident status and inserts exactly one actor-attributed from/to history row in the same database transaction, so a history insertion failure rolls back the status update and invalid or stale transitions create no extra history.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L15-L37",
+          "version": "repo-lines-v1:sha256:e29702d414a1ab3e19d44c4a35ecc6fea4eb775eb4e6488b9c9a811aa049372f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NzAyNTIxOTE5NjkzZDZlYjVhMzljNTZhZDk3YTc2NDkyODAzY2U0Yzg2NjVmNzZmYmVkNmJhZjJmM2E0NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L150-L185",
+          "version": "repo-lines-v1:sha256:554c389419cfce8482c762843605526c3950f92728a4b7f5545daee0e085da9d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1YjAwNTJkYWNlZmE3N2VlNGQyMWE3Mzg4OWU2NjhiZjA2NDlkODk4NGI0Y2VjZmY3YzEzMzVjODcyYmQwMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzYWE0MDUxZjFlNTYzOTZjMGJkZTIwNzY3MmQ4YmI3YTgyYTljMWFlZjJkMjM4MmMzMGNhODlhM2MxMTZlN2UifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L72-L101",
+          "version": "repo-lines-v1:sha256:43daaa8fe16ebd05f71ef6d323eae182ef01471f1a8df95824c3e182fe557c2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTc0ZjBlNDUwZjVkY2ZmOTExOTJjYjZmNDQ0YWJhOTMxNzI5ZGU3Mjg0ZWVlZGM3NmMzYWFmYjZlMThlMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxZGI3ZTQ0NTMyNGNiMzVmOTBiOWQ2MDg5NWM0NjI5ZTdkNjU4NDg0YzI5MDQ0NTk3YTUyYjE5NTg4MjhkOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f348f5362229467681d8e650d379fe82",
+      "statement": "Assignment is distinct from status transition: administrators can assign or reassign a technician in any incident status, technicians can claim only an unassigned incident for themselves, and successful assignment changes neither status nor status history.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/AssignIncident.php#L15-L32",
+          "version": "repo-lines-v1:sha256:3f06d9a2face05537605f3402ac3e982ab072a476f95a22beff9be50e5a2eb80:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmZmU5NTUxNjBiNjE1NzU4MWNhNTNhOTY0ZmEyZDU0YzFjNGQxMWM0MzVkNzUyY2ZhNTUyMzExMzQwYjJjOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentPolicy.php#L24-L28",
+          "version": "repo-lines-v1:sha256:f375b7fc6d9686ae815838ea3ef6d2b960c0bc0e91e0210ffb44a042a38c8573:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFiYjQ5MTJjMThlYzBlMjNkMDM4ZDkyMjAzYTdlZmMwZTA2ZmY0Zjc0MDJjZjAxZGY2MWI2MmViZTdiNGE3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Q4ZjViMzYzNmQzMWE5NWMwYjJmNGE3YWQ3ZGFlNDQ0YjRjMjg0NzRjNWZiYWM4ODkwZTc4N2EzYjU0NDlhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODBmOGYxMzU4NmUzMGEwYjg3ZWQ5ZWFmMTI2MzBmMzRlY2JmZjdiNmM0NWE0ZmJkNTBmN2EzNzBlNmM4M2Y0MSJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L22-L41",
+          "version": "repo-lines-v1:sha256:b915734bb42c71d9bc86660e085f682e1c3f43d75d5aedcaa02620e2bd0f94f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOGM0MTQwYzc5NzkxYWNjZjE2OWMwMTAxZTJmNmNmMDVlY2FhMWRjZjk0NTJmNGViNTFjOGVlMjNjZDAxZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExNjJiZjc3M2IxY2RhZWM0NmVlMDlkZDA0MGIzNDY2YWMxNDc1ODYxMmRhYTE2NWVkOWNhZWNjOTgyMTZkMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxMWNmNGZhOWIwZjRjZGYyYjdhZTMyYmY4ODFkMWIyYzM5ZWI3YTNlNDFmMDFlZTQyMDQ2YTczNzJmZDU1MmEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L43-L70",
+          "version": "repo-lines-v1:sha256:ceed15c15100f05f47c18bcc76a568df0576939cd3912d1c7a7bfacbd37f3b64:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwYjhmYTJlM2E0ZjExYmVlYmQ0Njg5Nzg5N2M2NWZiMjMyNTIzMzBlOTY1MmRkY2JmNTk3MGVmYWJjOGNiMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMDYzYzY5MDEyZDVjMDRmNzg1ZDZiMjI0OTI3NmQ4NWIxMTkwNmYwNWQ3MmFiYThhZDgyOTNlNjBjMzZiNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df33bde51dc64904ae0f5eb2249172ca",
+      "statement": "AssignIncident uses a transaction, locks and reloads the incident, reauthorizes against current state, and locks the selected user before verifying the technician role; this serializes competing self-assignments and rejects a waiting technician after another has claimed the incident.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/AssignIncident.php#L15-L32",
+          "version": "repo-lines-v1:sha256:3f06d9a2face05537605f3402ac3e982ab072a476f95a22beff9be50e5a2eb80:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmZmU5NTUxNjBiNjE1NzU4MWNhNTNhOTY0ZmEyZDU0YzFjNGQxMWM0MzVkNzUyY2ZhNTUyMzExMzQwYjJjOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L150-L171",
+          "version": "repo-lines-v1:sha256:c3e8f027836505e39b2afb818da4b9173ef8218729e7918c539f87c09e3f6e38:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1YjAwNTJkYWNlZmE3N2VlNGQyMWE3Mzg4OWU2NjhiZjA2NDlkODk4NGI0Y2VjZmY3YzEzMzVjODcyYmQwMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmMjZmZjU4NWRhN2U3YjUxNWFjZWQzZGM5ZGEyN2Q2YzY2M2I3ZmU4MzE4MTQ4Mjc4YWM4OWZjNGY2NmMwOTUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Support/check-postgres-concurrency.php#L44-L96",
+          "version": "repo-lines-v1:sha256:ae0d02f32ceb17fbbcc82b872e7f9c9ea745569974674be2fc73b56b05184ba0:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NzU5OTI5NzYzZjg2ZGNlZWZlMDUwZjQ3MjZiNmVlOTIzYjVkODk1YTI2Y2IzMTdmMTE0NTlkYmI0ZmRjMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmODNkNWI3OWZmYmE5MDI0ZWE5NDRiODQ1ZTA1NjcxYmMzMzY3ZTdlZjViMzAzZTVjY2RlYzJiZmU4NDg1ZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkNjhlOTU2ZjY1ZGI0NDY0MDljYzhhZjlkOGUyODE0NjJiYzM5MmZiNWRjNmJjM2FjOGUwMWIxMjBmZGUyOTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac5b4c90db6c459199c40e7aa6372961",
+      "statement": "The transition confirmation captures its origin status in a locked Livewire property and passes it as the expected status; if the locked current row no longer matches, the action raises a stale validation conflict instead of overwriting the newer state.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L17-L22",
+          "version": "repo-lines-v1:sha256:b421aea65bbb1b27225b1f11f27b21deb4e9e3308ef13df6236f244b45a9ae28:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJhY2ZiOTViNzJiNWI2MmEyMmU3NWRlYWQ0YWQ5OTVhMGYwOTExZjJkY2YxOGIxM2VkNzdlOTAzNGZlNzcyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIzZWYxNTM4MjA1YjAwNDU2NjdjZDAwMGRjOTA1NWY3ZDBhNmJkMDgzNzAwODczNDFkNWUxODA2NDQ0MTUyMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTMxY2VkMzc1MDgxNmZkYTY3YzY0YzZlZDM3MzFmMjE3ZjYzYWFiZjc3YzJiNWVkYjQ5MjE4NzI1OTk0ZDkxMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTcxNGFlNjI1NGJhNTYxNmI2MDhjMGY2NDRhYTExMGEyN2ZiYjdhYTAzMGNhMzUzOTlkZGE1YjQyMmFjNmJkZiJ9"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/Pages/ViewIncident.php#L20-L22",
+          "version": "repo-lines-v1:sha256:9c506ee0fa9583f8d25dbc417f3e30e48ba0773a1da4cdd0fe9a610badb89b99:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWMyODliYzlmMWM4ZjA0ZDVjZGY3YjMxMmMwZjU1ZjM0NzM4ZjUyZGZjZjFlNzdjNmI0YWJlOTBhNzE2NzE2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjRhMjU1MDkzNmY2ODRiM2JmMzBhYjUwMzhhNzU3MzAwNDY0NTZlMmIwYTBkMGI2ODRkOGI4ZmZhOWIyYThjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjUxN2RjMzcxYjI4ZmExZDc0YTkwMGE2ZmRiNWNjMzJjYjQ0NDk0NWQwNTM5Yzk5NDc1NzU1NjRlZjJlOWY3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTA1YTVlZDJhOGU5ZGQ3NDFmMDhmMTg2Nzg5MDgyMWIwN2QyNGUzY2U2ZjJhNDE0MzFhOGI0ODc3YmY5MTNjYyJ9"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/Pages/ViewIncident.php#L48-L57",
+          "version": "repo-lines-v1:sha256:bf922a95dc4fd42ffb1fd748b4fd79874e65e0fab6220f552a74a749bfd901fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzN2E2YjQxZWRlNDc5MDk0M2I1OGQxYWExY2FiODU3NDE5MjI1OGJhZTljYzUzOWYyZTJhODFkNDAzY2U3M2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlNjE5MDcwOWE1MmYxNTI0OWQ5YjgzMmNiM2M4MTJlY2ZkZWQyOWVhOGJlODkwZjMxMGZhNmZkNjc5Njk0MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhNjBlMjExMzhjM2U2NjRmYmQ2NmE1NDE0YWUyY2Q2OTA4MmFhNDg4MjE5NDkyOGE1ZTEwODFkNTFmMjc2MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMWFhYzBmNjUzZjI5YzNhMjk5NWQ1OTE3ZTVjZTYyMTExNWI0MTBiZTNmOTRlYTI3ZjExZWM4MGFiNjcxNmUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingPanelTest.php#L45-L56",
+          "version": "repo-lines-v1:sha256:9f2ecf76df138a5e4ad41456961b79c039ac534358dbd1c450af885cb1070ba9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1MGQ3YjBiM2VkMTQzZTVhOTY3ODljMTc0NmZkODg2MjU5MGQwYmI0ZWY0YWM3M2M0N2I2Yjc2OTgxNDIwMDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjYzM4ZTVlMzUyYWY1YjFlODg0M2ZlOTI2MmUyOGY3NDdkNzBlOTRjOGE1MGEwYWZjMDExZTQ3YTAyM2U3MWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViODk3MGNlNjI3ZDAyYmZiNDQ5ZGE2NDI5NDMwNzBmMDEyOTI3YmUyY2M5ZmQ2NmRlNDdmZjExMDEwNDQxNjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_affcfd2892814c40b0793c9a389c8b53",
+      "statement": "The PostgreSQL concurrency support check forces two independent connections to contend for the same incident row and verifies one winner and one conflict for both assignment and transition, with no assignment history and exactly one transition history row.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Support/check-postgres-concurrency.php#L33-L99",
+          "version": "repo-lines-v1:sha256:27430f99321ca676bb8e297ffc0822018256e39fc3536953835da090c786448c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzYWJjNWE1NzU2ZGUxYjhhOTVmY2ZhMjk1ZmZkM2IxMjYyNzQxYmYyYzljZjAxYmQ1OTgwZGVkYWU0MmVjM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzYWI1ODdjZWJhNWJhZGM1NzM5NDkzODhjMjZmYzcxMjM2YzJmZTA3ODU2MTk5ZTlhZGJjNmJjYTQ3NjExZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2NWIzMDlkODk1Y2FiMjcyMDYwNjhhMDZlNDI1MjgzZTY1ZTY1YzIzYWI1MmJkYmNkZDBmZWIzMWZkYTJjMWYifQ"
+        },
+        {
+          "resource": "repo://web/tests/Support/incident-race-worker.php#L14-L33",
+          "version": "repo-lines-v1:sha256:3d7f3154971653df64731a96ac3ea9a40909d6240a074f034359e60c720abc17:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExZGE4MDBlYWY4MDdiODBkNjVlZTdiNWM4N2RhYjM2MGUyMTg4NTI1MDY0N2U2ZWEyMTdkMWI5YThkMTgxMWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzYmEwOTU2ZDgyZTUyODVkMDc0NzFiMTRhODQ2NTg5YTM4MmQ5NTMxMmMzZjQ5ODQ2YjkyNWE3ZjM0OGI5ZjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlMDNiY2ZjZmQwZmZjMjBiZTQ4MmNhMzc3Y2M0Zjc3M2UxYzc0MGVlZTczMGZkNjgwN2Y2MTQ0YjcyYTE0YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_21f79b4c46eb41adaadd9c4f5d5d62ef",
+      "statement": "Comment creation is permitted whenever the actor can view the parent incident, in every incident status; the action reloads the incident, trims and validates a 1–5000 character body, and server-controls incident, author, and timestamps so forged attribution input is ignored.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/CommentOnIncident.php#L14-L22",
+          "version": "repo-lines-v1:sha256:d7f07a2237046c029065fdf09c33571f3d777893ebc9ce6b1b81a9eb9ddfcd61:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTg5MWJmZjdhYzFmN2NlYWFlNDBlZjA1MTA2NmJlOWVmZTQ3YjRlNDI4MWU4NmMzMTliZTJjNTVlYmNlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTMwYmIxMjI4ZjhlYzkwZWIxMWUwMzQ3MjU5YTIwNWQwM2Q0NTk4YTMzYjFkY2I5ZmZhMmZjZThmYzdlMzg0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentCommentPolicy.php#L10-L18",
+          "version": "repo-lines-v1:sha256:4488b71133d064b32ccc453dcdf7bb1ba4f96378f927e40b3dc577d49ff6cfd3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM4ODMxNDNjNzI3NTNkMDhmYjk5Yjk5MzFhNTQ5NDQ1MzdmNDNlNGQ3Y2JiN2IxNTU2ZGViMmU5YmU0MjliMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTg5MWJmZjdhYzFmN2NlYWFlNDBlZjA1MTA2NmJlOWVmZTQ3YjRlNDI4MWU4NmMzMTliZTJjNTVlYmNlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTMxZTllMzZkZTI1YzI2MWU0NjQyZmFmNGNmZjRlYjQxNzM3ZGJmOTQyNDE2NGYyYjExZWEzNmVkNmY2M2Q5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzJkNTA4YjhkNjc5Njc4ZDdiY2I3NmFiNThmNmVmMWRmMjA2ZjNmNzY2ZGNlZWZiNWNmZGFmNmMyMDk3Mzc1OSJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentCommentsTest.php#L19-L40",
+          "version": "repo-lines-v1:sha256:eff4adaa50a2e750c4955d2dea57d46b3ab71fa31e5fd8269c46ab667e2c4143:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2NjU5Mzk5YWM5NDFiZTU0N2IzYzdjNjI3OWIzYjljZWZhYzQxY2ZjOTRlYjYxYmIxY2RjMjI3MTVkN2FmNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwYWQ3MmU0YzYzZDY1OGFhOGY3ZGVhMzY1NDgwNjk2MTI3MTMxZGFkZjQ1ZGRlMGQzZjY2NGVjNjIwYmZlM2UifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentCommentsTest.php#L53-L68",
+          "version": "repo-lines-v1:sha256:b2df1814c02b5096e75c1c8b21f0fc2c6b636e3f1d1a692a0b2e5f0a5f68c757:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4M2UxOTE1NTMwMzMxOTM0OGYyMTUxMmI3M2ZiYmQ2YWZhN2RlZjdlMWIwZWI2MDgxZThlMGYzNDdiMWQwMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NzU5OTI5NzYzZjg2ZGNlZWZlMDUwZjQ3MjZiNmVlOTIzYjVkODk1YTI2Y2IzMTdmMTE0NTlkYmI0ZmRjMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzNTEyOWJkYmMzMzQ4Njg1MGJmYWJmNTVmNGU0YTdlNjc3MmFiODkwMzU1MWJhMzllN2YyNDYzMjEyZmZiNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkYzk4ZGY3NWQ1NWE3YWI4YzRlOTdhYWE2NzlkYTM0ZmFjNTU5MmM3MzE5YThhZTA5YjE2NjIxMmNjYjNlNzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6979491cad85474eadb05bdddd188189",
+      "statement": "Incident comments are ordered deterministically by creation time and ID and are append-only at the application policy boundary because all comment updates and deletions are denied.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Incident.php#L44-L47",
+          "version": "repo-lines-v1:sha256:aff10e23494639638d81d1e355887e2f0245e77510f950d6d689d546bda7ad89:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdlZDY4NGI0OTYyMDI4NzNiYzJlMzcxNzFmNTg5NTZhNTAyYTlhNTg2YjlmOTJiNDEzZTBiZjdlNWIwNTBmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJiNjE0ZjEwZjA0ZjQyYmQ2NjkxZjkzNTRjOWQ4NGQ3NjQ5NTc5NzQxOThlMzU2MWFlMzYxNDIyOTUwNTczYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5NGQwMmE4MTIxOTQ0ZDE3NmQyNjVlOWJiOWNjNTlmNmFiODkwYmNhZGY4YWVmZGViZGJiYjRmMmVhODQ0NCJ9"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentCommentPolicy.php#L20-L33",
+          "version": "repo-lines-v1:sha256:a61f649db8dc07e41b120ccd5612b21c86b03800bfb514f715fd6460e3efd748:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3ZWZlZDUyMDk2M2FiNTlhMTBmOTg1MzIyMGFhZTMwYjE5Mjc4YmQ4ZjljMTNhNmU1MWNmOWUwMTRiZDNjMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ZTA5N2RlN2Q1ODI0ZDE3Y2NhNTRmMWYxYWZjZDgyZGNmZDdlZmExN2MyMzcwMTFmYzAxMDhmZDFkODJmMjEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentCommentsTest.php#L70-L76",
+          "version": "repo-lines-v1:sha256:b03639de38dcb9a50f36bacaeb4cf604faf2979909d1094137e866b77baab4b8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJiMDk5NDU5YjVjY2VlN2NiZWNkNTlhNjgwZDhhMzljMjRlM2QxMzg2ZjZjMGM0NTA0Nzk2NWZlMjdlNGUxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjZiOGM3Yjk2NjIyODJlNDBmZDNmZDQwNTI2YzdiNzU3ZGZmMGJkYWIwMjg5NzY0NjI5M2IwOWIxZTM1OTlkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_039868479de44edb9c9846173b5c9cbf",
+      "statement": "The incident view converts assignment and transition validation failures into a danger notification, refreshes the displayed record, and halts the Filament action; success refreshes the record, dispatches incident-updated, and shows a success notification.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/Pages/ViewIncident.php#L60-L73",
+          "version": "repo-lines-v1:sha256:02832ec7f1b6c6f1acc250a6e8b090c3db17e6605220d94ce2dff83083003c14:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2ZDBlOTQ3ZmMwOGZhNmZkMjEyNWU2MzNjNGY0ZTFmZWYxYjJiNmRjNjhmYWQ3Y2IxMjM4MGNhZTY5OWZlNmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_84bae6278c81484dab6683ecd1e85e50",
+      "statement": "Status history is ordered by creation time and ID, records incident, actor, from/to statuses and timestamps, restricts deletion of referenced actors, and cascades when its incident is deleted.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Incident.php#L39-L42",
+          "version": "repo-lines-v1:sha256:1b180e5bfddf56e2ed18ec6ce3521a5d6909777836423bb5f8db3b2a302499d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNjMmFiZmIxZTBjODM4NWU3ZmVhMTdmN2UzNWRmOGZiZTc0Y2ZmYmU5ZTM3YWFlM2MwZWZjODg3ZTE0MjBmZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWY3MzY0OTdhMGM5ZWM3MzY0NjAzMDA5YTgyNmIxZTc0NGI1ZTFiOGE0ZjYxODgxOGUzYjEyZTY3NTcyMmY1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzQ2ZTdkMmEzMmZhMGE4OGE2YjQ0ZWRhOWRlMzVjNjRmNWQ1MGJjYWQ0ZGIzNmI5MmRmMmQzNjdmMzIyZDAxNCJ9"
+        },
+        {
+          "resource": "repo://web/app/Models/IncidentStatusHistory.php#L10-L29",
+          "version": "repo-lines-v1:sha256:fe6889b09f68913c08519f1f95199e266381ad21adf496b2802205d34a026c5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4ZDgxZTc5MGY5MmRhZGY4Nzc3OTU3MTE2Y2VjMzY2ZjgzYzQ0NzE4MzJlNzlkMWM1OWU0YTA1MmYzMGM2YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_19_100100_create_incident_status_histories_table.php#L10-L19",
+          "version": "repo-lines-v1:sha256:b19e52333418ceb2918c7123f82d3090e7e98893d2af21a7062d4ce2ea105063:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkM2FhMzFhMjQzMTc4NGFiNjYzZmQ0YWNhMGY2MTJmY2NiYTlkM2JmMWYzMGFlMmNmNmJkMzRjZWViYmZkM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxOTUzZGVhNzEwZDBjYWUzMWZmYmQ0ZGU3Nzc3Mzg3NmMzZThiYTFhMThjMDNiY2Y4M2I5ZTBkMDAxMDhmZTAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-24T09:12:59.855Z"
+  }
+}

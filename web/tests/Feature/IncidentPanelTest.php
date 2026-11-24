@@ -8,6 +8,7 @@ use App\Filament\Resources\Incidents\IncidentResource;
 use App\Filament\Resources\Incidents\Pages\CreateIncident;
 use App\Filament\Resources\Incidents\Pages\ListIncidents;
 use App\Filament\Resources\Incidents\Pages\ViewIncident;
+use App\Models\Asset;
 use App\Models\Incident;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -22,7 +23,7 @@ class IncidentPanelTest extends TestCase
     {
         $this->actingAs($user = User::factory()->create());
         Livewire::test(CreateIncident::class)->assertFormSet(['priority' => IncidentPriority::Medium])
-            ->fillForm(['title' => 'Equipo', 'description' => 'No arranca'])
+            ->fillForm(['title' => 'Equipo', 'description' => 'No arranca', 'asset_id' => Asset::factory()->create()->id])
             ->call('create')->assertHasNoFormErrors();
         $incident = Incident::sole();
         $this->assertSame('proposed', $incident->status->value);

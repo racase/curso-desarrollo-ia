@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Enums\IncidentPriority;
 use App\Enums\IncidentStatus;
+use App\Models\Asset;
 use App\Models\Incident;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -20,11 +21,17 @@ class IncidentFactory extends Factory
             'priority' => IncidentPriority::Medium,
             'requester_id' => User::factory(),
             'technician_id' => null,
+            'asset_id' => Asset::factory(),
         ];
     }
 
     public function assigned(): static
     {
         return $this->state(fn () => ['technician_id' => User::factory()->technician()]);
+    }
+
+    public function withoutAsset(): static
+    {
+        return $this->state(fn () => ['asset_id' => null]);
     }
 }

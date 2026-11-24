@@ -19,10 +19,12 @@ class CreateIncident
             'title' => is_string($input['title'] ?? null) ? trim($input['title']) : ($input['title'] ?? null),
             'description' => is_string($input['description'] ?? null) ? trim($input['description']) : ($input['description'] ?? null),
             'priority' => $input['priority'] ?? IncidentPriority::Medium->value,
+            'asset_id' => $input['asset_id'] ?? null,
         ], [
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string', 'max:10000'],
             'priority' => ['required', Rule::enum(IncidentPriority::class)],
+            'asset_id' => ['required', 'integer', Rule::exists('assets', 'id')],
         ])->validate();
 
         return Incident::create([

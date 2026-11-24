@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:40784a1e2418de13012c6e9a45de76b06e1ea04aa0399b3ecba032220dc4868a",
+  "claims": [
+    {
+      "id": "claim_b22ad2036d7e4b30ba968f1e2dba4d68",
+      "statement": "The registered `AdminPanelProvider` exposes the default authenticated Filament panel at `/admin`, enables login, applies session and CSRF middleware, and discovers resources, pages, and widgets from the application's Filament directories.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Providers/Filament/AdminPanelProvider.php#L24-L60",
+          "version": "repo-lines-v1:sha256:59e43923afe9354e16cc32c9e32b0438eaa74cf7cc5c638cbcbc6981ca9b098d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMDc3ZTBiZTkwNTE4MmVlMjI0YzU4MjA5ODEyYTVmZmQ1ZTUyMjk1ZDk1MGZkY2NmYTU4MThjNjExMGEyYjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlZGRlYzc0NTJhYzc3ZDNlNzZhZGE3YWY3NTJhNjhmYjllNTZhOTA4MWU4NWI3YzViMzg3ZjUwNWVkNTg5ZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/bootstrap/providers.php#L3-L8",
+          "version": "repo-lines-v1:sha256:a7f912d30d4b340b3ee1b5c0a83c084389a0baddb5cbd107fe3454fec21e73ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQzOWIxMmIyZTQ1NDM3OTM1Yzk5ZjNlNmNkYzExZjgyMzhlZjcxMDE3ZjY0MmJiYTk1NGUxMDBmZjRiMmI2NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ0NTMwMjVjZTUzZTU1M2QyMzEwMjFjNDE4OWEwNzY4YjY4MjIyNWU0MDdhODkwOTM2NmRlNWIzZmI0NzE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzc1ZmMzM2RmMDQ4MTcxMzE1OTIzNmYyYzcwNmY3YmRmMWYzN2ExOWM1ZDY1ZGFlOTQwNjhiNzIzYTVmY2E0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjAyZDJjMGQ2ZGM1ZTc0ZDkyZmExNGI5MWRiZWEyNjQwOTBiZWIzNWZkYjkxODhkOWIzNDExODFkY2U5ZjRjZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_350b78f62cb44ef78678b4c732757cef",
+      "statement": "Every authenticated application role may enter the Filament panel because `User::canAccessPanel()` returns true; feature-specific queries, policies, and actions provide the finer authorization boundary.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/User.php#L24-L35",
+          "version": "repo-lines-v1:sha256:a7d2248a503921d50184e338a23b1f2e1030cde2e2945ab72aed96711dd17578:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwNzk1MDQ1M2I5MjE4NTI0NDM0YTYxYzI2YWQ1NDBiNmFiNTY2MzkzNWViYzAxNDllYjI5OWE5YmQ5M2Y3YzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4YmRlY2RmYjMyN2M3YTEwNjUxYWZiZjc5NGRmMjg0YzMyOGE4MDQ0NTk5OWRhMjlkYWViY2VmNDIyMTg2YjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzOTg0NDc1MTI0ZDcyZmNhN2E1YmFkNmUwZTJhOWNiZDYzYzdiMDMzODlhMDA1ZDQ1NDU4YjZhMGVlMTc2ZTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentPolicy.php#L10-L51",
+          "version": "repo-lines-v1:sha256:8f33657d389561482e5b600f43b0675b2242f3593a21ec3e40a44a75969a6a94:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiY2M4YTQ1NTcyNGExMmFkM2U4NTdmNTAwMmQ4YjhlYTViNGRmZjU5NzBlZTBiMTNhZDQ3YzI5YzJkNTNmODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5aa4f2bd901d44d9bf9c895d8e19b2fc",
+      "statement": "`IncidentResource` limits requester reads with `Incident::visibleTo()`, eager-loads requester and technician, exposes list/create/view pages with no edit page, and attaches comments and status-history relation managers.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/IncidentResource.php#L68-L93",
+          "version": "repo-lines-v1:sha256:5c95b1a54ecf480cdd68eec0ac556cd3be27fe13997f874409386736ccce650f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4MWJlNDQwZDk0MTdiZWQxOGQ2MGVlZDJmYTlhZmYxYWFkNjRmNTUzYzgxMGQ0ZTU3NzQ2YTI5NjM2NjVmMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwMWYxOGU4ZWRlMzQwNDM4YWYwMzE5NjhjZTQxNzBjNTg3NjZlZjE4ODdhMDJjNmQ3YzgyYjE2MmU0OTAxMDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/Incident.php#L24-L49",
+          "version": "repo-lines-v1:sha256:275febd30cd10d92baa555a08558169a1971823025da71a7b3986cdd8aaf8fc2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhNzA3ZmE0ZjRlMWYwNGRmNGIxYjAxNjYwYWRlYTcwMTAzMDc2ZGNmNTJkNzM5NTBmNmRjNDFlMmEzNjRhNGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d076d5788754923a51de63ebaab6cc1",
+      "statement": "Incident policies permit requesters to view only their own records, restrict assignment and transition by role and assignment state, and deny generic update and delete operations; comment policy permits creation only when the actor may view the incident and denies comment mutation or deletion.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Policies/IncidentCommentPolicy.php#L11-L35",
+          "version": "repo-lines-v1:sha256:e151fcca044fa9f302e93ed24128a443fc20f55ae46fcb6fd76ccc39a9a2b74e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1YjAzYzhmMGZmMDU4MDYzYjk0OGUyNDVkY2E5Y2Q4ZTJmY2YzZDNlOGYxM2U3ZjEwNGFjYTBhMDFiOTQ4ZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentPolicy.php#L10-L51",
+          "version": "repo-lines-v1:sha256:8f33657d389561482e5b600f43b0675b2242f3593a21ec3e40a44a75969a6a94:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiY2M4YTQ1NTcyNGExMmFkM2U4NTdmNTAwMmQ4YjhlYTViNGRmZjU5NzBlZTBiMTNhZDQ3YzI5YzJkNTNmODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b192d9fc6424b05a828163b42e7a225",
+      "statement": "Panel mutations delegate to application actions that perform server-side authorization and validation, so Filament control visibility is not the security boundary.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/AssignIncident.php#L15-L32",
+          "version": "repo-lines-v1:sha256:3f06d9a2face05537605f3402ac3e982ab072a476f95a22beff9be50e5a2eb80:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmZmU5NTUxNjBiNjE1NzU4MWNhNTNhOTY0ZmEyZDU0YzFjNGQxMWM0MzVkNzUyY2ZhNTUyMzExMzQwYjJjOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Actions/Incidents/CommentOnIncident.php#L14-L22",
+          "version": "repo-lines-v1:sha256:d7f07a2237046c029065fdf09c33571f3d777893ebc9ce6b1b81a9eb9ddfcd61:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTg5MWJmZjdhYzFmN2NlYWFlNDBlZjA1MTA2NmJlOWVmZTQ3YjRlNDI4MWU4NmMzMTliZTJjNTVlYmNlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTMwYmIxMjI4ZjhlYzkwZWIxMWUwMzQ3MjU5YTIwNWQwM2Q0NTk4YTMzYjFkY2I5ZmZhMmZjZThmYzdlMzg0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L15-L37",
+          "version": "repo-lines-v1:sha256:e29702d414a1ab3e19d44c4a35ecc6fea4eb775eb4e6488b9c9a811aa049372f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NzAyNTIxOTE5NjkzZDZlYjVhMzljNTZhZDk3YTc2NDkyODAzY2U0Yzg2NjVmNzZmYmVkNmJhZjJmM2E0NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/Pages/ViewIncident.php#L28-L57",
+          "version": "repo-lines-v1:sha256:fb8722900d12d1f602bb6190e9b1dda686123efd5dd14440ff20040c416ed059:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlNjE5MDcwOWE1MmYxNTI0OWQ5YjgzMmNiM2M4MTJlY2ZkZWQyOWVhOGJlODkwZjMxMGZhNmZkNjc5Njk0MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwMjBhYTg5YjM5N2Q1MjNlZjcwYjdiNTc1MzcxNjA5Nzc3NzlmNjE3MGVkZmYxZmRjNzA5MjIyM2RjMzFhZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMWFhYzBmNjUzZjI5YzNhMjk5NWQ1OTE3ZTVjZTYyMTExNWI0MTBiZTNmOTRlYTI3ZjExZWM4MGFiNjcxNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_906eb83e4293497ebd74bef2b5757dd1",
+      "statement": "Incident creation authorizes the actor, trims and validates accepted input, and enforces server-owned requester, proposed status, null technician, and medium default priority regardless of extra caller fields.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/CreateIncident.php#L14-L34",
+          "version": "repo-lines-v1:sha256:0424688637494b281bd1280b3aa26881345c5345c870a81b31569dbd1883d45d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1MjQwNTFhNjA1Yzk3YmJlODQ0YmI1NmMzMDFlZTE2OGVjMDY2ZDU5OTBiNWYxY2RiYThhYzI0ZWZkYTNkNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentAccessTest.php#L19-L35",
+          "version": "repo-lines-v1:sha256:8416b1665760177d754347fe838a162cb16c2ef7f36744ce19bb04e1596910c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NzNjYzg0YjhjMWMwMDM2Mzg0YWMwOGZkMWM3OWJmYWViNWQ1NGY3ZWI5M2I3NzA3NDc0ZTkwN2Q0MGZjMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4NDUxOGZkZWJiYzE5ZDY0NDAxZjMxZjU3OGM5Y2NmNzU0ZWZiZDc1ZDg1MDM0M2QwNmFhYzZhN2JmNDc0NDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8db2e68803374823b2478d0aa2aa14b7",
+      "statement": "Assignment runs in a transaction, locks and reloads the incident, reauthorizes current state, restricts technician self-assignment to the actor, validates the target's technician role, and then updates the assignee.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/AssignIncident.php#L15-L33",
+          "version": "repo-lines-v1:sha256:04059b2eaa37cb41bd67c1f75814b3a86fede9a12c828ab80eac943f0423a95c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmZmU5NTUxNjBiNjE1NzU4MWNhNTNhOTY0ZmEyZDU0YzFjNGQxMWM0MzVkNzUyY2ZhNTUyMzExMzQwYjJjOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_064b6911af01425f9739709f15c5b295",
+      "statement": "Status transition locks the current incident in a transaction, authorizes the locked state, rejects stale or non-next transitions, requires an assignee before `in_progress`, and atomically updates the incident and appends status history.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L15-L37",
+          "version": "repo-lines-v1:sha256:e29702d414a1ab3e19d44c4a35ecc6fea4eb775eb4e6488b9c9a811aa049372f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NzAyNTIxOTE5NjkzZDZlYjVhMzljNTZhZDk3YTc2NDkyODAzY2U0Yzg2NjVmNzZmYmVkNmJhZjJmM2E0NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingPanelTest.php#L47-L58",
+          "version": "repo-lines-v1:sha256:ad759a7d69ea811febadfeb9bc0ec4f8c4b5e9544bc8975ed5871618ad9e2556:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2OWVmMDc2YjEzZTM0YWQ4MTJhYTE3NjA4MGIzYWRhOGIyN2ZlMzMxNjYyODMxNGIzYjI4NWYyOGQyZGIyNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNWNmODFlZTYwYzgzNWZjN2NmMmM1ZGJiOGJjMDMwMWEzNTk1ODk2ZjFlZWI0ODg0MjNhNGEzNTE4NmI4ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMmFjOWU1NmJhYTkwOWIwNjZlYzE4Njg5NzI3M2Y1ODI5MjgxZThjMmYxMTczYjlmY2M4ZjBhYzJlMzdmMTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_34a120f663624bb1ab3b088ff3336173",
+      "statement": "After a successful view-page mutation, Livewire refreshes the incident, dispatches `incident-updated`, and the matching status-history relation manager resets its table; validation conflicts instead show a danger notification, refresh current state, and halt the action.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/Pages/ViewIncident.php#L60-L73",
+          "version": "repo-lines-v1:sha256:02832ec7f1b6c6f1acc250a6e8b090c3db17e6605220d94ce2dff83083003c14:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2ZDBlOTQ3ZmMwOGZhNmZkMjEyNWU2MzNjNGY0ZTFmZWYxYjJiNmRjNjhmYWQ3Y2IxMjM4MGNhZTY5OWZlNmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/RelationManagers/StatusHistoryRelationManager.php#L21-L40",
+          "version": "repo-lines-v1:sha256:0018c9b140de3e3070b2d33cff564072d83a7f8b19ac208f9afc3c07c89a8f0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MmRhMWE5NWY1NDc2MTk1ZTI4YmIzY2VkMDI4MGI0N2U0MWY4YjYzZTM0ZmE3YTEyZGJhMmM2OWE1YmVjNWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0YjczNzNhMzM2MTJlZTQzODU4OGM1YTllNmIzYzgyNzM2ZDYzM2JkZWY3ODI4ZTEyMjBjYzQ2MDU0ZDBiNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyMGZkM2M0MjhiNzcxMDg3OGYxMmFjNWJkODgzZDRlYmNlYjJlYWY1MWQ0ZjBlNjAwYTgyZGIzNzM5ZTg4OGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56bc548fd28c41f8b57e5174283960f3",
+      "statement": "Incident comments are created through an authorized application action after reloading the incident, and the relation manager resets after creation; comment and history relationships use deterministic chronological ordering by creation time and ID.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/CommentOnIncident.php#L14-L22",
+          "version": "repo-lines-v1:sha256:d7f07a2237046c029065fdf09c33571f3d777893ebc9ce6b1b81a9eb9ddfcd61:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTg5MWJmZjdhYzFmN2NlYWFlNDBlZjA1MTA2NmJlOWVmZTQ3YjRlNDI4MWU4NmMzMTliZTJjNTVlYmNlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTMwYmIxMjI4ZjhlYzkwZWIxMWUwMzQ3MjU5YTIwNWQwM2Q0NTk4YTMzYjFkY2I5ZmZhMmZjZThmYzdlMzg0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/RelationManagers/CommentsRelationManager.php#L30-L42",
+          "version": "repo-lines-v1:sha256:38a5cc4826c56d3656939f5d0e1798f3d98069eb4005afdde9941d1dce49ae45:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3M2RiOWU5Y2U4MGFjNDg5ZjRmODUzMDUxNWU4OTY4NTEzMzUxZTRkYmU2YjFiZDI3NDI5ZGQ1MmE4YjhiNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYzM4NjQ2MWRmOGU0M2NkNzcxNjFlNWIxZDAwNzBiMDNjNGQwMDg5N2ZjNmU1MDY0ZGZmOTkxYzA5OTdhZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwM2ZmNTBkODliYzc2NDc3NzU1NTU3OGU5Zjk3NjE5ZWM1MTJmNjkwZjA1YWE0NzllN2Y5OWZiODAxZDNmYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/Incident.php#L39-L48",
+          "version": "repo-lines-v1:sha256:99226e861dda286702193c1382f14d78b30fe3cb0182db7f1c7f756fe7569f50:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmNzM2NDk3YTBjOWVjNzM2NDYwMzAwOWE4MjZiMWU3NDRiNWUxYjhhNGY2MTg4MThlM2IxMmU2NzU3MjJmNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_767a93b8a01a4db89bae9d0f2bd5e590",
+      "statement": "Database foreign keys restrict deletion of referenced requester, technician, actor, and author users, while deleting an incident cascades to its comments and status-history rows; indexes support resource filters and ordered child queries.",
+      "evidence": [
+        {
+          "resource": "repo://web/database/migrations/2026_11_19_100000_create_incidents_table.php#L11-L25",
+          "version": "repo-lines-v1:sha256:245f57773a6755f9fd6ecca771ce8e827d2ce50aa914e660c9244df3fc1cdfc0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1N2FkOWY0NmY2NzJlYmVlYzYxNGY0ODViMzM5NTc5NTUyNjA3MDk2NzFlYjRjNDJmZTliN2VjZTExMWY3NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNmY2YTM0ZGE5ODNlYWMwY2ExMjdkNGNiZTg5NmFkOGM0YWQyZjA5MTcyMzBkNGI2Yzk2YjE3OThjMjlmZGMifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_19_100100_create_incident_status_histories_table.php#L11-L20",
+          "version": "repo-lines-v1:sha256:01518c7a20924dd8d0cf6093a46b3ce23ec9946032cd52da15a9c0277674f386:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwNDgzYTNhZDZmZDNmMmIzNmY5NzU3Y2Q4MWNiYjNhMzhlNmIyZmQ3YzBiNjgxMTIxNWQ5MzRkNjNhZWQ5MzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmZWVhMGQxNWJlN2IzNDhhYjkxNWMxODc1NmQ4M2FjN2JjNTc3YzAyMTY1ZjI3OGZlMmMyODE2ZGNhMmJiNjEifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_19_100200_create_incident_comments_table.php#L11-L19",
+          "version": "repo-lines-v1:sha256:03eedb274a9f392d064063ce69e2ef20e1f28ae8653185d49b8a6d14940dc1aa:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFkNzUwMGMyYTAwMWI4ZTQxN2VmNGMzNDk3OWM5ZTRkM2IyZDc5NDUyNmQ3OWZkNjJkZDM1ZGEzZDhlZGRhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzExNmRhYjQ2N2MxOTM1NzQxMDE5MTYyYzU2MDE0ZGUyODMxZDZiMTZmNzljOTU5OWIyY2VjZWY2YjI5YjI5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmZlZWEwZDE1YmU3YjM0OGFiOTE1YzE4NzU2ZDgzYWM3YmM1NzdjMDIxNjVmMjc4ZmUyYzI4MTZkY2EyYmI2MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1626e626acd47b882c1cfacc3dc9478",
+      "statement": "The panel uses a Vite-built custom Filament theme, forces light mode, and loads the locally hosted Rubik variable font rather than a CDN font.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Providers/Filament/AdminPanelProvider.php#L30-L39",
+          "version": "repo-lines-v1:sha256:a25a92ad5a183c4b7115ab450fc9bd488fe005b29711bbd8762e598e5e01b0f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5MGQ5MmYyNzM1NWYxYjNjMmJlMTYwMDI2MGMwODdjYmY3ODM2OWI2ZWRhYjNkNzI3ZWM2MWY2MTU3N2VjMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmYzljMGQ4NGQ1OWE5ZGYwMjE0NDg3NmVkMzRhZWQ0MjY0ODM2MTJlZDdjNjE5Zjc1YWY4MmJiNDc2NzU3NDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NGIxZGM4ZjFiMTdkMGEyYzIyNmFjZjk5MjRlNWZiODI2OWRjMmRmOTllZDY1NGYzOTg1NjE1M2UwNDA2ZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxM2E1YTBiYzY3OTYwNGY4NGE5YzRlMmY0MzdjYjVmMmU2NjMyNGVmOWZiMmQxNTVmNDk5MTg2ZTI3YzUxNzAifQ"
+        },
+        {
+          "resource": "repo://web/public/fonts/rubik/fonts.css#L1-L7",
+          "version": "repo-lines-v1:sha256:8a1b0d57021a378ae6390dc7ed8f1907519b98410497d097bb22201de8606cf5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2U0N2NlNjQ4MDY5ZjI0NmZlODUyZjEwOTIxODVjODM3NTY2MmJiOTliYmQzYjQxYjE2MGJkZTU4NmNjODRhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://web/resources/css/filament/admin/theme.css#L1-L20",
+          "version": "repo-lines-v1:sha256:fba85f3522ff877fc98f2a64bb0d88a15148b888faeb66780a88be6b0dedcd10:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1MTIyMGYyZDlkMWRhYTcxOWIwODY5YTIxNmQ5MzdiNWNlMTczNGQxYmQwMDA0NWIwYWZkNTgzMDM3YWU1NTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0MzAwNDIzMDFhNWU0MzA2ZTliZTIwM2ZjNjM2ZTcxNTU3MDlkNzlhN2Y2NmFkMTk2NWRmYWJkZTE3OTU2NTUifQ"
+        },
+        {
+          "resource": "repo://web/vite.config.js#L5-L16",
+          "version": "repo-lines-v1:sha256:98086477e5083253391fcfeab759318bf29f71f1c559156f88dbd0bc5da5f974:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyY2VjYjE0NGE0NmY1ZGNmMTJhNjE2OWZjZWVkNzY5NWU4Mjk0YjA5MGRlNzZmMzY2MWNkZDAyNDkzMDAxNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2M2Q1MzVjZTM4MDYzZDZiNGM1MWQ4YzM4NmE3ZjliM2U1ODBhMTRhMTBjMDdiMTk4ZGZhZjE5YzkzYTNiZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0NGQzYWY3OTY2N2EyZDVmMjg5MTE2MTdiZTZhM2Q5YmIwMGM2YzYyNGY5NmY1YTFhYWJiNGU2Y2NlZmY1NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllZWU5ODEwYWFiM2ViYTY3YTExNDM0NjI3ZDlmOGJjMjU3ODRmYjI5NzFmNWI5ZjVlMGI3OGRiZGI4OGU4N2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dc770f159d65440a810973edf08a6408",
+      "statement": "Because Composer dependencies are stored in a container volume, a host-side theme build must first copy `vendor/filament` from the application container, whereas a Node container sharing the application volumes can resolve the Filament theme import and write generated assets directly to `public/build`.",
+      "evidence": [
+        {
+          "resource": "repo://web/README.md#L38-L78",
+          "version": "repo-lines-v1:sha256:953c96887d38dd80d3fe7f00f4efe7332ab9a5908f87c0164a8f0fb3ab90a3b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYWQwOWViYTJiZmI3Y2EyYTkxZjhmYzcxMzk4OTQ1Nzk0YTA0MTBmYmM2ZDExMzM0NmZlYTk1NjFlODUzODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2OGY4NmUzMzAyMDEyMDY1NzVmYTY1OWI2NzQ4NWUzNzhmNDE4ZWZiMzBmMmIxMTEwNGFjYWRhY2ZhMTI2YzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1N2UwYmMxZDdiNDI3YjYyNmJmNDNkZjMwYTFlNDY1NTY1NDU5NGQ2MzQyNWUyNTg2NWE0YWUzNmJhZGI3NjEifQ"
+        },
+        {
+          "resource": "repo://web/docker-compose.yml#L2-L12",
+          "version": "repo-lines-v1:sha256:4ead571ddbfbd196304f2ac150c8f58644ef71051983cdf01da7d7a3586b9589:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZTFlMDIwM2VlMGIyNTU1MWRhMzdiMWFiYzUwNDU5MjMyYTkwNDhmNjJjM2JhODY1MTczNGNhODExZmUzYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNzQ2MzM0ZmRiZDY1MTMyMzlmMTMyNmRiOGI2MTI3NTdiNWIzMmMwODA4YjUwODFhOTkzN2Y2NTMzYjhkYjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoxLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5N2MzZDVmZDJmNzUzNDdlOGQ5NjhhYjRjYjM0MzA4ZjRkYjY2MDAwMWY2MTEwNzkyYjU2OTgyZTgwNGQwYTIifQ"
+        },
+        {
+          "resource": "repo://web/resources/css/filament/admin/theme.css#L1-L4",
+          "version": "repo-lines-v1:sha256:205a131f08a8a23f6c3198d2fbefba0cdbb6d330142d11ba699d6c6925ab964d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUxMjIwZjJkOWQxZGFhNzE5YjA4NjlhMjE2ZDkzN2I1Y2UxNzM0ZDFiZDAwMDQ1YjBhZmQ1ODMwMzdhZTU1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDIwOTE3ZTU5YzlhMGFiZjJjMzQyODk5NjBmNjQyZmQ1OTExMWQyOGI4ZWM1YzU3MWU5MWJjMzlmYTg4NGY3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzAyYWUwZTBhMGE1YzQxZjJmODI4ODZjMjY0NTIzOGNhOGMyYTQ1ZGM4NmYzOGUwYTBiOTE2ZGQwZjljZmE0NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ca315cb52e34a17a7c820cad1ccdb13",
+      "statement": "The routine test suite uses in-memory SQLite, while PostgreSQL locking and race behavior is checked separately with `tests/Support/check-postgres-concurrency.php` against a temporary PostgreSQL database.",
+      "evidence": [
+        {
+          "resource": "repo://web/README.md#L147-L160",
+          "version": "repo-lines-v1:sha256:d457b75a16daa4f132a0fe48543cd766229ab731fddcdb82f65f0a81665eb78a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3ZDE4OTBmOTA3ZDQwZTIyZTdlOGRhMmI3MDBjMTY3NTdjMjQwOWE4ODVjNTNiYjQzZWFiNTAyYjI0MTJjZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4MzFkYTQwODFiMWExYWEwNWEyNGNmNWM1MjA2NTQ2OTA1OWI1MzRhNTg3NjFjNmNlOWVlNGRiNzM5Y2YwNWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhOGI3MjNiNjViZjVlYzAwZjJjNDdhYWE3NTgyN2I1M2ZlNWI4NmY1ZDcxMDkwN2ZjZDlhNjI2ZWYxODE3NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxODlmY2YzYWRkYzQ5NzI1MmQ4ODEyZWU1Zjc3ZmFjZTRiNWQ4ZWFlMmZhZWViNDdmYTgzNjMyMmM2YWM0OGIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-24T09:12:59.855Z"
+  }
+}

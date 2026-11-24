@@ -133,7 +133,7 @@ class IncidentTrackingTest extends TestCase
     public function test_opening_needs_no_technician_but_starting_work_does(): void
     {
         $admin = User::factory()->admin()->create();
-        $incident = app(CreateIncident::class)->handle($admin, ['title' => 'Equipo', 'description' => 'No arranca']);
+        $incident = app(CreateIncident::class)->handle($admin, ['title' => 'Equipo', 'description' => 'No arranca', 'asset_id' => \App\Models\Asset::factory()->create()->id]);
         $this->assertSame(0, $incident->statusHistory()->count());
         $opened = app(TransitionIncident::class)->handle($admin, $incident, IncidentStatus::Proposed, IncidentStatus::Open);
         $this->assertNull($opened->technician_id);

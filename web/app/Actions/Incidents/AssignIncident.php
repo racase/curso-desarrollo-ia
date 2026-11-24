@@ -29,6 +29,6 @@ class AssignIncident
             $current->update(['technician_id' => $technician->id]);
 
             return $current;
-        });
+        }, 3);
     }
 }
