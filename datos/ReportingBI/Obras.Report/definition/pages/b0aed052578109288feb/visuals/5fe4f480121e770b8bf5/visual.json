@@ -1,0 +1,310 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "5fe4f480121e770b8bf5",
+  "position": {
+    "x": 20,
+    "y": 200,
+    "z": 20,
+    "height": 500,
+    "width": 1240,
+    "tabOrder": 20
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimObra"
+                    }
+                  },
+                  "Property": "Obra"
+                }
+              },
+              "queryRef": "DimObra.Obra",
+              "nativeQueryRef": "Obra"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactPresupuesto"
+                    }
+                  },
+                  "Property": "Presupuesto de coste"
+                }
+              },
+              "queryRef": "FactPresupuesto.Presupuesto de coste",
+              "nativeQueryRef": "Presupuesto de coste"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactPresupuesto"
+                    }
+                  },
+                  "Property": "Presupuesto de venta"
+                }
+              },
+              "queryRef": "FactPresupuesto.Presupuesto de venta",
+              "nativeQueryRef": "Presupuesto de venta"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMovimiento"
+                    }
+                  },
+                  "Property": "Coste real"
+                }
+              },
+              "queryRef": "FactMovimiento.Coste real",
+              "nativeQueryRef": "Coste real"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactProduccion"
+                    }
+                  },
+                  "Property": "Producción"
+                }
+              },
+              "queryRef": "FactProduccion.Producción",
+              "nativeQueryRef": "Producción"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMovimiento"
+                    }
+                  },
+                  "Property": "Certificado"
+                }
+              },
+              "queryRef": "FactMovimiento.Certificado",
+              "nativeQueryRef": "Certificado"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactProduccion"
+                    }
+                  },
+                  "Property": "Pendiente de certificar"
+                }
+              },
+              "queryRef": "FactProduccion.Pendiente de certificar",
+              "nativeQueryRef": "Pendiente de certificar"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactPresupuesto"
+                    }
+                  },
+                  "Property": "Margen previsto"
+                }
+              },
+              "queryRef": "FactPresupuesto.Margen previsto",
+              "nativeQueryRef": "Margen previsto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactPresupuesto"
+                    }
+                  },
+                  "Property": "Margen previsto %"
+                }
+              },
+              "queryRef": "FactPresupuesto.Margen previsto %",
+              "nativeQueryRef": "Margen previsto %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactProduccion"
+                    }
+                  },
+                  "Property": "Margen real"
+                }
+              },
+              "queryRef": "FactProduccion.Margen real",
+              "nativeQueryRef": "Margen real"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactProduccion"
+                    }
+                  },
+                  "Property": "Margen real %"
+                }
+              },
+              "queryRef": "FactProduccion.Margen real %",
+              "nativeQueryRef": "Margen real %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactProduccion"
+                    }
+                  },
+                  "Property": "Desviación de coste"
+                }
+              },
+              "queryRef": "FactProduccion.Desviación de coste",
+              "nativeQueryRef": "Desviación de coste"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactProduccion"
+                    }
+                  },
+                  "Property": "Desviación de coste %"
+                }
+              },
+              "queryRef": "FactProduccion.Desviación de coste %",
+              "nativeQueryRef": "Desviación de coste %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FactProduccion"
+                  }
+                },
+                "Property": "Pendiente de certificar"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FactProduccion"
+                        }
+                      },
+                      "Property": "Color margen real"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FactProduccion.Margen real"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FactProduccion"
+                        }
+                      },
+                      "Property": "Color margen real"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "FactProduccion.Margen real %"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Control económico por obra'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

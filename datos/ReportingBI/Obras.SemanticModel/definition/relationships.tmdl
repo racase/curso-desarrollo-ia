@@ -1,15 +1,32 @@
-relationship 2749ae3a-8031-4ecf-92a9-90b2a7801dcb
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'CONSTRUCTORA DEMO$Job'.'Creation Date'
-	toColumn: LocalDateTable_e56a0709-06df-4408-8919-ffe23f7e41a1.Date
+relationship FactPresupuesto_ObraId_DimObra_ObraId
+	fromColumn: FactPresupuesto.ObraId
+	toColumn: DimObra.ObraId
 
-relationship 122d3399-d933-48c3-b050-748e891e3bb1
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'CONSTRUCTORA DEMO$Job'.'Starting Date'
-	toColumn: LocalDateTable_f4909b8f-4551-4344-b0e7-8a844a57b147.Date
+relationship FactMovimiento_ObraId_DimObra_ObraId
+	fromColumn: FactMovimiento.ObraId
+	toColumn: DimObra.ObraId
 
-relationship 6d2dc61f-f562-4ee6-b618-283241620a05
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'CONSTRUCTORA DEMO$Job'.'Ending Date'
-	toColumn: LocalDateTable_7a0bf077-2031-4442-ab59-2b34a04c14ae.Date
+relationship FactProduccion_ObraId_DimObra_ObraId
+	fromColumn: FactProduccion.ObraId
+	toColumn: DimObra.ObraId
+
+relationship FactPresupuesto_CapituloId_DimCapitulo_CapituloId
+	fromColumn: FactPresupuesto.CapituloId
+	toColumn: DimCapitulo.CapituloId
+
+relationship FactMovimiento_CapituloId_DimCapitulo_CapituloId
+	fromColumn: FactMovimiento.CapituloId
+	toColumn: DimCapitulo.CapituloId
+
+relationship FactProduccion_CapituloId_DimCapitulo_CapituloId
+	fromColumn: FactProduccion.CapituloId
+	toColumn: DimCapitulo.CapituloId
+
+relationship FactMovimiento_Fecha_Calendario_Fecha
+	fromColumn: FactMovimiento.Fecha
+	toColumn: Calendario.Fecha
+
+relationship FactProduccion_Fecha_Calendario_Fecha
+	fromColumn: FactProduccion.Fecha
+	toColumn: Calendario.Fecha
 

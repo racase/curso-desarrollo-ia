@@ -1,0 +1,58 @@
+table FactPresupuesto
+	lineageTag: f2680bac-10a2-484e-ae8d-b394205701cb
+
+	/// Suma del coste de todas las líneas de presupuesto de la obra o capítulo, incluidas las que solo tienen coste y las que no tienen fecha de planificación. Se muestra siempre completo, sin filtrarse por fecha.
+	measure 'Presupuesto de coste' = SUM(FactPresupuesto[PresupuestoCoste])
+		formatString: #,0.00 €
+		lineageTag: f2004a88-ec40-4b93-8d6e-b01f2b6ba686
+
+	/// Suma del importe de venta de las líneas de presupuesto facturables. Se muestra siempre completo, sin filtrarse por fecha.
+	measure 'Presupuesto de venta' = SUM(FactPresupuesto[PresupuestoVenta])
+		formatString: #,0.00 €
+		lineageTag: 1a8c4888-f345-4b83-ada7-17443ba6abb3
+
+	/// Presupuesto de venta menos presupuesto de coste.
+	measure 'Margen previsto' = [Presupuesto de venta] - [Presupuesto de coste]
+		formatString: #,0.00 €
+		lineageTag: 51ca6fa4-c777-48ef-b28c-6f34b4cfd751
+
+	/// Margen previsto sobre el presupuesto de venta. En blanco cuando el presupuesto de venta es 0.
+	measure 'Margen previsto %' = DIVIDE([Margen previsto], [Presupuesto de venta])
+		formatString: 0.0 %
+		lineageTag: 0c40611d-6b95-4ab2-98cb-3b88e0585f4f
+
+	column ObraId
+		dataType: string
+		lineageTag: 3179acc2-00fe-4715-b2b6-662748aa057e
+		summarizeBy: none
+		sourceColumn: ObraId
+
+	column CapituloId
+		dataType: string
+		lineageTag: b7421e50-98ea-4613-8eac-72aa94e86bc5
+		summarizeBy: none
+		sourceColumn: CapituloId
+
+	column PresupuestoCoste
+		dataType: decimal
+		formatString: #,0.00 €
+		lineageTag: d20cd78b-eff6-4d3f-8702-2118d3ebb841
+		summarizeBy: sum
+		sourceColumn: PresupuestoCoste
+
+	column PresupuestoVenta
+		dataType: decimal
+		formatString: #,0.00 €
+		lineageTag: 11f31f41-6709-497c-8c37-28544ef119d0
+		summarizeBy: sum
+		sourceColumn: PresupuestoVenta
+
+	partition FactPresupuesto = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema = "rpt", Item = "FactPresupuesto"]}[Data]
+				in
+				    Vista
+

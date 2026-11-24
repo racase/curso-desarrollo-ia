@@ -1,0 +1,8 @@
+/// Servidor SQL de la base NAV
+expression Servidor = "127.0.0.1,14330" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: c3ac8328-a9d4-4a75-87e5-e31e1447fb40
+
+/// Base de datos NAV
+expression BaseDatos = "NAVDEMO" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: f1beadf3-063a-4e9a-81d6-503dff795c2a
+

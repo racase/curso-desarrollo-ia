@@ -1,0 +1,30 @@
+table DimCapitulo
+	lineageTag: 6a4039dd-b1e6-4976-af5f-6006896fa13a
+
+	column CapituloId
+		dataType: string
+		lineageTag: 30363ab4-0422-4ccc-9619-b890bb0a6efa
+		summarizeBy: none
+		sourceColumn: CapituloId
+
+	column Capitulo
+		dataType: string
+		lineageTag: c529011a-ca2e-4d21-a553-5ba5090533c8
+		summarizeBy: none
+		sourceColumn: Capitulo
+
+	column EsCosteIndirecto
+		dataType: boolean
+		lineageTag: 4c055bf8-a6e1-4801-b0e1-943953060b95
+		summarizeBy: none
+		sourceColumn: EsCosteIndirecto
+
+	partition DimCapitulo = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema = "rpt", Item = "DimCapitulo"]}[Data]
+				in
+				    Vista
+

@@ -1,0 +1,60 @@
+table FactMovimiento
+	lineageTag: df7ba25e-1fe2-4721-abfd-d30fcf2416a5
+
+	/// Suma del coste de los movimientos de consumo de la obra o capítulo en el periodo filtrado; sin filtro de fecha, todos los movimientos hasta la fecha de corte.
+	measure 'Coste real' = SUM(FactMovimiento[CosteReal])
+		formatString: #,0.00 €
+		lineageTag: be85bb6e-d2ea-4c2d-bdbd-7a0063dbfef5
+
+	/// Suma de lo facturado al cliente en la obra o capítulo en el periodo filtrado, en positivo aunque el ERP lo guarde con signo negativo.
+	measure Certificado = SUM(FactMovimiento[ImporteCertificado])
+		formatString: #,0.00 €
+		lineageTag: 51f71520-2b90-4d27-8ebb-6894dfad4635
+
+	/// Fecha del último movimiento registrado en el ERP, sin tener en cuenta ningún filtro.
+	measure 'Fecha de corte' = CALCULATE(MAX(FactMovimiento[Fecha]), REMOVEFILTERS())
+		formatString: dd/mm/yyyy
+		lineageTag: 86b53a1d-1382-43cc-9cfa-4aa4d8c942e7
+
+	column ObraId
+		dataType: string
+		lineageTag: a3fb9bc4-3e4b-44ea-a442-1abd3ae183a2
+		summarizeBy: none
+		sourceColumn: ObraId
+
+	column CapituloId
+		dataType: string
+		lineageTag: c0f79161-1c42-4941-8776-94745e64535f
+		summarizeBy: none
+		sourceColumn: CapituloId
+
+	column Fecha
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 1a9196bc-85b9-43bd-a634-18eba4e86e4c
+		summarizeBy: none
+		sourceColumn: Fecha
+
+	column CosteReal
+		dataType: decimal
+		formatString: #,0.00 €
+		lineageTag: ff708a17-b8c9-42a6-8aa3-45d14301c7ea
+		summarizeBy: sum
+		sourceColumn: CosteReal
+
+	column ImporteCertificado
+		dataType: decimal
+		formatString: #,0.00 €
+		lineageTag: bb1c79fb-e849-4c77-878c-63105eec3b9c
+		summarizeBy: sum
+		sourceColumn: Certificado
+
+	partition FactMovimiento = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema = "rpt", Item = "FactMovimiento"]}[Data]
+				in
+				    Vista
+

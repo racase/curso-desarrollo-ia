@@ -94,10 +94,10 @@ datos/ReportingBI/
 ## Los dos issues funcionales
 Siguen el formato de `datos/InfraData/docs/PROMPT_BACKLOG.md`: Contexto, Historia de usuario, Alcance, Fuera de alcance, Criterios de aceptación «Dado… cuando… entonces…» y Notas.
 
-Describen **qué** quiere negocio, no cómo se hace. Dicen las cifras esperadas («la obra X debe aparecer con desviación») sin decir las tablas, porque buscar el origen es trabajo del proposal.
+Describen **qué** quiere negocio, no cómo se hace. Los criterios de aceptación describen las situaciones que el informe tiene que mostrar («dada una obra con un capítulo que cuesta más de lo previsto…») sin nombrar obras concretas ni tablas: buscar el origen es trabajo del proposal, y qué obra cumple cada situación solo está en las notas del formador.
 
-1. **Control económico de obra.** Presupuesto frente a coste real frente a certificado, por obra y capítulo, con desviación, margen previsto y real, y obra pendiente de certificar. Filtros por delegación y jefe de obra.
-2. **Plazos y avance.** Curva S planificada frente a real, hitos retrasados y días de retraso, y ranking de obras por retraso. **Amplía el modelo del issue 1**, así que enseña cómo evoluciona un modelo con un segundo cambio de OpenSpec.
+1. **Control económico de obra** (`01-control-economico.md`). Por obra y capítulo: presupuesto de coste y de venta, coste real, producción, certificado, obra pendiente de certificar, margen previsto y real, y desviación de coste. Página resumen, detalle obra × capítulo, evolución mensual y filtros por delegación, tipo de obra, jefe de obra y estado.
+2. **Plazos y avance** (`02-plazos-avance.md`). Avance planificado frente a real, desviación de avance e índice de plazo, curva S, hitos con su estado y días de retraso, y ranking de obras por desviación de avance. Usa los mismos filtros. **Amplía el modelo del issue 1**, así que enseña cómo evoluciona un modelo con un segundo cambio de OpenSpec.
 
 ## Flujo de principio a fin (para cada issue)
 1. **Arranque:** `docker compose up -d`. Abres el agente en `datos/ReportingBI/` y Power BI Desktop en el mismo equipo.

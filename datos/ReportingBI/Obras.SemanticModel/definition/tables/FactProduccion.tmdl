@@ -1,0 +1,93 @@
+table FactProduccion
+	lineageTag: 9ec40503-4310-445c-a0cb-36ea048a8e37
+
+	/// Presupuesto de venta de cada capítulo por su avance (última medición hasta la fecha; 0 % sin mediciones). La de una obra es la suma de sus capítulos y la de un mes, lo que aumenta la acumulada en ese mes. Una medición a mitad de mes se asigna a su fin de mes.
+	measure Producción = SUM(FactProduccion[ProduccionMes])
+		formatString: #,0.00 €
+		lineageTag: 145f3e6d-414d-493c-8d43-cce07b080e0d
+
+	/// Coste previsto para lo producido: presupuesto de coste del capítulo por su avance; en capítulos sin presupuesto de venta (costes indirectos), por el avance global de la obra (producción de la obra entre su presupuesto de venta).
+	measure 'Coste previsto' = SUM(FactProduccion[CostePrevistoMes])
+		formatString: #,0.00 €
+		lineageTag: 4d5a90e7-8a7c-4cf0-93bd-bcb23ce78cd3
+
+	/// Producción menos certificado. Un valor negativo indica obra certificada por delante de la ejecutada.
+	measure 'Pendiente de certificar' = [Producción] - [Certificado]
+		formatString: #,0.00 €
+		lineageTag: 21b87960-dea3-453b-9c1f-239834ddab8c
+
+	/// Coste real menos coste previsto para lo producido. Positivo indica sobrecoste.
+	measure 'Desviación de coste' = [Coste real] - [Coste previsto]
+		formatString: #,0.00 €
+		lineageTag: c8c7c4b6-9ec8-480f-89e4-600932f52ad6
+
+	/// Desviación de coste entre el coste previsto. En blanco cuando el coste previsto es 0.
+	measure 'Desviación de coste %' = DIVIDE([Desviación de coste], [Coste previsto])
+		formatString: 0.0 %
+		lineageTag: f9bc970c-01d5-44ca-8948-6e81d7eb6dcd
+
+	/// Producción menos coste real.
+	measure 'Margen real' = [Producción] - [Coste real]
+		formatString: #,0.00 €
+		lineageTag: f801d841-62cb-4b97-b624-dd4f3db475ea
+
+	/// Margen real sobre la producción. En blanco cuando la producción es 0.
+	measure 'Margen real %' = DIVIDE([Margen real], [Producción])
+		formatString: 0.0 %
+		lineageTag: 638a91d6-4e82-4ab7-80d5-cbd67a2a4197
+
+	/// Avance global: producción entre presupuesto de venta. En blanco cuando el presupuesto de venta es 0.
+	measure 'Avance de obra %' = DIVIDE([Producción], [Presupuesto de venta])
+		formatString: 0.0 %
+		lineageTag: 8a6ac901-b44c-4a9d-aaa9-4bbb6269d617
+
+	/// Rojo (#C62828) cuando la desviación de coste es mayor del 5 %; en blanco en otro caso. Para formato condicional por valor de campo.
+	measure 'Color desviación' = IF([Desviación de coste %] > 0.05, "#C62828")
+		lineageTag: c5980f8f-eabc-4fb3-b0ae-49fe6f0e6226
+
+	/// Rojo (#C62828) cuando el margen real es negativo; en blanco en otro caso. Para formato condicional por valor de campo.
+	measure 'Color margen real' = IF([Margen real] < 0, "#C62828")
+		lineageTag: 37590fea-e27c-46d3-8044-3ad1073e07a0
+
+	column ObraId
+		dataType: string
+		lineageTag: 7dbf0281-becf-4635-8c49-a99340c0dd49
+		summarizeBy: none
+		sourceColumn: ObraId
+
+	column CapituloId
+		dataType: string
+		lineageTag: 7e7744c2-8943-4484-a8e1-fe34c189dc06
+		summarizeBy: none
+		sourceColumn: CapituloId
+
+	column Fecha
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: e7c85f56-d201-471d-8050-187e88566ee3
+		summarizeBy: none
+		sourceColumn: Fecha
+
+	column ProduccionMes
+		dataType: decimal
+		formatString: #,0.00 €
+		lineageTag: 45664209-d359-4af6-9e8f-d12778b824a6
+		summarizeBy: sum
+		sourceColumn: ProduccionMes
+
+	column CostePrevistoMes
+		dataType: decimal
+		formatString: #,0.00 €
+		lineageTag: c9faeb36-a2f7-4f64-8b76-17a4ef4a166e
+		summarizeBy: sum
+		sourceColumn: CostePrevistoMes
+
+	partition FactProduccion = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema = "rpt", Item = "FactProduccion"]}[Data]
+				in
+				    Vista
+
