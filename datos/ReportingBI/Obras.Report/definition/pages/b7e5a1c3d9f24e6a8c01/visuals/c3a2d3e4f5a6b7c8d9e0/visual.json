@@ -1,0 +1,102 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "c3a2d3e4f5a6b7c8d9e0",
+  "position": {
+    "x": 20,
+    "y": 200,
+    "z": 0,
+    "height": 400,
+    "width": 620,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CONSTRUCTORA DEMO$Job"
+                    }
+                  },
+                  "Property": "No_"
+                }
+              },
+              "queryRef": "CONSTRUCTORA DEMO$Job.No_",
+              "nativeQueryRef": "No_"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CONSTRUCTORA DEMO$Job"
+                    }
+                  },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "CONSTRUCTORA DEMO$Job.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CONSTRUCTORA DEMO$Job"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "CONSTRUCTORA DEMO$Job.Status",
+              "nativeQueryRef": "Status"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CONSTRUCTORA DEMO$Job"
+                    }
+                  },
+                  "Property": "Número de obras"
+                }
+              },
+              "queryRef": "CONSTRUCTORA DEMO$Job.Número de obras",
+              "nativeQueryRef": "Número de obras"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabla de obras'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

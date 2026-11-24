@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "c6a2d3e4f5a6b7c8d9e0",
+  "position": {
+    "x": 1280,
+    "y": 20,
+    "z": 0,
+    "height": 400,
+    "width": 620,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CONSTRUCTORA DEMO$Job"
+                    }
+                  },
+                  "Property": "Starting Date"
+                }
+              },
+              "queryRef": "CONSTRUCTORA DEMO$Job.Starting Date",
+              "nativeQueryRef": "Starting Date"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CONSTRUCTORA DEMO$Job"
+                    }
+                  },
+                  "Property": "Número de obras"
+                }
+              },
+              "queryRef": "CONSTRUCTORA DEMO$Job.Número de obras",
+              "nativeQueryRef": "Número de obras"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Obras por fecha de inicio'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
