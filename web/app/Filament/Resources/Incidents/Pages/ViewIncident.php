@@ -3,8 +3,11 @@
 namespace App\Filament\Resources\Incidents\Pages;
 
 use App\Actions\Incidents\AssignIncident;
+use App\Actions\Incidents\CorrectIncidentClassification;
 use App\Actions\Incidents\LinkIncidentAsset;
 use App\Actions\Incidents\TransitionIncident;
+use App\Enums\IncidentCategory;
+use App\Enums\IncidentPriority;
 use App\Enums\IncidentStatus;
 use App\Enums\UserRole;
 use App\Filament\Resources\Incidents\IncidentResource;
@@ -29,6 +32,18 @@ class ViewIncident extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
+            Action::make('classify')->label('Corregir clasificación')->outlined()
+                ->visible(fn (): bool => Gate::allows('classify', $this->getRecord()))
+                ->authorize('classify', $this->getRecord())
+                ->schema([
+                    Select::make('category')->label('Categoría')->options(IncidentCategory::class)->required()->native(false)
+                        ->default(fn () => $this->getRecord()->category->value),
+                    Select::make('priority')->label('Prioridad (urgencia)')->options(IncidentPriority::class)->required()->native(false)
+                        ->default(fn () => $this->getRecord()->priority->value),
+                ])
+                ->action(function (array $data): void {
+                    $this->performChange(fn () => app(CorrectIncidentClassification::class)->handle(auth()->user(), $this->getRecord(), $data));
+                }),
             Action::make('linkAsset')->label('Vincular o corregir activo')->outlined()
                 ->visible(fn (): bool => Gate::allows('linkAsset', $this->getRecord()))
                 ->authorize('linkAsset', $this->getRecord())

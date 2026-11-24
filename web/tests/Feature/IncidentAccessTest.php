@@ -30,24 +30,24 @@ class IncidentAccessTest extends TestCase
             $this->assertSame($actor->id, $incident->requester_id);
             $this->assertNull($incident->technician_id);
             $this->assertSame(IncidentStatus::Proposed, $incident->status);
-            $this->assertSame(IncidentPriority::Medium, $incident->priority);
+            $this->assertSame(IncidentPriority::Unclassified, $incident->priority);
             $this->assertSame('Sin conexión', $incident->title);
             $this->assertSame('Revisar el equipo', $incident->description);
         }
     }
 
-    public function test_explicit_priority_and_maximum_lengths_are_accepted(): void
+    public function test_maximum_lengths_are_accepted_and_manual_priority_is_ignored(): void
     {
         $incident = app(CreateIncident::class)->handle(User::factory()->create(), [
             'asset_id' => Asset::factory()->create()->id,
             'title' => str_repeat('á', 255), 'description' => str_repeat('ñ', 10000), 'priority' => 'critical',
         ]);
-        $this->assertSame(IncidentPriority::Critical, $incident->priority);
+        $this->assertSame(IncidentPriority::Unclassified, $incident->priority);
     }
 
     public function test_invalid_inputs_are_rejected_without_creating_incidents(): void
     {
-        foreach ([['title' => ' '], ['title' => str_repeat('a', 256)], ['description' => ' '], ['description' => str_repeat('a', 10001)], ['priority' => 'invalid']] as $invalid) {
+        foreach ([['title' => ' '], ['title' => str_repeat('a', 256)], ['description' => ' '], ['description' => str_repeat('a', 10001)]] as $invalid) {
             try {
                 app(CreateIncident::class)->handle(User::factory()->create(), [...['title' => 'Equipo', 'description' => 'No arranca', 'asset_id' => Asset::factory()->create()->id], ...$invalid]);
                 $this->fail('Invalid incident accepted');

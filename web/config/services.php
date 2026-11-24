@@ -2,6 +2,12 @@
 
 return [
 
+    'openrouter' => [
+        'api_key' => env('OPENROUTER_API_KEY'),
+        'model' => env('OPENROUTER_MODEL', 'gpt-oss120b'),
+        'timeout' => (int) env('OPENROUTER_TIMEOUT', 20),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Third Party Services

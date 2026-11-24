@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Enums\IncidentPriority;
 use App\Enums\IncidentStatus;
 use App\Filament\Resources\Incidents\IncidentResource;
 use App\Filament\Resources\Incidents\Pages\CreateIncident;
@@ -22,7 +21,7 @@ class IncidentPanelTest extends TestCase
     public function test_panel_creation_uses_defaults_and_displays_details(): void
     {
         $this->actingAs($user = User::factory()->create());
-        Livewire::test(CreateIncident::class)->assertFormSet(['priority' => IncidentPriority::Medium])
+        Livewire::test(CreateIncident::class)
             ->fillForm(['title' => 'Equipo', 'description' => 'No arranca', 'asset_id' => Asset::factory()->create()->id])
             ->call('create')->assertHasNoFormErrors();
         $incident = Incident::sole();

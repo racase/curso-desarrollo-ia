@@ -87,11 +87,11 @@ Todos con la contraseña `password`.
 ## Incidencias
 
 Entra en **Incidencias** (`/admin/incidents`) para crear una solicitud con título,
-descripción y prioridad. Toda alta se hace en nombre propio, comienza en **propuesta**,
-sin técnico y con prioridad **media** por defecto. Puedes elegir baja, media, alta o crítica.
+descripción y activo. Toda alta se hace en nombre propio, comienza en **propuesta**,
+sin técnico. Al guardar, el backend propone categoría y prioridad (urgencia) con un LLM.
 El título admite 1–255 caracteres y la descripción 1–10000, sin contar espacios exteriores.
 
-El listado muestra título, estado, prioridad y solicitante. Los filtros de estado y prioridad
+El listado muestra título, estado, categoría, prioridad y solicitante. Los filtros de estado, categoría y prioridad
 se pueden combinar; la ficha muestra también descripción, técnico, historial y comentarios.
 Los solicitantes solo acceden a sus incidencias, incluso mediante URL directa. Técnicos y
 administradores pueden consultar todas.
@@ -99,6 +99,7 @@ administradores pueden consultar todas.
 | Operación | Quién puede realizarla |
 |---|---|
 | Crear una incidencia | Cualquier usuario, para sí mismo |
+| Corregir categoría y prioridad | Técnico o administrador, desde la ficha |
 | Asignar o cambiar de técnico | Administrador, eligiendo un usuario con rol técnico |
 | Autoasignarse una incidencia libre | Técnico |
 | Avanzar de estado | Administrador o técnico asignado |
@@ -119,6 +120,46 @@ Las migraciones son aditivas: para actualizar una instalación existente ejecuta
 `docker compose exec app php artisan migrate`. No hace falta recrear la base de datos.
 Los usuarios referenciados como solicitante, técnico, actor o autor no pueden borrarse;
 la futura gestión de usuarios (issue 04) deberá conservar esta atribución.
+
+### Clasificación con OpenRouter
+
+Configura únicamente en el `.env` del backend (ignorado por Git):
+
+```dotenv
+OPENROUTER_API_KEY=
+OPENROUTER_MODEL=gpt-oss120b
+OPENROUTER_TIMEOUT=20
+```
+
+Introduce tu clave de OpenRouter como valor de `OPENROUTER_API_KEY`; nunca uses
+variables `VITE_` para secretos. Si la configuración está cacheada, ejecuta
+`docker compose exec app php artisan config:clear` después de modificarla.
+
+El alias `gpt-oss120b` se traduce a `openai/gpt-oss-120b`. También se acepta un
+identificador completo de OpenRouter en `OPENROUTER_MODEL`.
+La llamada usa el [formato JSON Schema de OpenRouter](https://openrouter.ai/docs/guides/features/structured-outputs),
+con esquema estricto y proveedores que soporten los parámetros solicitados.
+El backend valida también el JSON recibido: objeto con exactamente dos propiedades
+obligatorias de tipo string, `category` y `priority`, con valores de los enums.
+
+Catálogo inicial: Hardware (`hardware`), Software (`software`), Red (`network`),
+Accesos (`access`) y Otros (`other`). Prioridades: baja (`low`), media (`medium`),
+alta (`high`) y crítica (`critical`). Los enums y el esquema comparten estos valores.
+Los campos de clasificación enviados por el cliente durante el alta se ignoran.
+
+Solo se envía la descripción al proveedor. La llamada es síncrona al guardar,
+con un máximo de tres intentos (uno inicial y dos reintentos), un timeout por intento
+de 20 segundos y un timeout de conexión de 5 segundos. Los errores HTTP, de conexión,
+las respuestas incompletas y el JSON inválido cuentan como fallos. Tras agotarlos,
+la incidencia se guarda con ambos campos **Sin clasificar** (`unclassified`). Si falta
+la clave, se guarda directamente así, sin llamadas externas. El estado de seguimiento
+sigue siendo **propuesta**. Los logs de fallo contienen solo el número de intento.
+
+En la ficha, **Corregir clasificación** permite a técnicos y administradores cambiar
+los dos valores, también cuando falló la propuesta. No vuelve a llamar al LLM.
+La migración añade la categoría a los registros existentes como **Sin clasificar**,
+conservando sus prioridades. Las pruebas simulan OpenRouter y bloquean las llamadas
+externas; no requieren credenciales ni consumen saldo.
 
 ## Comandos habituales
 

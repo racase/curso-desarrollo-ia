@@ -40,6 +40,11 @@ class IncidentPolicy
         return false;
     }
 
+    public function classify(User $user, Incident $incident): bool
+    {
+        return $user->hasRole(UserRole::Admin) || $user->hasRole(UserRole::Technician);
+    }
+
     public function linkAsset(User $user, Incident $incident): bool
     {
         return $user->hasRole(UserRole::Admin);

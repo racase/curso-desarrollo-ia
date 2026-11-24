@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Incidents;
 
+use App\Enums\IncidentCategory;
 use App\Enums\IncidentPriority;
 use App\Enums\IncidentStatus;
 use App\Filament\Resources\Incidents\Pages\CreateIncident;
@@ -39,11 +40,10 @@ class IncidentResource extends Resource
     {
         return $schema->components([
             TextInput::make('title')->label('Título')->required()->maxLength(255),
-            Textarea::make('description')->label('Descripción')->required()->maxLength(10000)->columnSpanFull(),
+            Textarea::make('description')->label('Descripción')->required()->maxLength(10000)->columnSpanFull()
+                ->helperText('Al guardar propondremos una categoría y una urgencia. El técnico podrá corregirlas.'),
             Select::make('asset_id')->label('Activo y sede')->options(fn (): array => Asset::groupedOptions())
                 ->searchable()->required()->columnSpanFull(),
-            Select::make('priority')->label('Prioridad')->options(IncidentPriority::class)
-                ->default(IncidentPriority::Medium->value)->required()->native(false),
         ]);
     }
 
@@ -53,6 +53,7 @@ class IncidentResource extends Resource
             TextEntry::make('title')->label('Título'),
             TextEntry::make('description')->label('Descripción')->columnSpanFull(),
             TextEntry::make('status')->label('Estado')->badge(),
+            TextEntry::make('category')->label('Categoría')->badge(),
             TextEntry::make('priority')->label('Prioridad')->badge(),
             TextEntry::make('requester.name')->label('Solicitante'),
             TextEntry::make('technician.name')->label('Técnico')->placeholder('Sin asignar'),
@@ -68,6 +69,7 @@ class IncidentResource extends Resource
         return $table->columns([
             TextColumn::make('title')->label('Título')->searchable()->wrap(),
             TextColumn::make('status')->label('Estado')->badge(),
+            TextColumn::make('category')->label('Categoría')->badge(),
             TextColumn::make('priority')->label('Prioridad')->badge(),
             TextColumn::make('requester.name')->label('Solicitante'),
             TextColumn::make('asset.code')->label('Activo')->description(fn (Incident $record): ?string => $record->asset?->name)
@@ -75,6 +77,7 @@ class IncidentResource extends Resource
             TextColumn::make('asset.site.name')->label('Sede')->placeholder('Sin sede')->wrap(),
         ])->filters([
             SelectFilter::make('status')->label('Estado')->options(IncidentStatus::class),
+            SelectFilter::make('category')->label('Categoría')->options(IncidentCategory::class),
             SelectFilter::make('priority')->label('Prioridad')->options(IncidentPriority::class),
         ])->recordActions([ViewAction::make()->label('Ver')])
             ->defaultSort('id', 'desc')->emptyStateHeading('No hay incidencias');

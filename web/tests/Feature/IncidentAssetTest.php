@@ -39,7 +39,7 @@ class IncidentAssetTest extends TestCase
             $this->assertSame($actor->id, $incident->requester_id);
             $this->assertNull($incident->technician_id);
             $this->assertSame(IncidentStatus::Proposed, $incident->status);
-            $this->assertSame('critical', $incident->priority->value);
+            $this->assertSame('unclassified', $incident->priority->value);
         }
     }
 

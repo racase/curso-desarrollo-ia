@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\IncidentCategory;
 use App\Enums\IncidentPriority;
 use App\Enums\IncidentStatus;
 use App\Enums\UserRole;
@@ -12,14 +13,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['title', 'description', 'status', 'priority', 'requester_id', 'technician_id', 'asset_id'])]
+#[Fillable(['title', 'description', 'status', 'category', 'priority', 'requester_id', 'technician_id', 'asset_id'])]
 class Incident extends Model
 {
     use HasFactory;
 
     protected function casts(): array
     {
-        return ['status' => IncidentStatus::class, 'priority' => IncidentPriority::class];
+        return ['status' => IncidentStatus::class, 'category' => IncidentCategory::class, 'priority' => IncidentPriority::class];
     }
 
     public function scopeVisibleTo(Builder $query, User $user): Builder
