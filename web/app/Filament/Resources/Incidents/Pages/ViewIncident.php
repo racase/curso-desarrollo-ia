@@ -3,10 +3,12 @@
 namespace App\Filament\Resources\Incidents\Pages;
 
 use App\Actions\Incidents\AssignIncident;
+use App\Actions\Incidents\LinkIncidentAsset;
 use App\Actions\Incidents\TransitionIncident;
 use App\Enums\IncidentStatus;
 use App\Enums\UserRole;
 use App\Filament\Resources\Incidents\IncidentResource;
+use App\Models\Asset;
 use App\Models\User;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Select;
@@ -27,6 +29,17 @@ class ViewIncident extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
+            Action::make('linkAsset')->label('Vincular o corregir activo')->outlined()
+                ->visible(fn (): bool => Gate::allows('linkAsset', $this->getRecord()))
+                ->authorize('linkAsset', $this->getRecord())
+                ->schema([
+                    Select::make('asset_id')->label('Activo y sede')->required()->searchable()
+                        ->options(fn (): array => Asset::groupedOptions())
+                        ->default(fn () => $this->getRecord()->asset_id),
+                ])
+                ->action(function (array $data): void {
+                    $this->performChange(fn () => app(LinkIncidentAsset::class)->handle(auth()->user(), $this->getRecord(), $data));
+                }),
             Action::make('assign')->label('Asignar técnico')
                 ->outlined(fn (): bool => $this->getRecord()->status->next() !== null && Gate::allows('transition', $this->getRecord()))
                 ->visible(fn (): bool => auth()->user()->hasRole(UserRole::Admin))
@@ -64,10 +77,10 @@ class ViewIncident extends ViewRecord
             $change();
         } catch (ValidationException $exception) {
             Notification::make()->title('No se pudo actualizar la incidencia')->body($exception->getMessage())->danger()->send();
-            $this->getRecord()->refresh()->load(['requester', 'technician']);
+            $this->getRecord()->refresh()->load(['requester', 'technician', 'asset.site']);
             throw new Halt;
         }
-        $this->getRecord()->refresh()->load(['requester', 'technician']);
+        $this->getRecord()->refresh()->load(['requester', 'technician', 'asset.site']);
         $this->dispatch('incident-updated', incidentId: $this->getRecord()->id);
         Notification::make()->title('Incidencia actualizada')->success()->send();
     }

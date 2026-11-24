@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['title', 'description', 'status', 'priority', 'requester_id', 'technician_id'])]
+#[Fillable(['title', 'description', 'status', 'priority', 'requester_id', 'technician_id', 'asset_id'])]
 class Incident extends Model
 {
     use HasFactory;
@@ -30,6 +30,11 @@ class Incident extends Model
     public function requester(): BelongsTo
     {
         return $this->belongsTo(User::class, 'requester_id');
+    }
+
+    public function asset(): BelongsTo
+    {
+        return $this->belongsTo(Asset::class);
     }
 
     public function technician(): BelongsTo

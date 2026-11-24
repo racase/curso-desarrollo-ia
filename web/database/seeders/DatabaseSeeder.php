@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call(SiteAssetSeeder::class);
+
         foreach (self::USERS as $user) {
             if (User::where('email', $user['email'])->exists()) {
                 continue;

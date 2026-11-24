@@ -7,6 +7,7 @@ use App\Enums\IncidentStatus;
 use App\Filament\Resources\Incidents\Pages\CreateIncident;
 use App\Filament\Resources\Incidents\Pages\ListIncidents;
 use App\Filament\Resources\Incidents\Pages\ViewIncident;
+use App\Models\Asset;
 use App\Models\Incident;
 use BackedEnum;
 use Filament\Actions\ViewAction;
@@ -39,6 +40,8 @@ class IncidentResource extends Resource
         return $schema->components([
             TextInput::make('title')->label('Título')->required()->maxLength(255),
             Textarea::make('description')->label('Descripción')->required()->maxLength(10000)->columnSpanFull(),
+            Select::make('asset_id')->label('Activo y sede')->options(fn (): array => Asset::groupedOptions())
+                ->searchable()->required()->columnSpanFull(),
             Select::make('priority')->label('Prioridad')->options(IncidentPriority::class)
                 ->default(IncidentPriority::Medium->value)->required()->native(false),
         ]);
@@ -53,6 +56,10 @@ class IncidentResource extends Resource
             TextEntry::make('priority')->label('Prioridad')->badge(),
             TextEntry::make('requester.name')->label('Solicitante'),
             TextEntry::make('technician.name')->label('Técnico')->placeholder('Sin asignar'),
+            TextEntry::make('asset_id')->label('Activo')
+                ->formatStateUsing(fn (Incident $record): ?string => $record->asset ? $record->asset->code.' · '.$record->asset->name : null)
+                ->placeholder('Sin activo'),
+            TextEntry::make('asset.site.name')->label('Sede')->placeholder('Sin sede'),
         ]);
     }
 
@@ -63,6 +70,9 @@ class IncidentResource extends Resource
             TextColumn::make('status')->label('Estado')->badge(),
             TextColumn::make('priority')->label('Prioridad')->badge(),
             TextColumn::make('requester.name')->label('Solicitante'),
+            TextColumn::make('asset.code')->label('Activo')->description(fn (Incident $record): ?string => $record->asset?->name)
+                ->placeholder('Sin activo')->wrap(),
+            TextColumn::make('asset.site.name')->label('Sede')->placeholder('Sin sede')->wrap(),
         ])->filters([
             SelectFilter::make('status')->label('Estado')->options(IncidentStatus::class),
             SelectFilter::make('priority')->label('Prioridad')->options(IncidentPriority::class),
@@ -72,7 +82,7 @@ class IncidentResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->visibleTo(auth()->user())->with(['requester', 'technician']);
+        return parent::getEloquentQuery()->visibleTo(auth()->user())->with(['requester', 'technician', 'asset.site']);
     }
 
     public static function getRelations(): array
