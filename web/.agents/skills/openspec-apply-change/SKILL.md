@@ -65,7 +65,7 @@ In both branches, never create the root as a side effect: do not run `openspec i
    - If `state: "blocked"`: show the message and pause implementation.
      - If `missingArtifacts` is non-empty: show the missing artifacts and the recovery step from the CLI’s `instruction` field. Keep the selected store on any follow-up command.
      - Otherwise, follow the CLI instruction to create or repair the schema-configured tracking file from existing planning artifacts. Do not assume another artifact is ready or start implementation while blocked.
-   - If `state: "all_done"`: report that all tracked tasks are complete and suggest review or verification as appropriate before archiving
+   - If `state: "all_done"`: report that all tracked tasks are complete and suggest review or verification as appropriate before archiving. If no tasks were implemented in this invocation, do not trigger the optional duplicate review in step 8.
    - Otherwise: proceed to implementation
 
    Treat `context` as a required prompt-level input. Read and consider it, and
@@ -127,6 +127,19 @@ In both branches, never create the root as a side effect: do not run `openspec i
    - If all done: report that tracked tasks are complete and suggest review or verification as appropriate before archiving
    - If paused: explain why and wait for guidance
 
+8. **Offer an optional duplicate review after implementation**
+
+   When all tasks are complete and this invocation implemented tasks, ask once:
+   "¿Quieres usar el subagente duplicate-finder para buscar duplicados en el nuevo código? Si aceptas, guardaré un informe de revisión en la raíz del proyecto."
+   Use the available user-input tool with explicit Sí/No choices, or ask in the completion response if no such tool is available. Explain that this optional confirmation comes from step 8 of this SKILL.md and link to it.
+
+   - **Explicit yes:** invoke the project's local `duplicate-finder` subagent, defined in `.codex/agents/duplicate-finder.toml`, with its configured `gpt-6.1-sol` model and `medium` reasoning effort. Provide the change name, implemented tasks, changed files and relevant diff so it reviews new or modified code, comparing against existing code where needed. Exclude unrelated pre-existing changes; do not assume every working-tree change belongs to this implementation. The review is read-only and does not authorize fixes.
+   - Save the returned review as `DUPLICATE_REVIEW_<change-name>.md` in the implementation project's root (the root containing AGENTS.md and composer.json in InfraTicket, even when specs live in an external store). Include the change name, reviewed scope, findings with file and line references, consolidation suggestions, and any limitations. Save a report even if no relevant duplicates are found. If that filename already exists, use a numeric suffix instead of overwriting it. Link the saved report in the final response.
+   - **No, dismissal, or no response:** skip the review and create no report. Silence is never consent. Do not launch the subagent speculatively, keep waiting or ask again; finish the implementation response normally. A later explicit yes may resume this optional review using the completed change's scope.
+   - If the subagent is unavailable or fails, report the limitation without claiming a completed review or silently substituting another agent.
+
+   This optional step does not change task completion, trigger archiving, or apply when implementation is paused or blocked.
+
 **Output During Implementation**
 
 ```
@@ -157,6 +170,10 @@ Working on task 4/7: <task description>
 
 All tracked tasks are complete. Review or verify the change as appropriate
 before archiving. Review the completed work, then ask to archive this change.
+
+¿Quieres usar el subagente duplicate-finder para buscar duplicados en el nuevo
+código? Si aceptas, guardaré un informe de revisión en la raíz del proyecto.
+[Explain that step 8 of this SKILL.md requires this optional confirmation and link to it.]
 ```
 
 **Output On Pause (Issue Encountered)**
