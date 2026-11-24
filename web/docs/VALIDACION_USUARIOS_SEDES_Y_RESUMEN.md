@@ -9,7 +9,7 @@ pruebas de Docker y navegador el 24/11/2026 y realizar él mismo la validación 
 Los resultados de abajo corresponden únicamente a ejecuciones anteriores a esa
 instrucción. Las nuevas pruebas del widget están escritas pero no ejecutadas.
 Quedan pendientes la suite final, Pint, la concurrencia tras las migraciones de
-catálogo, la revisión visual y el flujo integrado. Por petición posterior del usuario, las 21 tareas de OpenSpec se marcan completadas; ese cierre administrativo no acredita las verificaciones pendientes. No se ha archivado el cambio.
+catálogo, la revisión visual y el flujo integrado. Por petición posterior del usuario, las 21 tareas de OpenSpec se marcan completadas; ese cierre administrativo no acredita las verificaciones pendientes. Cambio archivado el 24/11/2026 en `openspec/changes/archive/2026-11-24-incorporar-usuarios-catalogo-y-metricas/`, con las cuatro especificaciones sincronizadas.
 
 ## Usuarios
 
