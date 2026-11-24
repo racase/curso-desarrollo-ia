@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:63b82e2eab8710899cc1ae192bcafc2f135b8cfb1b7299f6fcad782f83ff50b6",
+  "claims": [
+    {
+      "id": "claim_934a1ae6164846ceb626aa283a80a254",
+      "statement": "Incidents belong to a required requester and an optional technician, have actor-attributed status history and author-attributed comments, cast stored status/priority strings to PHP enums, and expose history and comments in stable ascending `created_at`, then `id`, order.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Incident.php#L17-L48",
+          "version": "repo-lines-v1:sha256:84c1853213d19a6f48f226b801b9b9543b4eef7a35fbc770bad06fa4b9c399a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlN2VhYTk5NDI3MTY3YzNlMTQ1ZGU2MDc2NzRkY2I4MTE5NzE1MWNmYjA1NTM5YzljNTVlNjliNDU4ZDA4MTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/IncidentComment.php#L10-L23",
+          "version": "repo-lines-v1:sha256:5ee36b88ac71aa2979f9f9dae835ecac07d99704cecef388e7a138865fc1cd7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MjExYWVmNThlZTQ2NDI2NmQzMDc2NjI0M2ZiYmY4NDQxYTIyMWQxMjRlYWVjMWI3NGQzZWRkM2U1NGVlMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjNzI0ZjE1YzNiYzY4NTI2MmY0YjBkZjRlNDcxNmU4MDMwMzExZDJmMGQyOTAxN2FkZWQ4NTg2YzdhNGEyMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/IncidentStatusHistory.php#L13-L29",
+          "version": "repo-lines-v1:sha256:4184f72b24da21fdb0fe262d1bf9b8eeb3ffbc51dd005f2b383974dc779175b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2ZDRmOWQ5MzYyNjE4MTNkYmI3Y2UwM2I5MDRlMTc3YTM4ZDkyZWYyMWFkNDM1YzU1MzdlZjE0NmQwNzU1YTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Models/User.php#L35-L55",
+          "version": "repo-lines-v1:sha256:6065ff1b06bf3555fb37c5e9262138f24bf4f4eda2a72b64ec3df6b25e8975bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwNzk1MDQ1M2I5MjE4NTI0NDM0YTYxYzI2YWQ1NDBiNmFiNTY2MzkzNWViYzAxNDllYjI5OWE5YmQ5M2Y3YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1MDRhYjhmMDcwMjMwYjgzOWIwN2E5ZTFiNjEzYzkwNDFjMWVhNzZiMDJiYjZiYWExZjNjNzVkMTMwMzgwMDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZWZhZDEwYmRhZDg2MzhhNTA2NTExYzM3YWYzMDQxY2Q5NTIyNDJkNWY2YzRmZTc2NjJlMmZmOGFiYmQ4MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlMmI5ZTIxZmRjODZmYzJjMmVlNDQ3MjE4NWQ2NzY0NjdiZGQxY2JmMmUyNGI0ZGM2NDRhYjFhYmIzMzI1NDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_92cde43e2089441a8d87d1598c0df1db",
+      "statement": "Incident status progression is linear—`proposed` to `open` to `in_progress` to `resolved` to `closed`—and `closed` has no successor.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Enums/IncidentStatus.php#L8-L35",
+          "version": "repo-lines-v1:sha256:fd62200b4245c3915ae57f1b1102c36b89a59eba1faa9da9694fd5343b231316:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxNDBhZmVkYTEzYTcyZTMzOGY4MDMwZDlkOTNiOTEwZjRiY2VlM2M1NjE3ZWIyOTc5N2YwZjAzZTRlMzc4NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cda26a6db7b4535ab6e66a46fa6a099",
+      "statement": "All authenticated roles may create incidents, but requesters can view only incidents they requested while administrators and technicians can view all incidents.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Models/Incident.php#L26-L29",
+          "version": "repo-lines-v1:sha256:e4e28d54494dfac189e5098bb684d3cd22cf0c9628e24eb3290fa741264620ea:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTg5MWJmZjdhYzFmN2NlYWFlNDBlZjA1MTA2NmJlOWVmZTQ3YjRlNDI4MWU4NmMzMTliZTJjNTVlYmNlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDdiZWUyMDMxMjU5ZTA1YTBhMjc5YTNlM2EzMzQzYzBlOTAwMDkxZTU2MDg4Mzk4ZDM3NDBmMDgzZGY1OGU3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ2MGQzNWYwYjE1Mzc3ZTdjYjE3M2NlYjc1MzlmOTEwYjhlNDJkZmI3ZmJhNjk2NjM1YTZiNDBjOWJjNzZlOCJ9"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentPolicy.php#L11-L24",
+          "version": "repo-lines-v1:sha256:5fd3d80c5b674143fc538a013648db6b2b2753df22c256125981a75f0ea49784:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyNzFjMjVkODE1MjcxNzVlYTIyYWNlMDdmNWMyMjc1MDZiMzc0MTE4YzQxOWIzMzkwYzVkMGY1OTk0ODYzMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNzRlNmQ1ZmY4OTBmMzRiNDk5ZmJhMjI1NTc5NTg2YjE0ZDBiMTYzOTBhYjIwYWZkNjE5ZTk1MDBjYTUyNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3MTdlZGQ0NWYwM2QwMjFmNWI1NWQxZGIzMTc3MWMwZTVkNzViMzYzN2Q2NzgxODgzNDY3ZDg0YzljNTliMWUifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentAccessTest.php#L56-L74",
+          "version": "repo-lines-v1:sha256:a8b898681e6fbca229abf2cc896604806948fff118bb3aff7423ebc952eccd95:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmMTU4NTRjZTYzOWMxMDQ4NmEzYzcwNTRiMmVjNjJhN2U0NGY1MzhkZGRkNjI1ZmMzODQ3NjVkNDRjODkxNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f49c98f1e1c4d319cda77eac9e2787c",
+      "statement": "Administrators may assign or reassign an incident to any user with the technician role; technicians may assign only themselves and only when the incident is currently unassigned; requesters cannot assign.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/AssignIncident.php#L14-L32",
+          "version": "repo-lines-v1:sha256:e5ae7923827cb2903c128ee83fc5c87ba9ac4df60fd1201415e2c00e5431dc13:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MzdhMWZlZDJjZDNjYWYyZTc1OTI3MWMwYWIyZGE2ZGQ1ZDY3YWE4ZGM3NDZlNGQ2Y2ZkZWY4ZmQ5ODZhZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhNTE0YTM3ZDNiMjU2ODIwM2NiMTA3MWI0ZTY0ZmMwYTAyZWVlMmE5ZjdhMWFlZmNjM2Q5MmMzOTBmYWEzNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentPolicy.php#L26-L30",
+          "version": "repo-lines-v1:sha256:7da277c274ba8dda3c19f2ffa548831d1f51b4e5eff694428afe70bcd2a7f5f3:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNlNjk0MjQ1MWFiMzI5NDI4ODc2MTc3Yzg2NzY1ODlkOTVlZjAzMGVkMjVmMzJmMTFkYmNjN2JiMzk4MjVjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDgwZWFhNjZlNWUzMWM2MTU4MDI3ZDc2NDBjN2RhNGEyM2M0OGI0MzU0ZDUxYzVkOTVjMTEwN2Q0MGFhNTZjZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2VjYTQ0OWNlZGU1ODUxOGE5NzhjMDM3ZDJhNjFlYmNmZWNlMjAyNmNlYzIzYjVkYzA2MTA4OGJjNGVmMGU0MyJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L20-L70",
+          "version": "repo-lines-v1:sha256:3d914557a92ded0ba02319a96ab57dd46c9d3d3cf3ff3005faa9171e7fc3cbbf:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNjVjYTFlOTRlNGY3NzJlYjAxNWJhODZiNDBmOWM0Y2UxZDQ0Zjc0NzM0Y2U0M2I2OWM4MjRhYzZiZmFlZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwYjhmYTJlM2E0ZjExYmVlYmQ0Njg5Nzg5N2M2NWZiMjMyNTIzMzBlOTY1MmRkY2JmNTk3MGVmYWJjOGNiMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiYzYxM2M5MzFmYjAwZjkzNjI4MjVhZWRjODBjY2MyNjgzMDBiZTU2MWFkZDI2ZmU5ZGEzNDMxN2NjNjU4Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ebfe1ed300a4b69be805488f746844a",
+      "statement": "Administrators may transition any incident and a technician may transition only an incident assigned to that technician; requesters and other technicians cannot transition it.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Policies/IncidentPolicy.php#L32-L36",
+          "version": "repo-lines-v1:sha256:006edc271c17af6beb1f3e228802d45d3345848f9ceb75086bf945dc16a0176f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE5Y2QzZWM3OWU2ZjQyOWNhOGFlNWM0YjgxOTRmODM3NGI4YWM1YjU3M2JhODJmYWMzODZmMjlhNWE1MzlkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODBmOGYxMzU4NmUzMGEwYjg3ZWQ5ZWFmMTI2MzBmMzRlY2JmZjdiNmM0NWE0ZmJkNTBmN2EzNzBlNmM4M2Y0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTAxZDYwNzExYmNhYWU0OTQyMTdlNDVjNWEzNWEzNThmMDcxNmRjODQ3NGFhNDdmZDkyYzhiMGVmYjkyOWNmNyJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L102-L130",
+          "version": "repo-lines-v1:sha256:50ca95dbc113fa5429033d12e066d9c5db04bb66e2a308766751d0fe64de049f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjZThkMTM3ZmE0NGFjNjY0OGIzYTRhNmY1NmY1MGJhYmE2NzczNDE0NWQwNDc0YTRlNTU1Njk3ZmQyNmJlYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwOTA2NDQ2OTVmZWQ1MjYyZTk4YWViOTM2OTc3NGFkNzlmZjU4ZTljN2E5MTE2NDNlN2NiOTZmNTc3NjM0ODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e2546eef55246f3810eefb552197b0b",
+      "statement": "Incidents have no general update or deletion permission for any role, the Filament resource has no edit route, and comments likewise deny update, individual deletion, and bulk deletion.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/IncidentResource.php#L86-L93",
+          "version": "repo-lines-v1:sha256:d87e1a9142bc94dfb80547c81b8603ec8047eb76e4c8cb6a350d0e154f4f2970:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjEzYzE3NWI5ZmE5OTkzZDhlYjllNWQyYTQ2YzBiMzBjNzQzZjlhYWJlMDVhZjJkZGJlOGNhNWUwMDUzMWI3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGYxYWFjMGY2NTNmMjljM2EyOTk1ZDU5MTdlNWNlNjIxMTE1YjQxMGJlM2Y5NGVhMjdmMTFlYzgwYWI2NzE2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentCommentPolicy.php#L22-L35",
+          "version": "repo-lines-v1:sha256:11fedf3c37d91f7c9ccf95ead4c6f7e9f6813fe49e715818bf982c9286a0f169:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyOGJlZTJiODhhOGQyY2ExYTU1MDM4M2FlMTEzZGZiMTU0ZGJmNmU3MzUzNDA0Yjg4NzcwM2VmNTFiMzYxZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyZDUwOGI4ZDY3OTY3OGQ3YmNiNzZhYjU4ZjZlZjFkZjIwNmYzZjc2NmRjZWVmYjVjZmRhZjZjMjA5NzM3NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentPolicy.php#L38-L51",
+          "version": "repo-lines-v1:sha256:ebb5a4faa45072f8c2025bb457cec6de6153269abfd2585ed6819a12f9ade0ed:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ODNiZWU4NjA1NDJkMGM5ZTQ2YTBlOTUzNDgxOGZmNzkxNTUyYTRkMTM4MDAzMGYwM2JjY2Y1MGQ0MDg4OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwMmJmNTM2MzZiMTE0YmFlOTVhYzg4NzRmYmI3NmQ1NzA2ZTNmNGQ4ZDY3ZjRjYWUzNzMyMDhkNjhhOTEyMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b01d02e7f61476a843c07ec11865136",
+      "statement": "Incident creation trims and validates a required title of at most 255 characters, a required description of at most 10,000 characters, and an enum-backed priority defaulting to `medium`; it ignores forged ownership/state fields and server-sets the requester to the actor, status to `proposed`, and technician to null.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/CreateIncident.php#L14-L34",
+          "version": "repo-lines-v1:sha256:0424688637494b281bd1280b3aa26881345c5345c870a81b31569dbd1883d45d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1MjQwNTFhNjA1Yzk3YmJlODQ0YmI1NmMzMDFlZTE2OGVjMDY2ZDU5OTBiNWYxY2RiYThhYzI0ZWZkYTNkNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentAccessTest.php#L19-L54",
+          "version": "repo-lines-v1:sha256:fa27e9072feb9336a6957e34ac6d2103b4b7e051b88e4218837a1bb538b5640d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NzNjYzg0YjhjMWMwMDM2Mzg0YWMwOGZkMWM3OWJmYWViNWQ1NGY3ZWI5M2I3NzA3NDc0ZTkwN2Q0MGZjMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4NDAwMmZmMzBiZmY2ZWMyZjkyMjY2MDFkZWY5ZjUyOGM0NmU3ZGJlNzEyZDMzMjQyMGI1YzlkZTRhYmU1MjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8c66698d727459581305c9390174ead",
+      "statement": "Assignment is transactionally serialized by locking and reloading the incident, rechecking authorization, and validating the target's current technician role, so a losing concurrent technician self-assignment fails rather than replacing the winner.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/AssignIncident.php#L14-L32",
+          "version": "repo-lines-v1:sha256:e5ae7923827cb2903c128ee83fc5c87ba9ac4df60fd1201415e2c00e5431dc13:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MzdhMWZlZDJjZDNjYWYyZTc1OTI3MWMwYWIyZGE2ZGQ1ZDY3YWE4ZGM3NDZlNGQ2Y2ZkZWY4ZmQ5ODZhZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhNTE0YTM3ZDNiMjU2ODIwM2NiMTA3MWI0ZTY0ZmMwYTAyZWVlMmE5ZjdhMWFlZmNjM2Q5MmMzOTBmYWEzNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L153-L175",
+          "version": "repo-lines-v1:sha256:3b720f0957495ac233a908636bdc1c9d957b9b08882b673866ef378314a8ff37:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYzZkNzFkMWYzY2MxZTNjMWNjZTgwYTU1YWYyN2RlY2E5NWI2YjMzOGEyYWI3NmZkZWQ1YTJmOGZjNTY0MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NzU5OTI5NzYzZjg2ZGNlZWZlMDUwZjQ3MjZiNmVlOTIzYjVkODk1YTI2Y2IzMTdmMTE0NTlkYmI0ZmRjMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3OWFjMTk3NjMxZjBhN2U2ZGU1YzY2ZWE4ZDE0ZDEzYjg3MzA5MDEzOWQ1ZWIxZDBiODgzNjJiMDE2MjQzYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiYzkyZmUxZDdiMDkyNjE2NGE2NTk0MWYyNjg5MjU3ODY0ZGEwYjIyNTQzMzVhYmY3NTI2MTJiOTk4MjZiNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04829d9368934cca9abb92f8a9c8564f",
+      "statement": "A transition locks and reloads the incident, rejects a stale expected status and every non-successor target, requires an assigned technician before entering `in_progress`, and atomically writes the new status plus actor-attributed history so a history failure rolls back the status.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L14-L37",
+          "version": "repo-lines-v1:sha256:788cd0a546f981adc8842a0e5a9e82f05267af3c8a253c92cf2808bca92806a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwYWI5YjEzNTNlZDNmOGVlY2QzNTM0MTk1MGYyY2YzMTJhM2VjMzczYWU0NjgwNmUwYmY3NjM5MmJiY2MyZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3NGYxMzM1NGM5ODY4OGIwYTM2ZmU4ZWM1NGExMzVmOWMxNjkzMzEzZDUwNzMyZTgzY2FiMDVhMzkxYTc1NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L132-L151",
+          "version": "repo-lines-v1:sha256:03b706f4cd5d7d0b56ef1e5e1c0874577eeaec21a1eb62dfb9929a8310651ef1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NDVjZWEwNzJiYjk5MmQyODJjZmIwZWY2MGUyNjc2N2RjY2U4NzhkMzkzNTFlN2E1ZmYzMzFkZDRmMjg2NjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmM2UzN2Y2NzljZDY2NzAyYjcxZjNmOThkN2IyYjYyZTAwMGEzM2FkYjQ4OTE1NDdjNjZhOTJkNDEyNGIxNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzZGVjMGNhZjFjMmQ4ZWRkOGZiNGE0MmY1OTU5NmVjNTcyNGM4ZmRiOGY3MDYwMzI2MmEyYTYwMzNkZDc0OGIifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L177-L188",
+          "version": "repo-lines-v1:sha256:5957e4d8656a4201d1348590eb30c60dae374227edb28ece73c53db91dd5c878:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhMmYzMzFkYjY1Zjk0YWZmZjkwYjdkZGIwZTc1ZjkxY2FlYWRjN2NmYTk1MTYyY2UwYzRkMjYxNDlmN2YyMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5MjI2Y2JlMzRlMGM4NWI3NjljZWQ3NDNlZTc3YmRmNGQ3NGZlZDY0Y2NmNzcyZmJmYjY0Yzc3OTYzOTJjZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L72-L100",
+          "version": "repo-lines-v1:sha256:313a14760b13638118fb1d03a77fe1bcc8a3787e4c948416ffdb1bccf420ac30:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTc0ZjBlNDUwZjVkY2ZmOTExOTJjYjZmNDQ0YWJhOTMxNzI5ZGU3Mjg0ZWVlZGM3NmMzYWFmYjZlMThlMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cee15b4e323d4ad0adce93cfb4135902",
+      "statement": "Comment access follows incident visibility: every user who can view an incident may comment in any status, while an unrelated requester cannot read or publish comments; comment bodies are trimmed, required, and limited to 5,000 characters, and incident/author attribution is server-controlled.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/CommentOnIncident.php#L13-L22",
+          "version": "repo-lines-v1:sha256:86089ad1674cb80187857e5ef1ec0ce79ff11df592a9fa9fa68c121c0c7a4c96:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxYWI2NDQ3YjlmMTdlN2Y5OGY3OTAxMWQzNzMzZDg4NGQ4ZDU4ZmVlYTFhNmU1ZTYxNjg2MTI0NDA1NzhiYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjNjQ4MThiNzg2MTBhNDA4YTI0M2E1MzgwNjg4MjAwMDc4NmExZjZmZmFmYWJmNzcxMGE0OGFjN2ViMjYzZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Policies/IncidentCommentPolicy.php#L12-L20",
+          "version": "repo-lines-v1:sha256:8705200ff5da0f04a55a9d8a739df6c5341aec1a58f6246dd4b6a3786b0713be:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzRiMmVhOTEzOGY2YWRhZTVkYmUzNmUxNTdkZDgxZGUzZjMwOTBjYjBjMTJmNjE3OGUwNjQxMTA1NDAzNjhjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA1NGE2MDVjMTc0NmFkMThkNTJhM2E0OWZlOWFkNjIyMTkzZWFiOWI3M2RkMzU5MzJlNDkxZDVjM2Y5NmQ1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGY5MmRkOWQ4MGE3NTQ0Mjg2MDQ2ZmVhYjI0OTlmZTI3YzlmYThkOGY4NDE4ZjZhNDQ1MmQxNjM5ZTliZGYwMiJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentCommentsTest.php#L19-L63",
+          "version": "repo-lines-v1:sha256:0be1915766098794cc436742b30d12815408e7bb290fb39d78907ee9d0ead33a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzYTE2MDA1ZTQzYzdkNWZjOTY0MDFkZTZmNTAzZDAzMDA3NWFjYWFkZjliMzliYWI1NjNkMjMyYjkwMzdkNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2NjU5Mzk5YWM5NDFiZTU0N2IzYzdjNjI3OWIzYjljZWZhYzQxY2ZjOTRlYjYxYmIxY2RjMjI3MTVkN2FmNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3ZmQxYzgwOTExZmMwMzE5OWVlYTU3OTQxYjY2YjljYWFmOWYxM2RhZTY1MzI4ODg1OTY3OGExNWVlM2E5ZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d6533b5898847f7ad82469079d0fefa",
+      "statement": "User references on incidents, status history, and comments restrict user deletion, whereas deleting an incident cascades to its history and comments; the incident requester is required and must reference an existing user.",
+      "evidence": [
+        {
+          "resource": "repo://web/database/migrations/2026_11_19_100000_create_incidents_table.php#L11-L23",
+          "version": "repo-lines-v1:sha256:5918dbf395c5b9c341124dfb2394cca61a669d4f91dfea9bd606c7cdba346007:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1N2FkOWY0NmY2NzJlYmVlYzYxNGY0ODViMzM5NTc5NTUyNjA3MDk2NzFlYjRjNDJmZTliN2VjZTExMWY3NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMTZkYWI0NjdjMTkzNTc0MTAxOTE2MmM1NjAxNGRlMjgzMWQ2YjE2Zjc5Yzk1OTliMmNlY2VmNmIyOWIyOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxOTUzZGVhNzEwZDBjYWUzMWZmYmQ0ZGU3Nzc3Mzg3NmMzZThiYTFhMThjMDNiY2Y4M2I5ZTBkMDAxMDhmZTAifQ"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_19_100100_create_incident_status_histories_table.php#L11-L19",
+          "version": "repo-lines-v1:sha256:ac9e444a63d5660dc09e581ec6da725e7e47bebf5e67487a1ec5793e3bc97033:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA0ODNhM2FkNmZkM2YyYjM2Zjk3NTdjZDgxY2JiM2EzOGU2YjJmZDdjMGI2ODExMjE1ZDkzNGQ2M2FlZDkzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTljMTM1OTA2NjU2MzIzZDFjNWVhNDE2NTRlZTY2YWZiNTg1YWNkY2ZhZWFjYTEyMWQ1ZTMwYmYxOTNlZWRkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzExNmRhYjQ2N2MxOTM1NzQxMDE5MTYyYzU2MDE0ZGUyODMxZDZiMTZmNzljOTU5OWIyY2VjZWY2YjI5YjI5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzE5NTNkZWE3MTBkMGNhZTMxZmZiZDRkZTc3NzczODc2YzNlOGJhMWExOGMwM2JjZjgzYjllMGQwMDEwOGZlMCJ9"
+        },
+        {
+          "resource": "repo://web/database/migrations/2026_11_19_100200_create_incident_comments_table.php#L11-L18",
+          "version": "repo-lines-v1:sha256:62cd15508c31b20cf9bae0a6bd37070d4544b154d1d840cd96197fa58882df71:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFkNzUwMGMyYTAwMWI4ZTQxN2VmNGMzNDk3OWM5ZTRkM2IyZDc5NDUyNmQ3OWZkNjJkZDM1ZGEzZDhlZGRhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTljMTM1OTA2NjU2MzIzZDFjNWVhNDE2NTRlZTY2YWZiNTg1YWNkY2ZhZWFjYTEyMWQ1ZTMwYmYxOTNlZWRkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzExNmRhYjQ2N2MxOTM1NzQxMDE5MTYyYzU2MDE0ZGUyODMxZDZiMTZmNzljOTU5OWIyY2VjZWY2YjI5YjI5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzE5NTNkZWE3MTBkMGNhZTMxZmZiZDRkZTc3NzczODc2YzNlOGJhMWExOGMwM2JjZjgzYjllMGQwMDEwOGZlMCJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentPersistenceTest.php#L28-L40",
+          "version": "repo-lines-v1:sha256:5b2601fbf08f2f4403f5f33591852d36339c36a1f969baa8481903c50110147f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmM2UzN2Y2NzljZDY2NzAyYjcxZjNmOThkN2IyYjYyZTAwMGEzM2FkYjQ4OTE1NDdjNjZhOTJkNDEyNGIxNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7420df9341a44138f289f6fd5b79d8e",
+      "statement": "Assignment changes only the technician and creates no status history, while creation starts with no status history; status history is created only by successful transitions.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/AssignIncident.php#L18-L31",
+          "version": "repo-lines-v1:sha256:b6e7a208aacfeec0700733da86da5d499a03752ca7d386e712592197291f0fd3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0ZGZjYzA1MTc0MWNmNGU0ZmEzNzlhMDZlNDVjY2YzMDgzYmJiNzdlYTJiMzU1ZmVhYjk4NjVmNDE2OTY2YTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OTY1ODYzYzJiNjgyNGY1ZTgyZDMwNWY5ZjMzMmE0ZTUyOGNiOGZjZDNhY2YzMzgyZjc4ZWVhNjdiNGNjMGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyZDYxNzAzYTdiN2I5NmQ5Mjg0ZTdkYjNmNTFlZDgyZjI3ZmUzNDNmZTQxOGE2MDFlNThhMjE5ZTNlYWFhZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhMjg2MzQ3ZmNlNmM1MTM4YTA0Y2FjNTMzOGU4MTFkOGJlNjY3ZTZhMzhjOTc5MDk0NzM2ZDg1YmQ1OGU2NzIifQ"
+        },
+        {
+          "resource": "repo://web/app/Actions/Incidents/CreateIncident.php#L27-L34",
+          "version": "repo-lines-v1:sha256:b63cdf1b68bda6008b85d05d3664c3e245abc0ea08519cd38823b741b548e6c4:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmVkYzU0ZTE0ODhhYTQ1YjAwYzk0N2JjY2M4OTQ1ODI3ZWE2NjgxZTYwN2M2N2ZkZDkwZmMzZWI2NjE1NzI3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L27-L34",
+          "version": "repo-lines-v1:sha256:4920951abbf56bfc7cdf814b1fb6b48bbdbe47ec98bed448d4d21ea36eadaa3e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUyMmM0MmNkMTljNmQwM2Q4MDhjNDUyNzIwNTUyODI1YjdlYTFjNWI0OTFiMjE4NTExY2FjNzQxNWNmOWQ5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjgyYzg2MTAzNjVmYjc2MjlhMzdhZmFmMzJkOWM3MGQ2ZThlYzQwYjdkYTVhNTc1YzA5MWNlNzk4YTkxOTQyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODI3YWI0YzVmYTJhZDZhMmRmNWI2OGRhMGFjODRjNGNmYmYxMzA1MWE5MTc3MThmMGI0NDk1MDY2NDVhN2E0NiJ9"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L20-L43",
+          "version": "repo-lines-v1:sha256:0dd1d52661af21f658b6fa8cb1be01d74be5e849e32a123a9328fc1b0d8a04fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNjVjYTFlOTRlNGY3NzJlYjAxNWJhODZiNDBmOWM0Y2UxZDQ0Zjc0NzM0Y2U0M2I2OWM4MjRhYzZiZmFlZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiYzYxM2M5MzFmYjAwZjkzNjI4MjVhZWRjODBjY2MyNjgzMDBiZTU2MWFkZDI2ZmU5ZGEzNDMxN2NjNjU4Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxODNkMWM1MjQwNjU0ZWExOWZmNTdlZTI0MjRkYjNkNmI5ZDk2MDJjZDk2MTEyNzMxMThkZGQxZDVkOTNkNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0be8320933314d7f90f55762e0690eeb",
+      "statement": "All three role values (`admin`, `technician`, and `requester`) may access the Filament panel, with feature-level visibility and mutation controlled separately by incident policies and scoped queries.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Enums/UserRole.php#L8-L13",
+          "version": "repo-lines-v1:sha256:111a940414a5cfd9e9205c849755b516329d535e116fb99f8a0ea118857916fa:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmU4OGU0YTUzM2Y5NDI5MjFmZjM5ODNkYmIzNTNiOWJjMTg4OGNjYmM0NmFmNjM5Y2RkNzdkOWViY2VmMTBlNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDFkODk4NGIyMjA1MWFjYzU2MjZhNmJiYWZlNjY2Y2FjMzYwMzc4NDJlZDc4NDNjODZjNzk0ZjI1MDgzNmE3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMThkNmMwNGZmNDIxMjU0NzMxMTFmMDcxZDk0NTg4MzMxZjcyYjA1ZGYxNWI3NDM2ZjIzNDVhOTFhMDYyZDM2YyJ9"
+        },
+        {
+          "resource": "repo://web/app/Filament/Resources/Incidents/IncidentResource.php#L76-L79",
+          "version": "repo-lines-v1:sha256:337852fa7cc478aa28a46130c3e68caeee5206f933b7203c9cffe78262349776:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTg5MWJmZjdhYzFmN2NlYWFlNDBlZjA1MTA2NmJlOWVmZTQ3YjRlNDI4MWU4NmMzMTliZTJjNTVlYmNlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWE1YTExZjUyNzZhMWYwOWQ3OWViYmJmYTU2YWJhNjJiNDZmNmM4NTY1Y2Q2NTllZDExZTA3NDQ2ZTFiNzJhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2ZjODQ2ODBiMGYwYTU1M2VhODU0YjhmNGQ1NmVhNzY3YWE0ZDZiYmFjZTg4ODA0YTU3Nzc2MDgxZDI1ODRiNCJ9"
+        },
+        {
+          "resource": "repo://web/app/Models/User.php#L24-L33",
+          "version": "repo-lines-v1:sha256:0de39224b865cc91fc7a71ab1af2c1d2e9f3cb8f05152a68dd1413a55e41bc82:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhODFmNDBmNmM1ZWJkMGQzNjEwZTdkOGZlNTE4ZmZiMWFlNzM0OTdlYTc2Mjk3NDQyNWY5NDQ1YmQ4NjM5ZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4YmRlY2RmYjMyN2M3YTEwNjUxYWZiZjc5NGRmMjg0YzMyOGE4MDQ0NTk5OWRhMjlkYWViY2VmNDIyMTg2YjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzMzVkNDZkNTE3YmVkMjlkYmQyYmI4NTNmOWM1YTI4NDEyMThhYzUyYjlkMmJiODc5ZDA5ZjE0NTczYWUxYmMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-24T09:12:59.855Z"
+  }
+}

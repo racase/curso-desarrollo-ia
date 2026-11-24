@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e3270963f7b0bd09655144a32fbacf2ea8ef83870759dad6fa51cf2161293c0a",
+  "claims": [
+    {
+      "id": "claim_48dccba2d58a4c9e8dc05560c6b146d6",
+      "statement": "InfraTicket's ordinary PHPUnit configuration uses an in-memory SQLite database, so the normal feature and Livewire suite is isolated but cannot by itself validate PostgreSQL row-lock contention.",
+      "evidence": [
+        {
+          "resource": "repo://web/AGENTS.md#L24-L28",
+          "version": "repo-lines-v1:sha256:d4fe29c064555e9d973fbb18111fd050f3f3f8bc009031e12a1be73db0ec44e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdmYzk4NmVmMDFlZTVmNThjNmYxZmEyNjViOGE2NDEzMTE2OGY4YWE1OTkzZDc4ODZkOTZjNmUxODk4OTQzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRjMjMzMjczNTc4NTMyYWE3NWIxM2ZiMzRjYzkwYjdkMDIwYWVkNDhmNjY1YTE4MjYxNjdiOTAwMjljN2MzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWM0NzQxNTkwYzE5YWI4Yzg1ZTQ1YjMwNjMwNTQwY2M2NWIzODcxMjRmNjY0OTA4NTc1MzI5MDNlYmE4NDNiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTc4OTgzOGFlNTI3YmJjNjIxYjY0MTI2Y2VjZDI3YTJjNDc0ZjlmNWY4NjAyYWNkZjRhMmNjMGNjMjJkYTllOCJ9"
+        },
+        {
+          "resource": "repo://web/app/Actions/Incidents/AssignIncident.php#L17-L32",
+          "version": "repo-lines-v1:sha256:ecb3364f186f49ec6850e120af4044b99fa6c9a435a6eea2029ae06cbd066357:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmOTE3MGQ2ZDI5NTQ4NTI0YzM1NWI0YjRiNTZkNTliOTYwNjcwOWI4ZDc4NmU1MjcwZDFmMTY1NzAxOGYxN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTRkMDJhODEyMTk0NGQxNzZkMjY1ZTliYjljYzU5ZjZhYjg5MGJjYWRmOGFlZmRlYmRiYmI0ZjJlYTg0NDQifQ"
+        },
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L15-L35",
+          "version": "repo-lines-v1:sha256:b8151e8fcd80467605abf3f1ff7b8aca83502d82c268e5eb0d70bbd21b67ee0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OTY1ODYzYzJiNjgyNGY1ZTgyZDMwNWY5ZjMzMmE0ZTUyOGNiOGZjZDNhY2YzMzgyZjc4ZWVhNjdiNGNjMGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NzAyNTIxOTE5NjkzZDZlYjVhMzljNTZhZDk3YTc2NDkyODAzY2U0Yzg2NjVmNzZmYmVkNmJhZjJmM2E0NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhMjg2MzQ3ZmNlNmM1MTM4YTA0Y2FjNTMzOGU4MTFkOGJlNjY3ZTZhMzhjOTc5MDk0NzM2ZDg1YmQ1OGU2NzIifQ"
+        },
+        {
+          "resource": "repo://web/phpunit.xml#L23-L35",
+          "version": "repo-lines-v1:sha256:16a4f00b9e6bd678181ae2af8caac6fedd47d5283802b741fd2924526b256f26:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2MTJlZDg5MDZmNjQ5MWM1ODAwMWRhNTBkMWI1Mjk2MDljMDg0NDJlNGZkNGEzMzEzZGFjZDQ4NjAxOTkzOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0MGE2N2QyMjI0OGY4ZTIxNzQ2NGE5M2Q2MGJjZmQ5YjBlMWY4YjlmMTEwYzI2ZTUzYWIyMjhhNzJmZjk3OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkZTFkYzNkOGVlYWIzYmRkYmE0YjhmMWYwMjI4OTc0NDMyZjY0NmIxYjA2Y2NhMjM0YWJmOWE5ZDdjODgzMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3NDVkODBmMjE5NDlmMTcwN2I4NWIzMDFhYWYwMDNmNmVjNDU0OWM1M2UxZjBiOTU1NTUyNDJmOTBjZTMwZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_47eee652384542dca95e255819eb21b0",
+      "statement": "InfraTicket separates incident business-rule validation from panel wiring: action/policy feature tests cover protected inputs, role authorization, visibility, transition rules, stale operations, and rollback, while Livewire tests cover forms, direct access, action visibility, notifications, filtering, escaping, and relation-manager behavior.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/IncidentAccessTest.php#L18-L74",
+          "version": "repo-lines-v1:sha256:9519e0210bd603b64d7219d3c93c419af5f2d92245a8afe553be7404f233ec12:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOGM0MTQwYzc5NzkxYWNjZjE2OWMwMTAxZTJmNmNmMDVlY2FhMWRjZjk0NTJmNGViNTFjOGVlMjNjZDAxZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzMWQxYjJhMjk5ODhiOTk4MDQ1NGRhYmNhMGM3YTQ4YWQxNGExYTE4ZjVhMGQwNDc5N2U5ZDJhMjE5YTUwMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentPanelTest.php#L19-L75",
+          "version": "repo-lines-v1:sha256:7633f0bb0d0cd4fa0c1e0734afe8a474e9de37d8fd4ea0070d2e4b1d48baa65b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOGM0MTQwYzc5NzkxYWNjZjE2OWMwMTAxZTJmNmNmMDVlY2FhMWRjZjk0NTJmNGViNTFjOGVlMjNjZDAxZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZGIxZjRhNWQwYTBhOTVjZjBhOWRkMzlmMzkxMGFkNDZlNDU2MGQ4NTE5NTg5MmFlZWI3YTU1NzQ5ZGY3OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingPanelTest.php#L18-L63",
+          "version": "repo-lines-v1:sha256:0af83417d34817fb54aaac6188621c0428e906bbb6cf9903a0d391a453b584cb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOGM0MTQwYzc5NzkxYWNjZjE2OWMwMTAxZTJmNmNmMDVlY2FhMWRjZjk0NTJmNGViNTFjOGVlMjNjZDAxZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmYTFlZDA2NDRhYTk0ZWE4OGQ4YTNlNDU4YTJjZGVjNTVhNThhM2FlZTM4ZDQ3NTlkODQ3MDdkYjhmOTIxMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentTrackingTest.php#L20-L188",
+          "version": "repo-lines-v1:sha256:8554eb120829affae58ee0180b65b1d5603408c6de40cfaa686e0c46cb9173dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTY5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4MzY1Y2ExZTk0ZTRmNzcyZWIwMTViYTg2YjQwZjljNGNlMWQ0NGY3NDczNGNlNDNiNjljODI0YWM2YmZhZWRkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiYmM2MTNjOTMxZmIwMGY5MzYyODI1YWVkYzgwY2NjMjY4MzAwYmU1NjFhZGQyNmZlOWRhMzQzMTdjYzY1OGNjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f5597cae027434eb4c792f7b29abf24",
+      "statement": "Incident assignment and transition reload and lock the incident inside database transactions; transitions also update status and append history within the same transaction, with stale expected status rejected.",
+      "evidence": [
+        {
+          "resource": "repo://web/app/Actions/Incidents/AssignIncident.php#L15-L33",
+          "version": "repo-lines-v1:sha256:04059b2eaa37cb41bd67c1f75814b3a86fede9a12c828ab80eac943f0423a95c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmZmU5NTUxNjBiNjE1NzU4MWNhNTNhOTY0ZmEyZDU0YzFjNGQxMWM0MzVkNzUyY2ZhNTUyMzExMzQwYjJjOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/app/Actions/Incidents/TransitionIncident.php#L13-L37",
+          "version": "repo-lines-v1:sha256:70aeed77d92a151f678fdd8af3995da0de8191ba312c54d23b705afd3975d26c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NzJhNDhjZWIzMDcyMWFkM2EzMTMzYTE4YTQxZmMxZjdmMjZjNzk1NWVkZjdmMGQ0NGYzNGRiZTZkMTYyOGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c1b11d602604b998f4ff5626275ac81",
+      "statement": "The InfraTicket PostgreSQL concurrency harness creates and migrates a random isolated database, drives two independent workers into real row-lock contention for assignment and transition, requires one accepted result and one conflict, and verifies non-duplicated final state and history.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Support/check-postgres-concurrency.php#L14-L92",
+          "version": "repo-lines-v1:sha256:a7b963b3783f92d182cb9ce9d8c4727edc8b22c89b632ac3412f302aa1896b5e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhY2JlNmU5ZTQ2NjFiMzA0MWIzNzFkZmM2NmJkYzcxNjY4NzZlMTZmOGUzZmM5NDRmNzFjMTBhOTVlNmFjMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlMDNiY2ZjZmQwZmZjMjBiZTQ4MmNhMzc3Y2M0Zjc3M2UxYzc0MGVlZTczMGZkNjgwN2Y2MTQ0YjcyYTE0YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwYzg2ZWEzZGUxZDkyMGY1NjNlMzNmZDc3NThiZGQ0ZmU5ZDFkZmEzZTVkOWEwODQ4M2U5YmUwM2Y5MDQwODAifQ"
+        },
+        {
+          "resource": "repo://web/tests/Support/incident-race-worker.php#L13-L34",
+          "version": "repo-lines-v1:sha256:93b32c264705019fe541e93da1630ed441ac5e2be8c0e6fea8d95757c27b9ec4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkMmE5ZmE3YTk4ODUzNTgzMTMxYTYyMDBlOTZkZGE1OGJjNzMwZmE5MDFmY2VhNDVmNzMzZWFjMGFkODhmNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3M2RlNmZiNzBhOTIwMTBmYzY4MzlhNzQ5OTk2ZDExYWJjODkyODJiNTBlNTQ3OWI3MTcwYjU0MWFhNmNkNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3cb256748ad47c38e7b1ec2c963548d",
+      "statement": "The concurrency harness cleanup path stops running workers, rolls back an open harness transaction, disconnects, force-drops only the random temporary database, and removes its barrier directory, leaving the demo database untouched during normal success and exception paths.",
+      "evidence": [
+        {
+          "resource": "repo://web/README.md#L140-L151",
+          "version": "repo-lines-v1:sha256:60dd842398fcd378a87e028b58149c19fd771e0aaadeaf30092c7d1a1c75b06d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5MGM5MmJkNjBkNmUyMjYzNTlmODA1MzhiNTBmZWZkMzc4NDViZGJlMTA3NDkzNTZlMzNlZTJkNDU1MDBlNjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2NTA5OWQzYTY3YTU3ODgzZTRiMzE0M2NhODJhZjBhYzAzZWM1MjNhMGViMmY5ZmE3NTE5ZGQwMzYzYjFhY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0YjU0MjM5NjRiNzVlZjY1MWVlYjhjMDNmNGJjZTc5MGY0Y2YzNDJmNTQ1OTMxMGI0YTJiZDM5ZjMzOTBiZTcifQ"
+        },
+        {
+          "resource": "repo://web/tests/Support/check-postgres-concurrency.php#L17-L24",
+          "version": "repo-lines-v1:sha256:4b4b83ede3aa9e9d24fbc7db98e436d58f8eb2c10defd8713707f11d895c64d3:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjJhMTZmYzczNzQwNTUwMjIxYjY2ODQ1MmRmZjIzMDk1NzBhZWRmNzU0ZDA5MWYxZGMyMDQ3YWY5M2U4ZDlkOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTNhNzQwOWExZjRlNjU4YTBlZjRmYTczODYzN2ViMGI4ZWZmZmQ4MzA5ZmEwNGEyY2NjNTM1N2I1YWY3YjNjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWVmZWY3OWIxNDIwODhhNzFjMDg4ZjkxMGZjOWU4NDIzNGEzMjIxNTgyZTMwZmY2ZDBmZjExYWI5NzkzNGI5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjdjNWY5NWY2OTc2YWIzNGI2YmQwZmYyNDRhMWI0OTg0MDg2ODRlYmM4MDViMDhhMmVhN2FmZjcwMGU2MTA2YyJ9"
+        },
+        {
+          "resource": "repo://web/tests/Support/check-postgres-concurrency.php#L93-L107",
+          "version": "repo-lines-v1:sha256:28d2da723134e7d463d78fa631e8fd1de1cafe30e47d76c3b64561e15d16a0c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyYzk3ZGI5NmVhZTBiYjY3YTZmOGVkOGE3ZWQwZmQzNTdiOTRmY2ExZDM3MDA5MDU3Y2I1ZTEyYzNhMTk1ZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwNDgzNDQyNGQ1YTk0NGYzYTI3YzYxNzBjYjk3Mzk3NWY1ODExY2I2MjIwNDcxODFlMDUzY2ZkYzgwMDcwMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a935e2fa700e4c3181563fb989d5f94d",
+      "statement": "InfraTicket comment validation is split between domain tests for authorization, attribution, limits, immutability, and ordering and Livewire tests for outsider rejection, escaping, validation errors, pagination, empty state, and the absence of edit/delete actions.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Feature/IncidentCommentsPanelTest.php#L18-L59",
+          "version": "repo-lines-v1:sha256:ec5beeaf313190d55c879fe4ced132427c03a7cebb85161f9742ef7aaa1aa929:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0ZTJkOGEwODIyZTdhYjFkYTc5NzliYTZjZDQxMWYwMjJlNzkxYTVmN2VkZmYyYWMxMTYzNzdhNjUyNDZmNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://web/tests/Feature/IncidentCommentsTest.php#L18-L75",
+          "version": "repo-lines-v1:sha256:1ceb09b6bd9314b2fdbb8d5042c4ca96b2c92801889f6baf14a790b4b1c2a2ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOGM0MTQwYzc5NzkxYWNjZjE2OWMwMTAxZTJmNmNmMDVlY2FhMWRjZjk0NTJmNGViNTFjOGVlMjNjZDAxZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiOTg1MGU4ODJlMjI3YjA5NmFmYTY4Y2U3YTk3MzNiODFjZWJhYTRkNWFmOGYxMDUwZTc1MGE1ZjM4ODQ2ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e660e3ed895f47baad9322ca512cafc3",
+      "statement": "InfraTicket repository guidance requires the full test suite and Pint formatting, and visible panel changes should be reviewed against DESIGN.md and accompanied by screenshots in change reporting.",
+      "evidence": [
+        {
+          "resource": "repo://web/AGENTS.md#L10-L20",
+          "version": "repo-lines-v1:sha256:aafb82d63ae4788b8dd85c5958056f3a5e0c7feeaed1bcdac548f8a7705843cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiZmFjMDZkMmVjOGRkNjI3ZmNjNjRjZjRhYmM5ODg5NWU5ZWM1ZWFmOGM3YjYyNDVkZmNjOGRmM2RkNThjM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0NGFiOTM2Y2E2YTQ4ZTliOThlM2RhOTBjNTk1NWE5MGUxYjEwNTYyYTNlNDc2ODVjYTc2ZTQzM2RhNmMwZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjNDc0MTU5MGMxOWFiOGM4NWU0NWIzMDYzMDU0MGNjNjViMzg3MTI0ZjY2NDkwODU3NTMyOTAzZWJhODQzYmMifQ"
+        },
+        {
+          "resource": "repo://web/AGENTS.md#L24-L37",
+          "version": "repo-lines-v1:sha256:2a3f5734ecad8fc2740577fd29215e5e4c93476b691ee0c6280ca94063d5f6c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3ZmM5ODZlZjAxZWU1ZjU4YzZmMWZhMjY1YjhhNjQxMzExNjhmOGFhNTk5M2Q3ODg2ZDk2YzZlMTg5ODk0MzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjNDc0MTU5MGMxOWFiOGM4NWU0NWIzMDYzMDU0MGNjNjViMzg3MTI0ZjY2NDkwODU3NTMyOTAzZWJhODQzYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlMmYyMDA3NWM2YTYxYTEzNzJiZDY5MTk5YjNlOTE5ZGQ4ZDUyYzNhMjU4N2MxOTcyOWU2NzU5YjFmZDhjYmQifQ"
+        },
+        {
+          "resource": "repo://web/package.json#L5-L9",
+          "version": "repo-lines-v1:sha256:0884450bcbf2be88bf750658f73802e08ffdefd61c7c3d99133febc0f5ea6bae:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA4ZjFiMzE4ODdjZTRlYTY2ZTQ4MjcyN2IxNjkxZTEwNGYyNWZlMTNhZmJiNWNkNzNiMjQ2MTEyNGQzOTNlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE5YmMxYmIyN2VmNjE2ZjI2NTUwNDliZGNhNjAyN2Q2N2I0MWMyZGViNTg5MWU5YjBhNGRiY2I5OGRjYjE5ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjg1YTE3NmYxNTdhYmFlMjMzY2MzYmNjMjZmZGE1NWE5ZmU2MjNhNTgwMzMxNWU3OTI1ZTk4ZWQ1MDRkZDQxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjZhOTY3ZTE3MzcxY2RjYjdkYTBhODBjY2JmOTg1ZGQ0Mjc1YTU4MjRkYmFkNmU2MDIyZGZiZDZmMGE0YWM0NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe455c684c684c31ad47f23e7c4d8f55",
+      "statement": "InfraData registers database-dependent tests with the `integration` marker, while its configuration and unknown-command CLI tests run without a database.",
+      "evidence": [
+        {
+          "resource": "repo://datos/pyproject.toml#L19-L25",
+          "version": "repo-lines-v1:sha256:4b0bbfc86698642ff93d117f876778f4456229234122e554ae2d482760952380:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdjZDQ4YzFmYzhkZDI3OTE0ZjMwZDczYjNjNTI1NmUzNzk0ODc3NzhkYTYwZmFmNDZkZmNmMjEyZTJlMTlhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWJlOWI4MmVmZjE4OGJhYmFjNGZjMGUyYzk5ZDhiZjdhNDhlYTEzMDc1NDRiY2YwMzJiY2UzZWM1N2EzZTc3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM2NDI1OGM0MzhjZTQ3ZTI5M2QxZTY5NGE3MzQ5ZGQ5MmQ5NjZjMTU0Y2U0MGQ5ZGMwMDY0MmZhNjQzMmY5MCJ9"
+        },
+        {
+          "resource": "repo://datos/tests/test_cli.py#L1-L6",
+          "version": "repo-lines-v1:sha256:8d43bbf51ccdf68771ccfe1cac6b12f6d9749d798c09106844865e497dfa6855:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTg3Y2E4NTBhZTQ2NzlkNzcwYWQzMjg1ZmYwODJmOTNjNmQyNjk0YzVmMzBkOTA0MDI0MjdkNjM5MzQ5OGMwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2MxYmQ4NzdmMDNiZmU4MmU3OGFmYWU4MzQwZGJkOWJiYTk0ZTJhZDVjYzM5OTAxNjhjNjM4OTEwOWQ3NGY0NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://datos/tests/test_config.py#L1-L16",
+          "version": "repo-lines-v1:sha256:cc757400308341a5cc2634809730fd36c7e113c2dad6dec7d5994c673234795f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NzJjMzA0Njk2ZGY2OWQ0ZmEzNGMxODJlYWU3OWM2ZDg0ZWFjNDc3YTExYmNmOTdlZDgxNDk4MzE5NGZhOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZWI4YjlkMjU2NzdmOGIyN2I1YzllZTFlY2QzODYyODg1Y2YwMDEwMGI1Y2NlODliNWJjYTEwZjYwM2JhMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e82c9f1c61414255ab9767598769ecdd",
+      "statement": "InfraData integration tests skip the module when a two-second database connection attempt raises `psycopg.OperationalError`; therefore a green pytest run containing those skips is not evidence that PostgreSQL/TimescaleDB behavior was validated.",
+      "evidence": [
+        {
+          "resource": "repo://datos/AGENTS.md#L41-L44",
+          "version": "repo-lines-v1:sha256:a5bafd65de290440cf8e4dcf69d8b224c685cb15fe6272e59d8a7322813dac32:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjI4YmQ2OGU3ZmUzOGRlNjQyZjFkNTIxNzdmNzJmMzJlODUwOTQ4YWUyMmI2MGU3ZDE0MDhhNzA3NTRiMjBiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTVmNzNmZjU0ODBmZjM3NmQ5MjBhNDExNjQxMWM5YTE0ZDQ1M2NiZDcxMTA2YWM5NWZjZjE2ZDI4ZDYzZGI3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://datos/AGENTS.md#L8-L18",
+          "version": "repo-lines-v1:sha256:af4e71c00543305fedf04c24c888f33b81c5c4750ba53c843108b44a30a2c134:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ZDNhNDBhZDIzYzVjNTBmYTM1NWI5YTU0NmYwMWNjN2MzOGEwNjFiOGQzNjU4OWY5MzZlYzAzZjMyYWQwOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExYTY0YmNmNDk1NzVhNTdjMTE1NmRmMTAzYTUzZWUxODU2MmJhZGJlYzEzZTdlMDYxMzlmY2U2NjMyMjkwNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkZjA3NTRjOGJmNTE1YmY4MGUyMmU4ZTUzYzg5NGRkYjQ1MTE4ZWZkYTVkODU3NTlhYzZjZmZjYTMyOWYzYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhZmYxZDhjNWUzYzdkOWQxM2MyNGIwNDNjNTZlZTA4MTAzOGY2MTM2NjI1OTY3YjdiMGJkOWVkYTYyNTExMDkifQ"
+        },
+        {
+          "resource": "repo://datos/tests/test_db.py#L1-L19",
+          "version": "repo-lines-v1:sha256:f31b0c6e802355e2fcc01fd648378f91cc5db9d2f0816311ee5042715bcc805d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNDNhNTliZjA0YjA0ZWU2Nzk5M2E5NzgyMzg4ZDg3YzA2OWZiOTY2ZTQ5YjBkYTU3M2RiMjBiNGY5ZDQ0MjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzOGNkMmIxMjRmMzZkMmI5MDY4MTYzNjMwZjliNGM3YmNiNzUyNmEwNDMzMzMxNDI2Y2E2NTNhMWQ3ZWJmNmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxM2U1NTg4YWZjNmE3ZWZmMmY4M2IyOTBhYWZiMjE2MzM5YmRhYTRmYjZjMjU2MDJhMmQ0MzhhNjk0Y2IyNzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0fdb770aded5451dabf5e0b369b8f3d4",
+      "statement": "When the InfraData database is reachable, integration tests verify the seeded sensor count, reading date range, and TimescaleDB hypertable, while `python -m infradata check` exercises live aggregate queries and reports database errors with a nonzero exit code.",
+      "evidence": [
+        {
+          "resource": "repo://datos/src/infradata/__main__.py#L10-L40",
+          "version": "repo-lines-v1:sha256:ba38460ece16950f7119e9f00c5225e02f5ed3887ca8278e924280124e9f2a63:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNjRlOTIwMDBhMTljYTM4NTkzYTRlNmEwYmFjNzcwOTZkMWU5ODY5NDlhM2I2MjgyNmI3Y2VhNGY3M2Q5ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkYzI4NjY5YmYxYTIxYTA1YmY0MDU5MGM3MjkzM2Y1MDUxMzA1NmE4NzY5YTg4NjJiNzBhNTk3YmI4ZjkyMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://datos/tests/test_db.py#L21-L37",
+          "version": "repo-lines-v1:sha256:4708bb46295b73e88508c603d4eddf04f031b430f56d4faeaa507a06d6bfd4a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4MGZmZTg3ZjdlYTFkZjQwYjYzYWI2ZGU5NTRlYmQyY2I4ZTAzNTRkMjdmNWUzMmNjMTg1M2ZjMmVhYjQwMzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjM2VjNjM3MzYwOWY2NjExOThhNzcxZmNjNTI1OGY0ODYwNmJmOTJkMzJmMGViYjZkNDcxZWY5ZDRiMGUzNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bfbd7a96a50c4b58aa05aeb81f26f68d",
+      "statement": "InfraData's configured quality gate uses Ruff for linting and formatting and requires pytest to pass with the database running; its Compose TimescaleDB service is exposed on host port 5433, matching the application's default database URL.",
+      "evidence": [
+        {
+          "resource": "repo://datos/AGENTS.md#L14-L18",
+          "version": "repo-lines-v1:sha256:12376c70b3a07e9c832644ac818138ca318ff853ac4f580f5e40727f8ba9f3da:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjlhMmVlZWE3YzE4MGRjNTJmYzQ3ZGM3YTc4YTgxMDY5ZTljOGJiMWVmODhkOTFlMWE0MWYwYTg0OGM2NDJlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFhNjRiY2Y0OTU3NWE1N2MxMTU2ZGYxMDNhNTNlZTE4NTYyYmFkYmVjMTNlN2UwNjEzOWZjZTY2MzIyOTA3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmJlNWZkMGQ5OTY1OWE2MmQ1MjcxNTJhOTNhYjFmOGYwYWFiYTQ2MmU3ZTc1ZjFkMzE4ZGQ2NWJhZWZhMWE3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmFmZjFkOGM1ZTNjN2Q5ZDEzYzI0YjA0M2M1NmVlMDgxMDM4ZjYxMzY2MjU5NjdiN2IwYmQ5ZWRhNjI1MTEwOSJ9"
+        },
+        {
+          "resource": "repo://datos/AGENTS.md#L41-L44",
+          "version": "repo-lines-v1:sha256:a5bafd65de290440cf8e4dcf69d8b224c685cb15fe6272e59d8a7322813dac32:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjI4YmQ2OGU3ZmUzOGRlNjQyZjFkNTIxNzdmNzJmMzJlODUwOTQ4YWUyMmI2MGU3ZDE0MDhhNzA3NTRiMjBiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTVmNzNmZjU0ODBmZjM3NmQ5MjBhNDExNjQxMWM5YTE0ZDQ1M2NiZDcxMTA2YWM5NWZjZjE2ZDI4ZDYzZGI3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://datos/docker-compose.yml#L1-L21",
+          "version": "repo-lines-v1:sha256:cae6a45e4311b04b1ba758f752ba96f63d2a5ab13c0be84659bddccc58d02f35:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1ZTUxMDAzMWIzZDVjZmY4NjhiOTlhMjc1ZGQyNGQ3MmU0NWNiNTA2YjNjNGY1ODljZDA4ZGQ4MGU5ZmIyZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4MTYwNWRiYmY1NWJkMDU1NDU5NDVlNTBlYzJmMjFiZmFjOWEyZjBjYTMzYzhmZGI2MzI1NDUwY2MyNzU1ZTAifQ"
+        },
+        {
+          "resource": "repo://datos/pyproject.toml#L27-L35",
+          "version": "repo-lines-v1:sha256:7857d29c3a75dba51d4b011bdf9f1b2d9338392b7983ad7f2f044a16240029e5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2VhMGFmNzcyZDg2M2E1NTE3Y2E4ODUwMDdhOTQ3NzU3MTY4NmY0NjZjYTRiZDdkMWJkNjc3M2NlYzNiZjgzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTBkMTk2YzJkMDA5N2MwMmY1ODE4ZGM3NGVjYWJkZTE2N2ZmZmRjMDNjZmE1NGNiYmFiMWZmZGYxZDRiNjhmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTJmY2VmYWE0ZDRhYjNmMGFhNGVjNTA4Mjg4Mjk5MDcyNWU3YzU1MDQyM2M5YzdkZjA4MDFiOGRhYTliMzBjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://datos/src/infradata/config.py#L1-L10",
+          "version": "repo-lines-v1:sha256:aea0309527e5bd95be2e1785746826a6788547b5dda78b04de19b69aaf4b1d50:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhNDE2YWQ0YTJlZDA0ZDU3MmQyOTQ0NjY1OWZhNzllMzEwYzU2OGRlNjAwN2VjZTZhZmZlZmQzOTU3MmFhMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmOGZkNTBiODQzYzk2MDQ5Mzc0YWVmMjBiNzdkYjVlNmQ0YTZkNzU5ZTY4Y2VmMTY3YjVkYjRkNTgxMGRmNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-24T09:12:59.855Z"
+  }
+}

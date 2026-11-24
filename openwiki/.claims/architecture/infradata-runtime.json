@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b21c8fbe363029e6f776b4079348341eae10a87c5a22bf9bf127daeb897f407f",
+  "claims": [
+    {
+      "id": "claim_514634576d9f4b5aae89a5c55e9cea2f",
+      "statement": "The InfraData module accepts only the exact `check` argument, returns status 2 with usage on stderr for any other argument list, and turns `main()`'s return value into the process exit status through `SystemExit`.",
+      "evidence": [
+        {
+          "resource": "repo://datos/src/infradata/__main__.py#L30-L40",
+          "version": "repo-lines-v1:sha256:7f7a8b29c0307dba5323b088e6ca6ad36e856667b9f0f0c9e4d61dc1e08d8210:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNjRlOTIwMDBhMTljYTM4NTkzYTRlNmEwYmFjNzcwOTZkMWU5ODY5NDlhM2I2MjgyNmI3Y2VhNGY3M2Q5ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjNzUwNDRjZGVjMWM3MDMxZjEzOTEyNGNiZWVlMTQ5ZGIzZGQ0ZGI5NGQ0NTU2OGJiNzg5ZDA3ODllZTU0YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://datos/tests/test_cli.py#L1-L6",
+          "version": "repo-lines-v1:sha256:8d43bbf51ccdf68771ccfe1cac6b12f6d9749d798c09106844865e497dfa6855:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTg3Y2E4NTBhZTQ2NzlkNzcwYWQzMjg1ZmYwODJmOTNjNmQyNjk0YzVmMzBkOTA0MDI0MjdkNjM5MzQ5OGMwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2MxYmQ4NzdmMDNiZmU4MmU3OGFmYWU4MzQwZGJkOWJiYTk0ZTJhZDVjYzM5OTAxNjhjNjM4OTEwOWQ3NGY0NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a82bf03d860d49239482a5414e2b8062",
+      "statement": "Database configuration uses `DATABASE_URL` when it is non-empty and otherwise falls back to the local `infradata` database on host port 5433; `connect()` passes the selected URL and a default five-second timeout to psycopg.",
+      "evidence": [
+        {
+          "resource": "repo://datos/src/infradata/config.py#L1-L10",
+          "version": "repo-lines-v1:sha256:aea0309527e5bd95be2e1785746826a6788547b5dda78b04de19b69aaf4b1d50:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhNDE2YWQ0YTJlZDA0ZDU3MmQyOTQ0NjY1OWZhNzllMzEwYzU2OGRlNjAwN2VjZTZhZmZlZmQzOTU3MmFhMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmOGZkNTBiODQzYzk2MDQ5Mzc0YWVmMjBiNzdkYjVlNmQ0YTZkNzU5ZTY4Y2VmMTY3YjVkYjRkNTgxMGRmNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://datos/src/infradata/db.py#L1-L16",
+          "version": "repo-lines-v1:sha256:6443f2640660754d2906914ba7d44bf6d11451830c182611c2df5bcfa96e95f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2MzdhNzg5ZmFkMTM1OTkxZTJhNzUyYzU2OGYzYjgzOWQzNzJhYTE1YmJlMDYwMjk2ODdhY2JkYzBhZWRiZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5YTIxZjIxYjA1N2VmYTkyMzc1Y2I4MjU5YTZhNDNhMmVjODlkYjAxMDNiZWViMTIxZDNiZDc4NjQ3MTZhODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://datos/tests/test_config.py#L1-L16",
+          "version": "repo-lines-v1:sha256:cc757400308341a5cc2634809730fd36c7e113c2dad6dec7d5994c673234795f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NzJjMzA0Njk2ZGY2OWQ0ZmEzNGMxODJlYWU3OWM2ZDg0ZWFjNDc3YTExYmNmOTdlZDgxNDk4MzE5NGZhOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZWI4YjlkMjU2NzdmOGIyN2I1YzllZTFlY2QzODYyODg1Y2YwMDEwMGI1Y2NlODliNWJjYTEwZjYwM2JhMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2ab246b3e924b3580029fa35123fb72",
+      "statement": "The `check` command opens a context-managed connection, queries sensor count plus reading count and time bounds, formats bounds in UTC, returns 0 on success, and converts psycopg connection or query errors into stderr guidance and status 1.",
+      "evidence": [
+        {
+          "resource": "repo://datos/src/infradata/__main__.py#L9-L27",
+          "version": "repo-lines-v1:sha256:a3bdbf25e451ddbf373aa2a05be9af96545d529212467bd6a5ea9276d6b318d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMmJmZGE5ZDgxNjQ4N2Q0NWE2MTBmZWQ3MjIxZGI4YWNmNjU4YTFlYzVkNDgyOWNhNDdjY2Y3MDVjMTI4MjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3NzMwYTQwMDBmZmRlNDJmMGZjMTVlMWJlOWI4YmQ0MWM4MWU4ZDAwNGY5Yjg5ZDcyOGRhN2EzYzFmY2JmN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1NzIyYjhjNGYyODMxYTA4YTZmZjE2OGQxNjUxMTRiNmZkYmFjZjk4NDIxNTM2NjI3NzY5M2JkY2IzYmQwMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04e31da74a5f41f8a8d9b175bc58dc8a",
+      "statement": "Docker Compose runs TimescaleDB based on PostgreSQL 16 with host port 5433, persists state in the `infradata-pgdata` named volume, mounts `db/init` read-only into the image initialization directory, and exposes a PostgreSQL readiness health check.",
+      "evidence": [
+        {
+          "resource": "repo://datos/docker-compose.yml#L1-L22",
+          "version": "repo-lines-v1:sha256:994d16d0928eee99c6dfe1b526f2df52a9e0ee43ea5e7c1a7fd4cbd35209a6d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4MTYwNWRiYmY1NWJkMDU1NDU5NDVlNTBlYzJmMjFiZmFjOWEyZjBjYTMzYzhmZGI2MzI1NDUwY2MyNzU1ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b5640c903c1c4d188ca6e67981d19b06",
+      "statement": "The database initialization scripts run only when the database volume is created, and the shared course dataset SQL must not be modified without asking first.",
+      "evidence": [
+        {
+          "resource": "repo://datos/AGENTS.md#L32-L36",
+          "version": "repo-lines-v1:sha256:81c8845730b468b154d47e98cbef4e64ccf9367b2efea108f17fd8092da4e2f9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTY0MGRiOGEzZjM2NDYxY2ExYmRkMWM2MmZiNjM5MDViN2Q2MGEwMGI5M2ExMjhhNWRkNTdkN2JhODA3MGRlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDEwOGIxNTcwMjJlNjFkNmI3ZWYzYWEwMDc3OTUzZjI0MTNiZTAxNzc5Zjg0YTY5MTE3MWRmN2ExMGUxMjMxMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTk4YWI0MmM0ZGVlM2UyNGRjNTFjNTc0ODVjNjIzMzUxYmU5MzdjMDgxNzY4NDQ2ODJiYmNhMzljNDEwZmFiYSJ9"
+        },
+        {
+          "resource": "repo://datos/AGENTS.md#L8-L13",
+          "version": "repo-lines-v1:sha256:c1c0aeeed86fcd9223d66b8a1ad1a45616a8de35540310f634e4e294af9f8168:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZkM2E0MGFkMjNjNWM1MGZhMzU1YjlhNTQ2ZjAxY2M3YzM4YTA2MWI4ZDM2NTg5ZjkzNmVjMDNmMzJhZDA5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRmMDc1NGM4YmY1MTViZjgwZTIyZThlNTNjODk0ZGRiNDUxMThlZmRhNWQ4NTc1OWFjNmNmZmNhMzI5ZjNhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODRkYWEyYjI0YzYyZjZiMmNhMDBmZWJhZmVkNjVjNDM0MzJkZDI2MzY1MTgzYTk2YTQxMjA1NzczZTY1YjUxMSJ9"
+        },
+        {
+          "resource": "repo://datos/db/init/01_schema.sql#L1-L3",
+          "version": "repo-lines-v1:sha256:464602427920a111d4fd2157ad9da1e5980842edaf5160f0ea7699dc89fadbec:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWYxYTIwZGYwNjU5M2FmOTE2MTEyNmFkOTVhNDU4NWUzMWI3Yjg5MzFhMmU4MzAwMzU4ZjZhYTY2NTkwNmJmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjVkOGQwMzE5NzBjZWRiNTQzYTBiOWRmNGEwZDdlN2U5MjhhODgwM2UyODYyNTRmY2JlYjMyMTc0MWZjOWFmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDJjZTNhNzRiOTZhNmQ4MjAzZDNmNGNmM2UxOGQ0ZmQ0Yjg3NDllNWI1MWUzZTg5ZGI4MWJjNzAyMjI1MWFiYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c4d6a14e35447aca42dfafd36597b1b",
+      "statement": "The schema models constrained sensor metadata and required timestamped readings linked by a foreign key; `readings` is a TimescaleDB hypertable on `time` with a `(sensor_id, time DESC)` index for sensor-specific recency and range access.",
+      "evidence": [
+        {
+          "resource": "repo://datos/db/init/01_schema.sql#L3-L23",
+          "version": "repo-lines-v1:sha256:4b671a86b660af4ffd6124330952ef94627b018542eade796f33031888004166:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1ZDhkMDMxOTcwY2VkYjU0M2EwYjlkZjRhMGQ3ZTdlOTI4YTg4MDNlMjg2MjU0ZmNiZWIzMjE3NDFmYzlhZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiNGUwYjZhMGZjYjM5OGIzMWVjZDRjNzFhMzUwZDIyYjE5ZjdhZGVjMjYwZGI2YjU1YWE0YmU4MWMxNmY2ZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNTU3ZWFmY2FhODk4YjA1ZDhhZTY1NWExNzI5MTFhYzcwYzNjZDZiN2VlZTU3N2ZjYzMxNGZiYjg0NjhkZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_812dfe495c5c40e2b39c06b5a9fbc5b0",
+      "statement": "A fresh seed deterministically creates a five-minute UTC observation grid for 12 sensors from 2026-08-01 00:00 through 2026-10-30 23:55 using fixed dates and `setseed(0.42)`, then intentionally removes 736 readings so the final dataset contains 313,760 readings.",
+      "evidence": [
+        {
+          "resource": "repo://datos/README.md#L20-L32",
+          "version": "repo-lines-v1:sha256:0be617949604398798bf6f874146574e18869ef97066617bd5a6181356c0044f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNzdjZWVmZjZiMDU5MGJjZTcxNThkZDRkOTc0ZmQ3ODgzZWUwNTQwZDI1OWY1YTBjN2E1NDkyMWJiYTNjNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3ZWU2ZDQ5MGI5OTJkNzZjMTdjZWNlZDQ5OWE0NGU0Yjg0ZjIxYjA1YTM4ZTJiMmEyYmQ0YzI1YTA0M2I4ZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmMmU1ZjU5OTdmZWI3MDA2ZTJiMzAzMjRjYjM4Y2ZmNmQzMzUxMjRhZmQ2OTRjOTFkMWNlOTMyOWMyOGI3MzEifQ"
+        },
+        {
+          "resource": "repo://datos/db/init/02_seed.sql#L1-L59",
+          "version": "repo-lines-v1:sha256:704c9fd329393f037ec513881934ae44ca81f77f7c05764002bf53cc28e04c11:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzYjI3MDk4NzNiZmZiOGMxYmI5YzEzMDFhY2RlZjZjNDNkMjAxOTlhOTc2ZTE5ZDJlYTY3MDgwOTc0M2YzMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMGVkY2MzNTg1Mjk4OWQxZGFhYjdiMmUzOThlMDRhMzZkMzBhOGYzNTEwOGI0NzI0OWU5MGJhYzU4ZGIxYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhOWRmMzg4MjViYjgxOTgyODczYjgyYjc4YjE0ZGQzYTY4YWU1N2I1ZWNkMjU2MDJhNmU4MDI1MDZkOGY5NTQifQ"
+        },
+        {
+          "resource": "repo://datos/db/init/02_seed.sql#L61-L72",
+          "version": "repo-lines-v1:sha256:9c6e7f19c5b7c53baaf8a4d28eeead3a82057812a6eb8a8ad966dd3acbc16573:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyOTIxMGRjMDkzY2ZmMGIxZDM4MzI5NDU3YjgxYWI4ODJkMWRkYjJhNzNjZmRkNmMxNmQ0YmYxZjExNjE1NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NTY3OWI3MTY3MmE0ZDIyNzI5Yzg2MDA4ZDc1ODEwNzBmYTg2YzI2MmRhMTdkYjkzYzI0ZmI0MDc5YTkzYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmMThhNjJkMWI1NTc1ZTg4NjQxYjk0ODMwZWZlYTYzNzVjZDM2ZDhhMGNkZmY1MmNkZGU0MWM0ZDU2YzU1ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_290291819b1e46d1b96a31fe798628af",
+      "statement": "The seed deliberately includes three outage gaps and three out-of-range anomaly fixtures; they are intentional exercise inputs rather than defects to clean up.",
+      "evidence": [
+        {
+          "resource": "repo://datos/README.md#L64-L74",
+          "version": "repo-lines-v1:sha256:c423f6fb7d97e155396584bd4ff100c8b8c107631f41120b6d990e988cc54372:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3NTgxYjg0YWNiNTE2Y2U5NzhjOWZhNjNhMTY2OTIzOWYzMzk4ZTBkYzg4YzRlMzIyMTdjMzdjZGRkNjU0MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2EyOThhOTlhZjI1OGQ4MDBlMjQ2ZjM0ZTkxYzEwNGFkZWEyNDYwZDEyY2Q2NDY1ODNkYjdjMmU3ZGU2OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1OGVhMGY3MzI3MjMzOWVhOGQ3ZWRkZTMyYzRkYTRjY2JmZmNhMDViY2JkMzViZWU3ZTgxNDVmOGVjMDViMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxMWUzYTIwOWEzMjU0MWEyMzQ5MGJjMTM3Njc3OTY0ODkyMDI4NDg1YWJkODk0NzUyNjkwNmFiNmFlOTM1ZGMifQ"
+        },
+        {
+          "resource": "repo://datos/db/init/02_seed.sql#L61-L80",
+          "version": "repo-lines-v1:sha256:1567025813be702a8aad1a872540fc449b3d697611a201cab72091fcb0d933ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NzI3Y2ZmN2UxZjBkZWQ5NTY5YTVkMGRiZjJiNWVjZjgyYWFkYWZlZTQyZTMyYzQwMWM2YjJhNDZlMDU0MjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NTY3OWI3MTY3MmE0ZDIyNzI5Yzg2MDA4ZDc1ODEwNzBmYTg2YzI2MmRhMTdkYjkzYzI0ZmI0MDc5YTkzYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca65be7838444bd5bd0d6017685ccb23",
+      "statement": "InfraData's temporal contract uses `timestamptz` with UTC seed boundaries and UTC CLI output; future temporal aggregation is expected in parameterized SQL using TimescaleDB functions such as `time_bucket`, rather than by loading all rows into Python.",
+      "evidence": [
+        {
+          "resource": "repo://datos/AGENTS.md#L23-L29",
+          "version": "repo-lines-v1:sha256:e3f6a3ea9e4cc1f1c1a8e0916aa147dfbf3e3c7c19431965e4b884299724b463:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IyZjY5ODZjODkyYTRjMzk0YzNmM2MwNGRjNjE0NTkyYWY2NmY1NjBiMWQ5NmVjMDEwZDI1MWE0NzlhMjYyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWYyNTZiYjQzOGJjODYzYTcyYmYzMTg4MmFmYzY3NzVkYzg4MmMyMjc1ZmVhNzZjNzU0ZDJjYzJiZGJlMGQ1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2VlNWVkYTU3MDhkNTBhNWEwMTY1ZjM2MjAwOWQwZjg1ZmY2MjcyMGYzZjk2NTEzMGQ0YzkzMjI0NzYyZGIxZCJ9"
+        },
+        {
+          "resource": "repo://datos/db/init/01_schema.sql#L14-L18",
+          "version": "repo-lines-v1:sha256:ce6396f854c129c2eab788bd4c5a749ed11f590aae0ee165d6db30a374961463:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNiZTMwNTU1MDhlN2MwYzA5OTdhMWE1ZGY5MGYyMTA0MGVmYTY4MzJiZGVjM2E0NjM1YWE2ZjIyNzUzZDJkMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmYyM2JiMmIyZTAzYzA3ZDYyMjcwNjVhMmNiMDdiOWFjMDljY2Y3MmMxYWEyYWE1NDNlMWNkMDU2Mjg0ZWRjYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQ4MWM1MjBjMDc2NjM5Y2VhYzdkYjQxYjRmZWJlYjk1ZTg4N2IzMjFhMDFkYmJlZmZmZDA5YTU4YjYwOTI5NCJ9"
+        },
+        {
+          "resource": "repo://datos/db/init/02_seed.sql#L47-L58",
+          "version": "repo-lines-v1:sha256:4bbc0ccdc968a0c1f4096fffba22b0af9a327df9c6f5ca9d97e5907713e4e7a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMDFmYzA5MWY3NTdkZDUzYTA0ZDIxMWFjZDY5NGI4MTIxYWZjOWJkNjAwYWQ4MGM0NWZjMzg4NjQ1ZDcwZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkYTI0NzAzNjljYWM4OGZhOTc1OGUwYjRjNjA4YjM2M2MyMzRhMzljM2QyNmM1ZTc2ODYyYWYwZDE5NzBkM2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5OTU3ODQ1OTgyZDgyNzdjNWEwZmZiOTcwNGM0OTkwNjQ5MDg3MGI5NmQxOWJhMTU1YjhlMjg1NDliYWNmYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0ZjcyMmY1Y2Y3YmJkOGI3MmQ3YmRkMzQwOGVmNzg2OWRlNWYwNTIzYTBiODNhOWFiMTVjNWY2ZjhjMDQyYmMifQ"
+        },
+        {
+          "resource": "repo://datos/src/infradata/__main__.py#L3-L26",
+          "version": "repo-lines-v1:sha256:76ad530c5fd2e5f2d4b79747a3b8d40c821eecfedc42049002f60b4fdf05c57a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MTc1Nzc4NTFjNDg5ZTQ1YWJhZTI1OTEyNTZjNDA0MDRhMDVjNmQxOWNkNGQ1YWU3ZmQyMmIwMDg0Y2VjNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NGJlNzMxNzNiOGQ1OTIzMzgyOGRmYjEyZDI3ZDYxZWJlMjYwMzlkZDYwNDg5NDFiY2QyNTY3NDZiODRlNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjY2Y1NWQzMjAxYzVmNzc4YmM0NmM1MzE4NzQwYzg4MmIzZGI3OGIxNmI1Y2Q4NWE2N2Y3OWJiYmRlMDU0ZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjNzUwNDRjZGVjMWM3MDMxZjEzOTEyNGNiZWVlMTQ5ZGIzZGQ0ZGI5NGQ0NTU2OGJiNzg5ZDA3ODllZTU0YTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c50e84145434b029502c0317b590398",
+      "statement": "Database integration tests skip when a two-second connection attempt raises `psycopg.OperationalError`; when the database is available, they verify the 12-sensor fixture, expected UTC date coverage, and TimescaleDB hypertable registration.",
+      "evidence": [
+        {
+          "resource": "repo://datos/tests/test_db.py#L1-L37",
+          "version": "repo-lines-v1:sha256:e98aeb8201cccc49c2363b0b1bd3bf1712e85549f3597c98098cb92727ac2ce8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNDNhNTliZjA0YjA0ZWU2Nzk5M2E5NzgyMzg4ZDg3YzA2OWZiOTY2ZTQ5YjBkYTU3M2RiMjBiNGY5ZDQ0MjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4MGZmZTg3ZjdlYTFkZjQwYjYzYWI2ZGU5NTRlYmQyY2I4ZTAzNTRkMjdmNWUzMmNjMTg1M2ZjMmVhYjQwMzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-24T09:12:59.855Z"
+  }
+}

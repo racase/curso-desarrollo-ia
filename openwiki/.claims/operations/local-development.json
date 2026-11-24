@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4f153f13fc798993e7bf9331d16cda39475ba7c1b4d9c5dfd800e9c413e70eac",
+  "claims": [
+    {
+      "id": "claim_a4dcdaf95370421a8b719fc53c04fea8",
+      "statement": "InfraTicket publishes its application on host port 8000 and PostgreSQL on host port 5432, while InfraData intentionally publishes its TimescaleDB/PostgreSQL container on host port 5433 so both database services can run concurrently.",
+      "evidence": [
+        {
+          "resource": "repo://datos/docker-compose.yml#L1-L20",
+          "version": "repo-lines-v1:sha256:8ca2a0a91b7a7b43819c76d6a4430c0535e3e0ce2a948828f8f27db56bffe0f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNzI1NGEyNDJiZjk5MWVmZTM0NDRjNjYxYTE0MTdmMjRjOWFiMGRmNmI4ZGJiYzQzNzlmMGM4N2IxMWJlNDkifQ"
+        },
+        {
+          "resource": "repo://web/docker-compose.yml#L1-L29",
+          "version": "repo-lines-v1:sha256:c1c0a11008dd23bd18a9c659767c5bd7b6fe675ebdb04ce73d544732b317042a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxM2Y0ZDk2NjFlOWQyYzNlMWEyODllNTgzMjI5OWJlYTE0Y2RiNjRiZjg4NjYxZGY3MTdiMTJmYTAyZDAxMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjZTJhYmNkNDhkYThjMDhiMTBhOGFlZjg2ODdiMmZiZTgwZTcwNDA5NjJhMGUxN2VlZTVmNjE5ZWJjOTBiNmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f73f3c66b164f848d478a510a02bb74",
+      "statement": "InfraTicket bind-mounts the web checkout at `/app` but overlays `/app/vendor` with a named volume, keeping Composer dependencies out of the host shared folder and persistent across ordinary container recreation.",
+      "evidence": [
+        {
+          "resource": "repo://web/README.md#L25-L29",
+          "version": "repo-lines-v1:sha256:3e490f5589624a31e966c7391fcf580370e1b300d45b9bf6385c7620ff82673f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDM3ZWY1MjI4M2FhN2NiNjBjZGNjNTI0YTFlZTc4OTUyMWY0MjA4YWM1ZGE3ZmE4Yjg2ZmQ2YTcyYWFmZmNkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGI0NDI2N2EzYTgyMTAzYzA5ZTNjYzNiNjMwZDhlNzA0Yjg1MDY2YmE1YzdlODA3MTE0ODU2ZDNjM2ViYmQ0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWNiMTMxNjA4YzU4Y2M4YmE2ZTc5MDFiNzUwNzBlNjE1ZmM3YjE3MDNmMDdjODIwNzVkM2M1NGI0MDI2ZjhhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2QwMDBjMjNjZGUzNjgxYTE2NmUxNjNmNDdjNDNjOTAyYzgxODgxOWViMTQ1ZTk2Zjc0MTdiZmM2M2FkNWE1YiJ9"
+        },
+        {
+          "resource": "repo://web/docker-compose.yml#L1-L14",
+          "version": "repo-lines-v1:sha256:f81c98b5b56b9d7c0da89c7b35624e6571dc2d9878062dc14ff2b00e874614ce:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3NmExMjliMTE5YWFhNDE4ZDJjMDljMDI3ZjZjN2MzN2JiOGY2MDQ5Yzk1NWYwMjQyYzdhZjExOGNiM2JhMmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwNmI5YjgyMzQ1M2Q0NmUzYjdkNWNiYjA0YjE3Yjk3YjAyMzgxMzRmZTIxNGE3NTU2ZmJmMDRiZGQ5YTMyMGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32147ec0f098464d81d6419a024695cc",
+      "statement": "InfraTicket's container startup installs Composer dependencies only when the autoloader is absent, creates `.env` only when missing, generates a base64 application key when needed, then always runs migrations and seeders before starting the server with `--no-reload`.",
+      "evidence": [
+        {
+          "resource": "repo://web/docker/start.sh#L1-L25",
+          "version": "repo-lines-v1:sha256:e50f5faa708d7a9695f3528be0ea1be9662c4a9333f02419d64678c4c04feb97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MDc2ZDNkMjhkMjFlMDIwMTJiMjBlYWY3ZGJmNzU0MDlhNjI3NzEzNDQzOTAyNWYyODJlMzY4ZTMzMDVhYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4OGMzYjYyZDI3ODIyZGU0YjNlMTQzODRkNDhmMGExOTc3MTk1NjllYzBiMTk3ZjU3Nzg0NmQ0MzY5ZTI0ZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_643c067ee6bf458b96523e4ac08980ed",
+      "statement": "InfraTicket startup waits for a healthy PostgreSQL service, injects `DB_HOST=db` into the application container, and disables the Artisan server reloader because otherwise the container override can be lost in favor of `.env`'s host-side `127.0.0.1`.",
+      "evidence": [
+        {
+          "resource": "repo://web/.env.example#L24-L29",
+          "version": "repo-lines-v1:sha256:10b797723ad5e0a18a1ddb8c288ee7194a166076e1c58518e85b9637058b5284:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EwYjhhN2IzOTk3MmM4NjliZWQ5NTc1MjFmYjEwZDE2MWU5YjZlNzA4NTEyODNmMWE2M2U2YjhkMDQyYzRlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDUwYTMyNjU3MjU3ZDY0YWJjNGRkM2NhNjlmOWMxNjI2YTE2MzFkOWQyNGE2Y2Q2ODJhZmUwOWE3NjQ5ZTA1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODJmNDQxMTViMmQ4OTFjMDMzODk0MTI0N2QzYjI0MzMwNGIwOWY0NGExZDlkZjM3NzcyYzMyMWRiYThjZmNlZiJ9"
+        },
+        {
+          "resource": "repo://web/docker-compose.yml#L11-L35",
+          "version": "repo-lines-v1:sha256:68ac8fbc99227afa94b0bc208df043789cdb971c38c3c07d2792bc4f88d06485:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZjFkMzZjMGJiNjQxYmFkMzI2ZjZjNjg0MDM2MjBhZjQ3N2ZkNTkzY2QwYTUwZDhkM2M2ZTMxYzFiNGMzN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZTNmYTE2Nzg4Zjg2ZWQ0Nzk3MWEwMGUxNDExMGQyZjcyZmI3ZWUxM2Y3M2Q4NDI4YjdkZTc5OTBkMjRiOWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiMGYyM2NlMzM3YzMxZTdhMTU0MjY0YTUwMWRjYjI0YzZlMzI1M2UxYWNjZWIxZjBkMjUxNzJlNTNiZmE0M2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhM2Q1NzI1YjhmM2U1ZGJmN2JlNzg0OTQwNzM2YWE1MjA2OWI5M2IxZjFhMDM3YjljMzBmZTFhZjRjZjkyNjYifQ"
+        },
+        {
+          "resource": "repo://web/docker/start.sh#L20-L25",
+          "version": "repo-lines-v1:sha256:f92a2ef827519e3a755bdc84704350fd67913226d6141caf6d1bb181dcf3191f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFmMDBiZWMwYmE4ZjA1YzY1NzBiMTY5NjdiOTdjYzY3MzQ5NjYwN2Q3MTc3ZWUwN2Y0YzFmZGRkNjQ3MmM4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDg4YzNiNjJkMjc4MjJkZTRiM2UxNDM4NGQ0OGYwYTE5NzcxOTU2OWVjMGIxOTdmNTc3ODQ2ZDQzNjllMjRlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWIyM2JkNGIxZmQ5YzRlOWI3YTUxODliZDE1MDc5Y2NiMGY0ZTgxNGUyZmFjNzI0MDJmOThjMTc3ZjY2ZTU5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2894300a3294286b527778ec8acd510",
+      "statement": "InfraTicket's demo seeder is safe to invoke repeatedly because it skips users whose email already exists, although it consequently does not update the name or role of an existing seeded user.",
+      "evidence": [
+        {
+          "resource": "repo://web/database/seeders/DatabaseSeeder.php#L12-L39",
+          "version": "repo-lines-v1:sha256:df1fc7b5de776047cac13ac917789dc85a50c532d3f38de7af910aa67f144ba6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3M2I5ODQzN2M3ZjQ3YTM2N2M1NzU2NWQyMDUyMTk3YzliYjgzYWE1NmVhNTkzZjcxZTg0NTRiNTFhYzYxYmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlZmM3MTRjNGIyZmYwZGZiZDM3ZWNhNDBkNDM5ZWJkNjBmN2RlNjVlMDY5M2IxMDQxNWI2ZWRmMjBiZDUyZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_86fc6ef0709447e8bfb2cfdebd95fa69",
+      "statement": "InfraTicket's Vite build consumes application CSS, the Filament admin theme, and application JavaScript; the theme imports CSS from the Composer-installed Filament tree, so host asset builds must copy that dependency subtree or use a Node container sharing the app's volumes.",
+      "evidence": [
+        {
+          "resource": "repo://web/README.md#L37-L66",
+          "version": "repo-lines-v1:sha256:e40cae68bfa15a4ee059be89d07d1bc00655f2c452cd53be1c5917bad0473a06:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMDIzZjY2ODQwNWVjMTVkZmJiYTA5MmM4YzViZTBiNTcwODJiMjU2YTQ5OGI4ZDUzMDE3ZDI5ODg2M2E3ZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0YTFjNGNhZWFmMDMyYzIwZGZiMTkzODRmNTE4ZDYyOGFkYjk0YzBmMmJlNDFiODVkZjM4YmNmYjVkMjg3ZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYjhkNDMxYzNlYWFlNWI0MmRhZTQwMGE0ZDFhMzgyM2I1Njg0NjVmZDk4OTZmMGVhYjc2MDY3MjE0ZDM0YjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3NmU2OGI0NGY0N2Q2Y2FhNTJlZjliZTcyMzFkZTQ2ZDYzMGQ5YTZhMTVjOWE0ZDI3MjgyNzAwOThiZDgwMzIifQ"
+        },
+        {
+          "resource": "repo://web/resources/css/filament/admin/theme.css#L1-L4",
+          "version": "repo-lines-v1:sha256:205a131f08a8a23f6c3198d2fbefba0cdbb6d330142d11ba699d6c6925ab964d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUxMjIwZjJkOWQxZGFhNzE5YjA4NjlhMjE2ZDkzN2I1Y2UxNzM0ZDFiZDAwMDQ1YjBhZmQ1ODMwMzdhZTU1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDIwOTE3ZTU5YzlhMGFiZjJjMzQyODk5NjBmNjQyZmQ1OTExMWQyOGI4ZWM1YzU3MWU5MWJjMzlmYTg4NGY3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzAyYWUwZTBhMGE1YzQxZjJmODI4ODZjMjY0NTIzOGNhOGMyYTQ1ZGM4NmYzOGUwYTBiOTE2ZGQwZjljZmE0NSJ9"
+        },
+        {
+          "resource": "repo://web/vite.config.js#L1-L22",
+          "version": "repo-lines-v1:sha256:6ea7b00c0e5210ef9a34b87a9cc0b381914cffb185668535ebdaf4b43bee1a8a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxZDAyMTI3OTkzMzU4NzY1OTg0Mjk3ZGQzMzgzNWUwMGYyMjc0MjRjYmQ2NGMyY2JmMDJjYjcxMTQ1Y2ZmMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d44b8b24a28840c88d512c5a19ca077a",
+      "statement": "A stopped or interrupted Vite HMR process can leave `public/hot`, causing InfraTicket to continue targeting the unavailable development asset server; static operation requires removing the stale marker and rebuilding assets.",
+      "evidence": [
+        {
+          "resource": "repo://web/.gitignore#L15-L22",
+          "version": "repo-lines-v1:sha256:bce7d9b8b0170cc4b253a3cb3bb3ddc3203ef7d7414e12d5c96075da01052f9a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmZiMTZmYzJkYzNiN2YyNGUyMDk4MWFhNTg2ZTMxZDY2MjkzYzgxZWI3YzJlNWQwYTliYmIyNTJiMTNjNjI3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWIxYzEzNGNmZjE3ODVlNjI5ZmFiYzQwMDNlNGEzM2ZjNzJkZWQ0OTg0ODBkZDVlOTZlYTkyY2UzNTY3NTFhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDljNTk2MDhhZTM4ZDFlODA4ODA1YzIxNDIxYWE5ODEzYzA1ZjcyZDc3OWU1MmU5NGE2ZGNmOWVkNmY1YWMyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmIyNTYzZThlNDkzYjVjZmZkZDc2MDAzODQxMTkzYTY2YmRkODQ5MDk0ZGNiNGQ0NTRhOWMzOWRhYjQyYzdkMCJ9"
+        },
+        {
+          "resource": "repo://web/README.md#L68-L74",
+          "version": "repo-lines-v1:sha256:273251510d509c07c7844677bad32ee9658d47d6c70142f8c4b3b1a11bc8810d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2MyZDhmOTQzMTQ4ZmY2ZDZkODhlOTFlZmFkNzMxY2Y4ZmRmMTdmNThiZDI0NzA3NjExNTNmMGE0MDU2ODk1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTU1ZmY4YmIwNGVmNTllODg5ZmFiZjA3MDQ4OWQwYmJkNTA0MDY2NjY5ODQ0MGY3MjE1MjZlZGQwYmYyZDFlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGU1OGRjMjA0NWY5YTk2OTM0ODhjYWFjNTRhM2EyODVlYTdiY2YzNDZmMGEwMWQ0MWM3MDYwMzA3MDlmNTJkZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e832adb8c664d3a9e2c70d051ab671e",
+      "statement": "For InfraTicket, `php artisan migrate` is the data-preserving schema update path, whereas `php artisan migrate:fresh --seed` is an explicitly destructive local reset that deletes existing database data.",
+      "evidence": [
+        {
+          "resource": "repo://web/AGENTS.md#L32-L35",
+          "version": "repo-lines-v1:sha256:5b81dc4f7eb605a211f52c9fa2bb7628894309990532d1ec48c4fce16be0579c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzc1MGE3N2UxMWNjY2M0OGQ0MDAxYjliN2FjZjg1ZTdhOWZjNDYxNThjNjI5NmVhZTA4MjU0ZmUwNmEzZmFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc4OTgzOGFlNTI3YmJjNjIxYjY0MTI2Y2VjZDI3YTJjNDc0ZjlmNWY4NjAyYWNkZjRhMmNjMGNjMjJkYTllOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI3ZGNhMmRjMDVlNGY1ZWM5ZTdlMjY5MWZlMTdmZGU5OThkNGVjZTliMjc2NDAwZTUzMzdjNjg0ODQ1Yjg4OCJ9"
+        },
+        {
+          "resource": "repo://web/README.md#L113-L116",
+          "version": "repo-lines-v1:sha256:f455d825aa7d0f72bd59fbff13101464faedfa8c991520a875a1cfb87342139f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNhZWQ4MTExYTMwMWMxYTY0NjVlZWM2MjIwNjdmZjI4NmMyZWZkYzA3ZGU1NDMxZDEzNTFiY2MzMzhkZGE2YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjAzOTAyYjM2YmIwNDdmNjhjZDkxYTg1MjdmNzc2ZTMwNzQxNmRmMWRlOTYyZWUwOWQ3MTg1MmViYjk3NTg5ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk5OTM4ZDhmZmFiZmJmYjNlODk5ODgyZDFjMGMyN2RmNDI4Yzk2OGRiOTIxNmJkMzE1ZDdlMmExNjNjOGE2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGM5NzM3YWQ5NWE4ZjhhYWMzYzMzZWY1Zjk0YjQ0ZWRjZTI1NDlkYTkyMjg0ZjRjNjJkMTRmY2Q1OGE1YTBmMiJ9"
+        },
+        {
+          "resource": "repo://web/README.md#L125-L135",
+          "version": "repo-lines-v1:sha256:75cf1f7ad0a0854325e72497b1dbc8da19e9ae3935713d8a016f8835442cf526:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkYzUyZmJlNWJhMWI5ZmQyOTFkYjM5MzNkM2FlYThlNzE0ZDFjOThjMGQxMTU3NTVjZjU4Y2I4MGE1MmU1ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4NDA2ZjUyMjZkODQxNzExOWEzMWFjZDVmMjFiNjk0ZjllNGE5NTNlNzY1Y2U1MjU1Y2FlNmIwOTIzMWVlZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmNWRhODRlMzBmZDNkOGY0YTE2NTY3NTkxNjNiYmZhNDYwNmI3NTVjMGJhZGNlODdiNTEzODIxYjk4NGFlMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxNDU5YTYwMjY4ODJjM2Q5Njg4NGUxMTU0ZTZlZGM2YThkZTk3NjM4YjRhMDJkNThlMTAzNzI4MDYxNTMwZGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_598794eac6d64b1f9141c630be73117a",
+      "statement": "InfraData uses `DATABASE_URL` when it is non-empty and otherwise connects to the checked-in local demo default at `localhost:5433`; its tests verify missing, empty, and overridden environment-variable behavior.",
+      "evidence": [
+        {
+          "resource": "repo://datos/src/infradata/config.py#L1-L10",
+          "version": "repo-lines-v1:sha256:aea0309527e5bd95be2e1785746826a6788547b5dda78b04de19b69aaf4b1d50:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhNDE2YWQ0YTJlZDA0ZDU3MmQyOTQ0NjY1OWZhNzllMzEwYzU2OGRlNjAwN2VjZTZhZmZlZmQzOTU3MmFhMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmOGZkNTBiODQzYzk2MDQ5Mzc0YWVmMjBiNzdkYjVlNmQ0YTZkNzU5ZTY4Y2VmMTY3YjVkYjRkNTgxMGRmNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://datos/tests/test_config.py#L1-L16",
+          "version": "repo-lines-v1:sha256:cc757400308341a5cc2634809730fd36c7e113c2dad6dec7d5994c673234795f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NzJjMzA0Njk2ZGY2OWQ0ZmEzNGMxODJlYWU3OWM2ZDg0ZWFjNDc3YTExYmNmOTdlZDgxNDk4MzE5NGZhOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZWI4YjlkMjU2NzdmOGIyN2I1YzllZTFlY2QzODYyODg1Y2YwMDEwMGI1Y2NlODliNWJjYTEwZjYwM2JhMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3881d4b8878a46e4910cae3a42b5b6bc",
+      "statement": "InfraData mounts schema and seed files into `/docker-entrypoint-initdb.d`, and those initialization SQL files are designed to run only when the database volume is first created; recreating the dataset therefore requires the destructive `docker compose down -v` followed by startup, not an ordinary restart.",
+      "evidence": [
+        {
+          "resource": "repo://datos/AGENTS.md#L5-L17",
+          "version": "repo-lines-v1:sha256:3415db31fb7fb10ef678a418e35167d1a54e125fd8ae46e5019952ec8add90ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZTE4Y2UxM2QzN2EwYTZhNGVlNTI0MTA3NWM5MTRlZWU3YTA2NmM1NDFlMmRiNmI3OWU0ZTc2OThhYmU1ZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkMDNkZjZlN2I3ZmM3NWQzMGZiNWVmZGQ4Y2JhMTM4YWJmNTQxZmYzOTJiYTVlMDBjMzNlOGJjMjUxY2MwNGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyNzZiYzhkOWZkNDNjYTYwYjI1Mzk5YzEzMTkzMDYzMDJmYzUyYTBlOWM2ZDU4NDg3ZTA3NzU1MTk1MDNkYmMifQ"
+        },
+        {
+          "resource": "repo://datos/README.md#L41-L48",
+          "version": "repo-lines-v1:sha256:71aceba2c114da613986f4a8cb9ae53d3a1da93190d8f1a97fa8c3345a9f336c:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk0NjIwZThjMjc0YmQ5ZTA2MmEzYmM4ZDU5ODFjNmQxZDVjZTA2MDZjYzVkNDk0YmY1NGMzY2I4MWI2ZDEzNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTNlYzg1N2NhYjkzZmJiNjc3ZDcxMmFmZGEyYzI2MDQ1ZjQ2ZWJhMzM2OTZmNjM0OWY0NDM2NWY2M2YwYTkyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTJiZmQ4NGFkOGFlOGJhNzU0Mzg3ZGJhODQ1YTJlOThlMTMyMjhhYmU1NzdiODM4MWQ4NWNmZDFlOTY4NWJjZCJ9"
+        },
+        {
+          "resource": "repo://datos/db/init/01_schema.sql#L1-L23",
+          "version": "repo-lines-v1:sha256:2aab8ed1f44da000dac61c6abc1d0d95802e3f33c12489ef672eded222263f12:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMWEyMGRmMDY1OTNhZjkxNjExMjZhZDk1YTQ1ODVlMzFiN2I4OTMxYTJlODMwMDM1OGY2YWE2NjU5MDZiZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiNGUwYjZhMGZjYjM5OGIzMWVjZDRjNzFhMzUwZDIyYjE5ZjdhZGVjMjYwZGI2YjU1YWE0YmU4MWMxNmY2ZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://datos/docker-compose.yml#L1-L22",
+          "version": "repo-lines-v1:sha256:994d16d0928eee99c6dfe1b526f2df52a9e0ee43ea5e7c1a7fd4cbd35209a6d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4MTYwNWRiYmY1NWJkMDU1NDU5NDVlNTBlYzJmMjFiZmFjOWEyZjBjYTMzYzhmZGI2MzI1NDUwY2MyNzU1ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_84de952e62424a49a3184ad1e8e29bac",
+      "statement": "InfraData initialization enables TimescaleDB, creates `readings` as a hypertable, and loads a deterministic synthetic dataset of 12 sensors with five-minute readings over August through October 2026, including intentional gaps and anomalies.",
+      "evidence": [
+        {
+          "resource": "repo://datos/README.md#L57-L69",
+          "version": "repo-lines-v1:sha256:fba83438b4c1c3b52cb937e8d622fe211f37ce3df2d6063c1851fee97288140b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjOTJkMWIwOTFiMjVhZmNlZDQyNjVhYjhjYzJmNDBhZjBhZDhmZmExM2QzYmE1NjA3MTBhMWNhYTE0YmZhMDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzZjAyYWE1Y2I1NzJjNzA4OTkzNWVmZjRlNmE5MGE2YmY0NTJkYjg3NzkyYTkyN2QwZWI3MDI0MjQ2MWRkMTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2OGQwMDZlNTFlZWNmNDZkY2U4OGFlMjkzYWRiZmU0ZGFhZjE0MzEzNTk3ZTJjODI5OTM3ZGY0YmM4NDdmZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2ZjIzNGY2ZWUyNWRhNjk3YTM3ODczODIzMWFjYTNlYTExYjg4Yzc2NDVmYjhmMjc0MDBmZTU5YmY5MzZiYmIifQ"
+        },
+        {
+          "resource": "repo://datos/db/init/01_schema.sql#L1-L23",
+          "version": "repo-lines-v1:sha256:2aab8ed1f44da000dac61c6abc1d0d95802e3f33c12489ef672eded222263f12:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMWEyMGRmMDY1OTNhZjkxNjExMjZhZDk1YTQ1ODVlMzFiN2I4OTMxYTJlODMwMDM1OGY2YWE2NjU5MDZiZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiNGUwYjZhMGZjYjM5OGIzMWVjZDRjNzFhMzUwZDIyYjE5ZjdhZGVjMjYwZGI2YjU1YWE0YmU4MWMxNmY2ZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://datos/db/init/02_seed.sql#L1-L80",
+          "version": "repo-lines-v1:sha256:800eaec8c2f27e0911ced05ee67dc3914680c9eb5712ff1e774f7d7709a86cea:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzYjI3MDk4NzNiZmZiOGMxYmI5YzEzMDFhY2RlZjZjNDNkMjAxOTlhOTc2ZTE5ZDJlYTY3MDgwOTc0M2YzMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NzI3Y2ZmN2UxZjBkZWQ5NTY5YTVkMGRiZjJiNWVjZjgyYWFkYWZlZTQyZTMyYzQwMWM2YjJhNDZlMDU0MjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_817560aafff948cca4e42ebe0ad498b2",
+      "statement": "InfraTicket's ordinary PHPUnit configuration uses in-memory SQLite plus array-backed session and cache state rather than the local PostgreSQL demo database.",
+      "evidence": [
+        {
+          "resource": "repo://web/phpunit.xml#L19-L35",
+          "version": "repo-lines-v1:sha256:4a7bb4069a32218af70fcdae97da4849a667bf0e5be883a7cb751eddba9d79bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhN2ZiM2M0NDhkMmRiMTJlNzE5YjlhYmFkYTRjYWRkNmE3MWI3MjZiYjIyYTMyNjIxYTFmZGM1M2FlNTUxZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0MGE2N2QyMjI0OGY4ZTIxNzQ2NGE5M2Q2MGJjZmQ5YjBlMWY4YjlmMTEwYzI2ZTUzYWIyMjhhNzJmZjk3OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhMTJhNDMyYTZlM2ZhMWFkMTAxYzYzOGUyZTY4YzM4YTNmZGJlM2E3OWQwMTM4ZDIyYTk4ZTJlOTlkZTYzZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3NDVkODBmMjE5NDlmMTcwN2I4NWIzMDFhYWYwMDNmNmVjNDU0OWM1M2UxZjBiOTU1NTUyNDJmOTBjZTMwZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_478c2dc147c04a8f9f53935ea5c31725",
+      "statement": "InfraTicket's PostgreSQL concurrency check creates and migrates a randomly named temporary database, checks competing assignment and transition operations, and force-drops that isolated database in cleanup rather than resetting the normal demo database.",
+      "evidence": [
+        {
+          "resource": "repo://web/tests/Support/check-postgres-concurrency.php#L10-L38",
+          "version": "repo-lines-v1:sha256:aad6bfdcfb5c922a99926668dd0ee0ed9e8e4a146fbd551dcee6bd629e3f497a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyNzRmN2IyOTFhNGFhZWY0ODBmZGJhZWI5OWNlMWY5YTJmZDUwZWFiMmQ2OTkwNTA1NmY0YzFiYTkwNzhjMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1YmM1NzFmOTljZDRjYzQzMzc1YzA5MTAzOGQxMTNkMWRiZmZkMzFhYmYyMDQxYzFmNmNhZDU0ZjJiYWM5ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNzBhMmNkOWNhMmU0NDM2M2JiYmNmZDQ3ZDFkOGU1ZmFkNDczNjE1NTNmNDFkOTA3NTBhOTRhZmE3MGM3MzcifQ"
+        },
+        {
+          "resource": "repo://web/tests/Support/check-postgres-concurrency.php#L39-L107",
+          "version": "repo-lines-v1:sha256:ad4593cb3809a45b08326f130171a586b64f368629912e442d0e7c85074cefd4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxNTgxYzZlNzVkMWJkOTM3MDAyMjJlNTE5ZGI2OTcyZDIwNjcwMzExZmZiNzI4ZjdiYjA1NDZiY2M0ZjYwY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb4ec9b672354baa9fabaf73c8f8b553",
+      "statement": "InfraData integration tests skip when the database cannot be reached and, when it is available, verify the 12-sensor seed, expected date range, and TimescaleDB hypertable.",
+      "evidence": [
+        {
+          "resource": "repo://datos/pyproject.toml#L20-L25",
+          "version": "repo-lines-v1:sha256:ed8b6e2810b89f0cbff0b4c2c050b60455e0db82f4abae3b022868a6acd5277d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDNjMGU3MjM4ZjBiMThjYmU2YTQ2NjY0MWZkY2Q1OTQ4NTI0NDhkZGY3ZmY4OGQwYTlmNDk1MGVhZGVjMzkzZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdjZDQ4YzFmYzhkZDI3OTE0ZjMwZDczYjNjNTI1NmUzNzk0ODc3NzhkYTYwZmFmNDZkZmNmMjEyZTJlMTlhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjEzN2FhYWFjOGFmNGYwY2JiMDhhNzFmNmU1NGMyOGZiMGE0ODFiN2VhZGVlYTEyMTM0YzQ3Mzg3NTM0ZTdmOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM2NDI1OGM0MzhjZTQ3ZTI5M2QxZTY5NGE3MzQ5ZGQ5MmQ5NjZjMTU0Y2U0MGQ5ZGMwMDY0MmZhNjQzMmY5MCJ9"
+        },
+        {
+          "resource": "repo://datos/tests/test_db.py#L1-L37",
+          "version": "repo-lines-v1:sha256:e98aeb8201cccc49c2363b0b1bd3bf1712e85549f3597c98098cb92727ac2ce8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNDNhNTliZjA0YjA0ZWU2Nzk5M2E5NzgyMzg4ZDg3YzA2OWZiOTY2ZTQ5YjBkYTU3M2RiMjBiNGY5ZDQ0MjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4MGZmZTg3ZjdlYTFkZjQwYjYzYWI2ZGU5NTRlYmQyY2I4ZTAzNTRkMjdmNWUzMmNjMTg1M2ZjMmVhYjQwMzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_be9938c84bcd49be876bf323c589bfef",
+      "statement": "The checked-in InfraTicket and InfraData database identities and seeded InfraTicket accounts are local demo credentials, not production-safe secrets; real secrets must not be committed.",
+      "evidence": [
+        {
+          "resource": "repo://datos/src/infradata/config.py#L1-L10",
+          "version": "repo-lines-v1:sha256:aea0309527e5bd95be2e1785746826a6788547b5dda78b04de19b69aaf4b1d50:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhNDE2YWQ0YTJlZDA0ZDU3MmQyOTQ0NjY1OWZhNzllMzEwYzU2OGRlNjAwN2VjZTZhZmZlZmQzOTU3MmFhMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmOGZkNTBiODQzYzk2MDQ5Mzc0YWVmMjBiNzdkYjVlNmQ0YTZkNzU5ZTY4Y2VmMTY3YjVkYjRkNTgxMGRmNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/.env.example#L1-L29",
+          "version": "repo-lines-v1:sha256:4919ddd919309a64083d6f03ca29c7f02d8833de6bd4f2553623b3392779b28b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwMjUyMzkxYjkwMGE3MTFiNGZiZjZkMjIzN2I3ZWZmMmRjYzMwOWJiN2ZiNjFjODI4NThmZjkwOTZlYTcxODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyZjQ0MTE1YjJkODkxYzAzMzg5NDEyNDdkM2IyNDMzMDRiMDlmNDRhMWQ5ZGYzNzc3MmMzMjFkYmE4Y2ZjZWYifQ"
+        },
+        {
+          "resource": "repo://web/AGENTS.md#L32-L35",
+          "version": "repo-lines-v1:sha256:5b81dc4f7eb605a211f52c9fa2bb7628894309990532d1ec48c4fce16be0579c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzc1MGE3N2UxMWNjY2M0OGQ0MDAxYjliN2FjZjg1ZTdhOWZjNDYxNThjNjI5NmVhZTA4MjU0ZmUwNmEzZmFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc4OTgzOGFlNTI3YmJjNjIxYjY0MTI2Y2VjZDI3YTJjNDc0ZjlmNWY4NjAyYWNkZjRhMmNjMGNjMjJkYTllOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI3ZGNhMmRjMDVlNGY1ZWM5ZTdlMjY5MWZlMTdmZGU5OThkNGVjZTliMjc2NDAwZTUzMzdjNjg0ODQ1Yjg4OCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-24T09:12:59.855Z"
+  }
+}
