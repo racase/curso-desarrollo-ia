@@ -20,3 +20,22 @@ startup_timeout_sec = 120
 #
 # [mcp_servers.powerbi-remote]
 # url = "https://api.fabric.microsoft.com/v1/mcp/powerbi"
+
+# MCP de base de datos (MCP Toolbox for Databases) para consultar NAVDEMO en lenguaje natural.
+# Usa el usuario lectura (db/mcp/lectura.sql), que solo lee: la protección está en la
+# base, porque el MCP incluye execute_sql. La contraseña no va aquí: Codex la toma de la
+# variable de entorno MSSQL_PASSWORD. No necesita Windows: en WSL se ejecuta con npx de Linux.
+# Apagado por defecto para no cargarlo en los issues. Para la demo:
+#   codex -c mcp_servers.navdemo-db.enabled=true
+[mcp_servers.navdemo-db]
+enabled = false
+command = "npx"
+args = ["-y", "@toolbox-sdk/server@1.18.0", "--prebuilt=mssql", "--stdio"]
+env_vars = ["MSSQL_PASSWORD"]
+startup_timeout_sec = 60
+
+[mcp_servers.navdemo-db.env]
+MSSQL_HOST = "127.0.0.1"
+MSSQL_PORT = "14330"
+MSSQL_DATABASE = "NAVDEMO"
+MSSQL_USER = "lectura"
