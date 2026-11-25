@@ -12,10 +12,11 @@ El proyecto ya dispone de sensores y lecturas cargados, conexión y el comando `
 | [4](04-informe-semanal-csv-por-sede.md) | Informe semanal CSV por sede | 1 |
 | [5](05-resumen-diario-precalculado.md) | Resumen diario precalculado | 1 |
 | [6](06-del-notebook-al-paquete.md) | Del notebook al paquete | Ninguna |
+| [7](07-ingesta-de-lecturas-csv.md) | Ingesta de lecturas CSV | Ninguna |
 
 ## Orden recomendado
 
 1. Abordar el issue 1 y después el 2 en la sesión de datos. Son independientes; antes de implementar el 2, el equipo debe completar sus criterios de aceptación.
-2. Mantener los issues 3 a 6 como reserva. Se propone abordarlos en orden 3, 4, 5 y 6; el 4 y el 5 requieren completar el 1, mientras que el 3 y el 6 pueden adelantarse de forma independiente.
+2. Mantener los issues 3 a 7 como reserva. Se propone abordarlos en orden 3, 4, 5, 6 y 7; el 4 y el 5 requieren completar el 1, mientras que el 3, el 6 y el 7 pueden adelantarse de forma independiente.
 
 Cada issue se plantea para un único cambio. Las decisiones pendientes se recogen en sus notas y deben resolverse en la especificación antes de implementar.
