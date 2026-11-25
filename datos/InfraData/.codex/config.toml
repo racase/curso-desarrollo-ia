@@ -12,3 +12,22 @@
 # [mcp_servers.nombre]
 # command = "npx"
 # args = ["-y", "paquete-del-servidor"]
+
+# MCP de base de datos (MCP Toolbox for Databases) para consultar InfraData en lenguaje natural.
+# Usa el usuario lectura (db/mcp/lectura.sql), que solo puede leer: la protección está
+# en la base, porque el MCP incluye execute_sql. La contraseña no va aquí: Codex la toma de
+# la variable de entorno POSTGRES_PASSWORD (export POSTGRES_PASSWORD=lectura antes de codex).
+# Apagado por defecto para no cargarlo en las iteraciones. Para la demo:
+#   codex -c mcp_servers.infradata-db.enabled=true
+[mcp_servers.infradata-db]
+enabled = false
+command = "npx"
+args = ["-y", "@toolbox-sdk/server@1.18.0", "--prebuilt=postgres", "--stdio"]
+env_vars = ["POSTGRES_PASSWORD"]
+startup_timeout_sec = 60
+
+[mcp_servers.infradata-db.env]
+POSTGRES_HOST = "127.0.0.1"
+POSTGRES_PORT = "5433"
+POSTGRES_DATABASE = "infradata"
+POSTGRES_USER = "lectura"

@@ -21,7 +21,7 @@ docker compose ps
 docker compose exec -T db bash db/query.sh -f sql/rpt/01_dim_obra.sql
 ```
 
-Los comandos arrancan SQL Server, comprueban su estado y aplican una vista. Espera al estado `healthy`. Con Podman, sustituye `docker compose` por `podman compose`. Consulta la base exclusivamente mediante `db/query.sh`, pasando el SQL en un fichero o por la entrada estándar, nunca como argumento. Conserva la ruta relativa `db/query.sh`.
+Los comandos arrancan SQL Server, comprueban su estado y aplican una vista. Espera al estado `healthy`. Con Podman, sustituye `docker compose` por `podman compose`. Para crear vistas o ejecutar SQL en el desarrollo, usa exclusivamente `db/query.sh`, pasando el SQL en un fichero o por la entrada estándar, nunca como argumento. Conserva la ruta relativa `db/query.sh`. Para responder preguntas sobre los datos, usa el MCP `navdemo-db` (solo lectura).
 
 ## Estilo y convenciones
 
