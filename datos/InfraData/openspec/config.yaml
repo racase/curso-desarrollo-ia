@@ -1,0 +1,11 @@
+schema: spec-driven
+context: |
+  InfraData es un proyecto didáctico con Python 3.11+, psycopg, PostgreSQL y TimescaleDB.
+  Código en src/infradata/, pruebas en tests/ e issues en docs/issues/.
+  Redactar los documentos y los mensajes de CLI en castellano.
+  Los días, límites de fecha y agrupaciones se calculan en UTC.
+  Las agregaciones se realizan en SQL, sin cargar lecturas en memoria para agregarlas.
+  Usar connect() como gestor de contexto y parametrizar los valores SQL.
+  Pedir aprobación antes de modificar el esquema de base de datos.
+  Justificar cualquier dependencia nueva y marcar los tests de base de datos con integration.
+  Conservar los huecos y anomalías intencionados del conjunto de datos.

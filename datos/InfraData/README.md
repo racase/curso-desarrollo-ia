@@ -1,7 +1,7 @@
 # InfraData — demo de datos
 
 Proyecto Python mínimo sobre PostgreSQL + TimescaleDB con lecturas de sensores ya cargadas.
-No incluye ninguna analítica: la construiremos en clase con OpenSpec y Codex.
+Incluye una consulta de resumen diario por sensor, desarrollada con OpenSpec y Codex.
 
 ## Requisitos
 
@@ -38,6 +38,40 @@ python -m venv .venv
 pip install -e . pytest ruff
 python -m infradata check
 ```
+
+## Resumen diario por sensor
+
+```bash
+uv run python -m infradata resumen-diario
+uv run python -m infradata resumen-diario --sede "Planta Valencia"
+uv run python -m infradata resumen-diario --sensor VAL-T01 --desde 2026-08-01 --hasta 2026-08-01
+uv run python -m infradata resumen-diario --sede "Planta Sagunto" --sensor SAG-P02 --desde 2026-09-03 --hasta 2026-09-03
+```
+
+Ejemplo del último comando con el conjunto inicial:
+
+```text
+Sede | Sensor | Día UTC | Unidad | Mínimo | Máximo | Media | Lecturas | Esperadas
+Planta Sagunto | SAG-P02 | 2026-09-03 | bar | 6.11 | 7.27 | 6.67 | 210 | 288
+```
+
+Los filtros son opcionales y se combinan. Sede y código de sensor deben coincidir exactamente,
+incluyendo mayúsculas y acentos. Las fechas usan `YYYY-MM-DD`; ambos extremos se incluyen
+como días completos **UTC**, con independencia del horario local. Se puede indicar solo
+`--desde` o solo `--hasta`, y sin fechas se consulta todo el histórico.
+
+La base de datos calcula mínimo, máximo, media y recuento; la salida se ordena por día y
+código de sensor. Los valores se presentan con dos decimales y punto decimal, sin convertir
+la unidad del sensor. `Lecturas` muestra las observaciones disponibles y `Esperadas` siempre
+muestra **288** (una lectura cada cinco minutos durante un día UTC). Un recuento menor
+permite reconocer un día incompleto: la media usa solo las lecturas reales, por lo que debe
+compararse con cautela frente a la de un día completo. No se rellenan huecos ni se excluyen
+valores anómalos.
+
+Los días sin lecturas se omiten. Si no hay resultados, incluido un sensor desconocido o
+incompatible con la sede, se muestra `No hay lecturas para los filtros indicados.` y se
+termina con código 0. Los argumentos inválidos devuelven código 2 antes de conectar y
+los fallos de base de datos devuelven código 1. Usa `resumen-diario --help` para ver las opciones.
 
 ## Comandos habituales
 
@@ -99,7 +133,8 @@ datos/InfraData/
 ├── src/infradata/      código del proyecto
 │   ├── config.py       configuración (DATABASE_URL)
 │   ├── db.py           conexión
-│   └── __main__.py     comando `check`
+│   ├── analytics.py    consulta SQL del resumen diario
+│   └── __main__.py     comandos `check` y `resumen-diario`
 ├── tests/
 ├── docker-compose.yml
 └── pyproject.toml
