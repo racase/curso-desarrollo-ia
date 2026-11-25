@@ -1,4 +1,7 @@
-# Configuración de Codex para ReportingBI (datos/ReportingBI/).
+# Configuración de Codex para ReportingBI (datos/ReportingBI/) cuando Codex corre en WSL.
+# Para usarla, renómbrala a config.toml. Única diferencia con la de Windows: el MCP se
+# arranca con cmd.exe (en WSL no existe «cmd»), que lo ejecuta como programa de Windows
+# para que llegue a Power BI Desktop. Necesita Node.js instalado en Windows.
 #
 # Codex solo carga este fichero si el proyecto está marcado como de confianza.
 # Tiene prioridad sobre ~/.codex/config.toml. Las claves de proveedor, perfiles
@@ -8,7 +11,7 @@
 # Se conecta al modelo abierto en Power BI Desktop, a una carpeta PBIP o a un área de
 # trabajo de Fabric. La primera vez pide aceptar su licencia (EULA): acéptala tú.
 [mcp_servers.powerbi-modeling]
-command = "cmd"
+command = "cmd.exe"
 args = ["/c", "npx", "-y", "@microsoft/powerbi-modeling-mcp@latest", "--start"]
 startup_timeout_sec = 120
 
