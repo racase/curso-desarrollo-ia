@@ -1,0 +1,276 @@
+{
+  "connectionType": "Power BI Desktop",
+  "tables": [
+    {
+      "name": "FactPlanificacion",
+      "description": "Spec plazos-avance-obra: venta por partida y fecha; presupuesto sin fecha conservado con base elegible cero.",
+      "columns": [
+        [
+          "ObraClave",
+          "String",
+          true
+        ],
+        [
+          "PartidaClave",
+          "String",
+          true
+        ],
+        [
+          "Fecha",
+          "DateTime"
+        ],
+        [
+          "VentaPlanificada",
+          "Decimal"
+        ],
+        [
+          "BaseVentaElegible",
+          "Decimal"
+        ]
+      ]
+    },
+    {
+      "name": "FactMedicionAvance",
+      "description": "Spec plazos-avance-obra: mediciones acumuladas del partner; elegir la última conocida al corte, sin sumar porcentajes.",
+      "columns": [
+        [
+          "MedicionClave",
+          "Int64",
+          true
+        ],
+        [
+          "ObraClave",
+          "String",
+          true
+        ],
+        [
+          "PartidaClave",
+          "String",
+          true
+        ],
+        [
+          "Fecha",
+          "DateTime"
+        ],
+        [
+          "Avance",
+          "Double"
+        ]
+      ]
+    },
+    {
+      "name": "FactHito",
+      "description": "Spec plazos-avance-obra: hitos del partner, con fechas vacías como NULL y estados calculados a la fecha de corte.",
+      "columns": [
+        [
+          "HitoClave",
+          "String",
+          true
+        ],
+        [
+          "ObraClave",
+          "String",
+          true
+        ],
+        [
+          "HitoCodigo",
+          "String"
+        ],
+        [
+          "Secuencia",
+          "Int64"
+        ],
+        [
+          "Hito",
+          "String"
+        ],
+        [
+          "FechaPlanificada",
+          "DateTime"
+        ],
+        [
+          "FechaReal",
+          "DateTime"
+        ]
+      ]
+    },
+    {
+      "name": "DimCorteDatos",
+      "description": "Spec plazos-avance-obra: una fila con fecha máxima de movimiento de NAV; sin dependencia del reloj ni del filtro de obra.",
+      "columns": [
+        [
+          "CorteClave",
+          "Int64",
+          true
+        ],
+        [
+          "FechaCorte",
+          "DateTime"
+        ]
+      ]
+    }
+  ],
+  "measures": [
+    {
+      "tableName": "FactPlanificacion",
+      "name": "Corte de plazos",
+      "expression": "VAR ERP = CALCULATE(MAX(DimCorteDatos[FechaCorte]), REMOVEFILTERS(DimCorteDatos))\nVAR Seleccion = MAX(DimFecha[Fecha])\nRETURN IF(NOT ISBLANK(ERP), MIN(Seleccion, ERP))",
+      "description": "Spec plazos-avance-obra — Corte ERP global limitado por el último día seleccionado; vacío si no hay movimientos válidos.",
+      "formatString": "dd/MM/yyyy",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactPlanificacion",
+      "name": "Base de venta planificada",
+      "expression": "COALESCE(CALCULATE(SUM(FactPlanificacion[BaseVentaElegible]), REMOVEFILTERS(DimFecha), REMOVEFILTERS(FactPlanificacion[Fecha])),0)",
+      "description": "Spec plazos-avance-obra — Venta de todo el horizonte de las partidas medibles seleccionadas; excluye líneas sin fecha e indirectos.",
+      "formatString": "#,0.00 €",
+      "isHidden": true,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactPlanificacion",
+      "name": "Venta prevista acumulada",
+      "expression": "VAR Corte = [Corte de plazos]\nRETURN IF(NOT ISBLANK(Corte), COALESCE(CALCULATE(SUM(FactPlanificacion[BaseVentaElegible]),\n    REMOVEFILTERS(DimFecha),\n    FILTER(ALL(FactPlanificacion[Fecha]), NOT ISBLANK(FactPlanificacion[Fecha]) && FactPlanificacion[Fecha] <= Corte)),0))",
+      "description": "Spec plazos-avance-obra — Venta elegible con fecha hasta el corte; conserva el filtro de obra y partida.",
+      "formatString": "#,0.00 €",
+      "isHidden": true,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactPlanificacion",
+      "name": "Avance planificado",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]), DIVIDE([Venta prevista acumulada],[Base de venta planificada],0))",
+      "description": "Spec plazos-avance-obra — Acumulado de venta fechado / base de venta elegible completa; cero con base cero.",
+      "formatString": "0.0 %",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactPlanificacion",
+      "name": "Venta sin fecha excluida",
+      "expression": "COALESCE(CALCULATE(SUM(FactPlanificacion[VentaPlanificada]),REMOVEFILTERS(DimFecha),FactPlanificacion[Fecha]=BLANK()),0)",
+      "description": "Spec plazos-avance-obra — Importe sin fecha excluido del avance planificado; conservado en el presupuesto económico.",
+      "formatString": "#,0.00 €",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactMedicionAvance",
+      "name": "Avance medido de plazos",
+      "expression": "VAR Corte = [Corte de plazos]\nVAR Ultima = CALCULATETABLE(\n    TOPN(1,FactMedicionAvance,FactMedicionAvance[Fecha],DESC,FactMedicionAvance[MedicionClave],DESC),\n    REMOVEFILTERS(DimFecha),\n    FILTER(ALL(FactMedicionAvance[Fecha]), NOT ISBLANK(FactMedicionAvance[Fecha]) && FactMedicionAvance[Fecha] <= Corte))\nRETURN IF(NOT ISBLANK(Corte),COALESCE(MAXX(Ultima,FactMedicionAvance[Avance]),0))",
+      "description": "Spec plazos-avance-obra — Última medición acumulada por partida hasta el corte; cero antes de la primera, desempate por identificador.",
+      "formatString": "0.0 %",
+      "isHidden": true,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactMedicionAvance",
+      "name": "Producción de plazos",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]),\n    COALESCE(SUMX(VALUES(DimPartida[PartidaClave]),\n        VAR Base = CALCULATE([Base de venta planificada])\n        VAR Avance = CALCULATE([Avance medido de plazos])\n        RETURN ROUND(Base * Avance,2)),0))",
+      "description": "Spec plazos-avance-obra — Base elegible por última medición, redondeada por partida; conserva criterios del issue 01 sin su corte fijo.",
+      "formatString": "#,0.00 €",
+      "isHidden": true,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactMedicionAvance",
+      "name": "Avance real",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]),DIVIDE([Producción de plazos],[Base de venta planificada],0))",
+      "description": "Spec plazos-avance-obra — Avance ponderado por venta de todas las partidas medibles, incluidas las no iniciadas.",
+      "formatString": "0.0 %",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactPlanificacion",
+      "name": "Desviación de avance",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]),([Avance real]-[Avance planificado])*100)",
+      "description": "Spec plazos-avance-obra — Real menos planificado, expresado en puntos porcentuales, sin redondeo previo.",
+      "formatString": "0.0 \"pp\"",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactPlanificacion",
+      "name": "Índice de plazo",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]),DIVIDE([Avance real],[Avance planificado]))",
+      "description": "Spec plazos-avance-obra — Real / planificado; vacío si el avance planificado es cero.",
+      "formatString": "0.00",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactHito",
+      "name": "Estado de hito",
+      "expression": "VAR Corte = [Corte de plazos]\nVAR Plan = SELECTEDVALUE(FactHito[FechaPlanificada])\nVAR Real = SELECTEDVALUE(FactHito[FechaReal])\nRETURN IF(HASONEVALUE(FactHito[HitoClave]) && NOT ISBLANK(Corte) && NOT ISBLANK(Plan),\n    SWITCH(TRUE(),\n        NOT ISBLANK(Real) && Real <= Corte && Real <= Plan, \"Cumplido a tiempo\",\n        NOT ISBLANK(Real) && Real <= Corte, \"Cumplido con retraso\",\n        Plan < Corte, \"Retrasado\",\n        \"Pendiente\"))",
+      "description": "Spec plazos-avance-obra — Estado histórico por hito; una fecha real posterior al corte no supone cumplimiento.",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactHito",
+      "name": "Días de retraso del hito",
+      "expression": "VAR Corte = [Corte de plazos]\nVAR Plan = SELECTEDVALUE(FactHito[FechaPlanificada])\nVAR Real = SELECTEDVALUE(FactHito[FechaReal])\nVAR Fin = IF(NOT ISBLANK(Real) && Real <= Corte,Real,Corte)\nRETURN IF(HASONEVALUE(FactHito[HitoClave]) && NOT ISBLANK(Corte) && NOT ISBLANK(Plan),\n    MAX(0,DATEDIFF(Plan,Fin,DAY)))",
+      "description": "Spec plazos-avance-obra — Días por hito hasta cumplimiento conocido o corte, mínimo cero; vacío en totales.",
+      "formatString": "0",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactHito",
+      "name": "Hitos retrasados",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]),COALESCE(SUMX(VALUES(FactHito[HitoClave]),IF(CALCULATE([Estado de hito])=\"Retrasado\",1,0)),0))",
+      "description": "Spec plazos-avance-obra — Solo hitos pendientes vencidos; planificada estrictamente anterior al corte.",
+      "formatString": "0",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactHito",
+      "name": "Hitos cumplidos tarde",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]),COALESCE(SUMX(VALUES(FactHito[HitoClave]),IF(CALCULATE([Estado de hito])=\"Cumplido con retraso\",1,0)),0))",
+      "description": "Spec plazos-avance-obra — Cumplidos después de su fecha planificada y hasta el corte; separados de los pendientes.",
+      "formatString": "0",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactHito",
+      "name": "Hitos pendientes",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]),COALESCE(SUMX(VALUES(FactHito[HitoClave]),IF(CALCULATE([Estado de hito])=\"Pendiente\",1,0)),0))",
+      "description": "Spec plazos-avance-obra — Pendientes cuyo vencimiento aún no pasó al corte.",
+      "formatString": "0",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactHito",
+      "name": "Hitos cumplidos a tiempo",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]),COALESCE(SUMX(VALUES(FactHito[HitoClave]),IF(CALCULATE([Estado de hito])=\"Cumplido a tiempo\",1,0)),0))",
+      "description": "Spec plazos-avance-obra — Cumplidos hasta el corte sin superar su fecha planificada.",
+      "formatString": "0",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactHito",
+      "name": "Máximo retraso pendiente",
+      "expression": "IF(NOT ISBLANK([Corte de plazos]),COALESCE(MAXX(VALUES(FactHito[HitoClave]),\n    IF(CALCULATE([Estado de hito])=\"Retrasado\",CALCULATE([Días de retraso del hito]),0)),0))",
+      "description": "Spec plazos-avance-obra — Máximo de días entre hitos pendientes vencidos; cero sin retrasados; no suma demoras.",
+      "formatString": "0",
+      "isHidden": false,
+      "displayFolder": "Plazos y avance"
+    },
+    {
+      "tableName": "FactPlanificacion",
+      "name": "Mostrar mes de plazos",
+      "expression": "VAR Corte = CALCULATE([Corte de plazos], ALLSELECTED(DimFecha))\nVAR PrimeraFecha = CALCULATE(MIN(FactPlanificacion[Fecha]), REMOVEFILTERS(DimFecha), REMOVEFILTERS(DimObra), REMOVEFILTERS(DimPartida))\nRETURN IF(NOT ISBLANK(Corte) && MIN(DimFecha[Fecha]) <= Corte && MAX(DimFecha[Fecha]) >= PrimeraFecha,1,0)",
+      "description": "Spec plazos-avance-obra — Limita la curva S al horizonte con planificación y al corte efectivo seleccionado, incluido el mes parcial, sin techo fijo.",
+      "formatString": "0",
+      "isHidden": true,
+      "displayFolder": "Plazos y avance"
+    }
+  ]
+}

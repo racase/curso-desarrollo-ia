@@ -1,0 +1,109 @@
+/// Spec plazos-avance-obra: venta por partida y fecha; presupuesto sin fecha conservado con base elegible cero.
+table FactPlanificacion
+	lineageTag: 90d9bd04-ff74-4713-86ec-7b9c8b75f9ef
+
+	/// Spec plazos-avance-obra — Corte ERP global limitado por el último día seleccionado; vacío si no hay movimientos válidos.
+	measure 'Corte de plazos' =
+			VAR ERP = CALCULATE(MAX(DimCorteDatos[FechaCorte]), REMOVEFILTERS(DimCorteDatos))
+			VAR Seleccion = MAX(DimFecha[Fecha])
+			RETURN IF(NOT ISBLANK(ERP), MIN(Seleccion, ERP))
+		formatString: dd/MM/yyyy
+		displayFolder: Plazos y avance
+		lineageTag: 57be3d66-e782-4697-b32e-2c466cc32823
+
+	/// Spec plazos-avance-obra — Venta de todo el horizonte de las partidas medibles seleccionadas; excluye líneas sin fecha e indirectos.
+	measure 'Base de venta planificada' = COALESCE(CALCULATE(SUM(FactPlanificacion[BaseVentaElegible]), REMOVEFILTERS(DimFecha), REMOVEFILTERS(FactPlanificacion[Fecha])),0)
+		formatString: #,0.00 €
+		isHidden
+		displayFolder: Plazos y avance
+		lineageTag: 3eb7eea8-0677-4e02-9bfa-79c14c539cec
+
+	/// Spec plazos-avance-obra — Venta elegible con fecha hasta el corte; conserva el filtro de obra y partida.
+	measure 'Venta prevista acumulada' =
+			VAR Corte = [Corte de plazos]
+			RETURN IF(NOT ISBLANK(Corte), COALESCE(CALCULATE(SUM(FactPlanificacion[BaseVentaElegible]),
+			    REMOVEFILTERS(DimFecha),
+			    FILTER(ALL(FactPlanificacion[Fecha]), NOT ISBLANK(FactPlanificacion[Fecha]) && FactPlanificacion[Fecha] <= Corte)),0))
+		formatString: #,0.00 €
+		isHidden
+		displayFolder: Plazos y avance
+		lineageTag: a0ee7c63-00a5-44b7-9b01-40860dbf9120
+
+	/// Spec plazos-avance-obra — Acumulado de venta fechado / base de venta elegible completa; cero con base cero.
+	measure 'Avance planificado' = IF(NOT ISBLANK([Corte de plazos]), DIVIDE([Venta prevista acumulada],[Base de venta planificada],0))
+		formatString: 0.0 %
+		displayFolder: Plazos y avance
+		lineageTag: eb769af4-135d-48f4-be68-4d12fbcf5a42
+
+	/// Spec plazos-avance-obra — Importe sin fecha excluido del avance planificado; conservado en el presupuesto económico.
+	measure 'Venta sin fecha excluida' = COALESCE(CALCULATE(SUM(FactPlanificacion[VentaPlanificada]),REMOVEFILTERS(DimFecha),FactPlanificacion[Fecha]=BLANK()),0)
+		formatString: #,0.00 €
+		displayFolder: Plazos y avance
+		lineageTag: e5014a60-a3c8-4b2d-9579-ae90eb87f88d
+
+	/// Spec plazos-avance-obra — Real menos planificado, expresado en puntos porcentuales, sin redondeo previo.
+	measure 'Desviación de avance' = IF(NOT ISBLANK([Corte de plazos]),([Avance real]-[Avance planificado])*100)
+		formatString: 0.0 "pp"
+		displayFolder: Plazos y avance
+		lineageTag: 66cde28f-7640-4588-a015-371711a409b8
+
+	/// Spec plazos-avance-obra — Real / planificado; vacío si el avance planificado es cero.
+	measure 'Índice de plazo' = IF(NOT ISBLANK([Corte de plazos]),DIVIDE([Avance real],[Avance planificado]))
+		formatString: 0.00
+		displayFolder: Plazos y avance
+		lineageTag: 43eb92a2-5005-47a0-ad6f-d4babe6df4da
+
+	/// Spec plazos-avance-obra — Limita la curva S al horizonte con planificación y al corte efectivo seleccionado, incluido el mes parcial, sin techo fijo.
+	measure 'Mostrar mes de plazos' =
+			VAR Corte = CALCULATE([Corte de plazos], ALLSELECTED(DimFecha))
+			VAR PrimeraFecha = CALCULATE(MIN(FactPlanificacion[Fecha]), REMOVEFILTERS(DimFecha), REMOVEFILTERS(DimObra), REMOVEFILTERS(DimPartida))
+			RETURN IF(NOT ISBLANK(Corte) && MIN(DimFecha[Fecha]) <= Corte && MAX(DimFecha[Fecha]) >= PrimeraFecha,1,0)
+		formatString: 0
+		isHidden
+		displayFolder: Plazos y avance
+		lineageTag: a54b8758-57c9-4ce5-b1be-4f9618dc0ea8
+
+	column ObraClave
+		dataType: string
+		isHidden
+		lineageTag: 9f83c97e-2cf5-4135-87a6-80bcc57437eb
+		summarizeBy: none
+		sourceColumn: ObraClave
+
+	column PartidaClave
+		dataType: string
+		isHidden
+		lineageTag: 03d772d7-2594-4962-a4b8-ba9919387faa
+		summarizeBy: none
+		sourceColumn: PartidaClave
+
+	column Fecha
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: 88abd047-f6ee-4aa9-b3c0-5066f20c09ef
+		summarizeBy: none
+		sourceColumn: Fecha
+
+	column VentaPlanificada
+		dataType: decimal
+		formatString: #,0.00 €
+		lineageTag: 03f94518-81e4-4c42-b383-8f2c12701de3
+		summarizeBy: none
+		sourceColumn: VentaPlanificada
+
+	column BaseVentaElegible
+		dataType: decimal
+		formatString: #,0.00 €
+		lineageTag: 06ec1b85-8ee6-49a0-87cf-337095555947
+		summarizeBy: none
+		sourceColumn: BaseVentaElegible
+
+	partition FactPlanificacion = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema="rpt", Item="FactPlanificacion"]}[Data]
+				in
+				    Vista
+

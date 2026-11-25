@@ -1,0 +1,11 @@
+EVALUATE
+GENERATE(
+    SELECTCOLUMNS(FILTER(ALL(DimFecha[Fecha]),
+        DimFecha[Fecha] >= DATE(2025,1,31) && DimFecha[Fecha] <= MAX(DimCorteDatos[FechaCorte]) && DimFecha[Fecha] = EOMONTH(DimFecha[Fecha],0)),"Corte",DimFecha[Fecha]),
+    VAR Fecha = [Corte]
+    RETURN CALCULATETABLE(
+        SELECTCOLUMNS(SUMMARIZECOLUMNS(FactHito[ObraClave],FactHito[HitoCodigo],FactHito[HitoClave],
+            "Estado",[Estado de hito],"Dias",[Días de retraso del hito]),
+            "Obra",FactHito[ObraClave],"Codigo",FactHito[HitoCodigo],"Estado",[Estado],"Dias",[Dias]),
+        TREATAS({Fecha},DimFecha[Fecha]))
+) ORDER BY [Corte],[Obra],[Codigo]

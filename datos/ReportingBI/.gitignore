@@ -4,3 +4,8 @@
 
 # Se versiona el proyecto PBIP; los PBIX locales son copias binarias de trabajo.
 *.pbix
+
+# Diagnósticos locales del shell y cachés de Python.
+*.stackdump
+__pycache__/
+*.pyc

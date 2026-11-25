@@ -1,0 +1,36 @@
+{
+  "tablasOriginales": [
+    {
+      "name": "DimObra",
+      "identico": true
+    },
+    {
+      "name": "DimPartida",
+      "identico": true
+    },
+    {
+      "name": "DimFecha",
+      "identico": true
+    },
+    {
+      "name": "FactPresupuesto",
+      "identico": true
+    },
+    {
+      "name": "FactMovimiento",
+      "identico": true
+    },
+    {
+      "name": "FactAvance",
+      "identico": true
+    }
+  ],
+  "valoresEconomicos": {
+    "obras": 10,
+    "presupuestoVenta": 33735000,
+    "costeReal": 25054416.01,
+    "produccion": 27217494.6,
+    "certificado": 25365250.43
+  },
+  "resultado": "Las seis tablas originales tienen TMDL idéntico en MCP antes y después."
+}

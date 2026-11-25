@@ -1,0 +1,242 @@
+Empresa
+-------
+CONSTRUCTORA DEMO
+CONSTRUCTORA DEMO PRUEBAS
+Vista01|SHA256
+-------|------
+DimObra|EEC985DCD094FE70A11F81E2646F5E6BA1B9F193C76199DD218941C4EB71E2F4
+DimPartida|425D483D05B6A084F4C858B774D26D8006ACD98699DE9F2E77320E8138018A07
+FactAvance|ED8BAD9EEAD942361A41DFC55EAE59802FF1172787BCA532B49787CB14C7D6E3
+FactMovimiento|5F9450A5B3AE10F79F858A4DFF132AEBAD79B435FC3092FBE7A6FA2B847A27BB
+FactPresupuesto|F3099CE19EB7179BC5400A672A8540A816E1AFBDBB8B4397429A89B04BB47880
+Vista01|Fragmento|Definicion
+-------|---------|----------
+DimObra|0|-- Empresa operativa confirmada en Company. Estados contrastados con el generador.
+CREATE   VIEW [rpt].[DimObra]
+AS
+SELECT
+    [j].[No_] AS [ObraClave],
+    [j].[Description] AS [O
+DimObra|1|bra],
+    [j].[Status] AS [EstadoCodigo],
+    CASE [j].[Status]
+        WHEN 0 THEN N'Planificación'
+        WHEN 2 THEN N'Abierta'
+        WHEN 3 THEN N'Terminada'
+    END AS [Est
+DimObra|2|ado],
+    [j].[Global Dimension 1 Code] AS [DelegacionCodigo],
+    [d].[Name] AS [Delegacion],
+    [j].[Global Dimension 2 Code] AS [TipoObraCodigo],
+    [t].[Name] AS [TipoObra],
+
+DimObra|3|    [j].[Person Responsible] AS [JefeObraCodigo],
+    [r].[Name] AS [JefeObra],
+    [j].[Bill-to Customer No_] AS [ClienteCodigo],
+    CAST(NULLIF([j].[Creation Date], CONVERT(date
+DimObra|4|time, '17530101', 112)) AS date) AS [FechaCreacion],
+    CAST(NULLIF([j].[Starting Date], CONVERT(datetime, '17530101', 112)) AS date) AS [FechaInicio],
+    CAST(NULLIF([j].[Ending
+DimObra|5| Date], CONVERT(datetime, '17530101', 112)) AS date) AS [FechaFinPlanificada]
+FROM [dbo].[CONSTRUCTORA DEMO$Job] AS [j]
+LEFT JOIN [dbo].[CONSTRUCTORA DEMO$Dimension Value] AS [d]
+ 
+DimObra|6|   ON [d].[Dimension Code] = N'DELEGACION'
+    AND [d].[Code] = [j].[Global Dimension 1 Code]
+LEFT JOIN [dbo].[CONSTRUCTORA DEMO$Dimension Value] AS [t]
+    ON [t].[Dimension Code]
+DimObra|7| = N'TIPOOBRA'
+    AND [t].[Code] = [j].[Global Dimension 2 Code]
+LEFT JOIN [dbo].[CONSTRUCTORA DEMO$Resource] AS [r]
+    ON [r].[No_] = [j].[Person Responsible];
+
+DimPartida|0|-- Tipo 0 = detalle; tipos 3/4 = cabecera/total. La partida 10 recoge indirectos.
+CREATE   VIEW [rpt].[DimPartida]
+AS
+SELECT
+    CAST([t].[Job No_] + N'|' + [t].[Job Task No_] AS n
+DimPartida|1|varchar(41)) AS [PartidaClave],
+    [t].[Job No_] AS [ObraClave],
+    [t].[Job Task No_] AS [PartidaCodigo],
+    [t].[Description] AS [Partida],
+    CASE WHEN [t].[Job Task No_] = 
+DimPartida|2|N'10' THEN N'Indirecto' ELSE N'Directo' END AS [TipoCoste],
+    CAST(CASE WHEN [t].[Job Task No_] = N'10' THEN 1 ELSE 0 END AS bit) AS [EsIndirecta]
+FROM [dbo].[CONSTRUCTORA DEMO$J
+DimPartida|3|ob Task] AS [t]
+WHERE [t].[Job Task Type] = 0;
+
+FactAvance|0|-- Instantáneas mensuales, no sumables entre meses. Corte inicial del issue 01.
+-- Antes de la primera medición: avance cero. Después: última medición conocida.
+CREATE   VIEW [rpt]
+FactAvance|1|.[FactAvance]
+AS
+WITH [Limites] AS (
+    SELECT
+        DATEFROMPARTS(YEAR(MIN([e].[Measurement Date])), MONTH(MIN([e].[Measurement Date])), 1) AS [Inicio],
+        CONVERT(date, '
+FactAvance|2|20261031', 112) AS [Corte]
+    FROM [dbo].[CONSTRUCTORA DEMO$Job Progress Entry] AS [e]
+    WHERE [e].[Measurement Date] <> CONVERT(datetime, '17530101', 112)
+),
+[Digitos] AS (
+   
+FactAvance|3| SELECT [n] FROM (VALUES (0), (1), (2), (3), (4), (5), (6), (7), (8), (9)) AS [d] ([n])
+),
+[Meses] AS (
+    SELECT EOMONTH([l].[Inicio], [u].[n] + 10 * [d].[n] + 100 * [c].[n]) AS 
+FactAvance|4|[Fecha]
+    FROM [Limites] AS [l]
+    CROSS JOIN [Digitos] AS [u]
+    CROSS JOIN [Digitos] AS [d]
+    CROSS JOIN [Digitos] AS [c]
+    WHERE [u].[n] + 10 * [d].[n] + 100 * [c].[n] <
+FactAvance|5|= DATEDIFF(month, [l].[Inicio], [l].[Corte])
+)
+SELECT
+    [p].[ObraClave],
+    [p].[PartidaClave],
+    [m].[Fecha],
+    [ultima].[Entry No_] AS [MedicionClave],
+    CAST([ultima].[
+FactAvance|6|Measurement Date] AS date) AS [FechaUltimaMedicion],
+    CAST(COALESCE([ultima].[Completion _], 0) / 100 AS decimal(9,6)) AS [Avance]
+FROM [rpt].[DimPartida] AS [p]
+CROSS JOIN [Mes
+FactAvance|7|es] AS [m]
+OUTER APPLY (
+    SELECT TOP (1) [e].[Entry No_], [e].[Measurement Date], [e].[Completion _]
+    FROM [dbo].[CONSTRUCTORA DEMO$Job Progress Entry] AS [e]
+    WHERE [e].[
+FactAvance|8|Job No_] = [p].[ObraClave]
+        AND [e].[Job Task No_] = [p].[PartidaCodigo]
+        AND [e].[Measurement Date] <> CONVERT(datetime, '17530101', 112)
+        AND [e].[Measuremen
+FactAvance|9|t Date] < DATEADD(day, 1, [m].[Fecha])
+    ORDER BY [e].[Measurement Date] DESC, [e].[Entry No_] DESC
+) AS [ultima]
+WHERE [p].[EsIndirecta] = 0;
+
+FactMovimiento|0|-- Consumos (Entry Type 0) positivos; certificaciones (1) con signo de negocio.
+CREATE   VIEW [rpt].[FactMovimiento]
+AS
+SELECT
+    [e].[Job No_] AS [ObraClave],
+    CAST([e].[Job N
+FactMovimiento|1|o_] + N'|' + [e].[Job Task No_] AS nvarchar(41)) AS [PartidaClave],
+    CAST(NULLIF([e].[Posting Date], CONVERT(datetime, '17530101', 112)) AS date) AS [Fecha],
+    CAST(SUM(CASE W
+FactMovimiento|2|HEN [e].[Entry Type] = 0
+        THEN [e].[Total Cost (LCY)] ELSE 0 END) AS decimal(18,2)) AS [CosteReal],
+    CAST(-SUM(CASE WHEN [e].[Entry Type] = 1
+        THEN [e].[Line Amoun
+FactMovimiento|3|t (LCY)] ELSE 0 END) AS decimal(18,2)) AS [Certificado],
+    COUNT(*) AS [NumeroMovimientos]
+FROM [dbo].[CONSTRUCTORA DEMO$Job Ledger Entry] AS [e]
+WHERE [e].[Entry Type] IN (0, 1)
+FactMovimiento|4|
+GROUP BY
+    [e].[Job No_],
+    [e].[Job Task No_],
+    CAST(NULLIF([e].[Posting Date], CONVERT(datetime, '17530101', 112)) AS date);
+
+FactPresupuesto|0|-- Presupuesto completo por obra/partida. La revisión sin fecha se conserva por separado.
+-- Line Type: 0 = presupuesto, 1 = facturable, 2 = presupuesto y facturable.
+CREATE   VIEW
+FactPresupuesto|1| [rpt].[FactPresupuesto]
+AS
+SELECT
+    [p].[ObraClave],
+    [p].[PartidaClave],
+    CAST(COALESCE(SUM(CASE WHEN [l].[Line Type] IN (0, 2)
+        THEN [l].[Total Cost (LCY)] ELSE 0
+FactPresupuesto|2| END), 0) AS decimal(18,2)) AS [PresupuestoCoste],
+    CAST(COALESCE(SUM(CASE WHEN [l].[Line Type] IN (1, 2)
+        THEN [l].[Line Amount (LCY)] ELSE 0 END), 0) AS decimal(18,2)) 
+FactPresupuesto|3|AS [PresupuestoVenta],
+    CAST(COALESCE(SUM(CASE WHEN [l].[Line Type] IN (1, 2)
+        AND [l].[Planning Date] <> CONVERT(datetime, '17530101', 112)
+        AND [p].[EsIndirecta]
+FactPresupuesto|4| = 0
+        THEN [l].[Line Amount (LCY)] ELSE 0 END), 0) AS decimal(18,2)) AS [BaseVentaProduccion],
+    CAST(COALESCE(SUM(CASE WHEN [l].[Line Type] IN (0, 2)
+        AND [l].[Pla
+FactPresupuesto|5|nning Date] = CONVERT(datetime, '17530101', 112)
+        THEN [l].[Total Cost (LCY)] ELSE 0 END), 0) AS decimal(18,2)) AS [PresupuestoCosteSinFecha],
+    CAST(COALESCE(SUM(CASE WHE
+FactPresupuesto|6|N [l].[Line Type] IN (1, 2)
+        AND [l].[Planning Date] = CONVERT(datetime, '17530101', 112)
+        THEN [l].[Line Amount (LCY)] ELSE 0 END), 0) AS decimal(18,2)) AS [Presupue
+FactPresupuesto|7|stoVentaSinFecha],
+    MIN(CAST(NULLIF([l].[Planning Date], CONVERT(datetime, '17530101', 112)) AS date)) AS [PrimeraFechaPlanificada],
+    MAX(CAST(NULLIF([l].[Planning Date], CON
+FactPresupuesto|8|VERT(datetime, '17530101', 112)) AS date)) AS [UltimaFechaPlanificada]
+FROM [rpt].[DimPartida] AS [p]
+LEFT JOIN [dbo].[CONSTRUCTORA DEMO$Job Planning Line] AS [l]
+    ON [l].[Job N
+FactPresupuesto|9|o_] = [p].[ObraClave]
+    AND [l].[Job Task No_] = [p].[PartidaCodigo]
+GROUP BY [p].[ObraClave], [p].[PartidaClave];
+
+Tabla|column_id|Campo|Tipo|precision|scale
+-----|---------|-----|----|---------|-----
+CONSTRUCTORA DEMO$Job Milestone|1|timestamp|timestamp|0|0
+CONSTRUCTORA DEMO$Job Milestone|2|Job No_|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Milestone|3|Code|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Milestone|4|Sequence|int|10|0
+CONSTRUCTORA DEMO$Job Milestone|5|Description|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Milestone|6|Planned Date|datetime|23|3
+CONSTRUCTORA DEMO$Job Milestone|7|Actual Date|datetime|23|3
+CONSTRUCTORA DEMO$Job Planning Line|1|timestamp|timestamp|0|0
+CONSTRUCTORA DEMO$Job Planning Line|2|Job No_|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Planning Line|3|Job Task No_|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Planning Line|4|Line No_|int|10|0
+CONSTRUCTORA DEMO$Job Planning Line|5|Line Type|int|10|0
+CONSTRUCTORA DEMO$Job Planning Line|6|Planning Date|datetime|23|3
+CONSTRUCTORA DEMO$Job Planning Line|7|Document No_|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Planning Line|8|Type|int|10|0
+CONSTRUCTORA DEMO$Job Planning Line|9|No_|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Planning Line|10|Description|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Planning Line|11|Quantity|decimal|38|20
+CONSTRUCTORA DEMO$Job Planning Line|12|Unit of Measure Code|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Planning Line|13|Unit Cost (LCY)|decimal|38|20
+CONSTRUCTORA DEMO$Job Planning Line|14|Total Cost (LCY)|decimal|38|20
+CONSTRUCTORA DEMO$Job Planning Line|15|Unit Price (LCY)|decimal|38|20
+CONSTRUCTORA DEMO$Job Planning Line|16|Line Amount (LCY)|decimal|38|20
+CONSTRUCTORA DEMO$Job Progress Entry|1|timestamp|timestamp|0|0
+CONSTRUCTORA DEMO$Job Progress Entry|2|Entry No_|int|10|0
+CONSTRUCTORA DEMO$Job Progress Entry|3|Job No_|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Progress Entry|4|Job Task No_|nvarchar|0|0
+CONSTRUCTORA DEMO$Job Progress Entry|5|Measurement Date|datetime|23|3
+CONSTRUCTORA DEMO$Job Progress Entry|6|Completion _|decimal|38|20
+CONSTRUCTORA DEMO$Job Progress Entry|7|Measured By|nvarchar|0|0
+Line Type|Lineas
+---------|------
+0|147
+2|642
+Job Task Type|Tareas
+-------------|------
+0|100
+3|10
+4|10
+CorteERP
+--------
+2026-10-31
+Fuente|Filas|PorcentajesInvalidos|FechasVacias
+------|-----|--------------------|------------
+Mediciones|514|0|0
+Fuente|Filas|SinPlan|SinReal
+------|-----|-------|-------
+Hitos|50|0|13
+Control|Incidencias
+-------|-----------
+MedicionesHuerfanas|0
+Control|Incidencias
+-------|-----------
+HitosHuerfanos|0
+Control|Incidencias
+-------|-----------
+PlanificacionHuerfana|0
+Job No_|Job Task No_|Line Type|VentaSinFecha
+-------|------------|---------|-------------
+OB-25004|06|2|35000.00

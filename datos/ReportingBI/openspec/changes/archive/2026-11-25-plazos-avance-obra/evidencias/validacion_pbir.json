@@ -1,0 +1,16 @@
+{
+  "paginas": 5,
+  "paginasConVisualesValidados": 2,
+  "visuales": 36,
+  "archivosValidados": 42,
+  "gruposSincronizados": 6,
+  "tipos": {
+    "cardVisual": 12,
+    "textbox": 9,
+    "slicer": 12,
+    "lineChart": 1,
+    "tableEx": 2
+  },
+  "errores": [],
+  "revisionVisualDesktop": "pendiente"
+}

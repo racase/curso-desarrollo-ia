@@ -30,3 +30,41 @@ relationship FactAvance_DimFecha
 	fromColumn: FactAvance.Fecha
 	toColumn: DimFecha.Fecha
 
+relationship FactPlanificacion_DimObra
+	fromColumn: FactPlanificacion.ObraClave
+	toColumn: DimObra.ObraClave
+
+relationship FactPlanificacion_DimPartida
+	fromColumn: FactPlanificacion.PartidaClave
+	toColumn: DimPartida.PartidaClave
+
+relationship FactPlanificacion_DimFecha
+	fromColumn: FactPlanificacion.Fecha
+	toColumn: DimFecha.Fecha
+
+relationship FactMedicionAvance_DimObra
+	fromColumn: FactMedicionAvance.ObraClave
+	toColumn: DimObra.ObraClave
+
+relationship FactMedicionAvance_DimPartida
+	fromColumn: FactMedicionAvance.PartidaClave
+	toColumn: DimPartida.PartidaClave
+
+relationship FactMedicionAvance_DimFecha
+	fromColumn: FactMedicionAvance.Fecha
+	toColumn: DimFecha.Fecha
+
+relationship FactHito_DimObra
+	fromColumn: FactHito.ObraClave
+	toColumn: DimObra.ObraClave
+
+relationship FactHito_FechaPlanificada
+	isActive: false
+	fromColumn: FactHito.FechaPlanificada
+	toColumn: DimFecha.Fecha
+
+relationship FactHito_FechaReal
+	isActive: false
+	fromColumn: FactHito.FechaReal
+	toColumn: DimFecha.Fecha
+

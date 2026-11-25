@@ -1,4 +1,10 @@
-## ADDED Requirements
+# plazos-avance-obra Specification
+
+## Purpose
+
+Comparar la planificación temporal de venta, las mediciones reales y los hitos de las obras de CONSTRUCTORA DEMO para detectar retrasos con indicadores trazables y conciliados contra NAV.
+
+## Requirements
 
 ### Requirement: Fuentes SQL independientes y trazables
 

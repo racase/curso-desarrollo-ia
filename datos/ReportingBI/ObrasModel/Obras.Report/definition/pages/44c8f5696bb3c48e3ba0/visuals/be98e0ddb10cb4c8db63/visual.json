@@ -1,16 +1,238 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "be98e0ddb10cb4c8db63",
   "position": {
     "x": 36,
     "y": 400,
-    "width": 1848,
-    "height": 340,
     "z": 4036,
+    "height": 340,
+    "width": 1848,
     "tabOrder": 4036
   },
   "visual": {
     "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimFecha"
+                    }
+                  },
+                  "Property": "AñoMes"
+                }
+              },
+              "queryRef": "DimFecha.AñoMes",
+              "nativeQueryRef": "AñoMes",
+              "active": true,
+              "displayName": "Mes"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMovimiento"
+                    }
+                  },
+                  "Property": "Coste real mensual"
+                }
+              },
+              "queryRef": "FactMovimiento.Coste real mensual",
+              "nativeQueryRef": "Coste real mensual",
+              "displayName": "Coste"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactAvance"
+                    }
+                  },
+                  "Property": "Producción mensual"
+                }
+              },
+              "queryRef": "FactAvance.Producción mensual",
+              "nativeQueryRef": "Producción mensual",
+              "displayName": "Producción"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMovimiento"
+                    }
+                  },
+                  "Property": "Certificado mensual"
+                }
+              },
+              "queryRef": "FactMovimiento.Certificado mensual",
+              "nativeQueryRef": "Certificado mensual",
+              "displayName": "Certificado"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DimFecha"
+                  }
+                },
+                "Property": "AñoMes"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "axisType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Categorical'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Euros'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#B83246'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FactMovimiento.Coste real mensual"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#007F82'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FactAvance.Producción mensual"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#386CB0'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FactMovimiento.Certificado mensual"
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "background": [
         {
@@ -143,228 +365,6 @@
                 }
               }
             }
-          }
-        }
-      ]
-    },
-    "query": {
-      "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DimFecha"
-                    }
-                  },
-                  "Property": "AñoMes"
-                }
-              },
-              "queryRef": "DimFecha.AñoMes",
-              "nativeQueryRef": "AñoMes",
-              "displayName": "Mes"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "FactMovimiento"
-                    }
-                  },
-                  "Property": "Coste real mensual"
-                }
-              },
-              "queryRef": "FactMovimiento.Coste real mensual",
-              "nativeQueryRef": "Coste real mensual",
-              "displayName": "Coste"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "FactAvance"
-                    }
-                  },
-                  "Property": "Producción mensual"
-                }
-              },
-              "queryRef": "FactAvance.Producción mensual",
-              "nativeQueryRef": "Producción mensual",
-              "displayName": "Producción"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "FactMovimiento"
-                    }
-                  },
-                  "Property": "Certificado mensual"
-                }
-              },
-              "queryRef": "FactMovimiento.Certificado mensual",
-              "nativeQueryRef": "Certificado mensual",
-              "displayName": "Certificado"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "DimFecha"
-                  }
-                },
-                "Property": "AñoMes"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
-        "isDefaultSort": false
-      }
-    },
-    "objects": {
-      "legend": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Top'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "axisType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Categorical'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "11D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "11D"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Euros'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#B83246'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "FactMovimiento.Coste real mensual"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#007F82'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "FactAvance.Producción mensual"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#386CB0'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "FactMovimiento.Certificado mensual"
           }
         }
       ]

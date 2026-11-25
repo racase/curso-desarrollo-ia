@@ -1,2 +1,648 @@
 cultureInfo es-ES
 
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dimobra.tipoobra": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimObra",
+			          "ConceptualProperty": "TipoObra"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tipo de obra": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimobra.jefeobra": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimObra",
+			          "ConceptualProperty": "JefeObra"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Jefe de obra": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimobra.estado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimObra",
+			          "ConceptualProperty": "Estado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Estado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimobra.obra": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimObra",
+			          "ConceptualProperty": "Obra"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Obra": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimobra.delegacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimObra",
+			          "ConceptualProperty": "Delegacion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Delegación": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimfecha.fecha": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimFecha",
+			          "ConceptualProperty": "Fecha"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Hasta fecha": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimfecha.añomes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimFecha",
+			          "ConceptualProperty": "AñoMes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Mes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmovimiento.coste_real": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMovimiento",
+			          "ConceptualProperty": "Coste real"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Coste real": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmovimiento.importe_certificado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMovimiento",
+			          "ConceptualProperty": "Importe certificado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Importe certificado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmovimiento.pendiente_de_certificar": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMovimiento",
+			          "ConceptualProperty": "Pendiente de certificar"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pendiente de certificar": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Pendiente al cierre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmovimiento.margen_real": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMovimiento",
+			          "ConceptualProperty": "Margen real"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Margen real": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmovimiento.margen_real_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMovimiento",
+			          "ConceptualProperty": "Margen real %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Margen real %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmovimiento.coste_real_mensual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMovimiento",
+			          "ConceptualProperty": "Coste real mensual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Coste del periodo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Coste real mensual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Coste": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factmovimiento.certificado_mensual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactMovimiento",
+			          "ConceptualProperty": "Certificado mensual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Certificado mensual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Certificado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Certificado del periodo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factpresupuesto.presupuesto_de_coste": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactPresupuesto",
+			          "ConceptualProperty": "Presupuesto de coste"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Presupuesto de coste": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factpresupuesto.presupuesto_de_venta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactPresupuesto",
+			          "ConceptualProperty": "Presupuesto de venta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Presupuesto de venta": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factpresupuesto.margen_previsto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactPresupuesto",
+			          "ConceptualProperty": "Margen previsto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Margen previsto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factpresupuesto.margen_previsto_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactPresupuesto",
+			          "ConceptualProperty": "Margen previsto %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Margen previsto %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factavance.producción": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAvance",
+			          "ConceptualProperty": "Producción"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Producción": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factavance.desviación_de_coste_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAvance",
+			          "ConceptualProperty": "Desviación de coste %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Desviación de coste %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factavance.coste_previsto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAvance",
+			          "ConceptualProperty": "Coste previsto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Coste previsto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factavance.desviación_de_coste": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAvance",
+			          "ConceptualProperty": "Desviación de coste"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Desviación de coste": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factavance.estado_de_desviación": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAvance",
+			          "ConceptualProperty": "Estado de desviación"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Estado de desviación": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "factavance.producción_mensual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactAvance",
+			          "ConceptualProperty": "Producción mensual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Producción del periodo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Producción mensual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Producción": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimpartida.obraclave": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPartida",
+			          "ConceptualProperty": "ObraClave"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Obra": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimpartida.partidacodigo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPartida",
+			          "ConceptualProperty": "PartidaCodigo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Código": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimpartida.partida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPartida",
+			          "ConceptualProperty": "Partida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Partida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

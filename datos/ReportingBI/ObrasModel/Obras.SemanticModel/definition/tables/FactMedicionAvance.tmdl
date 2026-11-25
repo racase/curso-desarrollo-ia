@@ -1,0 +1,79 @@
+/// Spec plazos-avance-obra: mediciones acumuladas del partner; elegir la última conocida al corte, sin sumar porcentajes.
+table FactMedicionAvance
+	lineageTag: 200608a4-764f-434b-a69e-81ea48c64238
+
+	/// Spec plazos-avance-obra — Última medición acumulada por partida hasta el corte; cero antes de la primera, desempate por identificador.
+	measure 'Avance medido de plazos' =
+			VAR Corte = [Corte de plazos]
+			VAR Ultima = CALCULATETABLE(
+			    TOPN(1,FactMedicionAvance,FactMedicionAvance[Fecha],DESC,FactMedicionAvance[MedicionClave],DESC),
+			    REMOVEFILTERS(DimFecha),
+			    FILTER(ALL(FactMedicionAvance[Fecha]), NOT ISBLANK(FactMedicionAvance[Fecha]) && FactMedicionAvance[Fecha] <= Corte))
+			RETURN IF(NOT ISBLANK(Corte),COALESCE(MAXX(Ultima,FactMedicionAvance[Avance]),0))
+		formatString: 0.0 %
+		isHidden
+		displayFolder: Plazos y avance
+		lineageTag: e22aec09-57ce-44d2-967c-58aed778c7d4
+
+	/// Spec plazos-avance-obra — Base elegible por última medición, redondeada por partida; conserva criterios del issue 01 sin su corte fijo.
+	measure 'Producción de plazos' =
+			IF(NOT ISBLANK([Corte de plazos]),
+			    COALESCE(SUMX(VALUES(DimPartida[PartidaClave]),
+			        VAR Base = CALCULATE([Base de venta planificada])
+			        VAR Avance = CALCULATE([Avance medido de plazos])
+			        RETURN ROUND(Base * Avance,2)),0))
+		formatString: #,0.00 €
+		isHidden
+		displayFolder: Plazos y avance
+		lineageTag: 0f86cc61-ae4b-4cd6-a361-b7ff0082c050
+
+	/// Spec plazos-avance-obra — Avance ponderado por venta de todas las partidas medibles, incluidas las no iniciadas.
+	measure 'Avance real' = IF(NOT ISBLANK([Corte de plazos]),DIVIDE([Producción de plazos],[Base de venta planificada],0))
+		formatString: 0.0 %
+		displayFolder: Plazos y avance
+		lineageTag: 24f51663-c752-4896-bc87-5b418bea9055
+
+	column MedicionClave
+		dataType: int64
+		isHidden
+		lineageTag: 77b49f62-9eec-4d06-9536-83373c9a0083
+		summarizeBy: none
+		sourceColumn: MedicionClave
+
+	column ObraClave
+		dataType: string
+		isHidden
+		lineageTag: da59a745-a4c4-489c-b38c-9723cbb8b4d8
+		summarizeBy: none
+		sourceColumn: ObraClave
+
+	column PartidaClave
+		dataType: string
+		isHidden
+		lineageTag: 119b073c-bca3-44a4-b137-e94f5415cecb
+		summarizeBy: none
+		sourceColumn: PartidaClave
+
+	column Fecha
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: 906e793a-02b9-4de5-a8fc-fd0c926aa5d2
+		summarizeBy: none
+		sourceColumn: Fecha
+
+	column Avance
+		dataType: double
+		formatString: 0.0 %
+		lineageTag: 1565399a-1888-4fb2-9aed-afa506d16d04
+		summarizeBy: none
+		sourceColumn: Avance
+
+	partition FactMedicionAvance = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema="rpt", Item="FactMedicionAvance"]}[Data]
+				in
+				    Vista
+

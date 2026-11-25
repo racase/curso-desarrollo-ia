@@ -1,0 +1,27 @@
+/// Spec plazos-avance-obra: una fila con fecha máxima de movimiento de NAV; sin dependencia del reloj ni del filtro de obra.
+table DimCorteDatos
+	lineageTag: e372c9da-e0ab-4693-aacc-50b192379a59
+
+	column CorteClave
+		dataType: int64
+		isHidden
+		lineageTag: 243ce5c0-a9d1-496c-8b18-fa658cf004a9
+		summarizeBy: none
+		sourceColumn: CorteClave
+
+	column FechaCorte
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: 29c36b80-02ba-40ef-826c-c59b71335265
+		summarizeBy: none
+		sourceColumn: FechaCorte
+
+	partition DimCorteDatos = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema="rpt", Item="DimCorteDatos"]}[Data]
+				in
+				    Vista
+

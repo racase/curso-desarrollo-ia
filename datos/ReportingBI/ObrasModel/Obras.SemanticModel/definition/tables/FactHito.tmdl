@@ -1,0 +1,117 @@
+/// Spec plazos-avance-obra: hitos del partner, con fechas vacías como NULL y estados calculados a la fecha de corte.
+table FactHito
+	lineageTag: 3727bb37-feac-492a-ad56-049d0b9bb325
+
+	/// Spec plazos-avance-obra — Estado histórico por hito; una fecha real posterior al corte no supone cumplimiento.
+	measure 'Estado de hito' =
+			VAR Corte = [Corte de plazos]
+			VAR Plan = SELECTEDVALUE(FactHito[FechaPlanificada])
+			VAR Real = SELECTEDVALUE(FactHito[FechaReal])
+			RETURN IF(HASONEVALUE(FactHito[HitoClave]) && NOT ISBLANK(Corte) && NOT ISBLANK(Plan),
+			    SWITCH(TRUE(),
+			        NOT ISBLANK(Real) && Real <= Corte && Real <= Plan, "Cumplido a tiempo",
+			        NOT ISBLANK(Real) && Real <= Corte, "Cumplido con retraso",
+			        Plan < Corte, "Retrasado",
+			        "Pendiente"))
+		displayFolder: Plazos y avance
+		lineageTag: 29883ca7-1aed-4ffa-af8f-8007bb3f7ab0
+
+	/// Spec plazos-avance-obra — Días por hito hasta cumplimiento conocido o corte, mínimo cero; vacío en totales.
+	measure 'Días de retraso del hito' =
+			VAR Corte = [Corte de plazos]
+			VAR Plan = SELECTEDVALUE(FactHito[FechaPlanificada])
+			VAR Real = SELECTEDVALUE(FactHito[FechaReal])
+			VAR Fin = IF(NOT ISBLANK(Real) && Real <= Corte,Real,Corte)
+			RETURN IF(HASONEVALUE(FactHito[HitoClave]) && NOT ISBLANK(Corte) && NOT ISBLANK(Plan),
+			    MAX(0,DATEDIFF(Plan,Fin,DAY)))
+		formatString: 0
+		displayFolder: Plazos y avance
+		lineageTag: 31b11be4-62ed-49ac-a368-6009e3d83b5b
+
+	/// Spec plazos-avance-obra — Solo hitos pendientes vencidos; planificada estrictamente anterior al corte.
+	measure 'Hitos retrasados' = IF(NOT ISBLANK([Corte de plazos]),COALESCE(SUMX(VALUES(FactHito[HitoClave]),IF(CALCULATE([Estado de hito])="Retrasado",1,0)),0))
+		formatString: 0
+		displayFolder: Plazos y avance
+		lineageTag: fc06e1cf-eaaf-40fa-adca-cbc81ce67f50
+
+	/// Spec plazos-avance-obra — Cumplidos después de su fecha planificada y hasta el corte; separados de los pendientes.
+	measure 'Hitos cumplidos tarde' = IF(NOT ISBLANK([Corte de plazos]),COALESCE(SUMX(VALUES(FactHito[HitoClave]),IF(CALCULATE([Estado de hito])="Cumplido con retraso",1,0)),0))
+		formatString: 0
+		displayFolder: Plazos y avance
+		lineageTag: db5c736a-7718-4aa4-b062-479787d0efc5
+
+	/// Spec plazos-avance-obra — Pendientes cuyo vencimiento aún no pasó al corte.
+	measure 'Hitos pendientes' = IF(NOT ISBLANK([Corte de plazos]),COALESCE(SUMX(VALUES(FactHito[HitoClave]),IF(CALCULATE([Estado de hito])="Pendiente",1,0)),0))
+		formatString: 0
+		displayFolder: Plazos y avance
+		lineageTag: 0ec27e27-85b0-4e98-a3fb-71876fda2ced
+
+	/// Spec plazos-avance-obra — Cumplidos hasta el corte sin superar su fecha planificada.
+	measure 'Hitos cumplidos a tiempo' = IF(NOT ISBLANK([Corte de plazos]),COALESCE(SUMX(VALUES(FactHito[HitoClave]),IF(CALCULATE([Estado de hito])="Cumplido a tiempo",1,0)),0))
+		formatString: 0
+		displayFolder: Plazos y avance
+		lineageTag: 4c30ba36-419c-47fa-96a2-18e654a9fe52
+
+	/// Spec plazos-avance-obra — Máximo de días entre hitos pendientes vencidos; cero sin retrasados; no suma demoras.
+	measure 'Máximo retraso pendiente' =
+			IF(NOT ISBLANK([Corte de plazos]),COALESCE(MAXX(VALUES(FactHito[HitoClave]),
+			    IF(CALCULATE([Estado de hito])="Retrasado",CALCULATE([Días de retraso del hito]),0)),0))
+		formatString: 0
+		displayFolder: Plazos y avance
+		lineageTag: b67ffea8-0f2b-4688-b191-439c6bdc1f1e
+
+	column HitoClave
+		dataType: string
+		isHidden
+		lineageTag: be34608f-dc30-4f86-b898-f19781d24654
+		summarizeBy: none
+		sourceColumn: HitoClave
+
+	column ObraClave
+		dataType: string
+		isHidden
+		lineageTag: 1a125a8e-af11-4fcd-bed4-60805fa26746
+		summarizeBy: none
+		sourceColumn: ObraClave
+
+	column HitoCodigo
+		dataType: string
+		lineageTag: 04abb6bf-185e-4de9-ac40-8b27a160148d
+		summarizeBy: none
+		sourceColumn: HitoCodigo
+
+	column Secuencia
+		dataType: int64
+		lineageTag: 9a983888-0b40-4fcc-b20e-18a2e1d6a463
+		summarizeBy: none
+		sourceColumn: Secuencia
+
+	column Hito
+		dataType: string
+		lineageTag: 2ab5e337-b278-44c9-8e0f-4078c0f081d8
+		summarizeBy: none
+		sourceColumn: Hito
+
+	column FechaPlanificada
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: dace9c05-35a8-4e2f-9c58-97e2ff8de750
+		summarizeBy: none
+		sourceColumn: FechaPlanificada
+
+	column FechaReal
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: 7529db28-69cf-4d8a-877e-0748e06205cd
+		summarizeBy: none
+		sourceColumn: FechaReal
+
+	partition FactHito = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema="rpt", Item="FactHito"]}[Data]
+				in
+				    Vista
+

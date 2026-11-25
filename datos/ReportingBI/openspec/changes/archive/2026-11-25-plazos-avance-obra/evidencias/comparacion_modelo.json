@@ -1,0 +1,11 @@
+{
+  "filasSQL": 624,
+  "filasDAX": 624,
+  "indicadoresPorFila": 13,
+  "clavesDiferentes": 0,
+  "diferencias": 0,
+  "maxDiferenciaExacta": "0",
+  "maxDiferenciaRatio": "5.0746346E-11",
+  "toleranciaRatio": "0.00000001",
+  "primerasDiferencias": []
+}

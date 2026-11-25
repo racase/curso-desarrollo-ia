@@ -30,5 +30,82 @@
         }
       }
     ]
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b24b1284fc775705c027",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimFecha"
+              }
+            },
+            "Property": "Fecha"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "DimFecha",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "And": {
+                  "Left": {
+                    "Comparison": {
+                      "ComparisonKind": 2,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "s"
+                            }
+                          },
+                          "Property": "Fecha"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "datetime'2025-01-01T00:00:00'"
+                        }
+                      }
+                    }
+                  },
+                  "Right": {
+                    "Comparison": {
+                      "ComparisonKind": 4,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "s"
+                            }
+                          },
+                          "Property": "Fecha"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "datetime'2026-10-31T00:00:00'"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

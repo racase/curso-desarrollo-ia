@@ -12,7 +12,7 @@ import urllib.parse
 import urllib.request
 
 
-def validar(registry_path=None):
+def validar(registry_path=None, page_ids=None):
     import jsonschema
     from referencing import Registry, Resource
 
@@ -56,7 +56,9 @@ def validar(registry_path=None):
     errors, files, groups, ids = [], [], defaultdict(list), set()
     metadata = json.loads((report / 'pages/pages.json').read_text())
     page_order = metadata['pageOrder']
-    assert len(page_order) == 3 and len(set(page_order)) == 3
+    assert page_order and len(set(page_order)) == len(page_order)
+    scoped_pages = set(page_ids or page_order)
+    assert scoped_pages <= set(page_order)
 
     def bindings(value, sources=None):
         sources = dict(sources or {})
@@ -78,6 +80,15 @@ def validar(registry_path=None):
 
     visuals = []
     for file in report.rglob('*.json'):
+        if page_ids:
+            relative = file.relative_to(report).parts
+            # Conservar esquemas nativos del Desktop; validar las páginas editadas,
+            # el orden y los visuales nuevos usando sus esquemas públicos declarados.
+            if relative[0] != 'pages':
+                continue
+            if file.name != 'page.json' and relative != ('pages', 'pages.json'):
+                if len(relative) < 2 or relative[1] not in scoped_pages:
+                    continue
         data = json.loads(file.read_text())
         if '/version.json' in str(file):
             continue  # Metadato nativo sin cambios, fuera del conjunto generado.
@@ -118,7 +129,7 @@ def validar(registry_path=None):
             visuals.append((page['name'], data))
 
     for group, members in groups.items():
-        assert len(members) == 3 and len({p for p, _ in members}) == 3, group
+        assert len(members) == len(scoped_pages) and len({p for p, _ in members}) == len(scoped_pages), group
         assert len({field for _, field in members}) == 1, group
     assert len(groups) == 6
     for i, (page, a) in enumerate(visuals):
@@ -130,7 +141,8 @@ def validar(registry_path=None):
                        and x['y'] < y['y'] + y['height'] and y['y'] < x['y'] + x['height'])
             assert not overlap, (a['name'], b['name'])
 
-    summary = {'paginas': len(page_order), 'visuales': len(visuals), 'archivosValidados': len(files),
+    summary = {'paginas': len(page_order), 'paginasConVisualesValidados': len(scoped_pages),
+               'visuales': len(visuals), 'archivosValidados': len(files),
                'gruposSincronizados': len(groups), 'tipos': dict(Counter(v['visual']['visualType'] for _, v in visuals)),
                'errores': errors, 'revisionVisualDesktop': 'pendiente'}
     print(json.dumps(summary, ensure_ascii=False, indent=2))
@@ -141,5 +153,6 @@ def validar(registry_path=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--schemas')
+    parser.add_argument('--pages', nargs='+', help='Validar visuales solo de estas páginas y metadatos de todas las páginas')
     args = parser.parse_args()
-    validar(args.schemas)
+    validar(args.schemas, args.pages)

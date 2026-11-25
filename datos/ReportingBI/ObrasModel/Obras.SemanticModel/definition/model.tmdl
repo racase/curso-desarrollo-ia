@@ -18,6 +18,10 @@ ref table FactPresupuesto
 ref table FactMovimiento
 ref table FactAvance
 ref table DimFecha
+ref table FactPlanificacion
+ref table FactMedicionAvance
+ref table FactHito
+ref table DimCorteDatos
 
 ref cultureInfo es-ES
 

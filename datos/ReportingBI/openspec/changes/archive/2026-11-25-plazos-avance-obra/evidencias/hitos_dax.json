@@ -1,0 +1,7739 @@
+{
+  "rowCount": 1100,
+  "isTruncated": false,
+  "columns": [
+    {
+      "name": "[Corte]",
+      "dataType": "DateTime",
+      "isNullable": true,
+      "ordinal": 0
+    },
+    {
+      "name": "[Obra]",
+      "dataType": "String",
+      "isNullable": true,
+      "ordinal": 1
+    },
+    {
+      "name": "[Codigo]",
+      "dataType": "String",
+      "isNullable": true,
+      "ordinal": 2
+    },
+    {
+      "name": "[Estado]",
+      "dataType": "String",
+      "isNullable": true,
+      "ordinal": 3
+    },
+    {
+      "name": "[Dias]",
+      "dataType": "Int64",
+      "isNullable": true,
+      "ordinal": 4
+    }
+  ],
+  "rows": [
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-11-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2025-12-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-01-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Retrasado",
+      "[Dias]": 28
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-02-28T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Retrasado",
+      "[Dias]": 59
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-03-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 85
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-04-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 85
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-05-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 85
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Retrasado",
+      "[Dias]": 30
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-06-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 85
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Retrasado",
+      "[Dias]": 61
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-07-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 85
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Retrasado",
+      "[Dias]": 92
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-08-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 23
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 85
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 113
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-09-30T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 23
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 8
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 3
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25004",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 2
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25005",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 5
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 22
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 85
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 113
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25006",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Retrasado",
+      "[Dias]": 31
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 6
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-25007",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 9
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26001",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Cumplido con retraso",
+      "[Dias]": 4
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Cumplido a tiempo",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26002",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT01",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT02",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT03",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT04",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    },
+    {
+      "[Corte]": "2026-10-31T00:00:00",
+      "[Obra]": "OB-26003",
+      "[Codigo]": "HIT05",
+      "[Estado]": "Pendiente",
+      "[Dias]": 0
+    }
+  ],
+  "executionTimeMs": 54
+}
