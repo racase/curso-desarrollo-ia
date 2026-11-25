@@ -1,7 +1,8 @@
 # InfraData — demo de datos
 
 Proyecto Python mínimo sobre PostgreSQL + TimescaleDB con lecturas de sensores ya cargadas.
-Incluye una consulta de resumen diario por sensor, desarrollada con OpenSpec y Codex.
+Incluye consultas de resumen diario y detección de huecos por sensor, desarrolladas con
+OpenSpec y Codex.
 
 ## Requisitos
 
@@ -73,6 +74,56 @@ incompatible con la sede, se muestra `No hay lecturas para los filtros indicados
 termina con código 0. Los argumentos inválidos devuelven código 2 antes de conectar y
 los fallos de base de datos devuelven código 1. Usa `resumen-diario --help` para ver las opciones.
 
+## Detección de huecos
+
+```bash
+uv run python -m infradata huecos
+uv run python -m infradata huecos --umbral-minutos 15
+uv run python -m infradata huecos --sede "Planta Sagunto" --sensor SAG-P02
+uv run python -m infradata huecos --sensor PAT-L01 --desde 2026-10-12 --hasta 2026-10-13
+```
+
+El umbral es un entero positivo en minutos, **5 por defecto**, y se compara de forma
+estricta: un intervalo igual al umbral se excluye. La duración de un hueco completo es
+el tiempo entre la última lectura y la siguiente, sin descontar los cinco minutos de
+cadencia. Por ejemplo, lecturas a las 10:00 y 10:20 delimitan veinte minutos entre
+lecturas, aunque falten tres lecturas esperadas, equivalentes a quince minutos.
+
+Los filtros por sede y sensor son exactos, distinguen mayúsculas y acentos y se combinan.
+Las fechas incluyen días completos UTC. Cada extremo omitido usa el límite correspondiente
+del conjunto del curso: **2026-08-01** y **2026-10-30**. Estos límites son fijos; para datos
+posteriores hay que indicar fechas explícitas. Un rango efectivo invertido es un error.
+
+Se seleccionan los huecos que se solapan con el rango, buscando también las lecturas
+anteriores y posteriores fuera de él. Los huecos completos conservan su inicio, fin y
+duración total: el último ejemplo muestra el intervalo desde el 11 de octubre a las
+23:55 UTC hasta el 14 a las 06:00 UTC, con duración `54:05:00`. Un hueco que solo toca
+un límite del rango queda excluido.
+
+Si no existe una lectura delimitadora en todo el histórico disponible, el extremo aparece
+como `desconocido`. El estado indica `abierto al inicio`, `abierto al final` o
+`abierto en ambos extremos`; la duración, presentada como `>= HH:MM:SS`, es únicamente
+la cota mínima observable dentro del rango. Solo se muestra si esa cota supera el umbral;
+una cota menor no demuestra que la interrupción real sea corta. Se incluyen sensores
+conocidos sin lecturas cuando el rango observado supera el umbral. La ausencia de datos
+no demuestra una avería ni permite deducir cuándo empezó.
+
+La salida incluye sede, sensor, última y siguiente lectura UTC, duración y estado. Las
+horas se acumulan sin reiniciar a las 24; los resultados se ordenan por inicio observable,
+sensor y fin observable. El cálculo se realiza en SQL, sin rellenar huecos ni excluir
+valores anómalos. Con el conjunto inicial y umbral de quince minutos aparecen exactamente
+estos huecos completos:
+
+| Sensor | Última lectura UTC | Siguiente lectura UTC | Duración |
+|---|---|---|---|
+| VAL-F01 | 2026-08-20 22:10 | 2026-08-20 23:05 | 00:55:00 |
+| SAG-P02 | 2026-09-03 07:55 | 2026-09-03 14:30 | 06:35:00 |
+| PAT-L01 | 2026-10-11 23:55 | 2026-10-14 06:00 | 54:05:00 |
+
+Sin resultados se muestra `No hay huecos que superen el umbral para los filtros indicados.`
+y se termina con código 0. Los argumentos inválidos devuelven código 2 antes de conectar;
+los fallos de base de datos devuelven código 1. Consulta `huecos --help` para ver las opciones.
+
 ## Comandos habituales
 
 | Para | Comando |
@@ -133,8 +184,8 @@ datos/InfraData/
 ├── src/infradata/      código del proyecto
 │   ├── config.py       configuración (DATABASE_URL)
 │   ├── db.py           conexión
-│   ├── analytics.py    consulta SQL del resumen diario
-│   └── __main__.py     comandos `check` y `resumen-diario`
+│   ├── analytics.py    consultas SQL de resumen diario y detección de huecos
+│   └── __main__.py     comandos `check`, `resumen-diario` y `huecos`
 ├── tests/
 ├── docker-compose.yml
 └── pyproject.toml
