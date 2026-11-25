@@ -1,0 +1,19 @@
+# Configuración de Codex para ReportingBI (datos/ReportingBI/).
+#
+# Codex solo carga este fichero si el proyecto está marcado como de confianza.
+# Tiene prioridad sobre ~/.codex/config.toml. Las claves de proveedor, perfiles
+# y notificaciones se ignoran aquí: van en la configuración de usuario.
+
+# MCP oficial de Microsoft para modelos de Power BI (solo Windows).
+# Se conecta al modelo abierto en Power BI Desktop, a una carpeta PBIP o a un área de
+# trabajo de Fabric. La primera vez pide aceptar su licencia (EULA): acéptala tú.
+[mcp_servers.powerbi-modeling]
+command = "cmd"
+args = ["/c", "npx", "-y", "@microsoft/powerbi-modeling-mcp@latest", "--start"]
+startup_timeout_sec = 120
+
+# MCP remoto de Power BI para consultar modelos ya publicados (preview). Necesita que el
+# administrador del tenant lo tenga habilitado. Descomentar para la prueba en el servicio.
+#
+# [mcp_servers.powerbi-remote]
+# url = "https://api.fabric.microsoft.com/v1/mcp/powerbi"

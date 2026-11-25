@@ -1,6 +1,6 @@
 # Prompt para generar el backlog de InfraData
 
-Prompt para ejecutar con Codex abierto dentro de `datos/`. Genera los issues del backlog
+Prompt para ejecutar con Codex abierto dentro de `datos/InfraData/`. Genera los issues del backlog
 en `docs/issues/`, uno por fichero. Si la carpeta ya existe, bórrala o renómbrala antes
 para comparar el resultado.
 

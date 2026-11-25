@@ -1,4 +1,4 @@
-# Configuración de Codex para InfraData (datos/).
+# Configuración de Codex para InfraData (datos/InfraData/).
 #
 # Codex solo carga este fichero si el proyecto está marcado como de confianza.
 # Tiene prioridad sobre ~/.codex/config.toml. Las claves de proveedor, perfiles

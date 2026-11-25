@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "powerbi-modeling": {
+      "type": "local",
+      "command": ["cmd", "/c", "npx", "-y", "@microsoft/powerbi-modeling-mcp@latest", "--start"],
+      "enabled": true
+    }
+  }
+}

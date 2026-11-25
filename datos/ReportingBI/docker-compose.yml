@@ -1,0 +1,30 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: reportingbi-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+      # Contraseñas de la demo, solo para uso local. Se pueden cambiar con un fichero .env
+      # (ver .env.example) antes del primer arranque.
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:-ReportingBI#2026}
+      REPORTING_PASSWORD: ${REPORTING_PASSWORD:-Informes#2026}
+    ports:
+      # 14330 en el host para no chocar con un SQL Server instalado en el equipo (1433)
+      - "14330:1433"
+    volumes:
+      - reportingbi-mssql:/var/opt/mssql
+      # El proyecto, en solo lectura: scripts de arranque y vistas de sql/rpt/
+      - .:/project:ro
+    entrypoint: ["/bin/bash", "/project/db/entrypoint.sh"]
+    # Rutas relativas en «exec» (db/query.sh): Git Bash en Windows reescribe las que empiezan por /
+    working_dir: /project
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -C -S localhost -U reporting -P \"$$REPORTING_PASSWORD\" -d NAVDEMO -b -Q \"SELECT 1\" -o /dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+
+volumes:
+  reportingbi-mssql:
