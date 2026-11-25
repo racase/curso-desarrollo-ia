@@ -11,18 +11,18 @@ depends_on: []
 Dirección revisa cada mes cómo va económicamente cada obra. Hoy lo hace con exportaciones
 del ERP (Navision) a Excel que monta a mano cada jefe de obra, con criterios distintos y
 con días de retraso. Queremos un informe de Power BI único, conectado a los datos del ERP,
-que responda a una pregunta: **¿en qué obras estamos perdiendo dinero, en qué capítulo, y
+que responda a una pregunta: **¿en qué obras estamos perdiendo dinero, en qué partida, y
 estamos certificando lo que producimos?**
 
 ## Historia de usuario
 
 Como **director de producción**, quiero ver para cada obra su presupuesto, lo que llevamos
 gastado, lo que hemos producido y lo que hemos certificado al cliente, para detectar a tiempo
-las obras y capítulos que se desvían y la obra ejecutada que todavía no hemos cobrado.
+las obras y partidas que se desvían y la obra ejecutada que todavía no hemos cobrado.
 
 ## Alcance
 
-- Indicadores por obra y por capítulo:
+- Indicadores por obra y por partida:
   - presupuesto de coste y presupuesto de venta;
   - coste real;
   - producción (obra ejecutada valorada a precio de venta, según el avance medido);
@@ -32,7 +32,7 @@ las obras y capítulos que se desvían y la obra ejecutada que todavía no hemos
   - desviación de coste: coste real frente a lo que se debería haber gastado para la obra
     producida.
 - Una página resumen con los indicadores del conjunto de obras y una tabla por obra.
-- Una página de detalle obra × capítulo que destaque visualmente los capítulos con desviación.
+- Una página de detalle obra × partida que destaque visualmente las partidas con desviación.
 - Evolución mensual de coste real, producción y certificado.
 - Filtros por delegación, tipo de obra, jefe de obra y estado de la obra.
 - Publicado en el servicio Power BI, en el área de trabajo de la demo.
@@ -49,8 +49,8 @@ las obras y capítulos que se desvían y la obra ejecutada que todavía no hemos
 - Dado el informe publicado, cuando lo abro sin filtros, entonces veo los totales de
   presupuesto, coste real, producción, certificado y margen real del conjunto de obras, y
   cuadran con los datos del ERP a la fecha de corte.
-- Dada una obra con un capítulo que cuesta más de lo previsto para lo que lleva producido,
-  cuando abro el detalle obra × capítulo, entonces ese capítulo aparece destacado y su
+- Dada una obra con una partida que cuesta más de lo previsto para lo que lleva producido,
+  cuando abro el detalle obra × partida, entonces esa partida aparece destacada y su
   desviación se ve en porcentaje.
 - Dada una obra con obra ejecutada que no se ha certificado, cuando miro la tabla por obra,
   entonces veo el importe pendiente de certificar y puedo ordenar las obras por ese importe.

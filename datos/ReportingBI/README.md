@@ -71,7 +71,7 @@ como enteros, fechas vacías como `1753-01-01` y sin valores NULL.
 |---|---|
 | `Company` | Empresas de la base de datos |
 | `...$Job` | Obras |
-| `...$Job Task` | Capítulos de cada obra |
+| `...$Job Task` | Partidas de cada obra |
 | `...$Job Planning Line` | Presupuesto, repartido en el tiempo |
 | `...$Job Ledger Entry` | Movimientos reales: consumos y certificaciones |
 | `...$Customer`, `...$Resource`, `...$Dimension Value` | Clientes, recursos y dimensiones |

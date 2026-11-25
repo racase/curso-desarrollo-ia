@@ -252,7 +252,7 @@ class JobDef:
     sale: float  # presupuesto de venta (sin indirectos)
     margin: float  # margen previsto sobre la venta
     delay: float = 1.0  # >1: la obra avanza más despacio de lo planificado
-    overrun: dict[str, float] = field(default_factory=dict)  # sobrecoste por capítulo
+    overrun: dict[str, float] = field(default_factory=dict)  # sobrecoste por partida
     overrun_all: float = 1.0
     cert_ratio: float = 1.0  # <1: se certifica menos de lo producido
     cert_ratio_from: int = 0  # mes desde el que aplica cert_ratio
@@ -379,7 +379,7 @@ def simulate(rows: Rows) -> list[JobResult]:
         res.chapter_cost_budget = dict(ch_cost)
         res.chapter_cost_budget["10"] = indirect_budget
 
-        # --- Tareas (capítulos)
+        # --- Tareas (partidas)
         rows.add("Job Task", (job.no, "00", "PRESUPUESTO DE EJECUCIÓN", 3, 0, ""))
         for code, desc, _a, _b in CHAPTERS:
             rows.add("Job Task", (job.no, code, desc, 0, 1, ""))
@@ -739,8 +739,8 @@ def expected_md(results: list[JobResult], rows: Rows) -> str:
         "- **Presupuesto venta**: suma de `Line Amount (LCY)` de `Job Planning Line` con `Line Type` 1 o 2.",
         "- **Coste real**: suma de `Total Cost (LCY)` de `Job Ledger Entry` con `Entry Type` = 0 (consumo).",
         "- **Certificado**: suma de `Line Amount (LCY)` de `Job Ledger Entry` con `Entry Type` = 1, cambiada de signo.",
-        "- **Producción**: por capítulo, último `Completion _` de `Job Progress Entry` × presupuesto de venta",
-        "  del capítulo (sin la línea sin fecha).",
+        "- **Producción**: por partida, último `Completion _` de `Job Progress Entry` × presupuesto de venta",
+        "  de la partida (sin la línea sin fecha).",
         "- **Avance planificado a la fecha de corte**: presupuesto de venta con `Planning Date` ≤ corte",
         "  (sin la línea sin fecha) / presupuesto de venta.",
         "- **Hitos retrasados**: cumplidos después de la fecha planificada, o no cumplidos con la fecha",
@@ -782,9 +782,9 @@ def expected_md(results: list[JobResult], rows: Rows) -> str:
         out[-1] += f"{pct(planned)} | {pct(real)} | {r.milestones_late} | {r.max_delay_days} |"
     out += [
         "",
-        "## Coste por capítulo en las obras con sobrecoste",
+        "## Coste por partida en las obras con sobrecoste",
         "",
-        "| Obra | Capítulo | Ppto. coste | Coste real | Desviación |",
+        "| Obra | Partida | Ppto. coste | Coste real | Desviación |",
         "|---|---|---:|---:|---:|",
     ]
     for r in results:
