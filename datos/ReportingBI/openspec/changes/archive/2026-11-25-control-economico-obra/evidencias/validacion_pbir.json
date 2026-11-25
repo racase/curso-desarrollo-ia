@@ -1,0 +1,18 @@
+{
+  "paginas": 3,
+  "visuales": 45,
+  "archivosValidados": 50,
+  "gruposSincronizados": 6,
+  "tipos": {
+    "slicer": 18,
+    "cardVisual": 16,
+    "tableEx": 3,
+    "lineChart": 1,
+    "textbox": 7
+  },
+  "errores": [],
+  "revisionVisualDesktop": "completada en las tres páginas",
+  "aperturaPBIP": "correcta",
+  "actualizacionCompletaMCP": "correcta",
+  "filtroProbado": "Delegación Norte, sincronizado en las tres páginas; definición guardada sin selecciones de prueba"
+}

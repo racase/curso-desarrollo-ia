@@ -1,0 +1,150 @@
+/// Vista rpt.FactAvance de NAVDEMO. Spec control-economico-obra.
+table FactAvance
+	lineageTag: d4b809ae-8a3a-4214-a4b7-f343a07d3e95
+
+	/// Spec control-economico-obra — Informe, filtros y fechas: último día seleccionado, limitado al 31/10/2026.
+	measure 'Fecha de corte' = MIN(MAX(DimFecha[Fecha]), DATE(2026,10,31))
+		formatString: dd/MM/yyyy
+		isHidden
+		lineageTag: 56d2a3cb-6c2e-4525-9a74-32f567b1d631
+
+	/// Spec control-economico-obra — Producción acumulada y mensual: última medición por partida; cero antes de iniciar.
+	measure 'Avance medido' =
+			VAR Corte = [Fecha de corte]
+			VAR Cierre = CALCULATE(MAX(FactAvance[Fecha]), REMOVEFILTERS(DimFecha), FactAvance[Fecha] <= Corte)
+			RETURN COALESCE(CALCULATE(MAX(FactAvance[Avance]), REMOVEFILTERS(DimFecha), FactAvance[Fecha] = Cierre),0)
+		formatString: 0.0 %
+		isHidden
+		lineageTag: 2eab699d-bf34-43e5-b039-a6eb69ca3c64
+
+	/// Spec control-economico-obra — Producción acumulada y mensual: venta elegible por último avance, redondeada por partida.
+	measure Producción =
+			COALESCE(SUMX(FactPresupuesto,
+			    VAR Partida = FactPresupuesto[PartidaClave]
+			    VAR Avance = CALCULATE([Avance medido], TREATAS({Partida}, DimPartida[PartidaClave]))
+			    RETURN ROUND(FactPresupuesto[BaseVentaProduccion] * Avance,2)
+			),0)
+		formatString: #,0.00 €
+		lineageTag: 45343daa-4e0e-427b-b712-f3db66181324
+
+	/// Spec control-economico-obra — Coste previsto directo e indirecto: producción/venta elegible de la obra completa, conservando obras y corte.
+	measure 'Avance global de obra' =
+			VAR Obras = VALUES(FactPresupuesto[ObraClave])
+			RETURN CALCULATE(
+			    DIVIDE([Producción],[Base de venta para producción],0),
+			    REMOVEFILTERS(DimPartida), REMOVEFILTERS(FactPresupuesto),
+			    TREATAS(Obras, DimObra[ObraClave])
+			)
+		formatString: 0.0 %
+		lineageTag: 87efedc0-6d3f-4c64-9217-2b0b6642a154
+
+	/// Spec control-economico-obra — Coste previsto directo e indirecto: presupuesto por avance propio o global por obra, con redondeo por partida.
+	measure 'Coste previsto' =
+			COALESCE(SUMX(FactPresupuesto,
+			    VAR Partida = FactPresupuesto[PartidaClave]
+			    VAR Indirecta = LOOKUPVALUE(DimPartida[EsIndirecta],DimPartida[PartidaClave],Partida)
+			    VAR Avance = IF(Indirecta,
+			        CALCULATE([Avance global de obra]),
+			        CALCULATE([Avance medido],TREATAS({Partida},DimPartida[PartidaClave])))
+			    RETURN ROUND(FactPresupuesto[PresupuestoCoste] * Avance,2)
+			),0)
+		formatString: #,0.00 €
+		lineageTag: e4b3cd33-0cff-47b1-a7de-c19c0ed73e3f
+
+	/// Spec control-economico-obra — Coste previsto directo e indirecto: solo partidas directas.
+	measure 'Coste previsto directo' = CALCULATE([Coste previsto], KEEPFILTERS(DimPartida[EsIndirecta] = FALSE()))
+		formatString: #,0.00 €
+		lineageTag: 68387492-9464-472c-93ec-26056b8c4234
+
+	/// Spec control-economico-obra — Coste previsto directo e indirecto: suma del presupuesto indirecto de cada obra por su avance global.
+	measure 'Coste previsto indirecto' = CALCULATE([Coste previsto], KEEPFILTERS(DimPartida[EsIndirecta] = TRUE()))
+		formatString: #,0.00 €
+		lineageTag: f55957dc-18f1-4d03-bcb0-630229f135dc
+
+	/// Spec control-economico-obra — Producción acumulada y mensual: diferencias entre cierres consecutivos, sin sumar instantáneas.
+	measure 'Producción mensual' =
+			SUMX(VALUES(DimFecha[AñoMesOrden]),
+			    VAR Cierre = CALCULATE(MAX(DimFecha[Fecha]))
+			    VAR Corte = MIN(Cierre, DATE(2026,10,31))
+			    VAR Anterior = EOMONTH(Cierre,-1)
+			    VAR Actual = CALCULATE([Producción],REMOVEFILTERS(DimFecha),TREATAS({Corte},DimFecha[Fecha]))
+			    VAR Previa = CALCULATE([Producción],REMOVEFILTERS(DimFecha),TREATAS({Anterior},DimFecha[Fecha]))
+			    RETURN IF(DATE(YEAR(Cierre),MONTH(Cierre),1) > DATE(2026,10,31),0,Actual-Previa)
+			)
+		formatString: #,0.00 €
+		lineageTag: b1a88b67-5a5e-43a7-b015-697844e5ca0c
+
+	/// Spec control-economico-obra — Desviación y resaltado estricto: real menos previsto; positivo es desfavorable.
+	measure 'Desviación de coste' = [Coste real] - [Coste previsto]
+		formatString: #,0.00 €
+		lineageTag: bab59f99-17b4-42e0-895d-f4f186dc1c65
+
+	/// Spec control-economico-obra — Desviación y resaltado estricto: diferencia/previsto; vacío cuando previsto es cero.
+	measure 'Desviación de coste %' = DIVIDE([Desviación de coste],[Coste previsto])
+		formatString: 0.0 %
+		lineageTag: ffc0f82b-b2ea-4de5-a482-febf8095e807
+
+	/// Spec control-economico-obra — Desviación y resaltado estricto: umbral estrictamente superior al 5 %; aviso independiente con coste sin avance.
+	measure 'Estado de desviación' =
+			VAR Previsto = [Coste previsto]
+			VAR Real = [Coste real]
+			RETURN IF(Previsto = 0,
+			    IF(Real > 0,"Coste sin avance",BLANK()),
+			    IF((Real-Previsto)*100 > Previsto*5,"Desviación > 5 %",BLANK())
+			)
+		lineageTag: 57395567-8379-4011-95f6-892c4457b17a
+
+	/// Spec control-economico-obra — Desviación y resaltado estricto: indicador 1 para formato condicional de partidas con alerta.
+	measure 'Destacar partida' = IF(NOT ISBLANK([Estado de desviación]),1,0)
+		formatString: 0
+		lineageTag: 403e77ee-29c3-41d1-96a5-d10eb45ab722
+
+	column ObraClave
+		dataType: string
+		isHidden
+		lineageTag: 10851e7a-b5e0-466d-ab72-449de2f3e233
+		summarizeBy: none
+		sourceColumn: ObraClave
+
+	column PartidaClave
+		dataType: string
+		isHidden
+		lineageTag: 536db7b2-3e67-4a66-996e-23ada9002432
+		summarizeBy: none
+		sourceColumn: PartidaClave
+
+	column Fecha
+		dataType: dateTime
+		lineageTag: 02a61e70-8fcc-40cb-a4c0-acdb89c89371
+		summarizeBy: none
+		sourceColumn: Fecha
+
+	column MedicionClave
+		dataType: int64
+		isHidden
+		lineageTag: 2ec3d55f-1047-41db-9606-c8fb4d187741
+		summarizeBy: none
+		sourceColumn: MedicionClave
+
+	column FechaUltimaMedicion
+		dataType: dateTime
+		lineageTag: 07bc9232-14a1-417c-8c16-0e33e911129c
+		summarizeBy: none
+		sourceColumn: FechaUltimaMedicion
+
+	column Avance
+		dataType: double
+		formatString: 0.0 %
+		lineageTag: 7428a0b0-a31d-4e02-b622-cdcb93cc9db9
+		summarizeBy: none
+		sourceColumn: Avance
+
+	partition FactAvance = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema="rpt", Item="FactAvance"]}[Data]
+				in
+				    Vista
+

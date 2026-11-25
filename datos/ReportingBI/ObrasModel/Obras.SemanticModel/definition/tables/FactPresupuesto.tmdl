@@ -1,0 +1,95 @@
+/// Vista rpt.FactPresupuesto de NAVDEMO. Spec control-economico-obra.
+table FactPresupuesto
+	lineageTag: 0cb3edb9-49b5-4cfc-8028-a957b9b05523
+
+	/// Spec control-economico-obra — Presupuestos y revisión sin fecha: coste completo, incluidos indirectos y revisión sin fecha.
+	measure 'Presupuesto de coste' = COALESCE(SUM(FactPresupuesto[PresupuestoCoste]),0)
+		formatString: #,0.00 €
+		lineageTag: 31f92c33-db2d-43d2-84fb-2e0cf21e5a6e
+
+	/// Spec control-economico-obra — Presupuestos y revisión sin fecha: venta completa de líneas facturables.
+	measure 'Presupuesto de venta' = COALESCE(SUM(FactPresupuesto[PresupuestoVenta]),0)
+		formatString: #,0.00 €
+		lineageTag: ea65ac19-4eb1-4f66-b6d8-252034869f76
+
+	/// Spec control-economico-obra — Producción acumulada y mensual: venta elegible sin revisión sin fecha.
+	measure 'Base de venta para producción' = COALESCE(SUM(FactPresupuesto[BaseVentaProduccion]),0)
+		formatString: #,0.00 €
+		isHidden
+		lineageTag: f8da7020-6951-4ca4-b110-957c8d5e9327
+
+	/// Spec control-economico-obra — Pendiente de certificar y márgenes: venta presupuestada menos coste presupuestado.
+	measure 'Margen previsto' = [Presupuesto de venta] - [Presupuesto de coste]
+		formatString: #,0.00 €
+		lineageTag: 02e1b662-3790-4944-b745-0732b6be73e6
+
+	/// Spec control-economico-obra — Pendiente de certificar y márgenes: margen previsto/venta, ratio recalculado en totales.
+	measure 'Margen previsto %' = DIVIDE([Margen previsto],[Presupuesto de venta])
+		formatString: 0.0 %
+		lineageTag: 7ccdde79-0bc5-45dc-a1d1-62346cc071af
+
+	column ObraClave
+		dataType: string
+		isHidden
+		lineageTag: b7258f13-53be-4375-9243-d3bbe95fb190
+		summarizeBy: none
+		sourceColumn: ObraClave
+
+	column PartidaClave
+		dataType: string
+		isHidden
+		lineageTag: 199ad2b8-4cdf-45b1-ad1f-181b4f86653e
+		summarizeBy: none
+		sourceColumn: PartidaClave
+
+	column PresupuestoCoste
+		dataType: decimal
+		lineageTag: 7391a8f4-2867-43eb-9c32-63deda6dde0c
+		summarizeBy: none
+		sourceColumn: PresupuestoCoste
+
+	column PresupuestoVenta
+		dataType: decimal
+		lineageTag: 3f3dc3e9-fa17-42e0-8603-b77905f85dff
+		summarizeBy: none
+		sourceColumn: PresupuestoVenta
+
+	column BaseVentaProduccion
+		dataType: decimal
+		lineageTag: 89f9305f-07fb-4d8c-be55-1f3069543e56
+		summarizeBy: none
+		sourceColumn: BaseVentaProduccion
+
+	column PresupuestoCosteSinFecha
+		dataType: decimal
+		lineageTag: cecc7538-539a-4a02-acfa-113a49a27de2
+		summarizeBy: none
+		sourceColumn: PresupuestoCosteSinFecha
+
+	column PresupuestoVentaSinFecha
+		dataType: decimal
+		lineageTag: 552ac744-099e-46d7-ab2f-f0b6c4d92041
+		summarizeBy: none
+		sourceColumn: PresupuestoVentaSinFecha
+
+	column PrimeraFechaPlanificada
+		dataType: dateTime
+		lineageTag: a4a351c1-15a3-410a-847f-8d48be4b5725
+		summarizeBy: none
+		sourceColumn: PrimeraFechaPlanificada
+
+	column UltimaFechaPlanificada
+		dataType: dateTime
+		lineageTag: 33ea2fa7-a2da-41a3-98b4-59199ee183fc
+		summarizeBy: none
+		sourceColumn: UltimaFechaPlanificada
+
+	partition FactPresupuesto = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema="rpt", Item="FactPresupuesto"]}[Data]
+				in
+				    Vista
+

@@ -1,0 +1,23 @@
+/// Control económico de obra — issue 01, corte 31/10/2026.
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["MCP-PBIModeling"]
+
+ref table DimObra
+ref table DimPartida
+ref table FactPresupuesto
+ref table FactMovimiento
+ref table FactAvance
+ref table DimFecha
+
+ref cultureInfo es-ES
+

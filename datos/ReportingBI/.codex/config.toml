@@ -12,7 +12,8 @@
 # trabajo de Fabric. La primera vez pide aceptar su licencia (EULA): acéptala tú.
 [mcp_servers.powerbi-modeling]
 command = "cmd.exe"
-args = ["/c", "npx", "-y", "@microsoft/powerbi-modeling-mcp@latest", "--start"]
+# UTF-8 evita que los mensajes localizados del MCP cierren el transporte de Codex.
+args = ["/d", "/c", "chcp 65001 >nul && npx -y @microsoft/powerbi-modeling-mcp@latest --start"]
 startup_timeout_sec = 120
 
 # MCP remoto de Power BI para consultar modelos ya publicados (preview). Necesita que el

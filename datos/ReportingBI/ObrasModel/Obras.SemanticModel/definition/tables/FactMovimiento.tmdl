@@ -1,0 +1,94 @@
+/// Vista rpt.FactMovimiento de NAVDEMO. Spec control-economico-obra.
+table FactMovimiento
+	lineageTag: 26592846-150f-445f-a62e-e1aef1de433f
+
+	/// Spec control-economico-obra — Coste real y certificado: importe acumulado hasta corte con signo de negocio.
+	measure 'Coste real' =
+			VAR Corte = [Fecha de corte]
+			RETURN COALESCE(CALCULATE(SUM(FactMovimiento[CosteReal]), REMOVEFILTERS(DimFecha), FactMovimiento[Fecha] <= Corte),0)
+		formatString: #,0.00 €
+		lineageTag: 8d0537a4-d729-45c9-989d-2e33b09ee83a
+
+	/// Spec control-economico-obra — Coste real y certificado: movimientos del periodo seleccionado por fecha de registro.
+	measure 'Coste real mensual' =
+			VAR Corte = [Fecha de corte]
+			RETURN COALESCE(CALCULATE(SUM(FactMovimiento[CosteReal]), KEEPFILTERS(DimFecha[Fecha] <= Corte)),0)
+		formatString: #,0.00 €
+		lineageTag: 88a47078-0b60-4695-aa57-456841179041
+
+	/// Spec control-economico-obra — Coste real y certificado: importe acumulado hasta corte con signo de negocio.
+	measure 'Importe certificado' =
+			VAR Corte = [Fecha de corte]
+			RETURN COALESCE(CALCULATE(SUM(FactMovimiento[Certificado]), REMOVEFILTERS(DimFecha), FactMovimiento[Fecha] <= Corte),0)
+		formatString: #,0.00 €
+		lineageTag: bca450be-f4ab-4fe4-8ddc-2c17bd5017fe
+
+	/// Spec control-economico-obra — Coste real y certificado: movimientos del periodo seleccionado por fecha de registro.
+	measure 'Certificado mensual' =
+			VAR Corte = [Fecha de corte]
+			RETURN COALESCE(CALCULATE(SUM(FactMovimiento[Certificado]), KEEPFILTERS(DimFecha[Fecha] <= Corte)),0)
+		formatString: #,0.00 €
+		lineageTag: 6b2ca314-9c82-404d-838e-c752e0ad9985
+
+	/// Spec control-economico-obra — Pendiente de certificar y márgenes: producción menos certificado, sin recortar negativos.
+	measure 'Pendiente de certificar' = [Producción] - [Importe certificado]
+		formatString: #,0.00 €
+		lineageTag: 890c9f1f-7eb6-4994-b625-32009454ef77
+
+	/// Spec control-economico-obra — Pendiente de certificar y márgenes: certificado menos coste real, confirmado por la persona.
+	measure 'Margen real' = [Importe certificado] - [Coste real]
+		formatString: #,0.00 €
+		lineageTag: a471e046-01e3-424b-ac4c-489fac455dca
+
+	/// Spec control-economico-obra — Pendiente de certificar y márgenes: margen real/certificado, vacío si certificado es cero.
+	measure 'Margen real %' = DIVIDE([Margen real],[Importe certificado])
+		formatString: 0.0 %
+		lineageTag: 27d531e4-0ad9-4e77-8ff7-6348f93a8644
+
+	column ObraClave
+		dataType: string
+		isHidden
+		lineageTag: 6d053729-230b-435e-b1e2-122cfe6e06ea
+		summarizeBy: none
+		sourceColumn: ObraClave
+
+	column PartidaClave
+		dataType: string
+		isHidden
+		lineageTag: d1673042-af4b-466a-b615-277e46a30c78
+		summarizeBy: none
+		sourceColumn: PartidaClave
+
+	column Fecha
+		dataType: dateTime
+		lineageTag: a88e4f12-973e-4efb-aba2-2a5bad0aad2e
+		summarizeBy: none
+		sourceColumn: Fecha
+
+	column CosteReal
+		dataType: decimal
+		lineageTag: 192cc6c9-55a7-441b-a149-5b14d20201ee
+		summarizeBy: none
+		sourceColumn: CosteReal
+
+	column Certificado
+		dataType: decimal
+		lineageTag: 7f594c7b-52e3-458e-9dbe-33e1451d17f8
+		summarizeBy: none
+		sourceColumn: Certificado
+
+	column NumeroMovimientos
+		dataType: int64
+		lineageTag: 34ea70c9-2257-4b10-a283-4e5f3d02f79c
+		summarizeBy: none
+		sourceColumn: NumeroMovimientos
+
+	partition FactMovimiento = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema="rpt", Item="FactMovimiento"]}[Data]
+				in
+				    Vista
+

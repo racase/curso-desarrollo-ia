@@ -1,3 +1,6 @@
 # Power BI (PBIP): caché de datos y ajustes locales de Desktop
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+
+# Se versiona el proyecto PBIP; los PBIX locales son copias binarias de trabajo.
+*.pbix

@@ -1,0 +1,697 @@
+{
+  "frontera": [
+    {
+      "name": "5 % exacto",
+      "real": 1050,
+      "previsto": 1000,
+      "flag": 0,
+      "state": null,
+      "query": "DEFINE MEASURE 'FactMovimiento'[Coste real] = 1050\nMEASURE 'FactAvance'[Coste previsto] = 1000\nMEASURE 'FactAvance'[Desviación de coste] = [Coste real] - [Coste previsto]\nMEASURE 'FactAvance'[Desviación de coste %] = DIVIDE([Desviación de coste],[Coste previsto])\nMEASURE 'FactAvance'[Estado de desviación] = VAR Previsto = [Coste previsto]\nVAR Real = [Coste real]\nRETURN IF(Previsto = 0,\n    IF(Real > 0,\"Coste sin avance\",BLANK()),\n    IF((Real-Previsto)*100 > Previsto*5,\"Desviación > 5 %\",BLANK())\n)\nMEASURE 'FactAvance'[Destacar partida] = IF(NOT ISBLANK([Estado de desviación]),1,0)\nEVALUATE ROW(\"Caso\",\"5 % exacto\",\"Estado\",[Estado de desviación],\"Alerta\",[Destacar partida],\"Porcentaje\",[Desviación de coste %])",
+      "result": {
+        "[Caso]": "5 % exacto",
+        "[Estado]": null,
+        "[Alerta]": 0,
+        "[Porcentaje]": 0.05
+      },
+      "passed": true
+    },
+    {
+      "name": "Superior al 5 %",
+      "real": 1050.01,
+      "previsto": 1000,
+      "flag": 1,
+      "state": "Desviación > 5 %",
+      "query": "DEFINE MEASURE 'FactMovimiento'[Coste real] = 1050.01\nMEASURE 'FactAvance'[Coste previsto] = 1000\nMEASURE 'FactAvance'[Desviación de coste] = [Coste real] - [Coste previsto]\nMEASURE 'FactAvance'[Desviación de coste %] = DIVIDE([Desviación de coste],[Coste previsto])\nMEASURE 'FactAvance'[Estado de desviación] = VAR Previsto = [Coste previsto]\nVAR Real = [Coste real]\nRETURN IF(Previsto = 0,\n    IF(Real > 0,\"Coste sin avance\",BLANK()),\n    IF((Real-Previsto)*100 > Previsto*5,\"Desviación > 5 %\",BLANK())\n)\nMEASURE 'FactAvance'[Destacar partida] = IF(NOT ISBLANK([Estado de desviación]),1,0)\nEVALUATE ROW(\"Caso\",\"Superior al 5 %\",\"Estado\",[Estado de desviación],\"Alerta\",[Destacar partida],\"Porcentaje\",[Desviación de coste %])",
+      "result": {
+        "[Caso]": "Superior al 5 %",
+        "[Estado]": "Desviación > 5 %",
+        "[Alerta]": 1,
+        "[Porcentaje]": 0.05000999999999999
+      },
+      "passed": true
+    },
+    {
+      "name": "Coste sin avance",
+      "real": 100,
+      "previsto": 0,
+      "flag": 1,
+      "state": "Coste sin avance",
+      "query": "DEFINE MEASURE 'FactMovimiento'[Coste real] = 100\nMEASURE 'FactAvance'[Coste previsto] = 0\nMEASURE 'FactAvance'[Desviación de coste] = [Coste real] - [Coste previsto]\nMEASURE 'FactAvance'[Desviación de coste %] = DIVIDE([Desviación de coste],[Coste previsto])\nMEASURE 'FactAvance'[Estado de desviación] = VAR Previsto = [Coste previsto]\nVAR Real = [Coste real]\nRETURN IF(Previsto = 0,\n    IF(Real > 0,\"Coste sin avance\",BLANK()),\n    IF((Real-Previsto)*100 > Previsto*5,\"Desviación > 5 %\",BLANK())\n)\nMEASURE 'FactAvance'[Destacar partida] = IF(NOT ISBLANK([Estado de desviación]),1,0)\nEVALUATE ROW(\"Caso\",\"Coste sin avance\",\"Estado\",[Estado de desviación],\"Alerta\",[Destacar partida],\"Porcentaje\",[Desviación de coste %])",
+      "result": {
+        "[Caso]": "Coste sin avance",
+        "[Estado]": "Coste sin avance",
+        "[Alerta]": 1,
+        "[Porcentaje]": null
+      },
+      "passed": true
+    },
+    {
+      "name": "Sin coste ni avance",
+      "real": 0,
+      "previsto": 0,
+      "flag": 0,
+      "state": null,
+      "query": "DEFINE MEASURE 'FactMovimiento'[Coste real] = 0\nMEASURE 'FactAvance'[Coste previsto] = 0\nMEASURE 'FactAvance'[Desviación de coste] = [Coste real] - [Coste previsto]\nMEASURE 'FactAvance'[Desviación de coste %] = DIVIDE([Desviación de coste],[Coste previsto])\nMEASURE 'FactAvance'[Estado de desviación] = VAR Previsto = [Coste previsto]\nVAR Real = [Coste real]\nRETURN IF(Previsto = 0,\n    IF(Real > 0,\"Coste sin avance\",BLANK()),\n    IF((Real-Previsto)*100 > Previsto*5,\"Desviación > 5 %\",BLANK())\n)\nMEASURE 'FactAvance'[Destacar partida] = IF(NOT ISBLANK([Estado de desviación]),1,0)\nEVALUATE ROW(\"Caso\",\"Sin coste ni avance\",\"Estado\",[Estado de desviación],\"Alerta\",[Destacar partida],\"Porcentaje\",[Desviación de coste %])",
+      "result": {
+        "[Caso]": "Sin coste ni avance",
+        "[Estado]": null,
+        "[Alerta]": 0,
+        "[Porcentaje]": null
+      },
+      "passed": true
+    }
+  ],
+  "ponderacion": {
+    "query": "DEFINE\nMEASURE FactAvance[Producción] = SUMX(DATATABLE(\"Venta\",CURRENCY,\"Avance\",DOUBLE,{{100000,1},{300000,0}}),[Venta]*[Avance])\nMEASURE FactPresupuesto[Base de venta para producción] = SUMX(DATATABLE(\"Venta\",CURRENCY,{{100000},{300000}}),[Venta])\nMEASURE 'FactAvance'[Avance global de obra] = VAR Obras = VALUES(FactPresupuesto[ObraClave])\nRETURN CALCULATE(\n    DIVIDE([Producción],[Base de venta para producción],0),\n    REMOVEFILTERS(DimPartida), REMOVEFILTERS(FactPresupuesto),\n    TREATAS(Obras, DimObra[ObraClave])\n)\nEVALUATE ROW(\"Avance\",[Avance global de obra],\"Indirecto\",ROUND(20000*[Avance global de obra],2))",
+    "result": {
+      "rowCount": 1,
+      "isTruncated": false,
+      "columns": [
+        {
+          "name": "[Avance]",
+          "dataType": "Double",
+          "isNullable": true,
+          "ordinal": 0
+        },
+        {
+          "name": "[Indirecto]",
+          "dataType": "Double",
+          "isNullable": true,
+          "ordinal": 1
+        }
+      ],
+      "rows": [
+        {
+          "[Avance]": 0.25,
+          "[Indirecto]": 5000
+        }
+      ],
+      "executionTimeMs": 4
+    }
+  },
+  "filtros": {
+    "query": "EVALUATE UNION(SELECTCOLUMNS(SUMMARIZECOLUMNS(DimObra[DelegacionCodigo],\"PptoCoste\",[Presupuesto de coste],\"PptoVenta\",[Presupuesto de venta],\"CosteReal\",[Coste real],\"Certificado\",[Importe certificado],\"Produccion\",[Producción],\"Previsto\",[Coste previsto],\"Directo\",[Coste previsto directo],\"Indirecto\",[Coste previsto indirecto],\"Pendiente\",[Pendiente de certificar],\"MargenPrevisto\",[Margen previsto],\"MargenReal\",[Margen real],\"Desviacion\",[Desviación de coste],\"CosteMensual\",[Coste real mensual],\"CertMensual\",[Certificado mensual],\"ProdMensual\",[Producción mensual],\"BaseVenta\",[Base de venta para producción],\"AvanceGlobal\",[Avance global de obra],\"MargenPrevistoPct\",[Margen previsto %],\"MargenRealPct\",[Margen real %],\"DesviacionPct\",[Desviación de coste %],\"Alerta\",[Destacar partida]),\"Filtro\",\"Delegacion\",\"Valor\",FORMAT(DimObra[DelegacionCodigo],\"\"),\"PptoCoste\",[PptoCoste],\"PptoVenta\",[PptoVenta],\"CosteReal\",[CosteReal],\"Certificado\",[Certificado],\"Produccion\",[Produccion],\"Previsto\",[Previsto],\"Directo\",[Directo],\"Indirecto\",[Indirecto],\"Pendiente\",[Pendiente],\"MargenPrevisto\",[MargenPrevisto],\"MargenReal\",[MargenReal],\"Desviacion\",[Desviacion],\"CosteMensual\",[CosteMensual],\"CertMensual\",[CertMensual],\"ProdMensual\",[ProdMensual],\"BaseVenta\",[BaseVenta],\"AvanceGlobal\",[AvanceGlobal],\"MargenPrevistoPct\",[MargenPrevistoPct],\"MargenRealPct\",[MargenRealPct],\"DesviacionPct\",[DesviacionPct],\"Alerta\",[Alerta]),\nSELECTCOLUMNS(SUMMARIZECOLUMNS(DimObra[TipoObraCodigo],\"PptoCoste\",[Presupuesto de coste],\"PptoVenta\",[Presupuesto de venta],\"CosteReal\",[Coste real],\"Certificado\",[Importe certificado],\"Produccion\",[Producción],\"Previsto\",[Coste previsto],\"Directo\",[Coste previsto directo],\"Indirecto\",[Coste previsto indirecto],\"Pendiente\",[Pendiente de certificar],\"MargenPrevisto\",[Margen previsto],\"MargenReal\",[Margen real],\"Desviacion\",[Desviación de coste],\"CosteMensual\",[Coste real mensual],\"CertMensual\",[Certificado mensual],\"ProdMensual\",[Producción mensual],\"BaseVenta\",[Base de venta para producción],\"AvanceGlobal\",[Avance global de obra],\"MargenPrevistoPct\",[Margen previsto %],\"MargenRealPct\",[Margen real %],\"DesviacionPct\",[Desviación de coste %],\"Alerta\",[Destacar partida]),\"Filtro\",\"Tipo\",\"Valor\",FORMAT(DimObra[TipoObraCodigo],\"\"),\"PptoCoste\",[PptoCoste],\"PptoVenta\",[PptoVenta],\"CosteReal\",[CosteReal],\"Certificado\",[Certificado],\"Produccion\",[Produccion],\"Previsto\",[Previsto],\"Directo\",[Directo],\"Indirecto\",[Indirecto],\"Pendiente\",[Pendiente],\"MargenPrevisto\",[MargenPrevisto],\"MargenReal\",[MargenReal],\"Desviacion\",[Desviacion],\"CosteMensual\",[CosteMensual],\"CertMensual\",[CertMensual],\"ProdMensual\",[ProdMensual],\"BaseVenta\",[BaseVenta],\"AvanceGlobal\",[AvanceGlobal],\"MargenPrevistoPct\",[MargenPrevistoPct],\"MargenRealPct\",[MargenRealPct],\"DesviacionPct\",[DesviacionPct],\"Alerta\",[Alerta]),\nSELECTCOLUMNS(SUMMARIZECOLUMNS(DimObra[JefeObraCodigo],\"PptoCoste\",[Presupuesto de coste],\"PptoVenta\",[Presupuesto de venta],\"CosteReal\",[Coste real],\"Certificado\",[Importe certificado],\"Produccion\",[Producción],\"Previsto\",[Coste previsto],\"Directo\",[Coste previsto directo],\"Indirecto\",[Coste previsto indirecto],\"Pendiente\",[Pendiente de certificar],\"MargenPrevisto\",[Margen previsto],\"MargenReal\",[Margen real],\"Desviacion\",[Desviación de coste],\"CosteMensual\",[Coste real mensual],\"CertMensual\",[Certificado mensual],\"ProdMensual\",[Producción mensual],\"BaseVenta\",[Base de venta para producción],\"AvanceGlobal\",[Avance global de obra],\"MargenPrevistoPct\",[Margen previsto %],\"MargenRealPct\",[Margen real %],\"DesviacionPct\",[Desviación de coste %],\"Alerta\",[Destacar partida]),\"Filtro\",\"Jefe\",\"Valor\",FORMAT(DimObra[JefeObraCodigo],\"\"),\"PptoCoste\",[PptoCoste],\"PptoVenta\",[PptoVenta],\"CosteReal\",[CosteReal],\"Certificado\",[Certificado],\"Produccion\",[Produccion],\"Previsto\",[Previsto],\"Directo\",[Directo],\"Indirecto\",[Indirecto],\"Pendiente\",[Pendiente],\"MargenPrevisto\",[MargenPrevisto],\"MargenReal\",[MargenReal],\"Desviacion\",[Desviacion],\"CosteMensual\",[CosteMensual],\"CertMensual\",[CertMensual],\"ProdMensual\",[ProdMensual],\"BaseVenta\",[BaseVenta],\"AvanceGlobal\",[AvanceGlobal],\"MargenPrevistoPct\",[MargenPrevistoPct],\"MargenRealPct\",[MargenRealPct],\"DesviacionPct\",[DesviacionPct],\"Alerta\",[Alerta]),\nSELECTCOLUMNS(SUMMARIZECOLUMNS(DimObra[EstadoCodigo],\"PptoCoste\",[Presupuesto de coste],\"PptoVenta\",[Presupuesto de venta],\"CosteReal\",[Coste real],\"Certificado\",[Importe certificado],\"Produccion\",[Producción],\"Previsto\",[Coste previsto],\"Directo\",[Coste previsto directo],\"Indirecto\",[Coste previsto indirecto],\"Pendiente\",[Pendiente de certificar],\"MargenPrevisto\",[Margen previsto],\"MargenReal\",[Margen real],\"Desviacion\",[Desviación de coste],\"CosteMensual\",[Coste real mensual],\"CertMensual\",[Certificado mensual],\"ProdMensual\",[Producción mensual],\"BaseVenta\",[Base de venta para producción],\"AvanceGlobal\",[Avance global de obra],\"MargenPrevistoPct\",[Margen previsto %],\"MargenRealPct\",[Margen real %],\"DesviacionPct\",[Desviación de coste %],\"Alerta\",[Destacar partida]),\"Filtro\",\"Estado\",\"Valor\",FORMAT(DimObra[EstadoCodigo],\"\"),\"PptoCoste\",[PptoCoste],\"PptoVenta\",[PptoVenta],\"CosteReal\",[CosteReal],\"Certificado\",[Certificado],\"Produccion\",[Produccion],\"Previsto\",[Previsto],\"Directo\",[Directo],\"Indirecto\",[Indirecto],\"Pendiente\",[Pendiente],\"MargenPrevisto\",[MargenPrevisto],\"MargenReal\",[MargenReal],\"Desviacion\",[Desviacion],\"CosteMensual\",[CosteMensual],\"CertMensual\",[CertMensual],\"ProdMensual\",[ProdMensual],\"BaseVenta\",[BaseVenta],\"AvanceGlobal\",[AvanceGlobal],\"MargenPrevistoPct\",[MargenPrevistoPct],\"MargenRealPct\",[MargenRealPct],\"DesviacionPct\",[DesviacionPct],\"Alerta\",[Alerta]))",
+    "result": {
+      "rowCount": 15,
+      "isTruncated": false,
+      "columns": [
+        {
+          "name": "[Filtro]",
+          "dataType": "String",
+          "isNullable": true,
+          "ordinal": 0
+        },
+        {
+          "name": "[Valor]",
+          "dataType": "String",
+          "isNullable": true,
+          "ordinal": 1
+        },
+        {
+          "name": "[PptoCoste]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 2
+        },
+        {
+          "name": "[PptoVenta]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 3
+        },
+        {
+          "name": "[CosteReal]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 4
+        },
+        {
+          "name": "[Certificado]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 5
+        },
+        {
+          "name": "[Produccion]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 6
+        },
+        {
+          "name": "[Previsto]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 7
+        },
+        {
+          "name": "[Directo]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 8
+        },
+        {
+          "name": "[Indirecto]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 9
+        },
+        {
+          "name": "[Pendiente]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 10
+        },
+        {
+          "name": "[MargenPrevisto]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 11
+        },
+        {
+          "name": "[MargenReal]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 12
+        },
+        {
+          "name": "[Desviacion]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 13
+        },
+        {
+          "name": "[CosteMensual]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 14
+        },
+        {
+          "name": "[CertMensual]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 15
+        },
+        {
+          "name": "[ProdMensual]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 16
+        },
+        {
+          "name": "[BaseVenta]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 17
+        },
+        {
+          "name": "[AvanceGlobal]",
+          "dataType": "Double",
+          "isNullable": true,
+          "ordinal": 18
+        },
+        {
+          "name": "[MargenPrevistoPct]",
+          "dataType": "Double",
+          "isNullable": true,
+          "ordinal": 19
+        },
+        {
+          "name": "[MargenRealPct]",
+          "dataType": "Double",
+          "isNullable": true,
+          "ordinal": 20
+        },
+        {
+          "name": "[DesviacionPct]",
+          "dataType": "Double",
+          "isNullable": true,
+          "ordinal": 21
+        },
+        {
+          "name": "[Alerta]",
+          "dataType": "Int64",
+          "isNullable": true,
+          "ordinal": 22
+        }
+      ],
+      "rows": [
+        {
+          "[Filtro]": "Delegacion",
+          "[Valor]": "NORTE",
+          "[PptoCoste]": 11455000,
+          "[PptoVenta]": 12800000,
+          "[CosteReal]": 10024808.58,
+          "[Certificado]": 10400076.23,
+          "[Produccion]": 11151629,
+          "[Previsto]": 9980466.11,
+          "[Directo]": 9311368.37,
+          "[Indirecto]": 669097.74,
+          "[Pendiente]": 751552.77,
+          "[MargenPrevisto]": 1345000,
+          "[MargenReal]": 375267.65,
+          "[Desviacion]": 44342.47,
+          "[CosteMensual]": 10024808.58,
+          "[CertMensual]": 10400076.23,
+          "[ProdMensual]": 11151629,
+          "[BaseVenta]": 12800000,
+          "[AvanceGlobal]": 0.871221015625,
+          "[MargenPrevistoPct]": 0.105078125,
+          "[MargenRealPct]": 0.03608316340196672,
+          "[DesviacionPct]": 0.004442925762311917,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Delegacion",
+          "[Valor]": "SUR",
+          "[PptoCoste]": 9860000,
+          "[PptoVenta]": 11000000,
+          "[CosteReal]": 7204113.22,
+          "[Certificado]": 7034778,
+          "[Produccion]": 7553781.6,
+          "[Previsto]": 6810365.85,
+          "[Directo]": 6357138.96,
+          "[Indirecto]": 453226.89,
+          "[Pendiente]": 519003.6,
+          "[MargenPrevisto]": 1140000,
+          "[MargenReal]": -169335.22,
+          "[Desviacion]": 393747.37,
+          "[CosteMensual]": 7204113.22,
+          "[CertMensual]": 7034778,
+          "[ProdMensual]": 7553781.6,
+          "[BaseVenta]": 11000000,
+          "[AvanceGlobal]": 0.6867074181818181,
+          "[MargenPrevistoPct]": 0.10363636363636364,
+          "[MargenRealPct]": -0.024071153346985504,
+          "[DesviacionPct]": 0.057815891050845676,
+          "[Alerta]": 1
+        },
+        {
+          "[Filtro]": "Delegacion",
+          "[Valor]": "CENTRO",
+          "[PptoCoste]": 8788000,
+          "[PptoVenta]": 9935000,
+          "[CosteReal]": 7825494.21,
+          "[Certificado]": 7930396.2,
+          "[Produccion]": 8512084,
+          "[Previsto]": 7550062.14,
+          "[Directo]": 7039337.1,
+          "[Indirecto]": 510725.04,
+          "[Pendiente]": 581687.8,
+          "[MargenPrevisto]": 1147000,
+          "[MargenReal]": 104901.99,
+          "[Desviacion]": 275432.07,
+          "[CosteMensual]": 7825494.21,
+          "[CertMensual]": 7930396.2,
+          "[ProdMensual]": 8512084,
+          "[BaseVenta]": 9900000,
+          "[AvanceGlobal]": 0.8598064646464646,
+          "[MargenPrevistoPct]": 0.11545042778057373,
+          "[MargenRealPct]": 0.01322783721701067,
+          "[DesviacionPct]": 0.03648076862053482,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Tipo",
+          "[Valor]": "EDIF",
+          "[PptoCoste]": 21072000,
+          "[PptoVenta]": 23700000,
+          "[CosteReal]": 17195684.96,
+          "[Certificado]": 17765174.2,
+          "[Produccion]": 18865865.6,
+          "[Previsto]": 16784427.99,
+          "[Directo]": 15652476.06,
+          "[Indirecto]": 1131951.93,
+          "[Pendiente]": 1100691.4,
+          "[MargenPrevisto]": 2628000,
+          "[MargenReal]": 569489.24,
+          "[Desviacion]": 411256.97,
+          "[CosteMensual]": 17195684.96,
+          "[CertMensual]": 17765174.2,
+          "[ProdMensual]": 18865865.6,
+          "[BaseVenta]": 23700000,
+          "[AvanceGlobal]": 0.7960280843881856,
+          "[MargenPrevistoPct]": 0.11088607594936709,
+          "[MargenRealPct]": 0.032056496243082155,
+          "[DesviacionPct]": 0.024502292854127822,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Tipo",
+          "[Valor]": "IND",
+          "[PptoCoste]": 2208000,
+          "[PptoVenta]": 2400000,
+          "[CosteReal]": 2525524.14,
+          "[Certificado]": 2400000,
+          "[Produccion]": 2400000,
+          "[Previsto]": 2208000,
+          "[Directo]": 2064000,
+          "[Indirecto]": 144000,
+          "[Pendiente]": 0,
+          "[MargenPrevisto]": 192000,
+          "[MargenReal]": -125524.14,
+          "[Desviacion]": 317524.14,
+          "[CosteMensual]": 2525524.14,
+          "[CertMensual]": 2400000,
+          "[ProdMensual]": 2400000,
+          "[BaseVenta]": 2400000,
+          "[AvanceGlobal]": 1,
+          "[MargenPrevistoPct]": 0.08,
+          "[MargenRealPct]": -0.052301725,
+          "[DesviacionPct]": 0.14380622282608696,
+          "[Alerta]": 1
+        },
+        {
+          "[Filtro]": "Tipo",
+          "[Valor]": "REHAB",
+          "[PptoCoste]": 1420000,
+          "[PptoVenta]": 1635000,
+          "[CosteReal]": 1389765.92,
+          "[Certificado]": 1600000,
+          "[Produccion]": 1600000,
+          "[Previsto]": 1420000,
+          "[Directo]": 1324000,
+          "[Indirecto]": 96000,
+          "[Pendiente]": 0,
+          "[MargenPrevisto]": 215000,
+          "[MargenReal]": 210234.08,
+          "[Desviacion]": -30234.08,
+          "[CosteMensual]": 1389765.92,
+          "[CertMensual]": 1600000,
+          "[ProdMensual]": 1600000,
+          "[BaseVenta]": 1600000,
+          "[AvanceGlobal]": 1,
+          "[MargenPrevistoPct]": 0.13149847094801223,
+          "[MargenRealPct]": 0.1313963,
+          "[DesviacionPct]": -0.021291605633802817,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Tipo",
+          "[Valor]": "URB",
+          "[PptoCoste]": 3510000,
+          "[PptoVenta]": 3900000,
+          "[CosteReal]": 2846534.34,
+          "[Certificado]": 2400076.23,
+          "[Produccion]": 3151629,
+          "[Previsto]": 2836466.11,
+          "[Directo]": 2647368.37,
+          "[Indirecto]": 189097.74,
+          "[Pendiente]": 751552.77,
+          "[MargenPrevisto]": 390000,
+          "[MargenReal]": -446458.11,
+          "[Desviacion]": 10068.23,
+          "[CosteMensual]": 2846534.34,
+          "[CertMensual]": 2400076.23,
+          "[ProdMensual]": 3151629,
+          "[BaseVenta]": 3900000,
+          "[AvanceGlobal]": 0.80811,
+          "[MargenPrevistoPct]": 0.1,
+          "[MargenRealPct]": -0.18601830409361622,
+          "[DesviacionPct]": 0.0035495682336920287,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Tipo",
+          "[Valor]": "CIVIL",
+          "[PptoCoste]": 1893000,
+          "[PptoVenta]": 2100000,
+          "[CosteReal]": 1096906.65,
+          "[Certificado]": 1200000,
+          "[Produccion]": 1200000,
+          "[Previsto]": 1092000,
+          "[Directo]": 1020000,
+          "[Indirecto]": 72000,
+          "[Pendiente]": 0,
+          "[MargenPrevisto]": 207000,
+          "[MargenReal]": 103093.35,
+          "[Desviacion]": 4906.65,
+          "[CosteMensual]": 1096906.65,
+          "[CertMensual]": 1200000,
+          "[ProdMensual]": 1200000,
+          "[BaseVenta]": 2100000,
+          "[AvanceGlobal]": 0.5714285714285714,
+          "[MargenPrevistoPct]": 0.09857142857142857,
+          "[MargenRealPct]": 0.085911125,
+          "[DesviacionPct]": 0.00449326923076923,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Jefe",
+          "[Valor]": "JO01",
+          "[PptoCoste]": 10363000,
+          "[PptoVenta]": 11600000,
+          "[CosteReal]": 8927901.93,
+          "[Certificado]": 9200076.23,
+          "[Produccion]": 9951629,
+          "[Previsto]": 8888466.11,
+          "[Directo]": 8291368.37,
+          "[Indirecto]": 597097.74,
+          "[Pendiente]": 751552.77,
+          "[MargenPrevisto]": 1237000,
+          "[MargenReal]": 272174.3,
+          "[Desviacion]": 39435.82,
+          "[CosteMensual]": 8927901.93,
+          "[CertMensual]": 9200076.23,
+          "[ProdMensual]": 9951629,
+          "[BaseVenta]": 11600000,
+          "[AvanceGlobal]": 0.8578990517241379,
+          "[MargenPrevistoPct]": 0.10663793103448276,
+          "[MargenRealPct]": 0.02958391791499319,
+          "[DesviacionPct]": 0.00443674077303761,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Jefe",
+          "[Valor]": "JO02",
+          "[PptoCoste]": 7172000,
+          "[PptoVenta]": 8000000,
+          "[CosteReal]": 5228743.66,
+          "[Certificado]": 5102292,
+          "[Produccion]": 5401879.2,
+          "[Previsto]": 4885653.69,
+          "[Directo]": 4561540.94,
+          "[Indirecto]": 324112.75,
+          "[Pendiente]": 299587.2,
+          "[MargenPrevisto]": 828000,
+          "[MargenReal]": -126451.66,
+          "[Desviacion]": 343089.97,
+          "[CosteMensual]": 5228743.66,
+          "[CertMensual]": 5102292,
+          "[ProdMensual]": 5401879.2,
+          "[BaseVenta]": 8000000,
+          "[AvanceGlobal]": 0.6752349,
+          "[MargenPrevistoPct]": 0.1035,
+          "[MargenRealPct]": -0.024783305228317,
+          "[DesviacionPct]": 0.07022396423681024,
+          "[Alerta]": 1
+        },
+        {
+          "[Filtro]": "Jefe",
+          "[Valor]": "JO03",
+          "[PptoCoste]": 5908000,
+          "[PptoVenta]": 6735000,
+          "[CosteReal]": 5688307.63,
+          "[Certificado]": 5863100.2,
+          "[Produccion]": 6140672.8,
+          "[Previsto]": 5415792.06,
+          "[Directo]": 5047351.69,
+          "[Indirecto]": 368440.37,
+          "[Pendiente]": 277572.6,
+          "[MargenPrevisto]": 827000,
+          "[MargenReal]": 174792.57,
+          "[Desviacion]": 272515.57,
+          "[CosteMensual]": 5688307.63,
+          "[CertMensual]": 5863100.2,
+          "[ProdMensual]": 6140672.8,
+          "[BaseVenta]": 6700000,
+          "[AvanceGlobal]": 0.9165183283582089,
+          "[MargenPrevistoPct]": 0.12279138827023015,
+          "[MargenRealPct]": 0.029812311582189915,
+          "[DesviacionPct]": 0.05031869151933429,
+          "[Alerta]": 1
+        },
+        {
+          "[Filtro]": "Jefe",
+          "[Valor]": "JO04",
+          "[PptoCoste]": 6660000,
+          "[PptoVenta]": 7400000,
+          "[CosteReal]": 5209462.79,
+          "[Certificado]": 5199782,
+          "[Produccion]": 5723313.6,
+          "[Previsto]": 5150982.24,
+          "[Directo]": 4807583.43,
+          "[Indirecto]": 343398.81,
+          "[Pendiente]": 523531.6,
+          "[MargenPrevisto]": 740000,
+          "[MargenReal]": -9680.79,
+          "[Desviacion]": 58480.55,
+          "[CosteMensual]": 5209462.79,
+          "[CertMensual]": 5199782,
+          "[ProdMensual]": 5723313.6,
+          "[BaseVenta]": 7400000,
+          "[AvanceGlobal]": 0.7734207567567568,
+          "[MargenPrevistoPct]": 0.1,
+          "[MargenRealPct]": -0.0018617684356767264,
+          "[DesviacionPct]": 0.011353281233600215,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Estado",
+          "[Valor]": "0",
+          "[PptoCoste]": 801000,
+          "[PptoVenta]": 900000,
+          "[CosteReal]": 0,
+          "[Certificado]": 0,
+          "[Produccion]": 0,
+          "[Previsto]": 0,
+          "[Directo]": 0,
+          "[Indirecto]": 0,
+          "[Pendiente]": 0,
+          "[MargenPrevisto]": 99000,
+          "[MargenReal]": 0,
+          "[Desviacion]": 0,
+          "[CosteMensual]": 0,
+          "[CertMensual]": 0,
+          "[ProdMensual]": 0,
+          "[BaseVenta]": 900000,
+          "[AvanceGlobal]": 0,
+          "[MargenPrevistoPct]": 0.11,
+          "[MargenRealPct]": null,
+          "[DesviacionPct]": null,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Estado",
+          "[Valor]": "2",
+          "[PptoCoste]": 18530000,
+          "[PptoVenta]": 20800000,
+          "[CosteReal]": 13960851.71,
+          "[Certificado]": 13365250.43,
+          "[Produccion]": 15217494.6,
+          "[Previsto]": 13568894.1,
+          "[Directo]": 12655844.43,
+          "[Indirecto]": 913049.67,
+          "[Pendiente]": 1852244.17,
+          "[MargenPrevisto]": 2270000,
+          "[MargenReal]": -595601.28,
+          "[Desviacion]": 391957.61,
+          "[CosteMensual]": 13960851.71,
+          "[CertMensual]": 13365250.43,
+          "[ProdMensual]": 15217494.6,
+          "[BaseVenta]": 20800000,
+          "[AvanceGlobal]": 0.7316103173076923,
+          "[MargenPrevistoPct]": 0.10913461538461539,
+          "[MargenRealPct]": -0.04456342087411227,
+          "[DesviacionPct]": 0.028886481618277202,
+          "[Alerta]": 0
+        },
+        {
+          "[Filtro]": "Estado",
+          "[Valor]": "3",
+          "[PptoCoste]": 10772000,
+          "[PptoVenta]": 12035000,
+          "[CosteReal]": 11093564.3,
+          "[Certificado]": 12000000,
+          "[Produccion]": 12000000,
+          "[Previsto]": 10772000,
+          "[Directo]": 10052000,
+          "[Indirecto]": 720000,
+          "[Pendiente]": 0,
+          "[MargenPrevisto]": 1263000,
+          "[MargenReal]": 906435.7,
+          "[Desviacion]": 321564.3,
+          "[CosteMensual]": 11093564.3,
+          "[CertMensual]": 12000000,
+          "[ProdMensual]": 12000000,
+          "[BaseVenta]": 12000000,
+          "[AvanceGlobal]": 1,
+          "[MargenPrevistoPct]": 0.10494391358537598,
+          "[MargenRealPct]": 0.07553630833333333,
+          "[DesviacionPct]": 0.029851865948756034,
+          "[Alerta]": 0
+        }
+      ],
+      "executionTimeMs": 818
+    }
+  },
+  "soloIndirectos": {
+    "query": "EVALUATE SUMMARIZECOLUMNS(DimPartida[ObraClave],\nFILTER(ALL(DimPartida),DimPartida[EsIndirecta]=TRUE()),\n\"AvanceGlobal\",[Avance global de obra],\"Indirecto\",[Coste previsto indirecto])\nORDER BY DimPartida[ObraClave]",
+    "result": {
+      "rowCount": 10,
+      "isTruncated": false,
+      "columns": [
+        {
+          "name": "DimPartida[ObraClave]",
+          "dataType": "String",
+          "isNullable": true,
+          "ordinal": 0
+        },
+        {
+          "name": "[AvanceGlobal]",
+          "dataType": "Double",
+          "isNullable": true,
+          "ordinal": 1
+        },
+        {
+          "name": "[Indirecto]",
+          "dataType": "Decimal",
+          "isNullable": true,
+          "ordinal": 2
+        }
+      ],
+      "rows": [
+        {
+          "DimPartida[ObraClave]": "OB-25001",
+          "[AvanceGlobal]": 1,
+          "[Indirecto]": 408000
+        },
+        {
+          "DimPartida[ObraClave]": "OB-25002",
+          "[AvanceGlobal]": 1,
+          "[Indirecto]": 144000
+        },
+        {
+          "DimPartida[ObraClave]": "OB-25003",
+          "[AvanceGlobal]": 0.890328,
+          "[Indirecto]": 272440.37
+        },
+        {
+          "DimPartida[ObraClave]": "OB-25004",
+          "[AvanceGlobal]": 1,
+          "[Indirecto]": 96000
+        },
+        {
+          "DimPartida[ObraClave]": "OB-25005",
+          "[AvanceGlobal]": 0.80811,
+          "[Indirecto]": 189097.74
+        },
+        {
+          "DimPartida[ObraClave]": "OB-25006",
+          "[AvanceGlobal]": 0.798072,
+          "[Indirecto]": 201114.14
+        },
+        {
+          "DimPartida[ObraClave]": "OB-25007",
+          "[AvanceGlobal]": 1,
+          "[Indirecto]": 72000
+        },
+        {
+          "DimPartida[ObraClave]": "OB-26001",
+          "[AvanceGlobal]": 0.741066,
+          "[Indirecto]": 142284.67
+        },
+        {
+          "DimPartida[ObraClave]": "OB-26002",
+          "[AvanceGlobal]": 0.409518,
+          "[Indirecto]": 108112.75
+        },
+        {
+          "DimPartida[ObraClave]": "OB-26003",
+          "[AvanceGlobal]": 0,
+          "[Indirecto]": 0
+        }
+      ],
+      "executionTimeMs": 43
+    }
+  }
+}

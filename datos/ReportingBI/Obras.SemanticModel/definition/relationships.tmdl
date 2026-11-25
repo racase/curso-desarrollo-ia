@@ -1,0 +1,32 @@
+relationship FactPresupuesto_DimObra
+	fromColumn: FactPresupuesto.ObraClave
+	toColumn: DimObra.ObraClave
+
+relationship FactPresupuesto_DimPartida
+	fromColumn: FactPresupuesto.PartidaClave
+	toColumn: DimPartida.PartidaClave
+
+relationship FactMovimiento_DimObra
+	fromColumn: FactMovimiento.ObraClave
+	toColumn: DimObra.ObraClave
+
+relationship FactMovimiento_DimPartida
+	fromColumn: FactMovimiento.PartidaClave
+	toColumn: DimPartida.PartidaClave
+
+relationship FactAvance_DimObra
+	fromColumn: FactAvance.ObraClave
+	toColumn: DimObra.ObraClave
+
+relationship FactAvance_DimPartida
+	fromColumn: FactAvance.PartidaClave
+	toColumn: DimPartida.PartidaClave
+
+relationship FactMovimiento_DimFecha
+	fromColumn: FactMovimiento.Fecha
+	toColumn: DimFecha.Fecha
+
+relationship FactAvance_DimFecha
+	fromColumn: FactAvance.Fecha
+	toColumn: DimFecha.Fecha
+

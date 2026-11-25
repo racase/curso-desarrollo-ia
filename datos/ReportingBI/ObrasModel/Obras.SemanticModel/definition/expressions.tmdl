@@ -1,0 +1,8 @@
+/// Servidor SQL de NAVDEMO; sin credenciales.
+expression Servidor = "127.0.0.1,14330" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 3dfce5dd-a0bb-400b-85d4-d232448ae407
+
+/// Base de datos de origen.
+expression BaseDatos = "NAVDEMO" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: ab57cac0-0e8d-48ff-9437-6f76ac2e61a7
+

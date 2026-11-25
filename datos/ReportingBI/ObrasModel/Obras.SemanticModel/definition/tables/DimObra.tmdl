@@ -1,0 +1,98 @@
+/// Vista rpt.DimObra de NAVDEMO. Spec control-economico-obra.
+table DimObra
+	lineageTag: 9bef1519-0094-4439-bde0-638592097ce1
+
+	column ObraClave
+		dataType: string
+		isHidden
+		lineageTag: 8b5c8604-081a-48d1-83e5-c815b74565ca
+		summarizeBy: none
+		sourceColumn: ObraClave
+
+	column Obra
+		dataType: string
+		lineageTag: 50dbdb5e-91c7-46dc-b6bb-ab16717064a4
+		summarizeBy: none
+		sourceColumn: Obra
+
+	column EstadoCodigo
+		dataType: int64
+		lineageTag: fe7d420c-3be3-4d1d-8ff8-24906e3db6d1
+		summarizeBy: none
+		sourceColumn: EstadoCodigo
+
+	column Estado
+		dataType: string
+		lineageTag: 8c1a56da-af5c-4730-8b58-a7330e7ae5d4
+		summarizeBy: none
+		sourceColumn: Estado
+
+	column DelegacionCodigo
+		dataType: string
+		lineageTag: 3ae06d8c-5ae4-4417-a634-36b07cfbdbb0
+		summarizeBy: none
+		sourceColumn: DelegacionCodigo
+
+	column Delegacion
+		dataType: string
+		lineageTag: ea15ceb8-8e26-43df-94c3-eec8114727e2
+		summarizeBy: none
+		sourceColumn: Delegacion
+
+	column TipoObraCodigo
+		dataType: string
+		lineageTag: 345aa67f-d05c-4b04-8d95-067111fdd83f
+		summarizeBy: none
+		sourceColumn: TipoObraCodigo
+
+	column TipoObra
+		dataType: string
+		lineageTag: 5069af0c-84bb-4e57-b857-cb7d89fd6e3b
+		summarizeBy: none
+		sourceColumn: TipoObra
+
+	column JefeObraCodigo
+		dataType: string
+		lineageTag: e3c7e0ed-fbf7-4d60-b114-c20af1a04679
+		summarizeBy: none
+		sourceColumn: JefeObraCodigo
+
+	column JefeObra
+		dataType: string
+		lineageTag: 7930cf5b-bdff-45ea-9f14-54bb8694bcbf
+		summarizeBy: none
+		sourceColumn: JefeObra
+
+	column ClienteCodigo
+		dataType: string
+		lineageTag: 9ae133c3-6049-46ad-9742-64bb1092556f
+		summarizeBy: none
+		sourceColumn: ClienteCodigo
+
+	column FechaCreacion
+		dataType: dateTime
+		lineageTag: a0bddfae-64d9-4488-adcb-017941ed85f9
+		summarizeBy: none
+		sourceColumn: FechaCreacion
+
+	column FechaInicio
+		dataType: dateTime
+		lineageTag: 0ea9d05c-711f-4cd3-a38b-1f811623ddb8
+		summarizeBy: none
+		sourceColumn: FechaInicio
+
+	column FechaFinPlanificada
+		dataType: dateTime
+		lineageTag: 9d9767cd-0d90-42d7-a74c-90f370d4d98f
+		summarizeBy: none
+		sourceColumn: FechaFinPlanificada
+
+	partition DimObra = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema="rpt", Item="DimObra"]}[Data]
+				in
+				    Vista
+

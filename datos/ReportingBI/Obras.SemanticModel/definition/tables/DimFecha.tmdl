@@ -1,0 +1,46 @@
+/// Spec: Informe, filtros y fechas. Calendario continuo de años completos, desde creación de obras hasta fin del presupuesto.
+table DimFecha
+	lineageTag: eca20e39-a62c-4f95-ae87-04c37533eec1
+	dataCategory: Time
+
+	column Fecha
+		isUnique
+		formatString: dd/MM/yyyy
+		isNameInferred
+		sourceColumn: [Fecha]
+
+	column Año
+		isNameInferred
+		sourceColumn: [Año]
+
+	column Mes
+		isNameInferred
+		sourceColumn: [Mes]
+
+	column MesNombre
+		isNameInferred
+		sourceColumn: [MesNombre]
+		sortByColumn: Mes
+
+	column AñoMes
+		isNameInferred
+		sourceColumn: [AñoMes]
+		sortByColumn: AñoMesOrden
+
+	column AñoMesOrden
+		isNameInferred
+		sourceColumn: [AñoMesOrden]
+
+	partition DimFecha = calculated
+		mode: import
+		source =
+				VAR Inicio = MINX(DimObra, DimObra[FechaCreacion])
+				VAR Fin = MAXX(FactPresupuesto, FactPresupuesto[UltimaFechaPlanificada])
+				RETURN ADDCOLUMNS(
+				    SELECTCOLUMNS(CALENDAR(DATE(YEAR(Inicio),1,1),DATE(YEAR(Fin),12,31)), "Fecha", [Date]),
+				    "Año", YEAR([Fecha]), "Mes", MONTH([Fecha]),
+				    "MesNombre", FORMAT([Fecha],"mmmm","es-ES"),
+				    "AñoMes", FORMAT([Fecha],"yyyy-MM"),
+				    "AñoMesOrden", YEAR([Fecha])*100+MONTH([Fecha])
+				)
+

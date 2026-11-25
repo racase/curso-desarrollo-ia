@@ -1,0 +1,21 @@
+Obra|Delegacion|Tipo|Jefe|Estado
+----|----------|----|----|------
+OB-25001|NORTE|EDIF|JO01|3
+OB-25002|SUR|IND|JO02|3
+OB-25003|CENTRO|EDIF|JO03|2
+OB-25004|CENTRO|REHAB|JO03|3
+OB-25005|NORTE|URB|JO01|2
+OB-25006|SUR|EDIF|JO04|2
+OB-25007|NORTE|CIVIL|JO02|3
+OB-26001|CENTRO|EDIF|JO04|2
+OB-26002|SUR|EDIF|JO02|2
+OB-26003|NORTE|CIVIL|JO01|0
+Caso|Real|Previsto|Porcentaje|Estado|Alerta
+----|----|--------|----------|------|------
+5 % exacto|1050.00|1000.00|.0500000000|NULL|0
+Superior al 5 %|1050.01|1000.00|.0500100000|Desviación > 5 %|1
+Coste sin avance|100.00|.00|NULL|Coste sin avance|1
+Sin coste ni avance|.00|.00|NULL|NULL|0
+Avance|Indirecto
+------|---------
+.2500000000|5000.00

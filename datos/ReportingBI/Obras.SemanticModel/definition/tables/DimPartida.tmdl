@@ -1,0 +1,51 @@
+/// Vista rpt.DimPartida de NAVDEMO. Spec control-economico-obra.
+table DimPartida
+	lineageTag: aecd6224-91cf-44ef-a875-1b7e8e813bdb
+
+	column PartidaClave
+		dataType: string
+		isHidden
+		lineageTag: e4a47674-9396-447d-91a0-8d55ff55dd32
+		summarizeBy: none
+		sourceColumn: PartidaClave
+
+	column ObraClave
+		dataType: string
+		isHidden
+		lineageTag: 9d1fe590-518b-4005-8723-60388515ecff
+		summarizeBy: none
+		sourceColumn: ObraClave
+
+	column PartidaCodigo
+		dataType: string
+		lineageTag: 044bcd15-2952-46bf-a5f4-87629569d69a
+		summarizeBy: none
+		sourceColumn: PartidaCodigo
+
+	column Partida
+		dataType: string
+		lineageTag: d68f3126-96ab-44ae-9ba3-2737b66c3e8b
+		summarizeBy: none
+		sourceColumn: Partida
+
+	column TipoCoste
+		dataType: string
+		lineageTag: 103388de-a2a7-431c-9b35-7dea264bd352
+		summarizeBy: none
+		sourceColumn: TipoCoste
+
+	column EsIndirecta
+		dataType: boolean
+		lineageTag: 4af49140-0ca7-4f3c-87e0-4a8c2e47aef2
+		summarizeBy: none
+		sourceColumn: EsIndirecta
+
+	partition DimPartida = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(Servidor, BaseDatos),
+				    Vista = Origen{[Schema="rpt", Item="DimPartida"]}[Data]
+				in
+				    Vista
+
