@@ -34,4 +34,22 @@ class IncidentFactory extends Factory
     {
         return $this->state(fn () => ['asset_id' => null]);
     }
+
+    public function closed(): static
+    {
+        return $this->assigned()->state(fn (array $attributes) => [
+            'status' => IncidentStatus::Closed,
+            'closing_technician_id' => $attributes['technician_id'],
+        ]);
+    }
+
+    public function rated(int $rating = 5): static
+    {
+        return $this->closed()->state(fn () => ['resolution_rating' => $rating, 'rated_at' => now()]);
+    }
+
+    public function historicalWithoutTechnician(): static
+    {
+        return $this->state(fn () => ['status' => IncidentStatus::Closed, 'technician_id' => null, 'closing_technician_id' => null]);
+    }
 }

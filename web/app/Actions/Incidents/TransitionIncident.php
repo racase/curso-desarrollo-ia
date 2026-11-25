@@ -26,6 +26,10 @@ class TransitionIncident
                 throw ValidationException::withMessages(['status' => 'Asigna un técnico antes de pasar a en curso.']);
             }
             $current->update(['status' => $target]);
+            if ($target === IncidentStatus::Closed) {
+                $current->closing_technician_id = $current->technician_id;
+                $current->save();
+            }
             $current->statusHistory()->create([
                 'actor_id' => $actor->id,
                 'from_status' => $expectedStatus,

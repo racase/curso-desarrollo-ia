@@ -290,3 +290,40 @@
         outline: 2px solid Highlight;
     }
 }
+
+.it-rating-options .fi-fo-radio-label {
+    min-block-size: 44px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.it-rating-options input:focus-visible {
+    outline: 2px solid var(--it-violet);
+    outline-offset: 4px;
+}
+
+.it-technician-ratings .fi-ta-table {
+    min-inline-size: 0;
+    inline-size: 100%;
+    table-layout: fixed;
+}
+
+.it-technician-ratings .fi-ta-header-cell {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    padding-inline: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.it-technician-ratings .fi-ta-col {
+    padding-inline: 0;
+    white-space: normal;
+}
+
+.it-technician-ratings .fi-ta-text {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+    white-space: normal;
+}

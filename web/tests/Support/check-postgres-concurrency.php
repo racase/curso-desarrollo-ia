@@ -2,6 +2,8 @@
 
 use App\Enums\IncidentStatus;
 use App\Models\Incident;
+use App\Models\IncidentComment;
+use App\Models\IncidentStatusHistory;
 use App\Models\User;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Facades\Artisan;
@@ -37,20 +39,41 @@ try {
     requireResult(Artisan::call('migrate', ['--force' => true]) === 0, 'Isolated migrations failed');
     echo "Migrations passed in isolated PostgreSQL database.\n";
 
-    foreach (['assign', 'transition'] as $mode) {
+    $ratingMigration = require database_path('migrations/2026_11_24_120000_add_resolution_rating_to_incidents_table.php');
+    $ratingMigration->down();
+    $legacy = Incident::factory()->assigned()->create(['status' => 'closed']);
+    $unassigned = Incident::factory()->create(['status' => 'closed']);
+    $pending = Incident::factory()->assigned()->create(['status' => 'resolved']);
+    $comment = IncidentComment::factory()->create(['incident_id' => $legacy->id]);
+    $history = IncidentStatusHistory::factory()->create(['incident_id' => $legacy->id]);
+    $ratingMigration->up();
+    requireResult($legacy->fresh()->closing_technician_id === $legacy->technician_id && $legacy->fresh()->resolution_rating === null, 'Historical attribution incorrect');
+    requireResult($unassigned->fresh()->closing_technician_id === null && $pending->fresh()->closing_technician_id === null, 'Unexpected attribution');
+    requireResult($comment->fresh() !== null && $history->fresh() !== null, 'Migration lost related rows');
+    $ratingMigration->down();
+    requireResult($legacy->fresh() !== null && $comment->fresh() !== null && $history->fresh() !== null, 'Rollback lost existing data');
+    $ratingMigration->up();
+    echo "Historical backfill and rollback passed; related rows preserved.\n";
+
+    foreach (['assign', 'transition', 'rate', 'closure'] as $mode) {
         foreach (glob($barrier.'/*') as $file) {
             unlink($file);
         }
-        $incident = Incident::factory()->create();
+        $incident = match ($mode) {
+            'rate' => Incident::factory()->closed()->create(),
+            'closure' => Incident::factory()->assigned()->create(['status' => 'resolved']),
+            default => Incident::factory()->create(),
+        };
+        $replacement = User::factory()->technician()->create();
         $actors = $mode === 'assign'
             ? [User::factory()->technician()->create(), User::factory()->technician()->create()]
-            : [User::factory()->admin()->create(), User::factory()->admin()->create()];
+            : ($mode === 'rate' ? [$incident->requester, $incident->requester] : [User::factory()->admin()->create(), User::factory()->admin()->create()]);
         DB::beginTransaction();
         Incident::query()->lockForUpdate()->findOrFail($incident->id);
         $workers = [];
         foreach ($actors as $index => $actor) {
             $worker = new Process([PHP_BINARY, __DIR__.'/incident-race-worker.php', $mode, (string) $incident->id, (string) $actor->id, $barrier, (string) $index], base_path(), [
-                'APP_ENV' => 'testing', 'DB_CONNECTION' => 'pgsql', 'DB_DATABASE' => $database, 'DB_URL' => '',
+                'APP_ENV' => 'testing', 'DB_CONNECTION' => 'pgsql', 'DB_DATABASE' => $database, 'DB_URL' => '', 'RACE_TECHNICIAN_ID' => (string) $replacement->id,
             ]);
             $worker->setTimeout(25)->start();
             $workers[] = $worker;
@@ -79,15 +102,23 @@ try {
             $results[] = trim($worker->getOutput());
         }
         sort($results);
-        requireResult($results === ['accepted', 'conflict'], 'Expected one winner and one conflict: '.json_encode($results));
+        if ($mode !== 'closure') {
+            requireResult($results === ['accepted', 'conflict'], 'Expected one winner and one conflict: '.json_encode($results));
+        }
         $incident->refresh();
         if ($mode === 'assign') {
             requireResult(in_array($incident->technician_id, array_map(fn (User $user) => $user->id, $actors), true), 'Unexpected technician');
             requireResult($incident->status === IncidentStatus::Proposed && $incident->statusHistory()->count() === 0, 'Assignment changed state or history');
+        } elseif ($mode === 'rate') {
+            requireResult(in_array($incident->resolution_rating, [3, 4], true) && $incident->rated_at !== null, 'Rating not saved exactly once');
+            requireResult($incident->statusHistory()->count() === 0, 'Rating changed history');
+        } elseif ($mode === 'closure') {
+            requireResult(in_array('closed:'.$incident->closing_technician_id, $results, true) && in_array('accepted', $results, true), 'Closure snapshot changed after reassignment');
+            requireResult($incident->technician_id === $replacement->id && $incident->status === IncidentStatus::Closed && $incident->statusHistory()->count() === 1, 'Closure and reassignment inconsistent');
         } else {
             requireResult($incident->status === IncidentStatus::Open && $incident->statusHistory()->count() === 1, 'Transition/history were duplicated');
         }
-        echo "{$mode}: one winner, one conflict; state and history consistent.\n";
+        echo "{$mode}: concurrency assertions passed; state and history consistent.\n";
     }
 } finally {
     foreach ($workers as $worker) {

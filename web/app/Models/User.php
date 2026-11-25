@@ -50,6 +50,11 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasMany(IncidentComment::class, 'author_id');
     }
 
+    public function closedIncidents(): HasMany
+    {
+        return $this->hasMany(Incident::class, 'closing_technician_id');
+    }
+
     public function incidentStatusHistory(): HasMany
     {
         return $this->hasMany(IncidentStatusHistory::class, 'actor_id');
