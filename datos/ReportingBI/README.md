@@ -89,7 +89,7 @@ Abre el agente desde esta carpeta.
 
 | Ruta | Lo usa | Contenido |
 |---|---|---|
-| `AGENTS.md` | Codex y OpenCode | Instrucciones del proyecto: base de datos, NAV, vistas, Power BI |
+| `AGENTS.md` | Codex y OpenCode | Instrucciones del proyecto. Se genera en clase con `/init` |
 | `.agents/skills/` | Codex y OpenCode | Skills del proyecto (vacío de momento) |
 | `.codex/config.toml` | Codex | MCP de Power BI |
 | `.mcp.json` | Claude Code | MCP de Power BI |
@@ -104,7 +104,7 @@ visuales del informe. La primera vez pide aceptar su licencia.
 
 ```
 datos/ReportingBI/
-├── AGENTS.md               instrucciones para los agentes
+├── AGENTS.md               instrucciones para los agentes (se genera en clase)
 ├── docker-compose.yml      SQL Server 2022 (puerto 14330)
 ├── db/
 │   ├── entrypoint.sh       arranque: crea la base de datos la primera vez
