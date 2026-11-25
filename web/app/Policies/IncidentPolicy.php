@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Enums\IncidentStatus;
 use App\Enums\UserRole;
 use App\Models\Incident;
 use App\Models\User;
@@ -38,6 +39,15 @@ class IncidentPolicy
     public function update(User $user, Incident $incident): bool
     {
         return false;
+    }
+
+    public function rate(User $user, Incident $incident): bool
+    {
+        return $user->hasRole(UserRole::Requester)
+            && $incident->requester_id === $user->id
+            && $incident->status === IncidentStatus::Closed
+            && $incident->closing_technician_id !== null
+            && $incident->resolution_rating === null;
     }
 
     public function classify(User $user, Incident $incident): bool

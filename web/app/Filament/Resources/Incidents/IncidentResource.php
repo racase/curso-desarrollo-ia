@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Incidents;
 use App\Enums\IncidentCategory;
 use App\Enums\IncidentPriority;
 use App\Enums\IncidentStatus;
+use App\Enums\UserRole;
 use App\Filament\Resources\Incidents\Pages\CreateIncident;
 use App\Filament\Resources\Incidents\Pages\ListIncidents;
 use App\Filament\Resources\Incidents\Pages\ViewIncident;
@@ -61,6 +62,13 @@ class IncidentResource extends Resource
                 ->formatStateUsing(fn (Incident $record): ?string => $record->asset ? $record->asset->code.' · '.$record->asset->name : null)
                 ->placeholder('Sin activo'),
             TextEntry::make('asset.site.name')->label('Sede')->placeholder('Sin sede'),
+            TextEntry::make('resolution_rating')->label('Tu valoración de la atención')
+                ->formatStateUsing(fn (int $state): string => str_repeat('★', $state).' · '.$state.' / 5')
+                ->visible(fn (Incident $record): bool => auth()->user()->hasRole(UserRole::Requester)
+                    && $record->requester_id === auth()->id() && $record->resolution_rating !== null),
+            TextEntry::make('rated_at')->label('Fecha de tu valoración')->dateTime('d/m/Y H:i')
+                ->visible(fn (Incident $record): bool => auth()->user()->hasRole(UserRole::Requester)
+                    && $record->requester_id === auth()->id() && $record->resolution_rating !== null),
         ]);
     }
 

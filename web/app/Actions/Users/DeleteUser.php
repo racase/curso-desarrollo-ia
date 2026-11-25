@@ -24,6 +24,9 @@ class DeleteUser
                     || $current->incidentComments()->exists() || $current->incidentStatusHistory()->exists()) {
                     throw ValidationException::withMessages(['user' => 'No se puede eliminar una cuenta referenciada por incidencias, comentarios o historial.']);
                 }
+                if ($current->closedIncidents()->exists()) {
+                    throw ValidationException::withMessages(['user' => 'No se puede eliminar una cuenta conservada como técnico del cierre de una incidencia.']);
+                }
                 $current->delete();
             });
         } catch (QueryException $exception) {

@@ -20,7 +20,8 @@ class Incident extends Model
 
     protected function casts(): array
     {
-        return ['status' => IncidentStatus::class, 'category' => IncidentCategory::class, 'priority' => IncidentPriority::class];
+        return ['status' => IncidentStatus::class, 'category' => IncidentCategory::class, 'priority' => IncidentPriority::class,
+            'resolution_rating' => 'integer', 'rated_at' => 'datetime'];
     }
 
     public function scopeVisibleTo(Builder $query, User $user): Builder
@@ -46,6 +47,11 @@ class Incident extends Model
     public function statusHistory(): HasMany
     {
         return $this->hasMany(IncidentStatusHistory::class)->orderBy('created_at')->orderBy('id');
+    }
+
+    public function closingTechnician(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'closing_technician_id');
     }
 
     public function comments(): HasMany
