@@ -20,7 +20,7 @@
 # Apagado por defecto para no cargarlo en las iteraciones. Para la demo:
 #   codex -c mcp_servers.infradata-db.enabled=true
 [mcp_servers.infradata-db]
-enabled = false
+enabled = true
 command = "npx"
 args = ["-y", "@toolbox-sdk/server@1.18.0", "--prebuilt=postgres", "--stdio"]
 env_vars = ["POSTGRES_PASSWORD"]
@@ -30,4 +30,5 @@ startup_timeout_sec = 60
 POSTGRES_HOST = "127.0.0.1"
 POSTGRES_PORT = "5433"
 POSTGRES_DATABASE = "infradata"
-POSTGRES_USER = "lectura"
+POSTGRES_USER = "infradata"
+POSTGRES_PASSWORD="infradata"
