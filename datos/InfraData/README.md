@@ -1,7 +1,7 @@
 # InfraData — demo de datos
 
-Proyecto Python mínimo sobre PostgreSQL + TimescaleDB con lecturas de sensores ya cargadas.
-No incluye ninguna analítica: la construiremos en clase con OpenSpec y Codex.
+Proyecto Python sobre PostgreSQL + TimescaleDB con lecturas de sensores ya cargadas.
+Incluye comprobación del dataset y consulta de resúmenes diarios por sensor desde la CLI.
 
 ## Requisitos
 
@@ -61,6 +61,49 @@ Los tests marcados como `integration` necesitan el contenedor levantado; si no l
 
 Para apuntar a otra base de datos, define la variable de entorno `DATABASE_URL`.
 
+## Resumen diario por sensor
+
+Consulta mínimo, máximo, media y recuento de lecturas por sensor y día UTC:
+
+```bash
+uv run python -m infradata daily-summary
+uv run python -m infradata daily-summary --sensor VAL-T01 --start-date 2026-08-01 --end-date 2026-08-01
+uv run python -m infradata daily-summary --site "Planta Sagunto" --sensor SAG-P02 --start-date 2026-09-03 --end-date 2026-09-03
+uv run python -m infradata daily-summary --help
+```
+
+Los filtros son opcionales y se combinan: sede y código deben coincidir exactamente,
+incluidas las mayúsculas. Las fechas tienen formato `YYYY-MM-DD` y ambos extremos son
+inclusivos en UTC. Puedes indicar solo uno; sin fechas se consulta todo el historial.
+El día final incluye hasta el instante anterior a la medianoche UTC del día siguiente.
+
+La salida es una tabla separada por tabuladores, ordenada por día y código, con columnas
+`dia_utc`, `sensor`, `nombre`, `sede`, `unidad`, `min`, `max`, `media` y `lecturas`.
+Los valores se muestran con tres decimales y punto decimal; el recuento es entero.
+La media usa exclusivamente las lecturas disponibles: no se rellenan huecos ni se
+descartan valores anómalos. Los días sin lecturas se omiten. Si no hay coincidencias,
+se muestra `Sin lecturas para los filtros indicados.`, también para sedes o sensores
+desconocidos. Todas las agregaciones se realizan en SQL.
+
+Referencias del dataset fijo del curso:
+
+| Sensor | Día UTC | Unidad | Mínimo | Máximo | Media | Lecturas |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| VAL-T01 | 2026-08-01 | °C | 18.600 | 27.460 | 23.013 | 288 |
+| SAG-P02 | 2026-09-03 | bar | 6.110 | 7.270 | 6.667 | 210 |
+| PAT-L01 | 2026-10-14 | % | 44.270 | 75.770 | 56.854 | 216 |
+
+`PAT-L01` no tiene lecturas los días 12 y 13 de octubre. Para comprobar la salida vacía:
+
+```bash
+uv run python -m infradata daily-summary --sensor PAT-L01 --start-date 2026-10-12 --end-date 2026-10-13
+```
+
+El comando devuelve 0 al consultar correctamente, incluso sin resultados; 2 para
+argumentos o fechas inválidos y 1 ante errores de base de datos. La validación de
+argumentos se realiza antes de conectar. No requiere dependencias nuevas ni cambios
+de esquema o de las semillas.
+
 ## Datos
 
 Dos tablas:
@@ -99,7 +142,8 @@ datos/InfraData/
 ├── src/infradata/      código del proyecto
 │   ├── config.py       configuración (DATABASE_URL)
 │   ├── db.py           conexión
-│   └── __main__.py     comando `check`
+│   ├── analytics.py    agregación diaria mediante SQL
+│   └── __main__.py     comandos `check` y `daily-summary`
 ├── tests/
 ├── docker-compose.yml
 └── pyproject.toml

@@ -1,10 +1,12 @@
-"""Command line entry point: ``python -m infradata check``."""
+"""Command line entry point for dataset checks and daily summaries."""
 
+import argparse
 import sys
-from datetime import UTC
+from datetime import UTC, date
 
 import psycopg
 
+from infradata.analytics import daily_summary
 from infradata.db import connect
 
 
@@ -28,12 +30,63 @@ def check() -> int:
     return 0
 
 
+def iso_date(value: str) -> date:
+    """Parse a calendar date in strict YYYY-MM-DD form."""
+    try:
+        parsed = date.fromisoformat(value)
+        if parsed.isoformat() != value:
+            raise ValueError
+        return parsed
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("Fecha inválida; usa YYYY-MM-DD.") from exc
+
+
 def main(argv: list[str] | None = None) -> int:
-    args = sys.argv[1:] if argv is None else argv
-    if args == ["check"]:
-        return check()
-    print("Uso: python -m infradata check", file=sys.stderr)
-    return 2
+    parser = argparse.ArgumentParser(
+        prog="python -m infradata",
+        usage="Uso: %(prog)s {check,daily-summary} ...",
+        allow_abbrev=False,
+    )
+    commands = parser.add_subparsers(dest="command", required=True)
+    commands.add_parser("check", help="Comprobar conexión y dataset")
+    summary = commands.add_parser(
+        "daily-summary", help="Resumen diario por sensor en UTC", allow_abbrev=False
+    )
+    summary.add_argument("--site", help="Nombre exacto de la sede")
+    summary.add_argument("--sensor", help="Código exacto del sensor")
+    summary.add_argument(
+        "--start-date", type=iso_date, help="Fecha inicial inclusiva YYYY-MM-DD UTC"
+    )
+    summary.add_argument("--end-date", type=iso_date, help="Fecha final inclusiva YYYY-MM-DD UTC")
+    try:
+        args = parser.parse_args(argv)
+        if args.command == "check":
+            return check()
+        try:
+            rows = daily_summary(
+                site=args.site,
+                sensor=args.sensor,
+                start_date=args.start_date,
+                end_date=args.end_date,
+            )
+        except ValueError as exc:
+            parser.error(str(exc))
+        except psycopg.Error as exc:
+            print(f"No se pudo consultar la base de datos: {exc}", file=sys.stderr)
+            return 1
+    except SystemExit as exc:
+        return int(exc.code)
+
+    if not rows:
+        print("Sin lecturas para los filtros indicados.")
+        return 0
+    print("dia_utc\tsensor\tnombre\tsede\tunidad\tmin\tmax\tmedia\tlecturas")
+    for row in rows:
+        print(
+            f"{row.day.isoformat()}\t{row.sensor}\t{row.name}\t{row.site}\t{row.unit}\t"
+            f"{row.minimum:.3f}\t{row.maximum:.3f}\t{row.mean:.3f}\t{row.count}"
+        )
+    return 0
 
 
 if __name__ == "__main__":
