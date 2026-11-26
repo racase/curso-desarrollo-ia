@@ -104,6 +104,69 @@ argumentos o fechas inválidos y 1 ante errores de base de datos. La validación
 argumentos se realiza antes de conectar. No requiere dependencias nuevas ni cambios
 de esquema o de las semillas.
 
+## Detección de huecos
+
+Lista periodos sin lecturas esperadas, con una cadencia fija de 5 minutos:
+
+```bash
+uv run python -m infradata gaps
+uv run python -m infradata gaps --sensor VAL-F01 --threshold-minutes 0
+uv run python -m infradata gaps --site "Planta Sagunto" --sensor SAG-P02
+uv run python -m infradata gaps --sensor PAT-L01 --start-date 2026-10-12 --end-date 2026-10-13
+uv run python -m infradata gaps --help
+```
+
+El hueco comienza en la primera lectura esperada ausente y termina cuando se recibe
+la siguiente: se descuentan los 5 minutos normales entre envíos. Por ejemplo, entre
+las lecturas de VAL-F01 a las 22:10 y 23:05 del 20 de agosto hay un hueco de
+22:15 a 23:05, de **50 minutos**. Las lecturas anómalas también cuentan como envíos.
+
+`--threshold-minutes` acepta enteros no negativos; por defecto es 15. Solo aparecen
+duraciones **estrictamente mayores**: con umbral 50 no aparece el hueco de 50 minutos,
+con 49 sí. Cero permite listar cualquier hueco positivo.
+
+Sede y sensor son filtros exactos que distinguen mayúsculas y se combinan con las
+fechas. Los días inicial y final son inclusivos en UTC; internamente se usa el rango
+desde la medianoche inicial hasta la medianoche posterior al día final, exclusiva.
+Sin fechas se usa la ventana común de todas las lecturas, independiente del sensor
+o sede elegidos: desde el mínimo timestamp hasta el máximo más 5 minutos. En el seed
+es `[2026-08-01T00:00:00Z, 2026-10-31T00:00:00Z)`. Un límite omitido usa el extremo
+global correspondiente; los límites explícitos se intersectan con esta ventana.
+Fuera de ella no se inventan huecos; sin lecturas globales no hay ventana observable.
+
+Se consultan también los vecinos fuera del rango para reconocer huecos que lo
+atraviesan. Se muestra su parte dentro del rango y **el umbral se aplica a esa parte**.
+PAT-L01 del 12 al 13 de octubre devuelve 2880 minutos aunque no haya lecturas esos
+días; solo el día 14 devuelve 360 minutos, que no aparecen con umbral 360.
+
+La salida tabulada contiene `sensor`, `sede`, `inicio_utc`, `fin_utc`, `duracion_minutos`,
+`recortado_inicio`, `recortado_fin`, `abierto_inicio`, `abierto_fin`. Se ordena por inicio
+y sensor, con tiempos ISO UTC terminados en `Z`, duración con tres decimales e
+indicadores `si`/`no`. `recortado_*` indica que el hueco continúa fuera del rango;
+`abierto_*` indica que falta una lectura que permita conocer ese extremo real.
+Ambas propiedades son independientes y se conservan al recortar. Un sensor existente
+sin lecturas produce un único hueco abierto por ambos extremos dentro del rango.
+
+Se supone que todos los sensores estaban activos durante la ventana común; no se
+infiere un calendario desde `installed_at`. Un sensor incorporado tarde podría
+parecer abierto al inicio. Tampoco se pueden detectar ausencias simultáneas de todos
+los sensores anteriores o posteriores al historial global sin otra fuente que defina
+la ventana esperada. La cadencia variable y los calendarios de actividad quedan fuera
+de este ejercicio.
+
+El conjunto fijo devuelve exactamente estos tres huecos, sin indicadores activos:
+
+| Sensor | Inicio UTC | Fin UTC | Duración (minutos) |
+| --- | --- | --- | ---: |
+| VAL-F01 | 2026-08-20T22:15:00Z | 2026-08-20T23:05:00Z | 50 |
+| SAG-P02 | 2026-09-03T08:00:00Z | 2026-09-03T14:30:00Z | 390 |
+| PAT-L01 | 2026-10-12T00:00:00Z | 2026-10-14T06:00:00Z | 3240 |
+
+Sin resultados, incluidos filtros desconocidos o incompatibles, imprime
+`Sin huecos para los filtros indicados.` y devuelve 0. Entradas inválidas devuelven 2
+antes de conectar; errores PostgreSQL devuelven 1 sin tabla parcial. Todos los cálculos
+se realizan en SQL, sin nuevas dependencias ni cambios de esquema o semillas.
+
 ## Datos
 
 Dos tablas:

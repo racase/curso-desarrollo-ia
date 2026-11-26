@@ -1,4 +1,4 @@
-"""Command line entry point for dataset checks and daily summaries."""
+"""Command line entry point for dataset checks and sensor analytics."""
 
 import argparse
 import sys
@@ -6,7 +6,7 @@ from datetime import UTC, date
 
 import psycopg
 
-from infradata.analytics import daily_summary
+from infradata.analytics import daily_summary, reading_gaps
 from infradata.db import connect
 
 
@@ -41,10 +41,37 @@ def iso_date(value: str) -> date:
         raise argparse.ArgumentTypeError("Fecha inválida; usa YYYY-MM-DD.") from exc
 
 
+def gaps(args: argparse.Namespace) -> int:
+    """Print missing-reading intervals with UTC limits and edge indicators."""
+    rows = reading_gaps(
+        site=args.site,
+        sensor=args.sensor,
+        start_date=args.start_date,
+        end_date=args.end_date,
+        threshold_minutes=args.threshold_minutes,
+    )
+    if not rows:
+        print("Sin huecos para los filtros indicados.")
+        return 0
+    print(
+        "sensor\tsede\tinicio_utc\tfin_utc\tduracion_minutos\t"
+        "recortado_inicio\trecortado_fin\tabierto_inicio\tabierto_fin"
+    )
+    for row in rows:
+        start = row.start.astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+        end = row.end.astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+        flags = "\t".join(
+            "si" if flag else "no"
+            for flag in (row.clipped_start, row.clipped_end, row.open_start, row.open_end)
+        )
+        print(f"{row.sensor}\t{row.site}\t{start}\t{end}\t{row.duration_minutes:.3f}\t{flags}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="python -m infradata",
-        usage="Uso: %(prog)s {check,daily-summary} ...",
+        usage="Uso: %(prog)s {check,daily-summary,gaps} ...",
         allow_abbrev=False,
     )
     commands = parser.add_subparsers(dest="command", required=True)
@@ -58,11 +85,37 @@ def main(argv: list[str] | None = None) -> int:
         "--start-date", type=iso_date, help="Fecha inicial inclusiva YYYY-MM-DD UTC"
     )
     summary.add_argument("--end-date", type=iso_date, help="Fecha final inclusiva YYYY-MM-DD UTC")
+    gap_parser = commands.add_parser(
+        "gaps",
+        help="Periodos sin lecturas esperadas en UTC",
+        description=(
+            "Detectar huecos descontando la cadencia normal de 5 minutos. "
+            "La duración y el umbral se aplican tras recortar al rango consultado; "
+            "se indican extremos recortados y abiertos."
+        ),
+        allow_abbrev=False,
+    )
+    gap_parser.add_argument("--site", help="Nombre exacto de la sede")
+    gap_parser.add_argument("--sensor", help="Código exacto del sensor")
+    gap_parser.add_argument(
+        "--start-date", type=iso_date, help="Fecha inicial inclusiva YYYY-MM-DD UTC"
+    )
+    gap_parser.add_argument(
+        "--end-date", type=iso_date, help="Fecha final inclusiva YYYY-MM-DD UTC"
+    )
+    gap_parser.add_argument(
+        "--threshold-minutes",
+        type=int,
+        default=15,
+        help="Umbral entero no negativo; duración estrictamente mayor (por defecto: 15)",
+    )
     try:
         args = parser.parse_args(argv)
         if args.command == "check":
             return check()
         try:
+            if args.command == "gaps":
+                return gaps(args)
             rows = daily_summary(
                 site=args.site,
                 sensor=args.sensor,
