@@ -4,7 +4,7 @@
 # Tiene prioridad sobre ~/.codex/config.toml. Las claves de proveedor, perfiles
 # y notificaciones se ignoran aquí: van en la configuración de usuario.
 #
-# De momento no hay ningún ajuste activo. Ejemplos de lo que se puede fijar:
+# Ejemplos de ajustes adicionales:
 #
 # approval_policy = "on-request"
 # sandbox_mode = "workspace-write"
@@ -15,15 +15,13 @@
 
 # MCP de base de datos (MCP Toolbox for Databases) para consultar InfraData en lenguaje natural.
 # Usa el usuario lectura (db/mcp/lectura.sql), que solo puede leer: la protección está
-# en la base, porque el MCP incluye execute_sql. La contraseña no va aquí: Codex la toma de
-# la variable de entorno POSTGRES_PASSWORD (export POSTGRES_PASSWORD=lectura antes de codex).
-# Apagado por defecto para no cargarlo en las iteraciones. Para la demo:
-#   codex -c mcp_servers.infradata-db.enabled=true
+# en la base, porque el MCP incluye execute_sql. La contraseña de demostración coincide
+# con db/mcp/lectura.sql; no usar credenciales reales en este fichero.
+# Para desactivarlo: codex -c mcp_servers.infradata-db.enabled=false
 [mcp_servers.infradata-db]
-enabled = false
+enabled = true
 command = "npx"
 args = ["-y", "@toolbox-sdk/server@1.18.0", "--prebuilt=postgres", "--stdio"]
-env_vars = ["POSTGRES_PASSWORD"]
 startup_timeout_sec = 60
 
 [mcp_servers.infradata-db.env]
@@ -31,3 +29,4 @@ POSTGRES_HOST = "127.0.0.1"
 POSTGRES_PORT = "5433"
 POSTGRES_DATABASE = "infradata"
 POSTGRES_USER = "lectura"
+POSTGRES_PASSWORD = "lectura"

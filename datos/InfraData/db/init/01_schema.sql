@@ -15,7 +15,8 @@ CREATE TABLE sensors (
 CREATE TABLE readings (
     time      timestamptz      NOT NULL,
     sensor_id integer          NOT NULL REFERENCES sensors (id),
-    value     double precision NOT NULL
+    value     double precision NOT NULL,
+    CONSTRAINT readings_sensor_time_unique UNIQUE (sensor_id, time)
 );
 
 SELECT create_hypertable('readings', 'time');

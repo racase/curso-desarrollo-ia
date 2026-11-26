@@ -124,6 +124,103 @@ Sin resultados se muestra `No hay huecos que superen el umbral para los filtros 
 y se termina con código 0. Los argumentos inválidos devuelven código 2 antes de conectar;
 los fallos de base de datos devuelven código 1. Consulta `huecos --help` para ver las opciones.
 
+## Ingesta de lecturas CSV
+
+```bash
+uv run python -m infradata ingestar-csv data/incoming/lecturas_2026-10-31_2026-11-06.csv --informe data/rechazos_lecturas.csv
+```
+
+El destino del informe es obligatorio, su carpeta debe existir y el archivo no debe existir.
+Se conserva el CSV original, también si el destino es un enlace al origen. Usa
+`ingestar-csv --help` para consultar la sintaxis.
+
+El formato del formador es UTF-8, separador `;`, comillas dobles CSV y finales LF o CRLF:
+
+```csv
+codigo_sensor;fecha_hora_local;valor
+VAL-T01;31/10/2026 01:00;23,12
+```
+
+Cada registro tiene tres campos. Los códigos distinguen mayúsculas; se quitan espacios
+exteriores para validar. Las fechas usan exactamente `DD/MM/AAAA HH:MM` en `Europe/Madrid`,
+sin segundos ni desplazamiento. Los valores admiten signo y coma decimal opcionales,
+sin miles, punto decimal ni notación científica. Se rechazan vacíos, no numéricos y
+no finitos, pero se conservan valores válidos negativos, ceros y anomalías.
+
+La conversión usa las reglas IANA, no un desplazamiento fijo: `31/10/2026 01:00`
+equivale a `2026-10-31T00:00:00Z`. Se rechazan fechas inválidas y horas locales ambiguas
+(por ejemplo, `25/10/2026 02:30`) o inexistentes (`29/03/2026 02:30`). El sistema debe
+tener datos IANA instalados; en Linux los proporciona el paquete del sistema `tzdata`.
+No se han añadido dependencias de Python.
+
+La carga es parcial: se incorporan juntas las filas válidas y se informa cada rechazo.
+Sensor e instante UTC identifican una lectura. La primera fila con campos válidos de una
+clave prevalece dentro del fichero: mismo valor numérico es duplicado y distinto valor es
+conflicto. Las lecturas ya almacenadas nunca se sobrescriben; cargar el fichero otra vez
+incorpora cero lecturas nuevas. Los sensores desconocidos no se dan de alta.
+
+El informe UTF-8 usa `;` y cabecera:
+
+```csv
+fila;codigo_sensor;fecha_hora_local;valor;registro_original;motivo
+```
+
+La fila es la línea física inicial del registro, con la cabecera en línea 1. Se conservan
+campos y registro originales, escapados como CSV, incluso con campos adicionales o saltos
+de línea. Un informe sin rechazos contiene solo la cabecera. Si hay varios fallos se
+informa el primero por este orden: número de campos, sensor, fecha, valor, duplicidad.
+Los motivos son `numero_de_campos_invalido`, `sensor_desconocido`, `fecha_invalida`,
+`hora_ambigua`, `hora_inexistente`, `valor_vacio`, `valor_no_numerico`, `valor_no_finito`,
+`duplicado_en_csv`, `conflicto_en_csv`, `ya_cargada` y `conflicto_con_existente`.
+
+Al completar se muestra `Filas: N | Incorporadas: I | Rechazadas: R` y la ruta del informe,
+con `N = I + R`. Código 0 significa carga completada, también con rechazos o cero filas;
+2 indica uso, rutas o formato incorrectos; 1 indica un fallo operativo. Una cabecera,
+codificación o sintaxis CSV ilegible aborta todo el fichero. Un fallo SQL o de archivos
+antes del commit revierte las inserciones.
+
+El informe se prepara en un temporal antes del commit y se publica después, sin
+sobrescribir destinos. Si falla la publicación tras confirmar, se devuelve 1 y se indica
+que la carga está confirmada junto con la ruta del temporal recuperable. Copia ese archivo
+a un destino nuevo y comprueba los recuentos. Si falla la conexión durante el commit,
+el resultado puede ser desconocido: verifica las lecturas o reintenta con otro informe;
+la restricción única impide duplicarlas. No se garantiza una transacción conjunta entre
+PostgreSQL y el sistema de archivos.
+
+### Migración de volúmenes existentes
+
+Las instalaciones nuevas incluyen `readings_sensor_time_unique`, una restricción
+`UNIQUE (sensor_id, time)` compatible con la hypertable. La CLI exige esa restricción y
+no modifica el esquema automáticamente. Los scripts de `db/init/` solo se ejecutan al
+crear el volumen; para un volumen existente hay que aplicar la migración explícita,
+**previa aprobación del usuario** según `AGENTS.md`:
+
+```bash
+docker compose exec -T db psql -U infradata -d infradata -v ON_ERROR_STOP=1 < db/migrations/01_readings_unique.sql
+```
+
+El script bloquea escrituras mientras comprueba duplicados y crea la restricción; elige
+una ventana adecuada. Si hay duplicados, aborta sin borrar ni fusionar datos. Su diagnóstico
+se puede ampliar con esta consulta, realizada en SQL:
+
+```sql
+SELECT sensor_id, time, count(*)
+FROM readings
+GROUP BY sensor_id, time
+HAVING count(*) > 1;
+```
+
+El saneamiento requiere una decisión explícita antes de continuar. La migración puede
+repetirse tras aplicarse correctamente. Revertir el código no requiere retirar la restricción
+ni borrar lecturas importadas. Si fuera necesario retirar la restricción, solicitar otra
+aprobación antes de ejecutar `ALTER TABLE readings DROP CONSTRAINT readings_sensor_time_unique`;
+esto deshabilitaría la ingesta hasta volver a aplicar la migración.
+
+Las pruebas de ingesta `integration` crean y eliminan exclusivamente una base efímera
+`infradata_test_ingestion_<uuid>` en el servidor configurado por `DATABASE_URL`, con
+TimescaleDB; necesitan permisos de creación de base y extensión. No importan el CSV del
+formador a la base local ni modifican sus lecturas.
+
 ## Comandos habituales
 
 | Para | Comando |
@@ -185,7 +282,8 @@ datos/InfraData/
 │   ├── config.py       configuración (DATABASE_URL)
 │   ├── db.py           conexión
 │   ├── analytics.py    consultas SQL de resumen diario y detección de huecos
-│   └── __main__.py     comandos `check`, `resumen-diario` y `huecos`
+│   ├── ingestion.py    validación, carga CSV e informe de rechazos
+│   └── __main__.py     comandos `check`, `resumen-diario`, `huecos` e `ingestar-csv`
 ├── tests/
 ├── docker-compose.yml
 └── pyproject.toml

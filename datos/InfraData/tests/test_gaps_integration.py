@@ -121,7 +121,6 @@ def test_cadence_duplicates_threshold_and_no_rounding(conn, sample):
         "cadencia",
         [
             stamp(1),
-            stamp(1),
             stamp(1, 0, 5),
             stamp(1, 0, 15),
             stamp(1, 0, 30),
@@ -129,6 +128,13 @@ def test_cadence_duplicates_threshold_and_no_rounding(conn, sample):
             stamp(2),
         ],
     )
+    # El esquema de ingesta impide ahora duplicados; el savepoint conserva el resto del caso.
+    with pytest.raises(psycopg.errors.UniqueViolation), conn.transaction():
+        conn.execute(
+            """INSERT INTO readings (time, sensor_id, value)
+               SELECT %s, id, -40 FROM sensors WHERE code = %s""",
+            (stamp(1), code),
+        )
     kwargs = dict(sensor=code, since=date(2026, 9, 1), until=date(2026, 9, 1))
     rows = analytics.reading_gaps(**kwargs)
     assert [r.duration for r in rows] == [
