@@ -26,7 +26,14 @@ Use four-space indentation and a 100-character line limit. Follow existing type 
 
 ## Testing Guidelines
 
-Use pytest with `tests/test_*.py` files and descriptive `test_*` functions. Mark database-dependent tests with `pytest.mark.integration`. Add focused tests for changed behavior; no coverage threshold is configured. Start the database before validating SQL or dataset changes.
+Use pytest with `tests/test_*.py` files and descriptive `test_*` functions. All tests requiring the database must be marked with `pytest.mark.integration`. Add focused tests for changed behavior; no coverage threshold is configured. Start the database before validating SQL or dataset changes.
+
+## Project Rules
+
+- Count days in UTC; use UTC boundaries for daily periods and aggregations.
+- Ask the user for approval before changing the database schema.
+- Justify every new dependency, explaining why it is needed.
+- Perform aggregations in the database using SQL; do not load readings into memory to aggregate them.
 
 ## Commit & Pull Request Guidelines
 
