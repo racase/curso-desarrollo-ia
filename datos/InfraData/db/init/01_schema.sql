@@ -21,3 +21,6 @@ CREATE TABLE readings (
 SELECT create_hypertable('readings', 'time');
 
 CREATE INDEX readings_sensor_time_idx ON readings (sensor_id, time DESC);
+
+-- Identity of one sensor reading, also used by ON CONFLICT during CSV ingestion.
+CREATE UNIQUE INDEX readings_sensor_time_unique_idx ON readings (sensor_id, time);

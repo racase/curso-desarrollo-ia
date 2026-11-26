@@ -1,7 +1,7 @@
 # InfraData — demo de datos
 
 Proyecto Python sobre PostgreSQL + TimescaleDB con lecturas de sensores ya cargadas.
-Incluye comprobación del dataset y consulta de resúmenes diarios por sensor desde la CLI.
+Incluye comprobación del dataset, resúmenes diarios, detección de huecos e ingesta CSV desde la CLI.
 
 ## Requisitos
 
@@ -202,12 +202,124 @@ datos/InfraData/
 ├── .claude/            ajustes de Claude Code
 ├── .opencode/          ajustes de OpenCode
 ├── db/init/            SQL que se ejecuta al crear la base de datos (esquema y datos)
+├── db/migrations/      migraciones explícitas de bases existentes
 ├── src/infradata/      código del proyecto
 │   ├── config.py       configuración (DATABASE_URL)
 │   ├── db.py           conexión
-│   ├── analytics.py    agregación diaria mediante SQL
-│   └── __main__.py     comandos `check` y `daily-summary`
+│   ├── analytics.py    agregación diaria y huecos mediante SQL
+│   ├── ingestion.py    validación y carga CSV idempotente
+│   └── __main__.py     comandos `check`, `daily-summary`, `gaps` e `ingest-csv`
 ├── tests/
 ├── docker-compose.yml
 └── pyproject.toml
 ```
+
+## Ingesta de lecturas CSV
+
+```bash
+uv run python -m infradata ingest-csv entrada.csv --rejects rechazos.csv
+```
+
+`DATABASE_URL` selecciona la base de destino. El informe debe ser un fichero nuevo,
+con directorio padre existente, distinto del origen; nunca se sobrescribe un informe.
+La ingesta no crea sensores ni modifica el esquema automáticamente.
+
+Contrato: UTF-8 (BOM opcional), separador `;`, comillas CSV estándar, LF o CRLF,
+y cabecera exacta en este orden:
+
+```csv
+codigo_sensor;fecha_hora_local;valor
+VAL-T01;31/10/2026 01:05;23,31
+```
+
+Cada registro tiene tres campos. Se recortan espacios exteriores para validar,
+conservando los originales en los rechazos. El código distingue mayúsculas y debe
+existir. La fecha es estrictamente `DD/MM/AAAA HH:MM`, en `Europe/Madrid`, sin segundos
+ni offset. El valor admite signo y coma decimal (`-2,50`, `96,40` o `12`), sin miles,
+punto decimal, exponentes ni valores no finitos. No se filtran anomalías.
+El entorno debe disponer de los datos de zona `Europe/Madrid`; si faltan, se informa
+un error antes de escribir. No se añaden dependencias Python.
+
+Se convierten los tiempos a UTC. Las fechas inválidas y las horas ambiguas o
+inexistentes de los cambios horarios se rechazan, sin elegir un offset arbitrario.
+Se cargan las filas válidas aunque otras se rechacen. Una lectura se identifica por
+**sensor e instante UTC**, con independencia del valor: prevalece la lectura existente;
+dentro del fichero, la primera fila válida. Repetir la carga no duplica lecturas.
+Una fila inválida no reserva la clave. Primero se comprueba estructura, sensor,
+fecha/zona y valor; después duplicados internos y finalmente duplicados en la base.
+
+El informe es CSV UTF-8 con `;` y columnas:
+`fila;codigo_sensor;fecha_hora_local;valor;registro_original;motivo;detalle`.
+`fila` es la línea física inicial del registro (cabecera en línea 1), también para
+registros multilínea. Se conservan campos y texto original; se informa un motivo por
+fila, en orden de entrada, y la primera fila válida para duplicados internos.
+Los motivos son `estructura_invalida`, `sensor_desconocido`, `fecha_invalida`,
+`hora_ambigua`, `hora_inexistente`, `valor_invalido`, `duplicado_fichero` y
+`duplicado_base`. Sin rechazos se escribe solo la cabecera.
+
+La CLI muestra procesadas, insertadas y rechazadas. Códigos de salida:
+
+| Código | Resultado |
+| --- | --- |
+| 0 | Carga confirmada sin rechazos, incluido un fichero con solo cabecera |
+| 3 | Carga confirmada con rechazos, incluida una repetición sin nuevas inserciones |
+| 2 | Argumentos o contrato global del CSV inválidos |
+| 1 | Error operativo (conexión, SQL, ficheros, zona o falta de unicidad) |
+
+La cabecera, codificación o sintaxis CSV irrecuperables invalidan toda la operación.
+Un error operativo antes del commit revierte las inserciones de esa ejecución.
+Cualquier informe de una operación fallida es incompleto y no acredita una carga.
+Una desconexión durante el commit puede dejar el resultado desconocido: el diagnóstico
+lo indica; se puede reintentar con otro informe gracias a la idempotencia.
+
+### Unicidad y migración
+
+La ingesta necesita un índice único en `(sensor_id, time)`. El esquema inicial lo
+incluye; un volumen existente necesita la migración explícita de
+`db/migrations/01_readings_unique.sql`. **Antes de ejecutar DDL se requiere aprobación
+del usuario**, también para el entorno de pruebas. El script bloquea escrituras durante
+la comprobación y creación, verifica índices homónimos y se detiene si encuentra
+duplicados históricos, conservándolos todos. No elimina ni corrige datos. Cambiar
+`db/init/01_schema.sql` no migra volúmenes existentes.
+
+Después de aprobación, con copia de seguridad y el destino revisado, el operador puede
+aplicar el script con `psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f db/migrations/01_readings_unique.sql`.
+Para volver a la versión anterior de la CLI se conservan lecturas e índice; retirar
+el índice necesita otra aprobación y elimina la garantía de futuras ingestas.
+
+### Pruebas de ingesta aisladas
+
+Se usa una base independiente `infradata_ingestion_test` dentro del mismo servidor
+Docker local del curso (`infradata-db`, puerto **5433**), sin otro contenedor ni
+modificaciones de lecturas en la base `infradata`. Tras aprobar su inicialización:
+
+```bash
+docker exec infradata-db createdb -U infradata infradata_ingestion_test
+docker exec -i infradata-db psql -U infradata -d infradata_ingestion_test -v ON_ERROR_STOP=1 < db/init/01_schema.sql
+docker exec -i infradata-db psql -U infradata -d infradata_ingestion_test -v ON_ERROR_STOP=1 < db/init/02_seed.sql
+export INGESTION_TEST_DATABASE_URL='postgresql://infradata:infradata@localhost:5433/infradata_ingestion_test'
+export INGESTION_TEST_SCHEMA_APPROVED=1
+uv run pytest tests/test_ingestion_integration.py -v
+```
+
+El indicador `INGESTION_TEST_SCHEMA_APPROVED=1` registra la aprobación para el DDL de
+la prueba de migración; no sustituye a pedirla previamente. Las pruebas usan sensores
+propios y limpian solo sus filas; la prueba del CSV real se revierte al terminar.
+La prueba de migración usa un esquema desechable exclusivamente en la base aislada.
+La base local observada ya tiene un índice único compatible (`readings_sensor_time_unique`);
+la CLI lo reconoce por su definición y no necesita migrarla. Sin URL explícita se omiten las pruebas. Se bloquean bases con el nombre de la original,
+incluso cambiando usuario, contraseña, alias o puerto (comprobación conservadora).
+No se imprime la URL en diagnósticos propios.
+
+Para comprobar las regresiones de consultas sobre la copia limpia, en otra ejecución:
+
+```bash
+DATABASE_URL="$INGESTION_TEST_DATABASE_URL" uv run pytest tests/test_db.py tests/test_daily_summary_integration.py tests/test_gaps_integration.py -v
+uv run pytest -m "not integration"
+uv run ruff check .
+uv run ruff format --check .
+```
+
+No uses `docker compose down -v` del curso: elimina su volumen original. La ingesta
+real amplía el periodo del conjunto; ejecuta los ejercicios de referencia sobre el
+seed original o una copia limpia.

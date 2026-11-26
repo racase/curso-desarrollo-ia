@@ -3,11 +3,13 @@
 import argparse
 import sys
 from datetime import UTC, date
+from zoneinfo import ZoneInfoNotFoundError
 
 import psycopg
 
 from infradata.analytics import daily_summary, reading_gaps
 from infradata.db import connect
+from infradata.ingestion import CSVContractError, IngestionError, ingest_csv
 
 
 def check() -> int:
@@ -71,7 +73,7 @@ def gaps(args: argparse.Namespace) -> int:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="python -m infradata",
-        usage="Uso: %(prog)s {check,daily-summary,gaps} ...",
+        usage="Uso: %(prog)s {check,daily-summary,gaps,ingest-csv} ...",
         allow_abbrev=False,
     )
     commands = parser.add_subparsers(dest="command", required=True)
@@ -109,8 +111,39 @@ def main(argv: list[str] | None = None) -> int:
         default=15,
         help="Umbral entero no negativo; duración estrictamente mayor (por defecto: 15)",
     )
+    ingest = commands.add_parser(
+        "ingest-csv",
+        help="Cargar lecturas CSV",
+        allow_abbrev=False,
+        description=(
+            "Carga parcial de CSV UTF-8 con separador ; y cabecera "
+            "codigo_sensor;fecha_hora_local;valor. Fecha DD/MM/AAAA HH:MM "
+            "Europe/Madrid, coma decimal; rechazos en un informe nuevo."
+        ),
+    )
+    ingest.add_argument("filename", metavar="FICHERO")
+    ingest.add_argument("--rejects", required=True, metavar="INFORME")
     try:
         args = parser.parse_args(argv)
+        if args.command == "ingest-csv":
+            try:
+                result = ingest_csv(args.filename, args.rejects)
+            except CSVContractError as exc:
+                print(
+                    f"Contrato CSV inválido: {exc}. Sin carga confirmada; informe incompleto.",
+                    file=sys.stderr,
+                )
+                return 2
+            except (OSError, ZoneInfoNotFoundError, psycopg.Error, IngestionError) as exc:
+                print(
+                    f"No se pudo cargar: {exc}. Sin carga confirmada; informe incompleto.",
+                    file=sys.stderr,
+                )
+                return 1
+            print(f"Procesadas: {result.processed}")
+            print(f"Insertadas: {result.inserted}")
+            print(f"Rechazadas: {result.rejected}")
+            return 3 if result.rejected else 0
         if args.command == "check":
             return check()
         try:
